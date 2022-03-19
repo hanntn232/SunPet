@@ -1,0 +1,476 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<div class="web--container">
+  <div class="web--header">
+    <div class="web--header--1">
+      <div class="header--logo">
+        <img src="../assets/image/logo_white.png" alt="">
+        <p>SUNPET</p>
+      </div>
+      <div class="header--common">
+        <div class="header--contact">
+          <div class="header--phone">
+            <i class="fas fa-phone"></i>
+            (+84) 012345678
+          </div>
+          <hr style="margin-top: 10px; margin-bottom: 10px;">
+          <div class="header--email">
+            <i class="fas fa-envelope"></i>
+            sunpet@gmail.com
+          </div>
+        </div>
+        <div class="header--cart">
+          <a href="Gio_hang.html">
+            <i class="fas fa-shopping-bag"></i>
+          </a>
+        </div>
+        <div class="btn-group dropdown__hover user--position dropdown">
+          <button class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+              class="fas fa-user"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right dropdown-content ">
+            <a class="dropdown-item" href="Dang_ky.html" id="dangky">Đăng ký</a>
+
+            <a class="dropdown-item" href="Dang_nhap.html" id="dangnhap">Đăng nhập</a>
+
+            <a class="dropdown-item" href="Xemthongtin.html" id="xemthongtin">Xem thông tin</a>
+
+            <a class="dropdown-item" href="#" id="dangxuat" onclick="dangXuat()">Đăng xuất</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-md sticky-top">
+    <!-- sticky top dán chặt ở trên, na..md thì từ kích thước medium trở lên thì nó sẽ expand ra -->
+    <div class="container-fluid">
+      <!-- container-fluid là sẽ chiếm toàn bộ chiều ngang -->
+      <div class="nav" data-target="collapse">
+        <nav class="nav__pc">
+          <ul class="navbar-nav ml-auto">
+            <!-- cho phép hiện các cái đường link khi co trang mình vào-->
+            <!-- ml auto là auto margin left -->
+            <li class="nav-item">
+              <!-- nav-item quy định màu là màu xanh, flex 1, mỗi item cách ra một khoảng -->
+              <a class="nav-link" href="#">TRANG CHỦ</a>
+            </li>
+            <li class="nav-item">
+              <a href="Contact.html" class="nav-link">LIÊN HỆ</a>
+            </li>
+            <li class="nav-item">
+              <a href="Product.html" class="nav-link">SẢN PHẨM</a>
+            </li>
+            <li class="nav-item">
+              <a href="Blog_Trangchu.html" class="nav-link">BLOG</a>
+            </li>
+
+          </ul>
+        </nav>
+        <label for="nav--input" class="nav__bars-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+
+        <input type="checkbox" class="nav__input" id="nav--input">
+
+        <label for="nav--input" class="navbar--overlay"></label>
+        <nav for="nav--input" class="nav--bar">
+          <label for="nav--input" class="nav--bar--close">
+            <i class="fas fa-times"></i>
+          </label>
+          <ul class="nav__list">
+            <li>
+              <a class="nav--link" href="#"><i class="fas fa-home"></i>TRANG CHỦ </a>
+            </li>
+            <li>
+              <a href="Contact.html" class="nav--link"><i class="fas fa-phone"></i> LIÊN HỆ </a>
+            </li>
+            <li>
+              <a href="Product.html" class="nav--link"><i class="fas fa-dolly"></i>SẢN PHẨM </a>
+            </li>
+            <li>
+              <a href="Blog_Trangchu.html" class="nav--link"><i class="fas fa-newspaper"></i>BLOG</a>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+
+      <!-- search -->
+      <div class="search--bar">
+        <input type="text" value="" name="search" id="search" placeholder="Bạn muốn tìm gì?" autocomplete="off"
+          class="search--input">
+        <button type="button" class="search--button" onclick="timKiemSanPham()"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+  <!-- banner 1 -->
+  <div class="web--banner">
+    <img src="../assets/banner1.png" alt="">
+  </div>
+  <!-- chúng tôi có gì cho thú cưng? -->
+  <div class="web--dogcat">
+    <div class="web--content">
+      <p>Chúng tôi có gì cho thú cưng của bạn</p>
+    </div>
+    <div class="web--dogcat--detail">
+      <div class="web--dog">
+        <img src="../assets/image/dogava.jpg" class="rounded-circle" alt="">
+        <p><a href="../HTML/Product.html">Dành cho chó cưng</a></p>
+      </div>
+      <div class="web--cat">
+        <img src="../assets/image/catava.jpg" class="rounded-circle" alt="">
+        <p><a href="../HTML/Product.html">Dành cho mèo yêu</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- Sản phẩm nổi bật -->
+  <div class="web--special">
+    <p>SẢN PHẨM NỔI BẬT</p>
+    <div class="web--special--block justify-content-center">
+      <div class="special--product--item">
+        <a href="../HTML_Chitiet_sanpham/Detail1.html">
+          <div class="special--product--detail">
+            <div class="special--product--img">
+              <img src="../assets/image/1-1.jpg" alt="">
+            </div>
+            <div class="special--product--name">
+              <p>Sữa bột cho mèo 110g Dr.Kyan Precaten</p>
+            </div>
+            <div class="special--product--price justify-content-center">
+              <p>Giá: 500.000đ</p>
+            </div>
+          </div>
+        </a>
+        <a href="../HTML_Chitiet_sanpham/Detail16.html">
+          <div class="special--product--detail">
+            <div class="special--product--img">
+              <img src="../assets/image/16-1.png" alt="">
+            </div>
+            <div class="special--product--name">
+              <p>Thức ăn hạt khô cho mèo MININO</p>
+            </div>
+            <div class="special--product--price justify-content-center">
+              <p>Giá: 179.000đ</p>
+
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="special--product--item">
+        <a href="../HTML_Chitiet_sanpham/Detail17.html">
+          <div class="special--product--detail">
+            <div class="special--product--img">
+              <img src="../assets/image/17.1.png" alt="">
+            </div>
+            <div class="special--product--name">
+              Thức ăn cao cấp dành cho chó FIBs
+            </div>
+            <div class="special--product--price justify-content-center">
+              <p>Giá: 199.000đ</p>
+
+            </div>
+          </div>
+        </a>
+        <a href="../HTML_Chitiet_sanpham/Detail14.html">
+          <div class="special--product--detail">
+            <div class="special--product--img">
+              <img src="../assets/image/14-1.jpg" alt="">
+            </div>
+            <div class="special--product--name">
+              Sữa bột cho chó Dr.Kyan Predogen
+            </div>
+            <div class="special--product--price justify-content-center">
+              <p>Giá: 250.000đ</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- bé yêu ăn gì -->
+  <div class="web--eatwhat">
+    <div class="web--eatwhat--content">
+      <p>BÉ YÊU ĂN GÌ?</p>
+    </div>
+
+    <div class="web--eatdogcat">
+      <div class="web--eatdog">
+        <div class="web--eatdog--block">
+          <p>CHÓ CƯNG</p>
+        </div>
+        <div class="web--eatdog--detail1">
+          <a href="../HTML_Chitiet_sanpham/Detail17.html">
+            <div class="special--product--detail1">
+              <div class="special--product--img">
+                <img src="../assets/image/17.1.png" alt="">
+              </div>
+              <div class="special--product--name">
+                Thức ăn cao cấp dành cho chó FIBs
+              </div>
+              <div class="special--product--price justify-content-center">
+                <p>Giá: 199.000đ</p>
+
+              </div>
+            </div>
+          </a>
+          <a href="../HTML_Chitiet_sanpham/Detail14.html">
+            <div class="special--product--detail1">
+              <div class="special--product--img">
+                <img src="../assets/image/14-1.jpg" alt="">
+              </div>
+              <div class="special--product--name">
+                Sữa bột cho chó Dr.Kyan Predogen
+              </div>
+              <div class="special--product--price justify-content-center">
+                <p>Giá: 250.000đ</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="web--eatcat ">
+        <div class="web--eatcat--block">
+          <p>MÈO YÊU</p>
+        </div>
+        <div class="web--eatcat--detail1 col-">
+          <a href="../HTML_Chitiet_sanpham/Detail1.html">
+            <div class="special--product--detail1">
+              <div class="special--product--img">
+                <img src="../assets/image/1-1.jpg" alt="">
+              </div>
+              <div class="special--product--name">
+                Sữa bột cho mèo 110g Dr.Kyan Precaten
+              </div>
+              <div class="special--product--price justify-content-center">
+                <p>Giá: 500.000đ</p>
+
+              </div>
+            </div>
+          </a>
+          <a href="../HTML_Chitiet_sanpham/Detail16.html">
+            <div class="special--product--detail1">
+              <div class="special--product--img">
+                <img src="../assets/image/16-1.png" alt="">
+              </div>
+              <div class="special--product--name">
+                Thức ăn hạt khô cho mèo MININO
+              </div>
+              <div class="special--product--price justify-content-center">
+                <p>Giá: 179.000đ</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="button--more">
+      <button type="button" class="web__button--eatdogcat" name="more"><a href="../HTML/Product.html">XEM
+          THÊM</a></button>
+    </div>
+  </div>
+  <!-- 50% sale off -->
+  <div class="web--discount">
+    <img src="../assets/image/16-1.png" alt="">
+  </div>
+  <!-- thời trang -->
+  <div class="web--fashion ">
+    <div class="web--fashion--content">
+      <p>GIÚP BÉ YÊU VUI VẺ VÀ THỜI TRANG HƠN</p>
+    </div>
+    <div class="web--fashion--rectangle ">
+      <div class="fashion--rectangle--detail">
+        <a href="../HTML_Chitiet_sanpham/Detail11.html">
+          <div class="special--product--detail2">
+            <div class="special--product--img">
+              <img src="../assets/image/11.1.jpg" alt="">
+            </div>
+            <div class="special--product--name">
+              <p>Đồ chơi cho mèo PAW Happy Pet Circle 3 tầng</p>
+            </div>
+            <div class="special--product--price justify-content-center">
+              <p>Giá: 160.000đ</p>
+            </div>
+          </div>
+        </a>
+        <a href="../HTML_Chitiet_sanpham/Detail13.html">
+          <div class="special--product--detail2">
+            <div class="special--product--img">
+              <img src="../assets/image/13-1.jpg" alt="">
+            </div>
+            <div class="special--product--name">
+              <p>Xương gặm tự nhiên vị gà Ferplast Goodbite</p>
+            </div>
+            <div class="special--product--price justify-content-center">
+              <p>Giá: 63.000đ</p>
+
+            </div>
+          </div>
+        </a>
+        <a href="../HTML_Chitiet_sanpham/Detail8.html">
+          <div class="special--product--detail2">
+            <div class="special--product--img">
+              <img src="../assets/image/Detail8_1.png" alt="">
+            </div>
+            <div class="special--product--name">
+              <p>Balo vận chuyển chó mèo Phi hành</p>
+            </div>
+            <div class="special--product--price justify-content-center">
+              <p>Giá: 390.000đ</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="button--more">
+        <button type="button" class="web__button--fashion" name="more1"><a href="../HTML/Product.html">XEM
+            THÊM</a></button>
+      </div>
+    </div>
+    <!-- TIN THÚ CƯNG -->
+    <div class="web--blog--pet">
+      <div class="blog--pet--content">
+        <p>TIN THÚ CƯNG</p>
+      </div>
+      <div class="blog--pet--rectangle">
+        <div class="blog--rectangle--1">
+          <div class="web--blogdog--container">
+            <div class="web--blog--item">
+              <div>
+                <div class="web--blog--header">
+                  <a href="../HTML/blog_chitiet.html" title="Pate cho chó - Giải pháp chuyên trị cho chó kén ăn">
+                    <img src="../assets/image/cun7.jpg" alt="Pate cho chó - Giải pháp chuyên trị cho chó
+                                                    kén ăn" class="web--blog--imgcun" data-was-processed="true">
+                  </a>
+                </div>
+                <div class="web--blog--content">
+                  <div class="web--blog--headercontent">
+                    <div class="web--blog--title">
+                      <h3><a href="" title="Pate cho chó - Giải pháp chuyên trị cho chó
+                                                            kén ăn" class="web--header--title">Pate cho chó - Giải pháp
+                          chuyên
+                          trị cho chó
+                          kén ăn</a></h3>
+                    </div>
+                    <div class="web--content--detail">
+                      <p>
+                        1.CHẾ ĐỘ ĂN CỦA CHÓ NHƯ THẾ NÀO? Chó là loài động vật ăn thịt
+                        nên nhu cầu về lượng đạm trong chế độ dinh dưỡng hằng ngày.
+                        Trong khẩu phần ăn của chó, chúng ta nên đáp ứng đủ các thành
+                        phần như đạm...
+                      </p>
+                    </div>
+
+                    <div class="web--blog--bottom">
+                      <span class="web--blog--time">
+                        <svg aria-hidden="true" width="16" height="16" focusable="false" data-prefix="fas"
+                          data-icon="clock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                          class="svg-inline--fa fa-clock fa-w-16">
+                          <path fill="currentColor"
+                            d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"
+                            class=""></path>
+                        </svg>
+                        <span class="web--time--color">20/07/2021</span>
+                        <span class="web--blog--readmore">|</span>
+                      </span>
+                      <div class="blog--readmore--underline">
+                        <a class="web--blog--readmore" href="../HTML_chitiet_blog/blog_chitiet_Patechocho.html"
+                          title="Xem tiếp">Xem tiếp</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blog--rectangle--2">
+          <div class="web--blogcat--container">
+            <div class="web--blog--item">
+              <div>
+                <div class="web--blog--header">
+                  <a href="../HTML/blog_chitiet.html" title="Cách ít người biết để dạy mèo đi vệ sinh đúng chỗ">
+                    <img src="../assets/image/cun1.jpg" alt="Cách ít người biết để dạy mèo đi vệ sinh đúng chỗ"
+                      class="web--blog--imgcun" data-was-processed="true">
+                  </a>
+                </div>
+                <div class="web--blog--content">
+                  <div class="web--blog--headercontent">
+                    <div class="web--blog--title">
+                      <h3><a href="" title="Cách ít người biết để dạy mèo đi vệ sinh đúng chỗ"
+                          class="web--header--title">Cách ít người biết để dạy mèo đi vệ
+                          sinh
+                          đúng
+                          chỗ</a></h3>
+                    </div>
+                    <div class="web--content--detail">
+                      <p>
+                        Với không ít người nuôi mèo, việc dạy cho mèo cách đi vệ sinh
+                        đúng chỗ là một chuyện không hề dễ, và nếu không chú ý tới vấn
+                        đề này ngay từ khi mèo còn nhỏ chúng ta sẽ phải xử lí hậu họa do
+                        mèo gây tra, rất vất...
+                      </p>
+                    </div>
+
+                    <div class="web--blog--bottom">
+                      <span class="web--blog--time">
+                        <svg aria-hidden="true" width="16" height="16" focusable="false" data-prefix="fas"
+                          data-icon="clock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                          class="svg-inline--fa fa-clock fa-w-16">
+                          <path fill="currentColor"
+                            d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"
+                            class=""></path>
+                        </svg>
+                        <span class="web--time--color">20/07/2021</span>
+                        <span class="web--blog--readmore">|</span>
+                      </span>
+                      <div class="blog--readmore--underline">
+                        <a class="web--blog--readmore" href="../HTML_chitiet_blog/blog_chitiet_MeoDiVS.html"
+                          title="Xem tiếp">Xem tiếp</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="more--floatright">
+        <button type="button" class="web__button--floatright" name="more2"><a href="../HTML/Blog_Trangchu.html"
+            class="a-hover">XEM THÊM BÀI VIẾT</a></button>
+      </div>
+    </div>
+    <div class="web--whychoose">
+      <div class="web--whychoose--content">
+        TẠI SAO BẠN NÊN CHỌN SUNPET?
+      </div>
+      <div class="web--whychoose--block">
+        <div class="whychoose--block--left">
+          <p>Chúng tôi mang đến cho thú cưng của bạn thức đạt chuẩn tốt nhất, giúp thú cưng của bạn vui vẻ
+            và hạnh phúc!</p>
+        </div>
+        <div class="whychoose--block--right">
+          <img src="../assets/image/Corgi.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- banner sponsors -->
+    <div class="web--banner--sponsors">
+      <img src="../assets/image/banner2.png" alt="">
+    </div>
+    <!-- ĐĂNG KÝ ĐỂ NHẬN THÊM THÔNG TIN -->
+    <div class="web--register--info">
+      <div class="web--register--content">
+        <h6>ĐĂNG KÝ ĐỂ NHẬN THÊM THÔNG TIN!</h6>
+        <p>Nhận thư mỗi tuần và mua sắm dễ dàng hơn.</p>
+      </div>
+      <form class="web--register--email">
+        <input type="email" class="register--email" value="" placeholder="Hãy nhập email của bạn" name="email"
+          id="email" required>
+        <button type="submit" value="ĐĂNG KÝ" id="btnRegister" name="btnRegister" class="button__email">ĐĂNG
+          KÝ</button>
+      </form>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>

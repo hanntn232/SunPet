@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt hàng</title>
+</head>
+
+<body>
+    <!-- Pop up thay đổi thông tin đặt hàng -->
+    <div class="pop-up-change" id="pop-up">
+        <div class="pop-up-content">
+            <div>
+                <label for="" class="khachhang--title">THÔNG TIN KHÁCH HÀNG</label>
+                <button class="btn--close" onclick="anFormThayDoi()">X</button>
+                <div class="form--row">
+                    <label for="">Họ tên: </label>
+                    <input type="text" value="Nguyễn Văn A" id="change-hoten">
+                </div>
+                <div class="form--row">
+                    <label for="">Số điện thoại: </label>
+                    <input type="text" value="0123456789" id="change-sdt">
+                </div>
+                <div class="form--row">
+                    <label for="">Địa chỉ: </label>
+                    <input type="text" value="Quận Thủ Đức, TPHCM" id="change-diachi">
+                </div>
+                <div class="form--row">
+                    <label for="">Phương thức thanh toán: </label>
+                    <label for="">Thanh toán khi giao hàng</label>
+                </div>
+                <div class="form--row">
+                    <button class="btn--change" onclick="thayDoiThongTinDatHang()">Thay đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header -->
+    <div class="width header col-12">
+        <app-header></app-header>
+    </div>
+
+    <!-- Nội dung đơn hàng -->
+    <div class="donhang--container col-12">
+        <div class="row col-12 donhang--title">
+            THÔNG TIN ĐƠN HÀNG
+        </div>
+        <div class="row col-12 donhang--khachhang1" id="donhang--khachhang1">
+            <div class="col-9">
+                <div>Họ tên: <span id="hoten1">Nguyễn Văn B</span></div>
+                <div>Số điện thoại: <span id="sdt1">0123456789</span></div>
+                <div>Địa chỉ: <span id="diachi1">Quận Thủ Đức, TPHCM</span></div>
+                <div>Phương thức thanh toán: <span id="pttt1">Thanh toán khi giao hàng</span></div>
+            </div>
+            <div class="col-3 btn--thaydoi">
+                <div class="col-12">
+                    <button onclick="hienThiFormThayDoi()">Thay đổi</button>
+                </div>
+            </div>
+        </div>
+        <div class="row col-12 donhang--khachhang2" id="donhang--khachhang2">
+            <div class="col-12">
+                <div>Họ tên: <span id="hoten2">Nguyễn Văn B</span></div>
+                <div>Số điện thoại: <span id="sdt2">0123456789</span></div>
+                <div>Địa chỉ: <span id="diachi2">Quận Thủ Đức, TPHCM</span></div>
+                <div id="pttt">Phương thức thanh toán: <span>Thanh toán khi giao hàng</span></div>
+            </div>
+            <div class="col-12 btn--thaydoi">
+                <div class="col-12">
+                    <button onclick="hienThiFormThayDoi()">Thay đổi</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Load nội dung từ giỏ hàng -->
+        <div class="giohang--bgr col-sm-12 col-md-12 col-lg-12">
+            <section class="giohang1 col-md-12 col-lg-12 col-sm-12">
+                <div class="title">
+                    SẢN PHẨM
+                </div>
+                <div class="giohang-container">
+                    <div class="giohang--head">
+                        <div class="col-2">Ảnh sản phẩm</div>
+                        <div class="col-4">Tên sản phẩm</div>
+                        <div class="col-2">Đơn giá</div>
+                        <div class="col-2">Số lượng</div>
+                        <div class="col-2">Thành tiền</div>
+                    </div>
+                    <div id="giohang1">
+                        <div class="giohang--item">
+                            <div class="giohang--anhsp col-2">
+                                <img src="https://bizweb.dktcdn.net/thumb/large/100/432/370/products/71.png?v=1626751368000"
+                                    alt="sanpham">
+                            </div>
+                            <div class="tensp col-4">
+                                <a href="../HTML_Chitiet_sanpham/Detail2.html">Nước rửa khóe mắt chó mèo
+                                    Precaten</a><br>
+                            </div>
+                            <div class="giohang--dongia col-2">
+                                <p>
+                                    190<span>.000 đ</span>
+                                </p>
+                            </div>
+                            <div class="giohang--soluong col-2">
+
+                                <span class="soluong">1</span>
+                            </div>
+                            <div class="giohang--thanhtien col-2">
+                                <p>
+                                    190<span>.000 đ</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row giohang--pttt">
+                    <div class="col-lg-12 col-md-12 bold">
+                        <div class="tongtien">Tổng tiền: <span id="tongtien1">0</span><span>.000 đ</span></div>
+                    </div>
+                </div>
+
+                <div class="row giohang1--footer">
+                    <div class="col-lg-12 col-md-12 bold">
+                        <button class="btn-tienhanhdathang" onclick="datHang()">Đặt hàng</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="giohang2 col-md-12 col-lg-12 col-sm-12">
+                <div class="title">
+                    SẢN PHẨM
+                </div>
+                <div class="giohang--container">
+                    <div id="giohang2">
+                        <div class="giohang--item">
+                            <div class="giohang--anhsp">
+                                <img src="https://bizweb.dktcdn.net/thumb/large/100/432/370/products/71.png?v=1626751368000"
+                                    alt="sanpham">
+                            </div>
+                            <div class="item--group1">
+                                <div class="tensp">
+                                    <a href="../HTML_Chitiet_sanpham/Detail2.html">Thức ăn hạt mềm cho chó Zenith</a>
+                                </div>
+                                <div class="giohang--dongia">
+                                    <span style="float: left;">Giá:&nbsp;</span>
+                                    <p>
+                                        190<span>.000 đ</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="item--group2">
+                                <div class="giohang--soluong">
+                                    <span class="soluong">1</span>
+                                </div>
+                                <div class="giohang--thanhtien">
+                                    <div>Thành tiền:</div>
+                                    <p>
+                                        190<span>.000 đ</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="giohang2--footer">
+                    <div class="col-sm-12 col-xs-12 bold">
+                        <div class="tongtien">Tổng tiền: <span id="tongtien2">0</span><span>.000 đ</span></div>
+                    </div>
+                    <div class="col-sm-12 col-xs-12 bold btn-center">
+                        <button class="btn-tienhanhdathang" onclick="datHang()">Đặt hàng</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="width">
+        <app-footer></app-footer>
+    </div>

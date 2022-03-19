@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <app-header></app-header>
+    <!-- Nội dung đăng nhập -->
+    <div class="dangnhap--container col-12">
+        <div class="dangnhap--title">ĐĂNG NHẬP</div>
+        <div>Nếu bạn có tài khoản, xin vui lòng đăng nhập.</div>
+        <form action="HOME.html" method="get" class="col-12">
+            <div class="dangnhap--sdt">
+                <label for="sdt" class="col-12">Số điện thoại <span>*</span></label>
+                <input type="text" placeholder="Số điện thoại" id="sdt" name="sdt" class="col-12 input">
+            </div>
+
+            <div class="dangnhap--matkhau">
+                <label for="mk" class="col-12">Mật khẩu <span>*</span></label>
+                <input type="password" placeholder="Mật khẩu" id="mk" name="mk" class="col-12 input">
+            </div>
+            <div class="btn--dangnhap center">
+                <input type="submit" class="btn-primary" value="Đăng nhập">
+            </div>
+            <div class="dangnhap--dangky">
+                Bạn chưa có tài khoản?
+               <a href="Dang_ky.html">Đăng ký tại đây</a> 
+            </div>
+            <div class="dangnhap--google center">
+                <label for="">Hoặc đăng nhập bằng</label>
+                <button class="btn--google">
+                   <div class="fab fa-google "></div> Continue with Google
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- Footer -->
+    <app-footer></app-footer>
+</body>
+
+</html>
