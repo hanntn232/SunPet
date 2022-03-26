@@ -15,6 +15,8 @@ import { BlogtrangchuComponent } from './blogtrangchu/blogtrangchu.component';
 import { XemthongtinComponent } from './xemthongtin/xemthongtin.component';
 import { HomeheaderComponent } from './homeheader/homeheader.component';
 import { ThongtinfooterComponent } from './thongtinfooter/thongtinfooter.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 @NgModule({
@@ -32,10 +34,12 @@ import { ThongtinfooterComponent } from './thongtinfooter/thongtinfooter.compone
     BlogtrangchuComponent,
     XemthongtinComponent,
     HomeheaderComponent,
-    ThongtinfooterComponent
+    ThongtinfooterComponent,
+    ProductDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

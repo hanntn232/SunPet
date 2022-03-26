@@ -1,22 +1,27 @@
-*{
+@font-face {
+    font-family: OpenSans;
+    src: url(/assets/font/OpenSans-Regular.ttf);
+}
+
+* {
     color: white;
 }
 
-
-*{
+* {
     font-family: Opensans;
     font-size: 20px;
 }
-.footer--mainpage{
+
+.footer--mainpage {
     position: relative;
     height: 400px;
     min-width: 300px;
-    background-image:url(/assets/image/footer.jpg); background-size: cover;
+    background-image: url(/assets/image/footer.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
-
-.footer--mainpage .footer--overlay{
+.footer--mainpage .footer--overlay {
     position: absolute;
     background-color: #FFA800;
     top: 0;
@@ -25,53 +30,67 @@
     right: 0;
     opacity: 0.9;
 }
-.footer--mainpage .footer--container{
+
+.footer--mainpage .footer--container {
     position: absolute;
     top: 30px;
     bottom: 10px;
     left: 10px;
     right: 10px;
 }
-.footer--mainpage .footer--container>div{
+
+.footer--mainpage .footer--container>div {
     padding-left: 50px;
 }
-.footer--mainpage .footer--container>div>p{
+
+.footer--mainpage .footer--container>div>p {
     margin-bottom: 20px;
 }
 
-@media (max-width: 720px){
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
 
-    *{
+@media (max-width: 720px) {
+    * {
         font-size: 12px !important;
     }
-    .footer--mainpage .fa-facebook,.footer--mainpage .fab.fa-instagram,.footer--mainpage .fab.fa-pinterest-square{
+    .footer--mainpage .fa-facebook,
+    .footer--mainpage .fab.fa-instagram,
+    .footer--mainpage .fab.fa-pinterest-square {
         font-size: 20px !important;
     }
-    .footer--mainpage{
+    .footer--mainpage {
         height: 450px !important;
     }
-    .footer--mainpage .footer--container>div{
+    .footer--mainpage .footer--container>div {
         padding-left: 10%;
     }
 }
 
-.footer--mainpage .fa-facebook,.footer--mainpage .fab.fa-instagram,.footer--mainpage .fab.fa-pinterest-square{
+.footer--mainpage .fa-facebook,
+.footer--mainpage .fab.fa-instagram,
+.footer--mainpage .fab.fa-pinterest-square {
     font-size: 2rem;
     margin-right: 25px;
 }
-.footer--mainpage a{
+
+.footer--mainpage a {
     text-decoration: none;
     color: white;
 }
-.footer--mainpage a:hover{
+
+.footer--mainpage a:hover {
     color: black;
 }
-.footer--mainpage h6{
+
+.footer--mainpage h6 {
     font-weight: bold;
 }
-.footer--mainpage .copyright{
+
+.footer--mainpage .copyright {
     position: absolute;
     bottom: 0px;
     font-size: 10px;
 }
-
