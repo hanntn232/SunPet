@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductDetailService } from '../service/product-detail.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _service: ProductDetailService) { }
+
+  public productList: any;
+  public errMsg: any;
 
   ngOnInit(): void {
+    this._service.getProductList().subscribe({
+      next: (data) => this.productList = data,
+      error: (err) => this.errMsg = err
+    });
   }
-
 }

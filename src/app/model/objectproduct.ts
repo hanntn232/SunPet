@@ -1,4 +1,4 @@
-export interface IDproduct{
+interface objectSanPham{
     id: string,
     ten: string,
     giaGoc: number,
