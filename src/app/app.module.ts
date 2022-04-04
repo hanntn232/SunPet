@@ -18,6 +18,7 @@ import { ThongtinfooterComponent } from './thongtinfooter/thongtinfooter.compone
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BlogChiTietComponent } from './blog-chi-tiet/blog-chi-tiet.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AppRoutingModule } from './app-routing.module';
     XemthongtinComponent,
     HomeheaderComponent,
     ThongtinfooterComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    BlogChiTietComponent
   ],
   imports: [
     BrowserModule,
