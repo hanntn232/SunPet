@@ -15,6 +15,8 @@ import { BlogtrangchuComponent } from './blogtrangchu/blogtrangchu.component';
 import { XemthongtinComponent } from './xemthongtin/xemthongtin.component';
 import { HomeheaderComponent } from './homeheader/homeheader.component';
 import { ThongtinfooterComponent } from './thongtinfooter/thongtinfooter.component';
+import { DonhangAdminComponent } from './donhang-admin/donhang-admin.component';
+import { ChitietdonhangAdminComponent } from './chitietdonhang-admin/chitietdonhang-admin.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { ThongtinfooterComponent } from './thongtinfooter/thongtinfooter.compone
     BlogtrangchuComponent,
     XemthongtinComponent,
     HomeheaderComponent,
-    ThongtinfooterComponent
+    ThongtinfooterComponent,
+    DonhangAdminComponent,
+    ChitietdonhangAdminComponent
   ],
   imports: [
     BrowserModule
