@@ -19,6 +19,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BlogChiTietComponent } from './blog-chi-tiet/blog-chi-tiet.component';
+import { DonhangAdminComponent } from './donhang-admin/donhang-admin.component';
+import { ChitietdonhangAdminComponent } from './chitietdonhang-admin/chitietdonhang-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import { BlogChiTietComponent } from './blog-chi-tiet/blog-chi-tiet.component';
     HomeheaderComponent,
     ThongtinfooterComponent,
     ProductDetailComponent,
-    BlogChiTietComponent
+    BlogChiTietComponent,
+    DonhangAdminComponent,
+    ChitietdonhangAdminComponent,
   ],
   imports: [
     BrowserModule,
