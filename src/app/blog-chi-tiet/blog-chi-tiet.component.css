@@ -21,6 +21,7 @@ a {
 
 a:hover {
     color: #FFC700;
+    text-decoration: none;
 }
 
 .title-color {
@@ -63,6 +64,14 @@ a:hover {
 
 .row {
     display: flex;
+}
+
+.text-dark:hover {
+    color: #FFC700 !important;
+}
+
+.cart-body {
+    padding: 10px 0px !important;
 }
 
 .d-flex {
@@ -128,7 +137,7 @@ a:hover {
     -webkit-line-clamp: 2;
     overflow: hidden;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     height: 3rem;
 }
 
@@ -141,7 +150,7 @@ a:hover {
     margin-left: 3%;
     margin-right: 3%;
     border-radius: 30px;
-    height: 15vh;
+    padding: 10px 0px;
 }
 
 .image-content {
@@ -183,6 +192,7 @@ a:hover {
     width: 160px;
     height: 94px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .post-item {
@@ -210,6 +220,15 @@ a:hover {
 
 .link-twitter {
     color: rgb(17, 151, 240);
+}
+
+.share-link.link-pinterest,
+.share-link.link-twitter {
+    font-size: 1rem;
+}
+
+.share-link.link-pinterest {
+    margin-right: 10px;
 }
 
 
@@ -296,6 +315,12 @@ a:hover {
     }
     .container {
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .blog_bottom {
+        height: 1.5rem;
     }
 }
 
