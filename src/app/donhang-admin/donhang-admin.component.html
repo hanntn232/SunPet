@@ -5,93 +5,170 @@
   </nav>
   
   <!-- Body  -->
-  <div class="container">
+  <div class="container mt-4">
     <div class="row">
         <!-- phân cột bên trái chờ bỏ vào -->
-      <div class="col-sm-2">
+      <div class="col-sm-3 col-md-2">
         
       </div>
 
       <!-- Phần cột bên phải do mình code -->
-        <div class="col-sm-10">
+        <div class="col-sm-9 col-md-10 mt-4">
             <!-- Điều kiện lọc -->
-        <div>
-            <option value=""></option>
-        </div>
+            <div class="mb-3 d-flex flex-row">
+                <div class="p-2">
+                    <label for="dieukienloc">Điều kiện lọc</label>
+                </div>
+                <div>
+                    <select id="dieukienloc" name="dieukienloc" class="form-select bg--button " [class.is-invalid]="errorFlag">
+                        <option value="none" >Tất cả</option>
+                        <option *ngFor="let d of dieukienloc">{{d}}</option>
+                    </select>
+                </div>
+            </div>
         <!-- Bảng  -->
-        <div>
-            <table  class="tb text-center">
-                <tr>
-                    <th>Mã</th>
-                    <th>Ngày đặt</th>
-                    <th>Khách hàng</th>
-                    <th>Status</th>
-                    <th>Tổng tiền</th>
-                </tr>
-                <tr>
-                    <td>#100123</td>
-                    <td>17/03/2022 15:20</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>
-                        <button class="bg--button btn">Chờ xác nhận</button>
-                    </td>
-                    <td>390,000 đ</td>
-                </tr>
-                <tr>
-                    <td>#100123</td>
-                    <td>17/03/2022 15:20</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>
-                        <button class="bg--button btn">Chờ xác nhận</button>
-                    </td>
-                    <td>390,000 đ</td>
-                </tr>
-                <tr>
-                    <td>#100123</td>
-                    <td>17/03/2022 15:20</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>
-                        <button class="bg--button btn">Chờ xác nhận</button>
-                    </td>
-                    <td>390,000 đ</td>
-                </tr>
-                <tr>
-                    <td>#100123</td>
-                    <td>17/03/2022 15:20</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>
-                        <button class="bg--button btn">Chờ xác nhận</button>
-                    </td>
-                    <td>390,000 đ</td>
-                </tr>
-                <tr>
-                    <td>#100123</td>
-                    <td>17/03/2022 15:20</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>
-                        <button class="bg--button btn">Chờ xác nhận</button>
-                    </td>
-                    <td>390,000 đ</td>
-                </tr>
-                <tr>
-                    <td>#100123</td>
-                    <td>17/03/2022 15:20</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>
-                        <button class="bg--button btn">Chờ xác nhận</button>
-                    </td>
-                    <td>390,000 đ</td>
-                </tr>
+        <div class="row">
+            <div class="d-flex flex-row row">
+                <div class="p-2 col-md-2  ma__display">
+                    <p class="text-center"><strong>Mã</strong></p>
+                </div>
+                <div class="p-2 col-md-3 ngaydat__display">
+                    <p class="text-center"><strong>Ngày đặt</strong></p>
+                </div>
+                <div class="p-2 col-md-2 kh__display">
+                    <p class="text-center"><strong>Khách hàng</strong></p>
+                </div>
+                <div class="p-2 col-md-3 status__display">
+                    <p class="text-center"><strong>Status</strong></p>
+                </div>
+                <div class="p-2 col-md-2 tongtien__display">
+                    <p class="text-center"><strong>Tổng tiền</strong></p>
+                </div>
+            </div>
+            <hr class="hr hr__display">
+            <div class="d-flex flex-row row">
+                <div class="p-2 col-xl-2 col-md-2 col-sm-3">
+                    <p class="text-center">#100123</p>
+                </div>
+                <div class="p-2 col-xl-3 col-md-3 col-sm-5">
+                    <p class="text-center">17/03/2022 15:20</p>
+                </div>
+                <div class="p-2 col-xl-2 col-md-2 col-sm-4">
+                    <p class="text-center">Nguyễn Văn A</p>
+                </div>
+                <div class="p-0 col-xl-3 col-md-3 col-sm-7 text-center">
+                    <button class="bg--button btn text-center">Chờ xác nhận</button>
+                </div>
+                <div class="p-2 col-xl-2 col-md-2 col-sm-5">
+                    <p class="text-center">390,000 đ</p>
+                </div>
+            </div>
+            <hr class="hr">
+            <div class="d-flex flex-row row">
+                <div class="p-2 col-xl-2 col-md-2 col-sm-3">
+                    <p class="text-center">#100123</p>
+                </div>
+                <div class="p-2 col-xl-3 col-md-3 col-sm-5">
+                    <p class="text-center">17/03/2022 15:20</p>
+                </div>
+                <div class="p-2 col-xl-2 col-md-2 col-sm-4">
+                    <p class="text-center">Nguyễn Văn A</p>
+                </div>
+                <div class="p-0 col-xl-3 col-md-3 col-sm-7 text-center">
+                    <button class="bg--button btn text-center">Chờ xác nhận</button>
+                </div>
+                <div class="p-2 col-xl-2 col-md-2 col-sm-5">
+                    <p class="text-center">390,000 đ</p>
+                </div>
+            </div>
+            <hr class="hr">
+            <div class="d-flex flex-row row">
+                <div class="p-2 col-xl-2 col-md-2 col-sm-3">
+                    <p class="text-center">#100123</p>
+                </div>
+                <div class="p-2 col-xl-3 col-md-3 col-sm-5">
+                    <p class="text-center">17/03/2022 15:20</p>
+                </div>
+                <div class="p-2 col-xl-2 col-md-2 col-sm-4">
+                    <p class="text-center">Nguyễn Văn A</p>
+                </div>
+                <div class="p-0 col-xl-3 col-md-3 col-sm-7 text-center">
+                    <button class="bg--button btn text-center">Chờ xác nhận</button>
+                </div>
+                <div class="p-2 col-xl-2 col-md-2 col-sm-5">
+                    <p class="text-center">390,000 đ</p>
+                </div>
+            </div>
+            <hr class="hr">
+            <div class="d-flex flex-row row">
+                <div class="p-2 col-xl-2 col-md-2 col-sm-3">
+                    <p class="text-center">#100123</p>
+                </div>
+                <div class="p-2 col-xl-3 col-md-3 col-sm-5">
+                    <p class="text-center">17/03/2022 15:20</p>
+                </div>
+                <div class="p-2 col-xl-2 col-md-2 col-sm-4">
+                    <p class="text-center">Nguyễn Văn A</p>
+                </div>
+                <div class="p-0 col-xl-3 col-md-3 col-sm-7 text-center">
+                    <button class="bg--button btn text-center">Chờ xác nhận</button>
+                </div>
+                <div class="p-2 col-xl-2 col-md-2 col-sm-5">
+                    <p class="text-center">390,000 đ</p>
+                </div>
+            </div>
+            <hr class="hr">
+            <div class="d-flex flex-row row">
+                <div class="p-2 col-xl-2 col-md-2 col-sm-3">
+                    <p class="text-center">#100123</p>
+                </div>
+                <div class="p-2 col-xl-3 col-md-3 col-sm-5">
+                    <p class="text-center">17/03/2022 15:20</p>
+                </div>
+                <div class="p-2 col-xl-2 col-md-2 col-sm-4">
+                    <p class="text-center">Nguyễn Văn A</p>
+                </div>
+                <div class="p-0 col-xl-3 col-md-3 col-sm-7 text-center">
+                    <button class="bg--button btn text-center">Chờ xác nhận</button>
+                </div>
+                <div class="p-2 col-xl-2 col-md-2 col-sm-5">
+                    <p class="text-center">390,000 đ</p>
+                </div>
+            </div>
+            <hr class="hr">
+            <!-- phần chuyển trang -->
+              <ul class="pagination home-product__pagination">
+                <li class="pagination-item">
+                    <span href="#category-item" class="pagination-item__link ">
+                        <i class="pagination-item_icon fas fa-angle-left" id="next"><</i>
+                    </span>
+                </li>
+                <li class="pagination-item pagination-item--active">
+                    <a href="#category-item" class="pagination-item__link " id="page-1">1</a>
+                </li>
+                <li class="pagination-item">
+                    <a href="#category-item" class="pagination-item__link " id="page-2">2</a>
+                </li>
 
-            </table>
+                <li class="pagination-item">
+                    <span href="#category-item" class="pagination-item__link ">
+                        <i class="pagination-item_icon fas fa-angle-right" id="next">></i>
+                    </span>
+                </li>
+            </ul>
+            <div class="xemthem" id="xemthem">
+                <div id="more" onclick="xemThem()">
+                    <span>
+                        Xem thêm <i class="select-input__icon fas fa-angle-down"></i>
+                    </span>
+                </div>
+            </div>
         </div>
         </div>
     </div>
     </div>
   
   <!-- footer chờ bỏ vào -->
-    <div class="jumbotron text-center bg-dark" >
-  </div>
 
 </div>
   

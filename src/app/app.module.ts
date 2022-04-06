@@ -36,7 +36,7 @@ import { ChitietdonhangAdminComponent } from './chitietdonhang-admin/chitietdonh
     HomeheaderComponent,
     ThongtinfooterComponent,
     DonhangAdminComponent,
-    ChitietdonhangAdminComponent
+    ChitietdonhangAdminComponent,
   ],
   imports: [
     BrowserModule
