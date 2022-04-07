@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop up thêm bài viết</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+
+</head>
+
+<body>
+    <a href="#bsw_popup">Thêm bài viết</a>
+    <div id='bsw_popup'>
+        <div class='bsw_popup_'>
+            <!-- <h2>Thông tin bài viết</h2> -->
+            <div class="form-title">
+                <h3 class="title-text">Thêm thông tin bài viết</h3>
+                <i class="fa fa-close"></i>
+            </div>
+
+            <div class="container">
+                <form action="/action_page.php">
+                    <!-- /action_page.php -->
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Tiêu đề:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="fname" name="firstname" placeholder="Nhập tiêu đề">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="subject">Nội dung bài viết:</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="subject" name="subject" placeholder="Viết gì đó..." style="height:100px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Hình ảnh:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="submit" value="Thêm hình ảnh">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                        </div>
+                        <div class="col-75">
+                            <i class="fa fa-image"></i> <span>   <i class="fa fa-image"></i></span>
+                            <i class="fa fa-image"></i>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="">
+                        <input class="button_form" type="submit" value="Hủy">
+                        <a href=""> <input class="button_form" type="submit" value="Lưu"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
