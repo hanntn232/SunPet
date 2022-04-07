@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- <div *ngFor="let p of productList">{{p | json}}</div> -->
+    <div class="app">
+        <app-header></app-header>
+        <div class="app__container">
+            <div class="grid wide">
+                <div class="row sm-gutter ">
+                    <div class="col-hinh">
+                        <div class="home-product-item">
+                            <div class="item-img">
+                                <img src="{{productList[3].hinhAnh[0]}}" alt="">
+                            </div>
+                            <div class="item-dt">
+                                <img src="{{productList[3].hinhAnh[0]}}" class="item-dt-1" alt="">
+
+                                <img src="{{productList[3].hinhAnh[1]}}" class="item-dt-1" alt="">
+
+                                <img src="{{productList[3].hinhAnh[2]}}" class="item-dt-1" alt="">
+
+                                <img src="{{productList[3].hinhAnh[3]}}" class="item-dt-1" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-thongtin">
+                        <h2 class="home-product-item__name">{{productList[3].ten}}</h2>
+                        <div class="home-product-item__price">
+                            <span class="home-product-item__price-curent">{{productList[3].giaBan}}đ</span>
+                            <span class="home-product-item__price-old">{{productList[3].giaGoc}}đ</span>
+                        </div>
+                        <div class="home-product-item__sl">
+                            <label class="home-product-item__label"> Số lượng:</label>
+                            <input class="home-product-item__input" value="1" type="number" id="quantity" name="quantity" min="1" />
+
+                        </div>
+                        <div class="home-product-item__buy">
+                            <a href="../HTML/Gio_hang.html"><button class="btn-mua" onclick="">MUA NGAY</button> </a>
+                            <a href="#"><button class="btn-them">THÊM VÀO GIỎ HÀNG</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="motasp">
+                    <div class="home-product-item__mota">
+                        <button class="btn-mota">MÔ TẢ SẢN PHẨM</button>
+                    </div>
+                    <div class="mota" [innerHTML]="productList[3].moTa">
+                        <!-- <div class="text1">
+                            <span class="inline">Thành Phần:</span> <br> Sữa bột nguyên kem, Sữa bột gầy, Nondairy creamer, Maltodextrin,Sucrose,Whey protein concentrate,Hương dùng trong thực phẩm,Chất xơ Inulin, Lysine, Nano - Precipitated Calcium Carbonate,Vitamin
+                            C, Vitamin K1, Vitamin B6, Vitamin B1, VitaminB2, Vitamin D3, Vitamin A, Vitamin B12, Vitamin Axit Pantothenic, Biotine, Axit Folic... <br>
+                        </div>
+                        <div class="text1">
+                            <span class="inline">Dinh dưỡng:</span> <br> - Canxi nano và vitamin D : Kích thước siêu nhỏ giú hấp thụ tối ưu vào xương, giúp xương và rang chắc khỏe, đặc biệt không tạo ra sỏi thận như thức ăn thông thường. <br> - Vitamin
+                            A : Tốt cho mắt và ngăn biến chứng võng mạc. <br> - Biotine : Giúp cho da khỏe mạnh và bộ lông bóng mượt. <br> - Lnulin :chất xơ tự nhiên giúp hệ tiêu hóa khỏe mạnh. <br> - Lysine : Kích thích them ăn. <br> - Folic acid : Hỗ
+                            trợ phát triển trí não. <br>
+                        </div>
+                        <div class="text1">
+                            <span class="inline"> Hướng dẫn sử dụng:</span> <br> *Pha với nước ấm khoảng 40 - 50°C <br>
+
+                            <span class="inline">- Mèo con dưới 1 tháng tuổi:</span> Hòa 3 muỗng sữa bột ( khoảng 15gr ) vào 30ml nước ấm, chia thành 4-6 lần, dung bình cho bú hoặc để mèo tự ăn hết trong ngày <br>
+                            <span class="inline">- Mèo con từ 1 – 2 tháng tuổi:</span> Hòa 6 muỗng sữa bột (khoảng 30gr) với 60ml nước ấm, chia thành 3-3 lấn ăn trong ngày . <br>
+                            <span class="inline">- Mèo trên 2 tháng tuổi:</span> Cho ăn khoảng 2-3 lần/ ngày như bữa phụ xen kẽ với các bữa chính, mỗi lần cho ăn bằng cách hòa 2 muỗng sữa bột (khoảng 10gr) với 20ml nước ấm để tự ăn. <br>
+                            <span class="inline">- Mèo đang ốm/ còi/ đang mang thai:</span> cho ăn khoảng 3 lần/ ngày như bữa phụ xen kẽ với các bữa chính, mỗi lần cho ăn bằng cách hòa 2 muỗng sữa bột (khoảng 10gr)
+                            <br>
+                        </div>
+                        <div class="text1">
+                            <span class="inline"> Bảo quản:</span> <br> - Nơi khô ráo thoáng mát. <br> - Sữa đã pha, bảo quản trong tủ lạnh được 24h. <br>
+                        </div> -->
+                        <!-- {{productList[0].moTa}} -->
+                    </div>
+
+                </div>
+                <div class="home-product1">
+                    <h3 class="prodct-lq">Sản phẩm liên quan</h3>
+                    <div class="row sm-gutter">
+                        <!-- <h3>Sản phẩm liên quan</h3> -->
+                        <div class="related-item">
+                            <!-- Product item -->
+                            <a class="home-product-item1" href="Detail1.html" target="_self">
+                                <div class="home-product-item1__img" style="background-image: url(https://bizweb.dktcdn.net/thumb/large/100/432/370/products/sua-bot-cho-meo-dr-kyan-precaten-anh.jpg?v=1626752115000);">
+                                </div>
+                                <div class="home-product-item1__name">Sữa cho mèo Dr.Kyan Precaten</div>
+                                <div class="home-product-item1__price">
+                                    <span class="home-product-item1__price-curent">500.000đ</span>
+                                    <span class="home-product-item1__price-old">590.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="related-item">
+                            <!-- Product item -->
+                            <a class="home-product-item1" href="Detail6.html" target="_self">
+                                <div class="home-product-item1__img" style="background-image: url(https://bizweb.dktcdn.net/thumb/large/100/432/370/products/62.png?v=1626747381000);">
+                                </div>
+                                <div class="home-product-item1__name">Bình trữ thức ăn tự động cho thú cưng</div>
+                                <div class="home-product-item1__price">
+                                    <span class="home-product-item1__price-curent">110.000đ</span>
+                                    <span class="home-product-item1__price-old">210.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="related-item">
+                            <!-- Product item -->
+                            <a class="home-product-item1" href="Detail8.html" target="_self">
+                                <div class="home-product-item1__img" style="background-image: url(https://bizweb.dktcdn.net/thumb/large/100/432/370/products/tb2iokzgaowbunjssppxxxpgpxa-829197117.jpg?v=1626745922000);">
+                                </div>
+                                <div class="home-product-item1__name">Balo vận chuyển cho thú cưng Phi hành</div>
+                                <div class="home-product-item1__price">
+                                    <span class="home-product-item1__price-curent">390.000đ</span>
+                                    <span class="home-product-item1__price-old">579.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="related-item">
+                            <!-- Product item -->
+                            <a class="home-product-item1" href="Detail10.html" target="_self">
+                                <div class="home-product-item1__img" style="background-image: url(https://bizweb.dktcdn.net/thumb/large/100/432/370/products/52.png?v=1626693016000);">
+                                </div>
+                                <div class="home-product-item1__name">
+                                    Sữa tắm cho chó lông trắng SPIRIT White Dog</div>
+                                <div class="home-product-item1__price">
+                                    <span class="home-product-item1__price-curent">150.000đ</span>
+                                    <span class="home-product-item1__price-old">200.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="related-item">
+                            <!-- Product item -->
+                            <a class="home-product-item1" href="Detail11.html" target="_self">
+                                <div class="home-product-item1__img" style="background-image: url(https://bizweb.dktcdn.net/thumb/large/100/432/370/products/5abd36eb09d04459b9d76a6cf928691b.jpg?v=1626691738000);">
+                                </div>
+                                <div class="home-product-item1__name">Đồ chơi cho mèo PAW Happy Pet Circle </div>
+                                <div class="home-product-item1__price">
+                                    <span class="home-product-item1__price-curent">160.000đ</span>
+                                    <span class="home-product-item1__price-old">200.000đ</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-footer></app-footer>
+    </div>
+
+    <!-- <script src="../JS/ChiTietSanPham.js"></script> -->
+    <!-- Test thẻ script -->
+    <!-- <script>
+        function them() {
+            if (localStorage.getItem('phienDangNhap') != null) {
+                //Lấy id Giỏ hàng của khách hàng
+                var idGioHang = layIdGioHang();
+
+
+                //Lấy danh sách item giỏ hàng của khách hàng từ local storage
+                var danhSachItemGioHang = layDanhSachItemGioHang(idGioHang);
+
+                //Tạo đối tượng item giỏ hàng
+                var itemGioHang = taoDoiTuongItemGioHang(idGioHang, '29755420_1636817383654', quantity.value);
+
+                //Thêm vào giỏ hàng
+                themSanPhamVaoGioHang(itemGioHang);
+
+                alert('Thêm sản phẩm vào giỏ hàng thành công!');
+            } else {
+                alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!');
+                window.open('../HTML/Dang_nhap.html', '_self');
+            }
+        }
+
+        function muaNgay() {
+            if (localStorage.getItem('phienDangNhap') != null) {
+                //Lấy id Giỏ hàng của khách hàng
+                var idGioHang = layIdGioHang();
+
+
+                //Lấy danh sách item giỏ hàng của khách hàng từ local storage
+                var danhSachItemGioHang = layDanhSachItemGioHang(idGioHang);
+
+                //Tạo đối tượng item giỏ hàng
+                var itemGioHang = taoDoiTuongItemGioHang(idGioHang, '29755420_1636817383654', quantity.value);
+
+                //Thêm vào giỏ hàng
+                themSanPhamVaoGioHang(itemGioHang);
+
+                window.open('../HTML/Dat_hang.html', '_self');
+            } else {
+                alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!');
+                window.open('../HTML/Dang_nhap.html', '_self');
+            }
+        }
+    </script> -->
+
+</body>
+
+</html>

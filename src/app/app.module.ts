@@ -17,6 +17,12 @@ import { HomeheaderComponent } from './homeheader/homeheader.component';
 import { ThongtinfooterComponent } from './thongtinfooter/thongtinfooter.component';
 import { FormthemsanphamComponent } from './formthemsanpham/formthemsanpham.component';
 import { FormsuasanphamComponent } from './formsuasanpham/formsuasanpham.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BlogChiTietComponent } from './blog-chi-tiet/blog-chi-tiet.component';
+import { DonhangAdminComponent } from './donhang-admin/donhang-admin.component';
+import { ChitietdonhangAdminComponent } from './chitietdonhang-admin/chitietdonhang-admin.component';
 
 
 @NgModule({
@@ -37,9 +43,15 @@ import { FormsuasanphamComponent } from './formsuasanpham/formsuasanpham.compone
     ThongtinfooterComponent,
     FormthemsanphamComponent,
     FormsuasanphamComponent
+    ProductDetailComponent,
+    BlogChiTietComponent,
+    DonhangAdminComponent,
+    ChitietdonhangAdminComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
