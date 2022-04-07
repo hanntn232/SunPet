@@ -45,11 +45,6 @@ import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-t
     XemthongtinComponent,
     HomeheaderComponent,
     ThongtinfooterComponent,
-<<<<<<< HEAD
-    FormthemsanphamComponent,
-    FormsuasanphamComponent,
-=======
->>>>>>> parent of 4bad9f9 (Merge pull request #2 from hanntn232/CamTu)
     ProductDetailComponent,
     BlogChiTietComponent,
     DonhangAdminComponent,
