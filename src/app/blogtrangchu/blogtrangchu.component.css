@@ -43,7 +43,27 @@
     font-family: 'Opensans';
     font-size: 25px;
     width: 220px;
-    height: 50px
+    /* display: none; */
+}
+
+.add-mobile {
+    border: 2px solid #FFC700;
+    padding: 5px 10px;
+    background-color: #FFC700;
+    border-radius: 5px;
+    position: absolute;
+    right: 50px;
+    font-size: 20px;
+    display: none;
+}
+
+.add-mobile:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.add-mobile:hover {
+    cursor: pointer;
 }
 
 .btn-header:active {
@@ -64,7 +84,6 @@
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
-    /* height: 400px */
 }
 
 .img-responsive {
@@ -100,30 +119,31 @@
 }
 
 .blog-edit {
-    /* text-align: center; */
     position: absolute;
     z-index: 3;
-    /* top: 120px; */
-    /* margin-left: 200px;
-    margin-right: 100px; */
-    /* left: 50%; */
     top: 30%;
     left: 35%;
     right: 35%;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* right: 200px; */
-    /* bottom: 300px; */
-    /* left: 120px; */
+}
+
+.blog-edit1 {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none
 }
 
 .blog-delete {
     position: absolute;
     z-index: 4;
-    /* right: 200px;
-    bottom: 300px; */
-    /* left: 50px; */
     top: 50%;
     left: 35%;
     right: 35%;
@@ -139,6 +159,7 @@
     border: none;
     background-color: rgb(255, 199, 0, 0.6);
     font-weight: bold;
+    /* display: none */
 }
 
 .btn-edit:active {
@@ -166,6 +187,48 @@
 
 .btn-delete:hover {
     background-color: rgb(255, 199, 0)
+}
+
+#btn-mobile1 {
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    color: black;
+    margin-right: 15px;
+}
+
+.fa-eye {
+    font-size: 30px
+}
+
+.fa-pen-to-square {
+    font-size: 30px
+}
+
+.fa-trash-can {
+    font-size: 30px
+}
+
+#btn-mobile2 {
+    /* width: 50px;
+    height: 50px; */
+    border-radius: 5px;
+    border: none;
+    /* background-color: rgb(255, 199, 0, 0.6); */
+    font-weight: bold;
+    color: black;
+    margin-right: 15px
+}
+
+#btn-mobile3 {
+    /* width: 50px;
+    height: 50px; */
+    border-radius: 5px;
+    border: none;
+    /* background-color: rgb(255, 199, 0, 0.6); */
+    font-weight: bold;
+    color: black;
+    margin-right: 15px
 }
 
 .blog_bottom {
@@ -379,6 +442,22 @@
     }
     .btn-edit {
         display: none;
+    }
+    .btn-header {
+        display: none;
+    }
+    .add-mobile {
+        display: block;
+    }
+    .blog-edit1 {
+        position: absolute;
+        z-index: 5;
+        top: 50%;
+        left: 50%;
+        right: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
