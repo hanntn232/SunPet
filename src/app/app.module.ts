@@ -23,6 +23,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { BlogChiTietComponent } from './blog-chi-tiet/blog-chi-tiet.component';
 import { DonhangAdminComponent } from './donhang-admin/donhang-admin.component';
 import { ChitietdonhangAdminComponent } from './chitietdonhang-admin/chitietdonhang-admin.component';
+import { PopupXoaBaivietThanhcongComponent } from './popup-xoa-baiviet-thanhcong/popup-xoa-baiviet-thanhcong.component';
+import { PopupXoaBaivietComponent } from './popup-xoa-baiviet/popup-xoa-baiviet.component';
+import { PopupSuaBaivietThanhcongComponent } from './popup-sua-baiviet-thanhcong/popup-sua-baiviet-thanhcong.component';
+import { PopupSuaBaivietComponent } from './popup-sua-baiviet/popup-sua-baiviet.component';
+import { PopupThemBaivietComponent } from './popup-them-baiviet/popup-them-baiviet.component';
+import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-thanhcong.component';
 
 
 @NgModule({
@@ -42,11 +48,17 @@ import { ChitietdonhangAdminComponent } from './chitietdonhang-admin/chitietdonh
     HomeheaderComponent,
     ThongtinfooterComponent,
     FormthemsanphamComponent,
-    FormsuasanphamComponent
+    FormsuasanphamComponent,
     ProductDetailComponent,
     BlogChiTietComponent,
     DonhangAdminComponent,
     ChitietdonhangAdminComponent,
+    PopupXoaBaivietThanhcongComponent,
+    PopupXoaBaivietComponent,
+    PopupSuaBaivietThanhcongComponent,
+    PopupSuaBaivietComponent,
+    PopupThemBaivietComponent,
+    PopupThemThanhcongComponent,
   ],
   imports: [
     BrowserModule,
