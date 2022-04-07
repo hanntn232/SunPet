@@ -15,8 +15,6 @@ import { BlogtrangchuComponent } from './blogtrangchu/blogtrangchu.component';
 import { XemthongtinComponent } from './xemthongtin/xemthongtin.component';
 import { HomeheaderComponent } from './homeheader/homeheader.component';
 import { ThongtinfooterComponent } from './thongtinfooter/thongtinfooter.component';
-import { FormthemsanphamComponent } from './formthemsanpham/formthemsanpham.component';
-import { FormsuasanphamComponent } from './formsuasanpham/formsuasanpham.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -47,8 +45,11 @@ import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-t
     XemthongtinComponent,
     HomeheaderComponent,
     ThongtinfooterComponent,
+<<<<<<< HEAD
     FormthemsanphamComponent,
     FormsuasanphamComponent,
+=======
+>>>>>>> parent of 4bad9f9 (Merge pull request #2 from hanntn232/CamTu)
     ProductDetailComponent,
     BlogChiTietComponent,
     DonhangAdminComponent,

@@ -60,46 +60,22 @@
                         </nav>
                     </div>
                     <div class="col l-8 m-12 c-12">
-                        <h4 class="category__heading">SẢN PHẨM</h4>
-                        <div class="home-arrange-product">
-                            <div class="home-filter-1">
-                                <div class="select-input">
-                                    <span class="select-input__label">Tất cả sản phẩm</span>
-                                    <i class="select-input__icon fas fa-angle-down"></i>
-                                    <!-- List options -->
-                                    <ul class="select-input__list">
-                                        <li class="select-input__item">
-                                            <a href="#category-item" class="select-input__link tangdan" id="category--thucanchocho" onclick="hienDanhMucThucAnChoCho()">Thức ăn cho chó</a>
-                                        </li>
-                                        <li class="select-input__item">
-                                            <a href="#category-item" class="select-input__link" id="category--thucanchomeo" onclick="hienDanhMucThucAnChoMeo()">Thức ăn cho mèo</a>
-                                        </li>
-                                        <li class="select-input__item">
-                                            <a href="#category-item" class="select-input__link" id="category--phukienchocho" onclick="hienDanhMucPhuKienChoCho()">Phụ kiện cho chó</a>
-                                        </li>
-                                        <li class="select-input__item">
-                                            <a href="#category-item" class="select-input__link" id="category--phukienchomeo" onclick="hienDanhMucPhuKienChoMeo()">Phụ kiện cho mèo</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="home-filter-2">
-                                <div class="select-input">
-                                    <span class="select-input__label">Sắp xếp theo</span>
-                                    <i class="select-input__icon fas fa-angle-down"></i>
-                                    <!-- List options -->
-                                    <ul class="select-input__list">
-                                        <li class="select-input__item">
-                                            <a href="#category-item" class="select-input__link tangdan" id="tangdan">Giá: tăng dần</a>
-                                        </li>
-                                        <li class="select-input__item">
-                                            <a href="#category-item" class="select-input__link" id="giamdan">Giá: giảm dần</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="button-addproduct" onclick="addProduct()">
-                                <i class="fa fa-plus"></i>
+                        <h4 class="category__heading">TẤT CẢ SẢN PHẨM</h4>
+                        <div class="home-filter">
+                            <div class="select-input">
+                                <span class="select-input__label">Sắp xếp theo</span>
+                                <i class="select-input__icon fas fa-angle-down"></i>
+                                <!-- List options -->
+                                <ul class="select-input__list">
+                                    <li class="select-input__item">
+                                        <a href="#category-item" class="select-input__link tangdan" id="tangdan">Giá:
+                                            tăng dần</a>
+                                    </li>
+                                    <li class="select-input__item">
+                                        <a href="#category-item" class="select-input__link" id="giamdan">Giá: giảm
+                                            dần</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <!-- Grid -> Row -> Column -->
@@ -116,19 +92,6 @@
                                             <span class="home-product-item__price-old">590.000đ</span>
                                         </div>
                                     </a>
-                                    <!-- cover -->
-                                    <div class="cover-product">
-                                        <div class="icon-edit-delete">
-                                            <div class="icon-change">
-                                                <i class="fa fa-pen-to-square"></i>
-                                                <p>Sửa</p>
-                                            </div>
-                                            <div class="icon-change">
-                                                <i class="fa fa-trash-can"></i>
-                                                <p>Xóa</p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -181,22 +144,6 @@
                     <li class="nav__mobile-item nav__mobile-item--active">
                         <a href="#category-item" class="nav__mobile-item__link" id="sanpham-category2">Sản phẩm
                         </a>
-                    <li class="nav__mobile-item nav__mobile-item-1">
-                        <a href="#category-item" class="nav__mobile-item__link" id="thucanchocho2"
-                            onclick="hienDanhMucThucAnChoCho_Mobile(),removeChecked()">Thức ăn cho chó</a>
-                    </li>
-                    <li class="nav__mobile-item nav__mobile-item-1">
-                        <a href="#category-item" class="nav__mobile-item__link" id="thucanchomeo2"
-                            onclick="hienDanhMucThucAnChoMeo_Mobile(),removeChecked()">Thức ăn cho mèo</a>
-                    </li>
-                    <li class="nav__mobile-item nav__mobile-item-1">
-                        <a href="#category-item" class="nav__mobile-item__link" id="phukienchocho2"
-                            onclick="hienDanhMucPhuKienChoCho_Mobile(),removeChecked()">Phụ kiện cho chó</a>
-                    </li>
-                    <li class="nav__mobile-item nav__mobile-item-1">
-                        <a href="#category-item" class="nav__mobile-item__link" id="phukienchomeo2"
-                            onclick="hienDanhMucPhuKienChoMeo_Mobile(),removeChecked()">Phụ kiện cho mèo</a>
-                    </li>
                         <li class="nav__mobile-item nav__mobile-item-1">
                             <a href="#category-item" class="nav__mobile-item__link" id="thucanchocho2" onclick="hienDanhMucThucAnChoCho_Mobile(),removeChecked()">Thức ăn cho chó</a>
                         </li>
@@ -218,62 +165,8 @@
                         </li>
                 </ul>
             </nav>
-            <div class="container-fluid-form">
-                <div class="form-container">
-                    <form action="">
-                        <div class="form-title">
-                            <h3 class="title-text">Điền thông tin sản phẩm</h3>
-                            <i class="fa fa-close"></i>
-                        </div>
-                        <div class="form-description">
-                            <div class="form-row">
-                                <label for="name_product" class="label-format">Tên sản phẩm:</label>
-                                <input type="text" id="name_product" name="name_sp" class="input-format" placeholder="Nhập tên sản phẩm">
-                            </div>
-                            <div class="form-row">
-                                <label for="price_product" class="label-format">Giá gốc:</label>
-                                <input type="number" id="price_product" name="price_sp" class="input-format" placeholder="VND">
-                               
-                            </div>
-                            <div class="form-row">
-                                <label for="price_product" class="label-format">Giá bán:</label>
-                                <input type="number" id="price_discount" name="price_new" class="input-format" placeholder="VND">
-                            </div>
-                            <div class="form-row">
-                                <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
-                                <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="input-format" placeholder="Nhập mô tả sản phẩm"></textarea>
-                            </div>
-                            <div class="form-row">
-                                <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
-                                <input type = "file" name = upload_file class="button-addimg" id="image_product">
-                            </div>
-                            <div class="add-image">
-                                
-                            </div>
-                            <div class="form-button">
-                                <button class="save-button" type="submit">Lưu</button>
-                                <button class="cancel-button" type="button">Hủy</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
-        <div class="container-fluid-popup">
-            <div class="popup-delete">
-                <div class="icon-popupdelete">
-                    <i class="fa fa-close"></i>
-                </div>
-                <div class="popup-delete-content">
-                    <p>Bạn có muốn xóa sản phẩm không?</p>
-                    <div class="popup-button">
-                        <button class="save-button" type="submit">Có</button>
-                        <button class="cancel-button" type="button">Không</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <app-footer></app-footer> -->
+        <app-footer></app-footer>
     </div>
     <!-- <script>
         taoDanhSachSanPham();
