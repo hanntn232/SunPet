@@ -27,6 +27,7 @@ import { PopupSuaBaivietThanhcongComponent } from './popup-sua-baiviet-thanhcong
 import { PopupSuaBaivietComponent } from './popup-sua-baiviet/popup-sua-baiviet.component';
 import { PopupThemBaivietComponent } from './popup-them-baiviet/popup-them-baiviet.component';
 import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-thanhcong.component';
+import { AdminBlogtrangchuComponent } from './admin-blogtrangchu/admin-blogtrangchu.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-t
     PopupSuaBaivietComponent,
     PopupThemBaivietComponent,
     PopupThemThanhcongComponent,
+    AdminBlogtrangchuComponent,
   ],
   imports: [
     BrowserModule,
