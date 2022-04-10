@@ -1,0 +1,12 @@
+.hr{
+    height:2px;
+    border-width:0;
+    color:#FFC700;
+    background-color:#FFC700;
+}
+
+.color--red{
+    color: red;
+    font-weight: bolder;
+}
+
