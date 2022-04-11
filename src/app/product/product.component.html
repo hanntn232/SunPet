@@ -91,7 +91,7 @@
                             <div class="row" id="dsSanPham1">
                                 <!-- <div class="col l-2-4 m-4 c-6" *ngFor="let p of productList"> -->
                                 <!-- Product item -->
-                                <a class="home-product-item" href="" *ngFor="let p of productList">
+                                <a class="home-product-item" *ngFor="let p of productList" (click)="onSelected(p)">
                                     <div class="home-product-item__img" style="background-image: url({{p.hinhAnh[0]}});">
                                     </div>
                                     <h4 class="home-product-item__name">{{p.ten}}</h4>
@@ -105,7 +105,7 @@
                         </div>
                         <div class="home-product dsSanPham2">
                             <div class="row" id="dsSanPham2">
-                                <a class="home-product-item" href="" *ngFor="let p of productList">
+                                <a class="home-product-item" *ngFor="let p of productList" (click)="onSelected(p)">
                                     <div class="home-product-item__img" style="background-image: url({{p.hinhAnh[0]}});">
                                     </div>
                                     <h4 class="home-product-item__name">{{p.ten}}</h4>

@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Blog Trang tong the</title>
 </head>
 
@@ -32,25 +36,21 @@
             <!-- Phần nội dung chính lớn có hình ảnh và các bài viết chi tiết bên trong -->
             <section>
                 <div class="row_blog_responsive">
-                    <div class="blog_item">
+                    <div class="blog_item" *ngFor="let b of blogList" (click)="onSelected(b)">
                         <div class="">
                             <div class="blog__position">
-                                <a href="../HTML_chitiet_blog/blog_chitiet_MeoDiVS.html" title="Cách ít người biết để dạy mèo đi vệ sinh đúng chỗ">
-                                    <img src="assets/image/cun1.jpg" alt="Cách ít người biết để dạy mèo đi vệ sinh đúng chỗ" class="img-responsive ">
-
+                                <a title="{{b.title}}">
+                                    <img src="{{b.image.img1}}" alt="{{b.title}}" class="img-responsive ">
                                 </a>
                             </div>
-
                             <div class="content_blog">
                                 <div class="content_margin--cun1">
                                     <div class="title__margin">
-                                        <h3><a href="../HTML_chitiet_blog/blog_chitiet_MeoDiVS.html" title="Cách ít người biết để dạy mèo đi vệ sinh đúng chỗ" class="a--title">Cách ít người biết để dạy mèo đi vệ sinh
-                                                đúng
-                                                chỗ</a></h3>
+                                        <h3><a title="{{b.title}}" class="a--title">{{b.title}}</a></h3>
                                     </div>
                                     <div class="summary_blog">
                                         <p>
-                                            Với không ít người nuôi mèo, việc dạy cho mèo cách đi vệ sinh đúng chỗ là một chuyện không hề dễ, và nếu không chú ý tới vấn đề này ngay từ khi mèo còn nhỏ chúng ta sẽ phải xử lí hậu họa do mèo gây tra, rất vất...
+                                            {{layDuLieuTextTuHTML2(b.content.part1)}}
                                         </p>
                                     </div>
 
@@ -64,19 +64,18 @@
                                                     d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"
                                                     class=""></path>
                                             </svg>
-                                            <span class="time__color">20/07/2021</span>
+                                            <span class="time__color">{{b.date}}</span>
                                         <span class="readmore ">|</span>
                                         </span>
                                         <div class="content__underline">
-                                            <a class="readmore " href="../HTML_chitiet_blog/blog_chitiet_MeoDiVS.html" title="Xem tiếp">Xem tiếp</a>
+                                            <a class="readmore " href="#" title="Xem tiếp">Xem tiếp</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="blog_item">
+                    <!-- <div class="blog_item">
                         <div>
                             <div class="blog__position">
                                 <a href="../HTML_chitiet_blog/blog_chitiet_ChovaBeGai.html" title="Tình yêu giống như một con chó, mình đuổi thì nó chạy mình chạy thì nó lại đuổi">
@@ -242,10 +241,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
-            <section class="mobile" id="mobile">
+            <!-- <section class="mobile" id="mobile">
                 <div class="row_blog_responsive">
                     <div class="blog_item">
                         <div>
@@ -334,21 +333,19 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-            </section>
+            </section> -->
 
             <!-- Chuyển trang 1 2 -->
             <ul class="pagination home-product__pagination">
                 <li class="pagination-item pagination-item--active">
-                    <a href="Blog_Trangchu.html" class="pagination-item__link " id="page-1">1</a>
+                    <a class="pagination-item__link " id="page-1">1</a>
                 </li>
                 <li class="pagination-item">
-                    <a href="Blog_Trangchu2.html" class="pagination-item__link " id="page-2">2</a>
+                    <a class="pagination-item__link " id="page-2">2</a>
                 </li>
                 <li class="pagination-item">
-                    <a href="Blog_Trangchu2.html" class="pagination-item__link ">
+                    <a class="pagination-item__link ">
                         <i class="pagination-item_icon fas fa-angle-right" id="next"></i>
                     </a>
                 </li>
@@ -365,29 +362,26 @@
             <div>
                 <h1><a href="" class="title-head title_page" title="Bài viết nổi bật">Bài viết nổi bật</a></h1>
                 <div class="blog-list blog-image-list">
-                    <div class="loop-blog">
+                    <div class="loop-blog" *ngFor="let b of mangBlog2(blogList,0,4)" (click)="onSelected(b)">
                         <div class="">
-                            <a href="../HTML_chitiet_blog/blog_chitiet_NNKCTNHD.html">
-                                <img class="blog__width--baiviet " src="assets/image/cun8.jpg" title="Nguyên nhân khiến chó trở nên hung dữ" alt="Nguyên nhân khiến chó trở nên hung dữ" data-was-processed="true">
-
+                            <a>
+                                <img class="blog__width--baiviet " src="{{b.image.img1}}" title="{{b.title}}" data-was-processed="true">
                             </a>
                         </div>
                         <div class="name-right">
-                            <h3><a href="../HTML_chitiet_blog/blog_chitiet_NNKCTNHD.html" class="readmore btn-transition" title="Nguyên nhân khiến chó trở nên hung dữ">Nguyên
-                                    nhân khiến chó trở nên hung dữ</a></h3>
+                            <h3><a href="#" class="readmore btn-transition" title="{{b.title}}">{{b.title}}</a></h3>
                         </div>
                     </div>
 
-                    <div class="loop-blog clearfix">
+                    <!-- <div class="loop-blog clearfix">
                         <div class="thumb-left">
-                            <a href="../HTML_chitiet_blog/blog_chitiet_HLCMNDCHQua.html">
-                                <img class="blog__width--baiviet" src="assets/image/cun9.jpg" title="Huấn luyện chó mèo ngủ đúng chỗ hiệu quả nhất!" alt="Huấn luyện chó mèo ngủ đúng chỗ hiệu quả nhất!" data-was-processed="true">
+                            <a href="#">
+                                <img class="blog__width--baiviet" src="{{blogList[1].image.img1}}" title="{{blogList[1].title}}" alt="{{blogList[1].title}}" data-was-processed="true">
 
                             </a>
                         </div>
                         <div class="name-right">
-                            <h3><a href="../HTML_chitiet_blog/blog_chitiet_HLCMNDCHQua.html" class="readmore btn-transition" title="Huấn luyện chó mèo ngủ đúng chỗ hiệu quả nhất!">Huấn luyện chó
-                                    mèo ngủ đúng chỗ hiệu quả nhất!</a></h3>
+                            <h3><a href="#" class="readmore btn-transition" title="{{blogList[1].title}}">{{blogList[1].title}}</a></h3>
                         </div>
                     </div>
 
@@ -416,15 +410,38 @@
                                     tính tuổi
                                     mèo chính xác nhất</a></h3>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-                <div>
-                    <img src="assets/image/Sunpet shop (1).png" alt="Huấn luyện chó con nghe lời chỉ với 10 phút mỗi ngày" class="welcom__page lazyload loaded" data-was-processed="true">
+                <!-- <div>
+                    <img src="assets/image/AnhBiaBlog.png" alt="Huấn luyện chó con nghe lời chỉ với 10 phút mỗi ngày" class="welcom__page lazyload loaded" data-was-processed="true">
+                </div> -->
+                <div id="carousel-container">
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="assets/image/AnhBiaBlog.png" class="d-block w-100" alt="">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="assets/image/AnhBiaBlog2.png" class="d-block w-100" alt="">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="assets/image/AnhBiaBlog3.png" class="d-block w-100" alt="">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
                 </div>
             </div>
             <!-- Phần từ khóa tìm kiếm -->
             <div class="btn__margin--top">
-                <h1><a href="../HTML_chitiet_blog/blog_chitiet_NNKCTNHD.html" class="title-head title_page" title="Từ khóa tìm kiếm">Từ khóa tìm kiếm</a></h1>
+                <h4><a href="../HTML_chitiet_blog/blog_chitiet_NNKCTNHD.html" class="title-head title_page" title="Từ khóa tìm kiếm">Từ khóa tìm kiếm</a></h4>
                 <div class="aside-content tags-list">
                     <a href="../HTML_chitiet_blog/blog_chitiet_ChoHusky.html" class="btn-transition readmore" title="cho">Chó</a>
                     <a href="../HTML_chitiet_blog/blog_chitiet_CTTMeoCXN.html" class="btn-transition readmore" title="chua-benh">Chữa

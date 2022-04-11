@@ -17,6 +17,7 @@
 a {
     text-decoration: none;
     font-size: 20px;
+    height: auto;
 }
 
 a:hover {
@@ -26,11 +27,22 @@ a:hover {
 
 .title-color {
     color: #FFC700;
+    font-family: 'Coiny', cursive;
 }
 
 .a--title {
     color: black;
     font-weight: bold;
+}
+
+.a--title.related {
+    font-size: 1rem;
+    line-height: 1.3rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    height: 2.7rem;
 }
 
 .display-1 {
@@ -132,13 +144,8 @@ a:hover {
 }
 
 .title__margin {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
     margin-top: 5px;
     margin-bottom: 10px;
-    height: 3rem;
 }
 
 .content_blog {
@@ -183,6 +190,7 @@ a:hover {
 .img-responsive {
     width: 100%;
     border-radius: 30px;
+    height: 30vh;
 }
 
 
@@ -290,6 +298,12 @@ a:hover {
     }
 }
 
+@media (max-width: 992px) {
+    .img-responsive {
+        height: 40vh;
+    }
+}
+
 @media (max-width: 720px) {
     * {
         font-family: Opensans;
@@ -316,11 +330,17 @@ a:hover {
     .container {
         margin-bottom: 20px;
     }
+    .img-responsive {
+        height: 40vh;
+    }
 }
 
 @media (max-width: 400px) {
     .blog_bottom {
         height: 1.5rem;
+    }
+    .img-responsive {
+        height: 30vh;
     }
 }
 
@@ -349,5 +369,8 @@ a:hover {
         width: 250px;
         height: 150px;
         object-fit: cover;
+    }
+    .img-responsive {
+        height: 35vh;
     }
 }

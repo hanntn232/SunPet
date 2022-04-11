@@ -1,3 +1,6 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coiny&family=Work+Sans&display=swap" rel="stylesheet">
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"> -->
 <div class="web--container">
@@ -18,7 +21,7 @@
                     </div>
                 </div>
                 <div class="header--cart">
-                    <a href="Gio_hang.html">
+                    <a routerLink="/giohang" routerLinkActive="active">
                         <i class="fas fa-shopping-bag"></i>
                     </a>
                 </div>
@@ -27,11 +30,11 @@
               class="fas fa-user"></i>
           </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-content ">
-                        <a class="dropdown-item" href="Dang_ky.html" id="dangky">Đăng ký</a>
+                        <a class="dropdown-item" id="dangky" routerLink="/dangky" routerLinkActive="active">Đăng ký</a>
 
-                        <a class="dropdown-item" href="Dang_nhap.html" id="dangnhap">Đăng nhập</a>
+                        <a class="dropdown-item" id="dangnhap" routerLink="/dangnhap" routerLinkActive="active">Đăng nhập</a>
 
-                        <a class="dropdown-item" href="Xemthongtin.html" id="xemthongtin">Xem thông tin</a>
+                        <a class="dropdown-item" id="xemthongtin" routerLink="/xemthongtin" routerLinkActive="active">Xem thông tin</a>
 
                         <a class="dropdown-item" href="#" id="dangxuat" onclick="dangXuat()">Đăng xuất</a>
                     </div>
@@ -51,16 +54,16 @@
                         <!-- ml auto là auto margin left -->
                         <li class="nav-item">
                             <!-- nav-item quy định màu là màu xanh, flex 1, mỗi item cách ra một khoảng -->
-                            <a class="nav-link" href="#">TRANG CHỦ</a>
+                            <a class="nav-link" routerLink="/home" routerLinkActive="active">TRANG CHỦ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="Contact.html" class="nav-link">LIÊN HỆ</a>
+                            <a routerLink="/contact" routerLinkActive="active" class="nav-link">LIÊN HỆ</a>
                         </li>
                         <li class="nav-item">
-                            <a href="Product.html" class="nav-link">SẢN PHẨM</a>
+                            <a routerLink="/sanpham" routerLinkActive="active" class="nav-link">SẢN PHẨM</a>
                         </li>
                         <li class="nav-item">
-                            <a href="Blog_Trangchu.html" class="nav-link">BLOG</a>
+                            <a routerLink="/blogtrangchu" routerLinkActive="active" class="nav-link">BLOG</a>
                         </li>
 
                     </ul>
@@ -78,16 +81,16 @@
           </label>
                     <ul class="nav__list">
                         <li>
-                            <a class="nav--link" href="#"><i class="fas fa-home"></i>TRANG CHỦ </a>
+                            <a class="nav--link" routerLink="/home" routerLinkActive="active"><i class="fas fa-home"></i>TRANG CHỦ </a>
                         </li>
                         <li>
-                            <a href="Contact.html" class="nav--link"><i class="fas fa-phone"></i> LIÊN HỆ </a>
+                            <a routerLink="/contact" routerLinkActive="active" class="nav--link"><i class="fas fa-phone"></i> LIÊN HỆ </a>
                         </li>
                         <li>
-                            <a href="Product.html" class="nav--link"><i class="fas fa-dolly"></i>SẢN PHẨM </a>
+                            <a routerLink="/sanpham" routerLinkActive="active" class="nav--link"><i class="fas fa-dolly"></i>SẢN PHẨM </a>
                         </li>
                         <li>
-                            <a href="Blog_Trangchu.html" class="nav--link"><i class="fas fa-newspaper"></i>BLOG</a>
+                            <a routerLink="/blogtrangchu" routerLinkActive="active" class="nav--link"><i class="fas fa-newspaper"></i>BLOG</a>
                         </li>
 
                     </ul>
@@ -149,7 +152,6 @@
                         </div>
                         <div class="special--product--price justify-content-center">
                             <p>Giá: 179.000đ</p>
-
                         </div>
                     </div>
                 </a>
@@ -161,11 +163,10 @@
                             <img src="../assets/image/17.1.png" alt="">
                         </div>
                         <div class="special--product--name">
-                            Thức ăn cao cấp dành cho chó FIBs
+                            <p>Thức ăn cao cấp dành cho chó FIBs</p>
                         </div>
                         <div class="special--product--price justify-content-center">
                             <p>Giá: 199.000đ</p>
-
                         </div>
                     </div>
                 </a>
@@ -175,7 +176,7 @@
                             <img src="../assets/image/14-1.jpg" alt="">
                         </div>
                         <div class="special--product--name">
-                            Sữa bột cho chó Dr.Kyan Predogen
+                            <p>Sữa bột cho chó Dr.Kyan Predogen</p>
                         </div>
                         <div class="special--product--price justify-content-center">
                             <p>Giá: 250.000đ</p>

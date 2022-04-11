@@ -7,6 +7,7 @@ import { IDproduct } from '../model/product';
 })
 export class ProductDetailService {
   public urlProduct: string="assets/data/product.json"
+  public selectedId: any;
   constructor(private _http: HttpClient) { 
   }
   getProductList(): Observable<IDproduct[]>{

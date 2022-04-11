@@ -7,5 +7,9 @@ function chuyenAnh() {
             mainImg.src = this.src;
         }
     }
-    console.log("Đã chạy")
+}
+
+//Bắt đầu cắt mảng tại index= start, kết thúc tại index=end-1
+function mangBlog(mang, start, end) {
+    return mang.slice(start, end)
 }

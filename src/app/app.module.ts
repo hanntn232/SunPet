@@ -28,6 +28,7 @@ import { PopupSuaBaivietComponent } from './popup-sua-baiviet/popup-sua-baiviet.
 import { PopupThemBaivietComponent } from './popup-them-baiviet/popup-them-baiviet.component';
 import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-thanhcong.component';
 import { AdminBlogtrangchuComponent } from './admin-blogtrangchu/admin-blogtrangchu.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -56,7 +57,7 @@ import { AdminBlogtrangchuComponent } from './admin-blogtrangchu/admin-blogtrang
     PopupSuaBaivietComponent,
     PopupThemBaivietComponent,
     PopupThemThanhcongComponent,
-    AdminBlogtrangchuComponent,
+    AdminBlogtrangchuComponent
   ],
   imports: [
     BrowserModule,
