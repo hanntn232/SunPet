@@ -60,19 +60,18 @@
     color: black;
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 50px;
     align-items: center;
     justify-content: center;
 }
 
 .title-text {
     position: relative;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .bsw_popup_ p a {
     font-weight: 700;
-    /* color: #555 */
 }
 
 .bsw_popup_ p a:hover {
@@ -140,7 +139,7 @@ input[type=submit]:hover {
 } */
 
 .button_form {
-    margin: 10px
+    margin-right: 10px
 }
 
 .fa-image {
@@ -168,5 +167,9 @@ input[type=submit]:hover {
     input[type=submit] {
         width: 100%;
         margin-top: 0;
+    }
+    .button_form {
+        margin-bottom: 10px;
+        margin-right: 0px;
     }
 }

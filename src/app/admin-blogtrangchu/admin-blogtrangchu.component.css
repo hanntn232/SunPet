@@ -43,7 +43,7 @@
     font-family: 'Opensans';
     font-size: 25px;
     width: 220px;
-    /* display: none; */
+    height: 50px
 }
 
 .add-mobile {
@@ -168,7 +168,7 @@
 }
 
 .btn-edit:hover {
-    background-color: rgb(255, 199, 0)
+    background-color: #ffc700
 }
 
 .btn-delete {
@@ -189,46 +189,49 @@
     background-color: rgb(255, 199, 0)
 }
 
-#btn-mobile1 {
+#btn-mobile1,
+#btn-mobile2,
+#btn-mobile3 {
+    height: 50px;
+    line-height: 50px;
+    background-color: rgb(255, 199, 0, 0.6);
+    margin-right: 10px;
+    float: left;
     border-radius: 5px;
-    border: none;
-    font-weight: bold;
-    color: black;
-    margin-right: 15px;
+}
+
+#btn-mobile1:hover,
+#btn-mobile2:hover,
+#btn-mobile3:hover {
+    background-color: #ffc700
+}
+
+#btn-mobile1:active,
+#btn-mobile2:active,
+#btn-mobile3:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .fa-eye {
-    font-size: 30px
+    font-size: 30px;
+    color: black;
+    width: 50px;
+    text-align: center
 }
 
 .fa-pen-to-square {
-    font-size: 30px
+    font-size: 30px;
+    color: black;
+    width: 50px;
+    text-align: center
 }
 
 .fa-trash-can {
-    font-size: 30px
-}
-
-#btn-mobile2 {
-    /* width: 50px;
-    height: 50px; */
-    border-radius: 5px;
-    border: none;
-    /* background-color: rgb(255, 199, 0, 0.6); */
-    font-weight: bold;
+    font-size: 30px;
     color: black;
-    margin-right: 15px
-}
-
-#btn-mobile3 {
-    /* width: 50px;
-    height: 50px; */
-    border-radius: 5px;
-    border: none;
-    /* background-color: rgb(255, 199, 0, 0.6); */
-    font-weight: bold;
-    color: black;
-    margin-right: 15px
+    width: 50px;
+    text-align: center
 }
 
 .blog_bottom {

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <div>
     <!-- hearder chờ bỏ vào -->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -17,12 +19,12 @@
             <!-- Điều kiện lọc -->
             <div class="mb-3 d-flex flex-row">
                 <div class="p-2">
-                    <label for="dieukienloc">Điều kiện lọc</label>
+                    <label for="dieukienloc">Điều kiện lọc:</label>
                 </div>
                 <div>
-                    <select id="dieukienloc" name="dieukienloc" class="form-select bg--button " [class.is-invalid]="errorFlag">
+                    <select id="dieukienloc" name="dieukienloc" class="form-select btn-outline-warning" [class.is-invalid]="errorFlag">
                         <option value="none" >Tất cả</option>
-                        <option *ngFor="let d of dieukienloc">{{d}}</option>
+                        <option  *ngFor="let d of dieukienloc">{{d}}</option>
                     </select>
                 </div>
             </div>
@@ -56,8 +58,8 @@
                 <div class="p-2 col-xl-2 col-md-2 col-sm-4">
                     <p class="text-center">Nguyễn Văn A</p>
                 </div>
-                <div class="p-0 col-xl-3 col-md-3 col-sm-7 text-center">
-                    <button class="bg--button btn text-center">Chờ xác nhận</button>
+                <div class="p-2 col-xl-3 col-md-3 col-sm-7 font-weight-normal text-center">
+                    <span class="badge bg--button badge-warning ">Chờ xác nhận</span>
                 </div>
                 <div class="p-2 col-xl-2 col-md-2 col-sm-5">
                     <p class="text-center">390,000 đ</p>
@@ -74,8 +76,8 @@
                 <div class="p-2 col-xl-2 col-md-2 col-sm-4">
                     <p class="text-center">Nguyễn Văn A</p>
                 </div>
-                <div class="p-0 col-xl-3 col-md-3 col-sm-7 text-center">
-                    <button class="bg--button btn text-center">Chờ xác nhận</button>
+                <div class="p-2 col-xl-3 col-md-3 col-sm-7 font-weight-normal text-center">
+                    <span class="badge bg--button badge-warning ">Chờ xác nhận</span>
                 </div>
                 <div class="p-2 col-xl-2 col-md-2 col-sm-5">
                     <p class="text-center">390,000 đ</p>
@@ -92,8 +94,8 @@
                 <div class="p-2 col-xl-2 col-md-2 col-sm-4">
                     <p class="text-center">Nguyễn Văn A</p>
                 </div>
-                <div class="p-0 col-xl-3 col-md-3 col-sm-7 text-center">
-                    <button class="bg--button btn text-center">Chờ xác nhận</button>
+                <div class="p-2 col-xl-3 col-md-3 col-sm-7 font-weight-normal text-center">
+                    <span class="badge bg--button badge-warning ">Chờ xác nhận</span>
                 </div>
                 <div class="p-2 col-xl-2 col-md-2 col-sm-5">
                     <p class="text-center">390,000 đ</p>
@@ -110,8 +112,8 @@
                 <div class="p-2 col-xl-2 col-md-2 col-sm-4">
                     <p class="text-center">Nguyễn Văn A</p>
                 </div>
-                <div class="p-0 col-xl-3 col-md-3 col-sm-7 text-center">
-                    <button class="bg--button btn text-center">Chờ xác nhận</button>
+                <div class="p-2  col-xl-3 col-md-3 col-sm-7 text-center">
+                    <div class="w-100"><span class="badge bg--button badge-warning">Chờ xác nhận</span></div>
                 </div>
                 <div class="p-2 col-xl-2 col-md-2 col-sm-5">
                     <p class="text-center">390,000 đ</p>
@@ -128,8 +130,8 @@
                 <div class="p-2 col-xl-2 col-md-2 col-sm-4">
                     <p class="text-center">Nguyễn Văn A</p>
                 </div>
-                <div class="p-0 col-xl-3 col-md-3 col-sm-7 text-center">
-                    <button class="bg--button btn text-center">Chờ xác nhận</button>
+                <div class="p-2 col-xl-3 col-md-3 col-sm-7 font-weight-normal text-center">
+                    <span class="badge bg--button badge-warning ">Chờ xác nhận</span>
                 </div>
                 <div class="p-2 col-xl-2 col-md-2 col-sm-5">
                     <p class="text-center">390,000 đ</p>
@@ -140,7 +142,7 @@
               <ul class="pagination home-product__pagination">
                 <li class="pagination-item">
                     <span href="#category-item" class="pagination-item__link ">
-                        <i class="pagination-item_icon fas fa-angle-left" id="next"><</i>
+                        <i class="fa-solid fa-backward"></i>
                     </span>
                 </li>
                 <li class="pagination-item pagination-item--active">
@@ -152,7 +154,7 @@
 
                 <li class="pagination-item">
                     <span href="#category-item" class="pagination-item__link ">
-                        <i class="pagination-item_icon fas fa-angle-right" id="next">></i>
+                        <i class="fa-solid fa-forward"></i>
                     </span>
                 </li>
             </ul>

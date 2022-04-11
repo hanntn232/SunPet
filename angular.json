@@ -35,7 +35,8 @@
                             "node_modules/popper.js/dist/umd/popper.min.js",
                             "node_modules/bootstrap/dist/js/bootstrap.min.js",
                             "./src/assets/js/productDetail.js",
-                            "./src/assets/js/blogchitiet.js"
+                            "./src/assets/js/blogchitiet.js",
+                            "node_modules/apexcharts/dist/apexcharts.min.js"
                         ]
                     },
                     "configurations": {
