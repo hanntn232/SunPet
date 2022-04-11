@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-chitietdonhang-admin',
   templateUrl: './chitietdonhang-admin.component.html',
@@ -11,5 +12,8 @@ export class ChitietdonhangAdminComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
 }
+
+
