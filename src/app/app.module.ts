@@ -30,6 +30,8 @@ import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-t
 import { ProductAdminComponent } from './product-admin/product-admin.component';
 import { FormSuaSanphamAdminAndroidComponent } from './form-sua-sanpham-admin-android/form-sua-sanpham-admin-android.component';
 import { FormThemSanphamAdminAndroidComponent } from './form-them-sanpham-admin-android/form-them-sanpham-admin-android.component';
+import { AdminBlogtrangchuComponent } from './admin-blogtrangchu/admin-blogtrangchu.component';
+
 
 
 @NgModule({
@@ -61,6 +63,7 @@ import { FormThemSanphamAdminAndroidComponent } from './form-them-sanpham-admin-
     ProductAdminComponent,
     FormSuaSanphamAdminAndroidComponent,
     FormThemSanphamAdminAndroidComponent,
+    AdminBlogtrangchuComponent,
   ],
   imports: [
     BrowserModule,

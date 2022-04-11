@@ -11,6 +11,23 @@
 
 /* css cho content bên trong của trang blog chính */
 
+.box-left {
+    float: left;
+    margin-bottom: 15px;
+}
+
+.box-right {
+    float: right;
+    margin-bottom: 15px;
+    /* height: 100px; */
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
 .title_page {
     color: #FFC700;
     font-family: 'coiny';
@@ -27,6 +44,26 @@
     font-size: 25px;
     width: 220px;
     /* display: none; */
+}
+
+.add-mobile {
+    border: 2px solid #FFC700;
+    padding: 5px 10px;
+    background-color: #FFC700;
+    border-radius: 5px;
+    position: absolute;
+    right: 50px;
+    font-size: 20px;
+    display: none;
+}
+
+.add-mobile:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.add-mobile:hover {
+    cursor: pointer;
 }
 
 .btn-header:active {
@@ -79,6 +116,119 @@
     margin-left: 3%;
     margin-right: 3%;
     border-radius: 30px;
+}
+
+.blog-edit {
+    position: absolute;
+    z-index: 3;
+    top: 30%;
+    left: 35%;
+    right: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-edit1 {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none
+}
+
+.blog-delete {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 35%;
+    right: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-edit {
+    width: 220px;
+    height: 60px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 199, 0, 0.6);
+    font-weight: bold;
+    /* display: none */
+}
+
+.btn-edit:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.btn-edit:hover {
+    background-color: rgb(255, 199, 0)
+}
+
+.btn-delete {
+    width: 220px;
+    height: 60px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(255, 199, 0, 0.6);
+    font-weight: bold;
+}
+
+.btn-delete:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.btn-delete:hover {
+    background-color: rgb(255, 199, 0)
+}
+
+#btn-mobile1 {
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    color: black;
+    margin-right: 15px;
+}
+
+.fa-eye {
+    font-size: 30px
+}
+
+.fa-pen-to-square {
+    font-size: 30px
+}
+
+.fa-trash-can {
+    font-size: 30px
+}
+
+#btn-mobile2 {
+    /* width: 50px;
+    height: 50px; */
+    border-radius: 5px;
+    border: none;
+    /* background-color: rgb(255, 199, 0, 0.6); */
+    font-weight: bold;
+    color: black;
+    margin-right: 15px
+}
+
+#btn-mobile3 {
+    /* width: 50px;
+    height: 50px; */
+    border-radius: 5px;
+    border: none;
+    /* background-color: rgb(255, 199, 0, 0.6); */
+    font-weight: bold;
+    color: black;
+    margin-right: 15px
 }
 
 .blog_bottom {
