@@ -30,7 +30,7 @@
     border-radius: 15px;
     border: 1px solid #FFC700;
     z-index: 999;
-    width: 600px;
+    width: 500px;
     max-width: 100%;
     position: fixed;
     top: 45%;
@@ -64,12 +64,13 @@
 
 .title-text {
     position: relative;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .fa-close {
     position: absolute;
-    right: 50px;
+    right: 20px;
+    top: 10px;
     font-size: 20px;
 }
 
