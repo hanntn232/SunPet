@@ -27,6 +27,13 @@ import { PopupSuaBaivietThanhcongComponent } from './popup-sua-baiviet-thanhcong
 import { PopupSuaBaivietComponent } from './popup-sua-baiviet/popup-sua-baiviet.component';
 import { PopupThemBaivietComponent } from './popup-them-baiviet/popup-them-baiviet.component';
 import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-thanhcong.component';
+import { AdminheaderComponent } from './adminheader/adminheader.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
+import { AdminfooterComponent } from './adminfooter/adminfooter.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+=======
 import { ProductAdminComponent } from './product-admin/product-admin.component';
 import { FormSuaSanphamAdminAndroidComponent } from './form-sua-sanpham-admin-android/form-sua-sanpham-admin-android.component';
 import { FormThemSanphamAdminAndroidComponent } from './form-them-sanpham-admin-android/form-them-sanpham-admin-android.component';
@@ -60,6 +67,11 @@ import { AdminBlogtrangchuComponent } from './admin-blogtrangchu/admin-blogtrang
     PopupSuaBaivietComponent,
     PopupThemBaivietComponent,
     PopupThemThanhcongComponent,
+    AdminheaderComponent,
+    AdmindashboardComponent,
+    AdminnavbarComponent,
+    AdminfooterComponent,
+    LineChartComponent,
     ProductAdminComponent,
     FormSuaSanphamAdminAndroidComponent,
     FormThemSanphamAdminAndroidComponent,
@@ -68,7 +80,8 @@ import { AdminBlogtrangchuComponent } from './admin-blogtrangchu/admin-blogtrang
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
