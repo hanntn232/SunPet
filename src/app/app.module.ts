@@ -27,6 +27,9 @@ import { PopupSuaBaivietThanhcongComponent } from './popup-sua-baiviet-thanhcong
 import { PopupSuaBaivietComponent } from './popup-sua-baiviet/popup-sua-baiviet.component';
 import { PopupThemBaivietComponent } from './popup-them-baiviet/popup-them-baiviet.component';
 import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-thanhcong.component';
+import { ProductAdminComponent } from './product-admin/product-admin.component';
+import { FormSuaSanphamAdminAndroidComponent } from './form-sua-sanpham-admin-android/form-sua-sanpham-admin-android.component';
+import { FormThemSanphamAdminAndroidComponent } from './form-them-sanpham-admin-android/form-them-sanpham-admin-android.component';
 
 
 @NgModule({
@@ -55,6 +58,9 @@ import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-t
     PopupSuaBaivietComponent,
     PopupThemBaivietComponent,
     PopupThemThanhcongComponent,
+    ProductAdminComponent,
+    FormSuaSanphamAdminAndroidComponent,
+    FormThemSanphamAdminAndroidComponent,
   ],
   imports: [
     BrowserModule,
