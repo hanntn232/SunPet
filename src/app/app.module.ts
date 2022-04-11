@@ -29,6 +29,12 @@ import { PopupSuaBaivietThanhcongComponent } from './popup-sua-baiviet-thanhcong
 import { PopupSuaBaivietComponent } from './popup-sua-baiviet/popup-sua-baiviet.component';
 import { PopupThemBaivietComponent } from './popup-them-baiviet/popup-them-baiviet.component';
 import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-thanhcong.component';
+import { AdminheaderComponent } from './adminheader/adminheader.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
+import { AdminfooterComponent } from './adminfooter/adminfooter.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 @NgModule({
@@ -59,11 +65,17 @@ import { PopupThemThanhcongComponent } from './popup-them-thanhcong/popup-them-t
     PopupSuaBaivietComponent,
     PopupThemBaivietComponent,
     PopupThemThanhcongComponent,
+    AdminheaderComponent,
+    AdmindashboardComponent,
+    AdminnavbarComponent,
+    AdminfooterComponent,
+    LineChartComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
