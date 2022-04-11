@@ -64,7 +64,7 @@
 
 .title-text {
     position: relative;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .fa-close {
