@@ -4,7 +4,7 @@
 }
 *{
     font-family: Opensans;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .container__color{
@@ -13,6 +13,8 @@
 
 .bg--button{
     background-color: #FFC700;
+    color: black;
+    font-size: 100% !important;
 }
 
 .hr{

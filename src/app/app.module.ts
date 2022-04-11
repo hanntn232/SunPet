@@ -15,8 +15,6 @@ import { BlogtrangchuComponent } from './blogtrangchu/blogtrangchu.component';
 import { XemthongtinComponent } from './xemthongtin/xemthongtin.component';
 import { HomeheaderComponent } from './homeheader/homeheader.component';
 import { ThongtinfooterComponent } from './thongtinfooter/thongtinfooter.component';
-import { FormthemsanphamComponent } from './formthemsanpham/formthemsanpham.component';
-import { FormsuasanphamComponent } from './formsuasanpham/formsuasanpham.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,6 +33,12 @@ import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { AdminfooterComponent } from './adminfooter/adminfooter.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+=======
+import { ProductAdminComponent } from './product-admin/product-admin.component';
+import { FormSuaSanphamAdminAndroidComponent } from './form-sua-sanpham-admin-android/form-sua-sanpham-admin-android.component';
+import { FormThemSanphamAdminAndroidComponent } from './form-them-sanpham-admin-android/form-them-sanpham-admin-android.component';
+import { AdminBlogtrangchuComponent } from './admin-blogtrangchu/admin-blogtrangchu.component';
+
 
 
 @NgModule({
@@ -53,8 +57,6 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     XemthongtinComponent,
     HomeheaderComponent,
     ThongtinfooterComponent,
-    FormthemsanphamComponent,
-    FormsuasanphamComponent,
     ProductDetailComponent,
     BlogChiTietComponent,
     DonhangAdminComponent,
@@ -70,6 +72,10 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     AdminnavbarComponent,
     AdminfooterComponent,
     LineChartComponent,
+    ProductAdminComponent,
+    FormSuaSanphamAdminAndroidComponent,
+    FormThemSanphamAdminAndroidComponent,
+    AdminBlogtrangchuComponent,
   ],
   imports: [
     BrowserModule,

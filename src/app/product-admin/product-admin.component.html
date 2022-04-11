@@ -8,7 +8,8 @@
     <title>Sản phẩm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- <script src="../JS/sanPham.js"></script>
     <script src="../JS/sanPhamStorage.js"></script> -->
 </head>
@@ -16,6 +17,7 @@
 <body>
     <div class="app">
         <app-header></app-header>
+        
         <div class="app__container">
             <div class="grid-wide">
                 <div class="search">
@@ -23,74 +25,69 @@
                     <label class="fas fa-search" onclick="timKiemSanPham()"></label>
                 </div>
                 <div class="row sm-gutter app__content">
-                    <div class="col l-3 m-0 c-0">
-                        <nav class="category">
-                            <h3 class="category__heading">
-                                <i class="category__heading-icon fas fa-list"></i> DANH MỤC
-                            </h3>
-                            <ul class="category-list">
-                                <li class="category-item" id="category-item">
-                                    <a href="HOME.html" class="category-item__link">Trang chủ</a>
-                                </li>
-                                <li class="category-item category-item--active">
-                                    <a href="#category-item" class="category-item__link" id="sanpham-category">Sản phẩm
-                                    </a>
-                                    <li class="category-item category-item-1">
-                                        <a href="#category-item" class="category-item__link" onclick="hienDanhMucThucAnChoCho()" id="category--thucanchocho">Thức ăn cho
-                                        chó</a>
-                                    </li>
-                                    <li class="category-item category-item-1">
-                                        <a href="#category-item" class="category-item__link" id="category--thucanchomeo" onclick="hienDanhMucThucAnChoMeo()">Thức ăn cho mèo</a>
-                                    </li>
-                                    <li class="category-item category-item-1">
-                                        <a href="#category-item" class="category-item__link" id="category--phukienchocho" onclick="hienDanhMucPhuKienChoCho()">Phụ kiện cho
-                                        chó</a>
-                                    </li>
-                                    <li class="category-item category-item-1">
-                                        <a href="#category-item" class="category-item__link" id="category--phukienchomeo" onclick="hienDanhMucPhuKienChoMeo()">Phụ kiện cho mèo</a>
-                                    </li>
+                    <!-- menu -->
+                    <div class="col-md-3">
 
-                                    <li class="category-item">
-                                        <a href="Blog_Trangchu.html" class="category-item__link">Tin thú cưng</a>
-                                    </li>
-                                    <li class="category-item">
-                                        <a href="Contact.html" class="category-item__link">Liên hệ</a>
-                                    </li>
-                            </ul>
-                        </nav>
                     </div>
-                    <div class="col l-8 m-12 c-12">
-                        <h4 class="category__heading">TẤT CẢ SẢN PHẨM</h4>
-                        <div class="home-filter">
-                            <div class="select-input">
-                                <span class="select-input__label">Sắp xếp theo</span>
-                                <i class="select-input__icon fas fa-angle-down"></i>
-                                <!-- List options -->
-                                <ul class="select-input__list">
-                                    <li class="select-input__item">
-                                        <a href="#category-item" class="select-input__link tangdan" id="tangdan">Giá:
-                                            tăng dần</a>
-                                    </li>
-                                    <li class="select-input__item">
-                                        <a href="#category-item" class="select-input__link" id="giamdan">Giá: giảm
-                                            dần</a>
-                                    </li>
-                                </ul>
+                    <!-- product -->
+                    <div class="col-md-9">
+                        <h4 class="category__heading">SẢN PHẨM</h4>
+                        <div class="home-arrange-product">
+                            <div class="home-filter-1">
+                                <div class="select-input">
+                                    <span class="select-input__label">Tất cả sản phẩm</span>
+                                    <i class="select-input__icon fas fa-angle-down"></i>
+                                    <!-- List options -->
+                                    <ul class="select-input__list">
+                                        <li class="select-input__item">
+                                            <a href="#category-item" class="select-input__link tangdan" id="category--thucanchocho" onclick="hienDanhMucThucAnChoCho()">Thức ăn cho chó</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="#category-item" class="select-input__link" id="category--thucanchomeo" onclick="hienDanhMucThucAnChoMeo()">Thức ăn cho mèo</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="#category-item" class="select-input__link" id="category--phukienchocho" onclick="hienDanhMucPhuKienChoCho()">Phụ kiện cho chó</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="#category-item" class="select-input__link" id="category--phukienchomeo" onclick="hienDanhMucPhuKienChoMeo()">Phụ kiện cho mèo</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="home-filter-2">
+                                <div class="select-input">
+                                    <span class="select-input__label">Sắp xếp theo</span>
+                                    <i class="select-input__icon fas fa-angle-down"></i>
+                                    <!-- List options -->
+                                    <ul class="select-input__list">
+                                        <li class="select-input__item">
+                                            <a href="#category-item" class="select-input__link tangdan" id="tangdan">Giá: tăng dần</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="#category-item" class="select-input__link" id="giamdan">Giá: giảm dần</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="button-addproduct" onclick="addProduct()" data-bs-toggle="modal" data-bs-target="#formAddProduct">
+                                <i class="fa fa-plus"></i>
                             </div>
                         </div>
-                        <!-- Grid -> Row -> Column -->
+                        
                         <div class="home-product dsSanPham1">
                             <div class="row" id="dsSanPham1">
-                                <div class="col l-2-4 m-4 c-6">
+                                <div class="col-md-3">
                                     <!-- Product item -->
                                     <a class="home-product-item" href="../HTML_Chitiet_sanpham/Detail1.html" target="_self">
-                                        <div class="home-product-item__img" style="background-image: url(https://bizweb.dktcdn.net/thumb/large/100/432/370/products/sua-bot-cho-meo-dr-kyan-precaten-anh.jpg?v=1626752115000);">
+                                        <div class="product-image">
+                                            <img src="https://bizweb.dktcdn.net/thumb/large/100/432/370/products/sua-bot-cho-meo-dr-kyan-precaten-anh.jpg?v=1626752115000" alt="Image" class="hoverable">
                                         </div>
                                         <h4 class="home-product-item__name">Sữa bột cho mèo 110g Dr.Kyan Precaten</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-curent">500.000đ</span>
                                             <span class="home-product-item__price-old">590.000đ</span>
                                         </div>
+                                        
                                     </a>
                                 </div>
                             </div>
@@ -121,6 +118,7 @@
                                 </span>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -144,29 +142,157 @@
                     <li class="nav__mobile-item nav__mobile-item--active">
                         <a href="#category-item" class="nav__mobile-item__link" id="sanpham-category2">Sản phẩm
                         </a>
-                        <li class="nav__mobile-item nav__mobile-item-1">
-                            <a href="#category-item" class="nav__mobile-item__link" id="thucanchocho2" onclick="hienDanhMucThucAnChoCho_Mobile(),removeChecked()">Thức ăn cho chó</a>
-                        </li>
-                        <li class="nav__mobile-item nav__mobile-item-1">
-                            <a href="#category-item" class="nav__mobile-item__link" id="thucanchomeo2" onclick="hienDanhMucThucAnChoMeo_Mobile(),removeChecked()">Thức ăn cho mèo</a>
-                        </li>
-                        <li class="nav__mobile-item nav__mobile-item-1">
-                            <a href="#category-item" class="nav__mobile-item__link" id="phukienchocho2" onclick="hienDanhMucPhuKienChoCho_Mobile(),removeChecked()">Phụ kiện cho chó</a>
-                        </li>
-                        <li class="nav__mobile-item nav__mobile-item-1">
-                            <a href="#category-item" class="nav__mobile-item__link" id="phukienchomeo2" onclick="hienDanhMucPhuKienChoMeo_Mobile(),removeChecked()">Phụ kiện cho mèo</a>
-                        </li>
-
-                        <li class="nav__mobile-item">
-                            <a href="Blog_Trangchu.html" class="nav__mobile-item__link">Tin thú cưng</a>
-                        </li>
-                        <li class="nav__mobile-item">
-                            <a href="Contact.html" class="nav__mobile-item__link">Liên hệ</a>
-                        </li>
+                    <li class="nav__mobile-item nav__mobile-item-1">
+                        <a href="#category-item" class="nav__mobile-item__link" id="thucanchocho2"
+                            onclick="hienDanhMucThucAnChoCho_Mobile(),removeChecked()">Thức ăn cho chó</a>
+                    </li>
+                    <li class="nav__mobile-item nav__mobile-item-1">
+                        <a href="#category-item" class="nav__mobile-item__link" id="thucanchomeo2"
+                            onclick="hienDanhMucThucAnChoMeo_Mobile(),removeChecked()">Thức ăn cho mèo</a>
+                    </li>
+                    <li class="nav__mobile-item nav__mobile-item-1">
+                        <a href="#category-item" class="nav__mobile-item__link" id="phukienchocho2"
+                            onclick="hienDanhMucPhuKienChoCho_Mobile(),removeChecked()">Phụ kiện cho chó</a>
+                    </li>
+                    <li class="nav__mobile-item nav__mobile-item-1">
+                        <a href="#category-item" class="nav__mobile-item__link" id="phukienchomeo2"
+                            onclick="hienDanhMucPhuKienChoMeo_Mobile(),removeChecked()">Phụ kiện cho mèo</a>
+                    </li>
                 </ul>
             </nav>
+            <!-- cover -->
+            <div class="cover-product">
+                <div class="icon-edit-delete">
+                    <button class="icon-change d-inline-flex align-self-center" data-bs-toggle="modal" data-bs-target="#formChangeProduct">
+                        <i class="fa fa-pen-to-square"></i>
+                        <p>Sửa</p>
+                    </button>
+                    <button class="icon-change d-inline-flex" data-bs-toggle="modal" data-bs-target="#formDeleteProduct">
+                        <i class="fa fa-trash-can"></i>
+                        <p>Xóa</p>
+                    </button>
+                </div>
+            </div>
+            <!-- form -->
+            <!-- form add product -->
+            <div class="container-fluid-form modal fade" id="formAddProduct" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <form action="">
+                                    <div class="modal-header">
+                                        <h5 class="text-center">Điền thông tin sản phẩm</h5>
+                                        <button type="button" class="btn-close" aria-label="Close" data-dismiss="modal"></button>
+                                    </div>
+                                    <div class="form-description">
+                                        <div class="form-group">
+                                            <label for="name_product" class="label-format">Tên sản phẩm:</label>
+                                            <input type="text" id="name_product" name="name_sp" class="form-control"
+                                                placeholder="Nhập tên sản phẩm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="price_product" class="label-format">Giá gốc:</label>
+                                            <input type="number" id="price_product" name="price_sp" class="form-control" placeholder="VND">
+                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="price_product" class="label-format">Giá bán:</label>
+                                            <input type="number" id="price_discount" name="price_new" class="form-control" placeholder="VND">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
+                                            <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="form-control"
+                                                placeholder="Nhập mô tả sản phẩm"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
+                                            <input type="file" name=upload_file class="button-addimg" id="image_product">
+                                        </div>
+                                        <div class="add-image">
+                            
+                                        </div>
+                                        <div class="form-button">
+                                            <button class="save-button" type="submit">Lưu</button>
+                                            <button class="cancel-button" data-dismiss="modal" type="button">Hủy</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid-form modal fade" id="formChangeProduct" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <form action="">
+                                    <div class="modal-header">
+                                        <h5 class="text-center">Sửa thông tin sản phẩm</h5>
+                                        <button type="button" class="btn-close" aria-label="Close" data-dismiss="modal"></button>
+                                    </div>
+                                    <div class="form-description">
+                                        <div class="form-group">
+                                            <label for="name_product" class="label-format">Tên sản phẩm:</label>
+                                            <input type="text" id="name_product" name="name_sp" class="form-control"
+                                                placeholder="Nhập tên sản phẩm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="price_product" class="label-format">Giá gốc:</label>
+                                            <input type="number" id="price_product" name="price_sp" class="form-control" placeholder="VND">
+                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="price_product" class="label-format">Giá bán:</label>
+                                            <input type="number" id="price_discount" name="price_new" class="form-control" placeholder="VND">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
+                                            <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="form-control"
+                                                placeholder="Nhập mô tả sản phẩm"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
+                                            <input type="file" name=upload_file class="button-addimg" id="image_product">
+                                        </div>
+                                        <div class="add-image">
+                            
+                                        </div>
+                                        <div class="form-button">
+                                            <button class="save-button" type="submit">Lưu</button>
+                                            <button class="cancel-button" data-dismiss="modal" type="button">Hủy</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <app-footer></app-footer>
+        <div class="container-fluid-popup modal fade" id="formDeleteProduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="popup-delete modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="icon-popupdelete">
+                                <i class="fa fa-close"></i>
+                            </div>
+                            <div class="popup-delete-content">
+                                <p>Bạn có muốn xóa sản phẩm không?</p>
+                                <div class="popup-button">
+                                    <button class="save-button" type="submit">Có</button>
+                                    <button class="cancel-button" data-dismiss="modal" type="button">Không</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+        <!-- <app-footer></app-footer> -->
     </div>
     <!-- <script>
         taoDanhSachSanPham();
