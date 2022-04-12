@@ -118,3 +118,91 @@
       font-size: 24px;
       text-align: center;
   }
+  /* ----------------navbar---------------- */
+  .navbar{
+    background-color: #FFC700;
+}
+.nav__bars-btn{
+    width: 28px;
+    height: 28px;
+    color: black;
+    display: none;
+    margin-left: 10px;
+}
+.navbar--overlay{
+    position:fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+    height: 100vh;
+}
+.nav--bar{
+    display: none;
+}
+
+
+.nav__list{
+    margin-top: 50px;
+    background-color: #FFC700;
+    height: 100%;
+
+}
+.nav__list>li{
+    border-bottom: 2px solid black;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.nav--bar--close{
+    color: black;
+    position: absolute;
+    top: 10px;
+}
+.nav__list i{
+    margin-right: 10px;
+}
+.fa-times{
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+.nav--bar ul{
+    list-style-type: none;
+}
+
+.nav--bar a:hover{
+    color: white; 
+}
+.nav__pc ul{
+    list-style-type: none;
+}
+.nav__pc a{
+    color: black;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 0;
+}
+.nav-link:hover{
+    color: white !important;
+}
+.nav--link{
+    color: black;
+    text-decoration: none;
+}
+.nav__input{
+    display: none;
+    
+}
+.nav__input:checked ~ .nav--bar{
+    transform: translateX(0%);
+}
+.nav__input:checked ~ .nav__list{
+    transform: translateX(0%);
+}

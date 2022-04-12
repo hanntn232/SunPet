@@ -35,6 +35,7 @@ import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { AdminfooterComponent } from './adminfooter/adminfooter.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { PiechartComponent } from './piechart/piechart.component';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     AdminnavbarComponent,
     AdminfooterComponent,
     LineChartComponent,
+    PiechartComponent,
   ],
   imports: [
     BrowserModule,
