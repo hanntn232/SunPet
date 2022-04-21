@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="C:\Users\Admin\Documents\DO AN CUOI KY WEB2\SunPet\src\assets\css\giohang.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="width">
+        <app-header></app-header>
+    </div>
+
+    <!-- Giỏ hàng -->
+    <div class="giohang--bgr" id="dsGioHang">
+        <section class="giohang1 col-md-12 col-lg-12 col-sm-12">
+            <div class="title">
+                GIỎ HÀNG CỦA BẠN
+            </div>
+            <div class="giohang-container">
+                <div class="giohang--head">
+                    <div class="col-2">Ảnh sản phẩm</div>
+                    <div class="col-3">Tên sản phẩm</div>
+                    <div class="col-2">Đơn giá</div>
+                    <div class="col-2">Số lượng</div>
+                    <div class="col-2">Thành tiền</div>
+                    <div class="col-1">Xóa</div>
+                </div>
+                <div id="giohang1">
+                    <div class="giohang--item">
+                        <div class="giohang--anhsp col-2">
+                            <img src="https://bizweb.dktcdn.net/thumb/large/100/432/370/products/71.png?v=1626751368000" alt="sanpham">
+                        </div>
+                        <div class="tensp col-3">
+                            <a href="../HTML_Chitiet_sanpham/Detail2.html">Nước rửa khóe mắt chó mèo Precaten</a><br>
+                        </div>
+                        <div class="giohang--dongia col-2">
+                            <p>
+                                190<span>.000 đ</span>
+                            </p>
+                        </div>
+                        <div class="giohang--soluong col-2">
+
+                            <button class="fas fa-minus btn-giam" onclick="giamSoLuong('5594_1642320928406','74442428_1636817383654')"></button>
+                            <span class="soluong">1</span>
+                            <button class="fas fa-plus btn-tang" onclick="tangSoLuong('5594_1642320928406','74442428_1636817383654')"></button>
+                        </div>
+                        <div class="giohang--thanhtien col-2">
+                            <p>
+                                190<span>.000 đ</span>
+                            </p>
+                        </div>
+                        <div class="giohang--xoa col-1">
+                            <button class="far fa-trash-alt btn-xoa" onclick="xoaItem('5594_1642320928406','74442428_1636817383654')"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row giohang--pttt">
+                <div class="col-4 bold">
+                    <div>Phương thức thanh toán</div>
+                    <div class="input--cod">
+                        <input type="radio" value="COD" checked> Thanh toán khi giao hàng
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 bold">
+                    <div class="tongtien">Tổng tiền: <span id="tongtien1">0</span><span>.000 đ</span></div>
+                </div>
+            </div>
+
+            <div class="row giohang1--footer col-12">
+                <div class="col-4 bold">
+                    <a href="../HTML/Product.html">
+                        <button class="btn-tieptucmuahang">Tiếp tục mua hàng</button>
+                    </a>
+                </div>
+                <div class="col-4 bold">
+                    <a href="../HTML/Dat_hang.html">
+                        <button class="btn-tienhanhdathang">Tiến hành đặt hàng</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="giohang2 col-md-12 col-lg-12 col-sm-12">
+            <div class="title">
+                GIỎ HÀNG CỦA BẠN
+            </div>
+            <div class="giohang--container">
+                <div id="giohang2">
+                    <div class="giohang--item">
+                        <div class="giohang--anhsp">
+                            <img src="https://bizweb.dktcdn.net/thumb/large/100/432/370/products/71.png?v=1626751368000" alt="sanpham">
+                        </div>
+                        <div class="item--group1">
+                            <div class="tensp">
+                                <a href="../HTML_Chitiet_sanpham/Detail2.html">Nước rửa khóe mắt chó mèo Precaten</a>
+                            </div>
+                            <div class="giohang--dongia">
+                                <span style="float: left;">Giá:&nbsp;</span>
+                                <p>
+                                    190<span>.000 đ</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="item--group2">
+                            <div class="giohang--soluong">
+                                <button class="fas fa-minus btn-giam" onclick="giamSoLuong('5594_1642320928406','74442428_1636817383654')"></button>
+                                <span class="soluong">1</span>
+                                <button class="fas fa-plus btn-tang" onclick="tangSoLuong('5594_1642320928406','74442428_1636817383654')"></button>
+                            </div>
+                            <div class="giohang--thanhtien">
+                                <div>Thành tiền:</div>
+                                <p>
+                                    190<span>.000 đ</span>
+                                </p>
+                            </div>
+                            <div class="giohang--xoa">
+                                <button class="btn-xoa" onclick="xoaItem('5594_1642320928406','74442428_1636817383654')">Xóa</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="giohang2--footer">
+                <div class="col-sm-12 col-xs-12 bold">
+                    <div class="tongtien">Tổng tiền: <span id="tongtien2">0</span><span>.000 đ</span></div>
+                </div>
+                <div class="col-sm-12 col-xs-12 bold pttt">
+                    <div>Phương thức thanh toán</div>
+                    <div class="input--cod">
+                        <input type="radio" value="COD" checked> Thanh toán khi giao hàng
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xs-12 bold btn-center">
+                    <a href="../HTML/Product.html">
+                        <button class="btn-tieptucmuahang">Tiếp tục mua hàng</button>
+                    </a>
+                </div>
+                <div class="col-sm-12 col-xs-12 bold btn-center">
+                    <a href="../HTML/Dat_hang.html">
+                        <button class="btn-tienhanhdathang">Tiến hành đặt hàng</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div class="width">
+        <app-footer></app-footer>
+    </div>

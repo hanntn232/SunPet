@@ -1,0 +1,92 @@
+@font-face {
+    font-family: OpenSans;
+    src: url(/assets/font/OpenSans-Regular.ttf);
+}
+/* Font chữ */
+* {
+    font-family: Opensans;
+    font-size: 20px;
+}
+/* Định dạng footer */
+.frame--footer--container{
+    height: 400px;
+    position: relative;
+    min-width: 300px;
+    margin-top: -69px;
+}
+.page-container{
+  background-color: #FEF8E1;
+}
+.container{
+  line-height: 2.5rem;
+}
+.page-container{
+    min-width: 300px;
+}
+.container.py-2{
+    min-width: 300px;
+    padding: 0px;
+}
+.frame--footer{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    bottom: 0;
+}
+.article-content{
+    padding-top: 40px;
+    padding-bottom: 200px;
+}
+.display-6{
+      
+      font-size: 20px;
+}
+.dp-justify{
+      text-align:justify;
+}
+@media screen and (max-width: 790px) {
+    .frame--footer--container{
+        height: 450px !important;
+    }
+    .frame--footer{
+        height: 400px !important;
+    }
+    .article-content{
+      padding-top: 30px;
+      padding-bottom: 150px;
+  }
+    
+}
+
+@media (max-width: 720px){
+    *{
+        font-family: Opensans;
+        font-size: 15px;
+    }
+    .frame--footer--container{
+        height: 500px !important;
+    }
+    .frame--footer{
+        height: 450px !important;
+    }
+    .frame--header--container{
+        height: 150px !important;
+        min-width: 300px;
+    }
+    .article-content{
+      padding-top: 30px;
+      padding-bottom: 150px;
+  }
+
+}
+
+@media (max-width: 500px){
+    *{
+        font-family: Opensans;
+        font-size: 15px;
+    }
+    .article-content{
+      padding-top: 20px;
+      padding-bottom: 100px;
+  }
+}

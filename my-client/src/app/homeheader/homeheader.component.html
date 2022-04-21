@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="web--container">
+        <div class="web--header">
+            <div class="web--header--1">
+                <div class="header--logo">
+                    <img src="../assets/image/logo_white.png" alt="">
+                    <p>SUNPET</p>
+                </div>
+                <div class="header--common">
+                    <div class="header--contact">
+                        <div class="header--phone">
+                            <i class="fas fa-phone"></i>
+                            (+84) 012345678
+                        </div>
+                        <hr style="margin-top: 10px; margin-bottom: 10px;">
+                        <div class="header--email">
+                            <i class="fas fa-envelope"></i>
+                            sunpet@gmail.com
+                        </div>
+                    </div>
+                    <div class="header--cart">
+                        <a href="Gio_hang.html">
+                            <i class="fas fa-shopping-bag"></i>
+                        </a>
+                    </div>
+                    <div class="btn-group dropdown__hover user--position dropdown">
+                        <button class="btn" type="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false"><i class="fas fa-user"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-content ">
+                            <a class="dropdown-item" href="Dang_ky.html" id="dangky">Đăng ký</a>
+
+                            <a class="dropdown-item" href="Dang_nhap.html" id="dangnhap">Đăng nhập</a>
+
+                            <a class="dropdown-item" href="Xemthongtin.html" id="xemthongtin">Xem thông tin</a>
+
+                            <a class="dropdown-item" href="#" id="dangxuat" onclick="dangXuat()">Đăng xuất</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-md sticky-top">
+            <!-- sticky top dán chặt ở trên, na..md thì từ kích thước medium trở lên thì nó sẽ expand ra -->
+            <div class="container-fluid">
+                <!-- container-fluid là sẽ chiếm toàn bộ chiều ngang -->
+                <div class="nav" data-target="collapse">
+                    <nav class="nav__pc">
+                        <ul class="navbar-nav ml-auto">
+                            <!-- cho phép hiện các cái đường link khi co trang mình vào-->
+                            <!-- ml auto là auto margin left -->
+                            <li class="nav-item">
+                                <!-- nav-item quy định màu là màu xanh, flex 1, mỗi item cách ra một khoảng -->
+                                <a class="nav-link" href="#">TRANG CHỦ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Contact.html" class="nav-link">LIÊN HỆ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Product.html" class="nav-link">SẢN PHẨM</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Blog_Trangchu.html" class="nav-link">BLOG</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <label for="nav--input" class="nav__bars-btn">
+                        <i class="fas fa-bars"></i>
+                    </label>
+
+                    <input type="checkbox" class="nav__input" id="nav--input">
+
+                    <label for="nav--input" class="navbar--overlay"></label>
+                    <nav for="nav--input" class="nav--bar">
+                        <label for="nav--input" class="nav--bar--close">
+                            <i class="fas fa-times"></i>
+                        </label>
+                        <ul class="nav__list">
+                            <li>
+                                <a class="nav--link" href="#"><i class="fas fa-home"></i>TRANG CHỦ </a>
+                            </li>
+                            <li>
+                                <a href="Contact.html" class="nav--link"><i class="fas fa-phone"></i> LIÊN HỆ </a>
+                            </li>
+                            <li>
+                                <a href="Product.html" class="nav--link"><i class="fas fa-dolly"></i>SẢN PHẨM </a>
+                            </li>
+                            <li>
+                                <a href="Blog_Trangchu.html" class="nav--link"><i class="fas fa-newspaper"></i>BLOG</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- search -->
+                <div class="search--bar">
+                    <input type="text" value="" name="search" id="search" placeholder="Bạn muốn tìm gì?"
+                        autocomplete="off" class="search--input">
+                    <button type="button" class="search--button" onclick="timKiemSanPham()"><i
+                            class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

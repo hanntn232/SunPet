@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="web--container">
+        <app-header></app-header>
+        <div class="web--header">
+            <h1>LIÊN HỆ</h1>
+        </div>
+        <div class="block--contact">
+            <div class="row--inline">
+                <div class="row--block">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>Hỗ trợ</h4>
+                    <p>(+84) 012345678</p>
+                </div>
+                <div class="row--block">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Văn phòng giao dịch</h4>
+                    <p>665 QL1, KP3, Linh Xuân, Thủ Đức, Thành phố Hồ Chí Minh</p>
+                </div>
+                <div class="row--block">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Hỗ trợ mua hàng</h4>
+                    <p>sunpet@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="map--form">
+            <div class="web--map">
+                <img src="/assets/image/map.png" alt="">
+            </div>
+
+            <form class="web--form">
+                <h5>Nếu bạn có thắc mắc thì hãy điền thông tin form dưới đây</h5>
+                <div class="form--row">
+                    <label for="name" class="form__label">Họ tên:
+                    </label>
+                    <input type="text" name="hoten" id="name" value="" class="form__input" required>
+                </div>
+                <div class="form--row">
+                    <label for="phone" class="form__label">SĐT:</label>
+                    <input type="number" name="phone" id="phone" class="form__input" required>
+                </div>
+                <div class="form--row">
+                    <label for="email" class="form__label">Email:</label>
+                    <input type="email" name="mail" id="email" class="form__input" required>
+                </div>
+                <div class="form--row">
+                    <label for="content" class="form__label">Nội dung:</label>
+                    <input type="text" name="noidung" id="content" class="form__input--1" required>
+                </div>
+                <div class="form--button">
+                    <button type="submit" name="submit" value="Gui" class="form__button--send" id="btnSubmit">Gửi
+                    </button>
+                </div>
+
+            </form>
+        </div>
+        <app-footer></app-footer>
+    </div>
+    <script src="../JS/contact_get.js"></script>
+
+</body>
+
+</html>

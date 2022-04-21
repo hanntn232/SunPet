@@ -1,0 +1,171 @@
+@font-face {
+    font-family: OpenSans;
+    src: url(/assets/font/OpenSans-Regular.ttf);
+}
+*{
+    font-family: Opensans;
+    font-size: 20px;
+}
+.web--container{
+    background-color: #FEF8E1;
+    min-width: 300px;
+}
+.web--header{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+}
+.block--contact{
+    text-align: center;
+    width: 100%;
+    
+}
+.row--inline{
+    display: inline-flex;
+    text-align: center;
+    
+}
+.row--block{
+    flex: 1;
+}
+.row--block h5{
+    font-weight: bold;
+}
+.fa-map-marker-alt{
+    color: red;
+    
+}
+.fa-phone-alt{
+    color: blue;
+}
+.map--form{
+    display: flex;
+    width: 100%;
+}
+.web--map{
+    width: 100%;
+}
+.web--map img{
+    width: 100%;
+    height: 85%;
+}
+.web--form{
+    display: block;
+    margin-left: 20px;
+    width: 90%;
+}
+.form--row{
+    margin-bottom:15px ;
+    
+}
+.form__label{
+    min-width: 90px;
+}
+.form__input{
+    border-radius: 10px;
+    border: 1px solid white;
+    width: 70%;
+    height: 40px;
+}
+.form__input--1{
+    border-radius: 10px;
+    border: 1px solid white;
+    height: 70px;
+    width: 70%;
+}
+.form__button--send{
+    background-color: #FFC700;
+    border: 1px solid #FFC700;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+}
+.form--button{
+    width: 15%;
+    margin: auto;
+    margin-top: 20px;
+}
+.frame--footer--container{
+    min-width: 300px;
+    height: 500px;
+}
+
+.header{
+    position: relative;
+    width: 100%;
+}
+
+.header img{
+    width: 100%;
+}
+.header--overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0,0.7);
+}
+.frame--footer--container{
+    width: 100%;
+    height: 450px;
+    position: relative;
+    min-width: 100px;
+}
+.frame--footer{
+    position: absolute;
+    bottom: 0;
+    min-width: 100px;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+@media screen and (max-width:720px) {
+    *{
+        font-family: Opensans;
+        font-size: 12px;
+    }
+    .web--header{
+       
+        font-weight: bold;
+        font-size: 17px;
+    }
+    
+    .row--inline{
+        display: block;
+    }
+    .map--form{
+        display: block;
+    }
+    .web--map{
+        margin-bottom: 10px;
+    }
+    .web--map img{
+        height: 250px;
+        width: 100%;
+    }
+    .web--form{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    .form__label{
+        min-width: 70px;
+    }
+    .header{
+        min-width: 300px;
+    }
+    .header>.header--overlay{
+        min-width: 300px;
+    }
+    .frame--footer--container{
+        min-width: 300px;
+        height: 500px;
+    }
+    .frame--footer{
+        min-width: 300px;
+        height: 450px;
+    }
+}

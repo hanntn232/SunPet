@@ -1,0 +1,393 @@
+@font-face {
+    font-family: OpenSans;
+    src: url(/assets/font/OpenSans-Regular.ttf);
+}
+
+* {
+    font-family: Opensans;
+    font-size: 20px;
+}
+
+.width {
+    min-width: 1000px;
+}
+
+#header {
+    min-width: 1000px;
+}
+
+.header {
+    min-width: 1000px;
+}
+
+.giohang--bgr {
+    padding: 50px 0px;
+    /* min-width: 1000px; */
+}
+
+section.giohang1 {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    min-width: 1000px;
+    padding-left: 2%;
+}
+
+.giohang2 {
+    display: none;
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.giohang--container {
+    display: flex;
+    flex-direction: column;
+}
+
+.group--column1,
+.group--column2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.giohang--head,
+.giohang--item {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+}
+
+.giohang--item,
+.giohang--item>div {
+    height: 200px;
+}
+
+
+/* canh giữa nội dung theo chiều dọc */
+
+.giohang--item>div {
+    padding: 70px 10px;
+}
+
+
+/* quy định border trong head */
+
+.giohang--head>div {
+    border: 1px solid lightgray;
+    padding: 5px 7px;
+}
+
+
+/* quy định border trong item */
+
+.giohang--item>div:first-child {
+    border-left: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+.giohang--item>div {
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+}
+
+
+/* Quy định kích thước ảnh */
+
+.giohang--anhsp>img {
+    height: 130px;
+    margin-top: 30px;
+}
+
+.giohang--anhsp {
+    padding: 5px 10px !important;
+}
+
+
+/* Quy định button */
+
+.btn-tang {
+    background-color: white;
+    border: none;
+    padding: 5px 5px;
+}
+
+.btn-giam {
+    background-color: white;
+    border: none;
+    padding: 5px 5px;
+}
+
+.btn-xoa {
+    border: none;
+    background-color: unset;
+    padding: 5px 5px;
+}
+
+.btn-giam:hover,
+.btn-tang:hover,
+.btn-xoa:hover {
+    background-color: #FFD541;
+    border-radius: 3px;
+}
+
+.fas.fa-minus,
+.fas.fa-plus {
+    color: rgb(224, 222, 222);
+}
+
+.soluong {
+    padding: 0px 10px;
+}
+
+
+/* quy định kiểu chữ */
+
+.giohang1 .giohang--dongia>p,
+.giohang1 .giohang--thanhtien>p {
+    font-weight: bold;
+    color: red;
+}
+
+.giohang2 .giohang--dongia>p,
+.giohang2 .giohang--thanhtien>p {
+    font-weight: bold;
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* ------ */
+
+
+/* Phương thức thanh toán và tổng tiền */
+
+.row.giohang--pttt {
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tongtien {
+    text-align: right;
+    color: red;
+}
+
+.input--cod {
+    padding: 3px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.giohang--pttt .bold>div {
+    margin-bottom: 10px;
+}
+
+
+/* Đặt hàng hoặc tiếp tục mua hàng */
+
+.row.giohang1--footer {
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.row.giohang1--footer>div:nth-of-type(2) {
+    padding-right: 0px;
+    text-align: right;
+    margin-right: -20px;
+}
+
+.btn-tieptucmuahang {
+    border: 1px solid #ABAAAA;
+    border-radius: 5px;
+    background-color: #ABAAAA;
+    color: white;
+    width: 250px;
+    padding: 10px 5px;
+}
+
+.btn-tieptucmuahang:hover {
+    background-color: lightgray;
+}
+
+.btn-tienhanhdathang {
+    border: 1px solid #FFC700;
+    border-radius: 5px;
+    background-color: #FFC700;
+    color: white;
+    width: 250px;
+    padding: 10px 5px;
+    margin-left: 20%;
+}
+
+.btn-tienhanhdathang:hover {
+    background-color: #FFD541;
+}
+
+
+/* Định dạng frame footer */
+
+.frame--footer--container {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    min-width: 1016px;
+}
+
+.frame--footer {
+    position: absolute;
+    bottom: 0;
+    min-width: 1016px;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 720px) {
+    .width {
+        min-width: 300px !important;
+    }
+    .giohang1 {
+        display: none !important;
+    }
+    .giohang2 {
+        display: block;
+        width: 100% !important;
+        margin-right: 0px !important;
+        min-width: 300px;
+        /* margin-left: 10px; */
+    }
+    .giohang--container {
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        min-width: 300px;
+    }
+    .frame--footer--container {
+        min-width: 300px;
+        height: 500px;
+    }
+    .frame--footer {
+        min-width: 300px;
+        height: 450px;
+    }
+    /* quy định font chữ nhỏ */
+    * {
+        font-size: 10px;
+    }
+    .title {
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    /* canh trái chữ */
+    .giohang--item>div {
+        border: none !important;
+        text-align: left;
+    }
+    /* Quy định kích thước ảnh */
+    .giohang--anhsp>img {
+        height: 70%;
+        padding-left: 20px;
+        margin-top: 5px;
+    }
+    .giohang--anhsp {
+        padding: 10px 0px !important;
+    }
+    /* Quy định kích thước hàng item */
+    .giohang--item,
+    .giohang--item>div {
+        height: 100px;
+    }
+    /* canh giữa nội dung theo chiều dọc */
+    .giohang--item>div {
+        padding: 10px 0px;
+        padding-left: 20px;
+    }
+    /* quy định độ rộng của các cột */
+    .giohang--anhsp {
+        width: 20% !important;
+    }
+    .item--group1 {
+        width: 40% !important;
+    }
+    .item--group2 {
+        width: 40% !important;
+    }
+    /* canh giữa group 2 */
+    .item--group2 {
+        text-align: center !important;
+    }
+    /* Tổng tiền và phương thức thanh toán */
+    .giohang2--footer {
+        margin: 10px 20px;
+    }
+    .tongtien {
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .pttt {
+        margin-bottom: 20px;
+    }
+    .pttt>div {
+        margin-bottom: 5px;
+    }
+    .input--cod {
+        width: 50%;
+    }
+    .input--cod>input {
+        margin-top: 2px;
+        margin-bottom: 5px;
+    }
+    .giohang2 .btn-center {
+        text-align: center;
+    }
+    .btn-tieptucmuahang {
+        width: 40%;
+        margin-bottom: 5px;
+    }
+    .btn-tienhanhdathang {
+        width: 40%;
+        margin-left: 0%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Định dạng header */
+
+.header {
+    min-width: 1016px;
+}
+
+.header>.header--overlay {
+    min-width: 1016px;
+}
+
+@media screen and (max-width: 720px) {
+    .header {
+        min-width: 300px;
+    }
+    .header>.header--overlay {
+        min-width: 300px;
+    }
+}
