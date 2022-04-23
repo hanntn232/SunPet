@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-chitietdonhang-admin',
   templateUrl: './chitietdonhang-admin.component.html',
@@ -9,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ChitietdonhangAdminComponent implements OnInit {
 
   constructor() { }
-
+ 
   ngOnInit(): void {
   }
   
