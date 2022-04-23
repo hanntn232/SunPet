@@ -82,6 +82,10 @@
     margin: auto;
 }
 
+.mg-top{
+    padding-top: 70px;
+}
+
 @media screen and (max-width: 768px) {
     .container{
         margin: 0 !important;

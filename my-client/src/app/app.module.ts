@@ -38,6 +38,8 @@ import { FormSuaSanphamAdminAndroidComponent } from './form-sua-sanpham-admin-an
 import { FormThemSanphamAdminAndroidComponent } from './form-them-sanpham-admin-android/form-them-sanpham-admin-android.component';
 import { AdminBlogtrangchuComponent } from './admin-blogtrangchu/admin-blogtrangchu.component';
 import { RouterModule } from '@angular/router';
+import { PopupLydohuyComponent } from './popup-lydohuy/popup-lydohuy.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -75,12 +77,14 @@ import { RouterModule } from '@angular/router';
     FormSuaSanphamAdminAndroidComponent,
     FormThemSanphamAdminAndroidComponent,
     AdminBlogtrangchuComponent,
+    PopupLydohuyComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
