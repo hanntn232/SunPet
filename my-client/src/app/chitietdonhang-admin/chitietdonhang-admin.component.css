@@ -25,6 +25,23 @@
 .mg-top{
     padding-top: 70px;
 }
+.checked{
+    border-color: #FFC700 !important;
+}
+.form-check .form-check-input:checked{
+    border-color: #FFC700;
+    background-color: #FFC700;
+}
+.btn-close{
+    box-sizing:border-box;
+    opacity: 1;
+}
+.modal-body{
+    padding-left: 30px;
+}
+.mg-subcontainer{
+    margin-left: 15px;
+}
 @media screen and (max-width: 1700px) {
     
     .status_display--lg{
