@@ -12,7 +12,7 @@
 
 <body>
     <!-- <div *ngFor="let p of productList">{{p | json}}</div> -->
-    <div class="app">
+    <div class="app" id="topPage">
         <app-header></app-header>
         <div class="container">
             <div class="app__container" *ngFor="let p of productList">
@@ -201,6 +201,12 @@
             }
         }
     </script> -->
+    <script>
+        window.onload(window.scrollTo({
+            top: 5,
+            behavior: 'smooth'
+        }));
+    </script>
 
 </body>
 
