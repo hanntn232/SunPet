@@ -2,76 +2,107 @@
     font-family: OpenSans;
     src: url(/assets/font/OpenSans-Regular.ttf);
 }
-*{
+
+* {
     font-family: Opensans;
-    font-size: 20px;
+    font-size: 18px;
 }
-.dangky--container{
+
+.dangky--container {
     width: 40% !important;
     padding: 10px 20px;
     margin: auto;
     margin-top: 50px;
     min-width: 300px;
 }
-.dangky--title{
+
+.dangky--title {
     font-weight: bold;
 }
-.dangky--sdt span, .dangky--matkhau span, .dangky--ho span, .dangky--ten span, .dangky--diachi span{
+
+.dangky--sdt span,
+.dangky--matkhau span,
+.dangky--ho span,
+.dangky--ten span,
+.dangky--diachi span {
     color: red;
 }
-.dangky--container>*{
+
+.dangky--container>* {
     margin-bottom: 10px;
 }
 
-form>*{
+form>* {
     margin-bottom: 20px;
 }
-.dangky--matkhau>label, .dangky--sdt>label,.dangky--ho>label,.dangky--ten>label,.dangky--diachi>label ,.dangnhap--google>label{
+
+.dangky--matkhau>label,
+.dangky--sdt>label,
+.dangky--ho>label,
+.dangky--ten>label,
+.dangky--diachi>label,
+.dangnhap--google>label {
     margin-bottom: 10px;
 }
 
-.dangky--matkhau>input, .dangky--sdt>input,.dangky--ho>input,.dangky--ten>input,.dangky--diachi>input {
+.dangky--matkhau>input,
+.dangky--sdt>input,
+.dangky--ho>input,
+.dangky--ten>input,
+.dangky--diachi>input {
     border: 1px solid #FFC700;
     height: 2.5rem;
     border-radius: 5px;
 }
-.dangky--matkhau>input:focus, .dangky--sdt>input:focus,.dangky--ho>input:focus,.dangky--ten>input:focus,.dangky--diachi>input:focus{
+
+.dangky--matkhau>input:focus,
+.dangky--sdt>input:focus,
+.dangky--ho>input:focus,
+.dangky--ten>input:focus,
+.dangky--diachi>input:focus {
     outline: 1px solid #FFD541;
 }
 
 
 /* Canh giữa nội dung */
-.center{
+
+.center {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.dangky--dangnhap{
+
+.dangky--dangnhap {
     text-align: center;
 }
 
-.input{
+.input {
     padding: 5px 10px;
 }
+
+
 /* Định dạng button */
-.btn--dangky>input{
+
+.btn--dangky>input {
     border: 1px solid #FFC700;
     background-color: #FFC700;
     width: 150px;
     padding: 5px 10px;
     border-radius: 5px;
 }
-.btn--dangky>input:hover{
+
+.btn--dangky>input:hover {
     background-color: #FFD541;
     border: 1px solid #FFC700;
 }
-.btn--dangky>input:focus{
+
+.btn--dangky>input:focus {
     box-shadow: none !important;
     background-color: #FFD541;
     border: 1px solid #FFC700;
 }
 
-.btn--google{
+.btn--google {
     width: 80%;
     border: 1px solid #dd4b39;
     background-color: #dd4b39;
@@ -79,85 +110,97 @@ form>*{
     border-radius: 5px;
     color: white;
 }
-.fab.fa-google{
+
+.fab.fa-google {
     margin-right: 10px;
     margin-left: 0px;
     font-size: 1.5rem;
     color: white;
 }
+
+
 /* Đinh dạng chuyển hướng đăng nhập*/
-a, a:hover, a:visited{
+
+a,
+a:hover,
+a:visited {
     text-decoration: none !important;
     color: red !important;
 }
 
 
 /* Định dạng responsive */
+
 @media screen and (max-width: 1000px) {
-    .btn--google{
+    .btn--google {
         font-size: 15px;
     }
-    .btn--dangky> input{
+    .btn--dangky>input {
         font-size: 15px;
         width: 100px;
     }
 }
+
 @media screen and (max-width: 720px) {
-    *{
+    * {
         font-size: 12px;
     }
-    .btn--google{
+    .btn--google {
         height: 35px;
-        
     }
-    .dangky--container{
+    .dangky--container {
         width: 70%;
     }
-    .frame--header--container{
+    .frame--header--container {
         height: 150px !important;
         min-width: 300px;
     }
-      
-    .frame--footer--container{
+    .frame--footer--container {
         height: 500px !important;
         min-width: 300px;
     }
-      .frame--footer{
-          height: 450px !important;
-          min-width: 300px;
-      }
+    .frame--footer {
+        height: 450px !important;
+        min-width: 300px;
+    }
 }
-@media screen and (max-width: 500px){
-    .dangky--container{
+
+@media screen and (max-width: 500px) {
+    .dangky--container {
         margin-top: 0px !important;
     }
 }
 
+
 /* Định dạng header */
-.frame--header--container{
+
+.frame--header--container {
     width: 100%;
     height: 300px;
     position: relative;
     min-width: 300px;
 }
-.frame--header{
+
+.frame--header {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
 }
 
+
 /* Định dạng footer */
-.frame--footer--container{
+
+.frame--footer--container {
     width: 100%;
     height: 350px;
     position: relative;
     min-width: 300px;
 }
-.frame--footer{
+
+.frame--footer {
     width: 100%;
     height: 300px;
     position: absolute;
     bottom: 0;
 }
-
