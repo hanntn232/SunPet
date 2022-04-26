@@ -5,7 +5,7 @@
 
 * {
     font-family: Opensans;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 
@@ -14,6 +14,7 @@
 .box-left {
     float: left;
     margin-bottom: 15px;
+    font-family: Coiny;
 }
 
 .box-right {
@@ -30,8 +31,8 @@
 
 .title_page {
     color: #FFC700;
-    font-family: 'coiny';
     font-size: 3rem;
+    font-family: 'Coiny', cursive;
 }
 
 .btn-header {
@@ -41,7 +42,7 @@
     font-weight: bold;
     background-color: #FFC700;
     font-family: 'Opensans';
-    font-size: 25px;
+    /* font-size: 25px; */
     width: 220px;
     height: 50px
 }
@@ -76,8 +77,16 @@
 }
 
 .page__bg {
-    background-color: #FEF8E1;
-    padding-top: 20px;
+    background-color: #fef8e1;
+    padding-top: 80px;
+}
+
+.main {
+    position: absolute;
+    top: 60px;
+    width: calc(100% - 260px);
+    min-height: calc(100vh - 60px);
+    left: 260px;
 }
 
 .welcom__page {
@@ -214,21 +223,21 @@
 }
 
 .fa-eye {
-    font-size: 30px;
+    font-size: 20px;
     color: black;
     width: 50px;
     text-align: center
 }
 
 .fa-pen-to-square {
-    font-size: 30px;
+    font-size: 20px;
     color: black;
     width: 50px;
     text-align: center
 }
 
 .fa-trash-can {
-    font-size: 30px;
+    font-size: 20px;
     color: black;
     width: 50px;
     text-align: center
@@ -244,6 +253,15 @@
     color: black;
 }
 
+.summary_blog>p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5rem;
+    height: auto;
+}
+
 .content_margin--cun1 {
     margin-left: 10%;
     margin-right: 10%;
@@ -253,7 +271,7 @@
     color: black;
     font-weight: bold;
     text-decoration: none;
-    line-height: 2rem;
+    line-height: 1.2rem;
 }
 
 .a--title:hover {
@@ -332,6 +350,331 @@
 }
 
 
+/* Form AddBlog */
+
+#formAddBlog {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    transform: scale(1.2);
+    display: none
+}
+
+#formAddBlog:target {
+    transform: scale(1);
+    background: rgba(0, 0, 0, .2);
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: 999999999999;
+    transition: .5s;
+    display: block;
+}
+
+.formAddBlog_ {
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #FFC700;
+    z-index: 999;
+    width: 600px;
+    max-width: 100%;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    /* padding: 20px; */
+    box-sizing: border-box;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .1)
+}
+
+.formAddBlog_ h2 {
+    margin: 0 0 .75em;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    font-family: OpenSans;
+    color: black;
+    background-color: #FFC700;
+    height: 100%;
+}
+
+.form-title {
+    background-color: #FFC700;
+    border-radius: 15px 15px 0 0;
+    border: 1px solid #FFC700;
+    color: black;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-text {
+    position: relative;
+    font-weight: bold;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.formAddBlog_ p a {
+    font-weight: 700;
+}
+
+.formAddBlog_ p a:hover {
+    text-decoration: underline
+}
+
+
+/* <!-- code popup bacsiwindows.com --> */
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #FFC700;
+    border-radius: 4px;
+    /* resize: vertical; */
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: gray;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #FFC700;
+}
+
+.container1 {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+/* .row:after {
+    content: "";
+    display: table;
+    clear: both;
+} */
+
+.button_form {
+    margin-right: 10px;
+}
+
+.fa-image {
+    font-size: 50px;
+    font-weight: normal;
+    margin-right: 5px;
+}
+
+.fa-plus {
+    font-size: 25px;
+    color: black;
+}
+
+.fa-close {
+    position: absolute;
+    right: 15px;
+}
+
+
+/* Bố cục linh hoạt: khi màn hình có chiều rộng dưới 600px thì hai cột chồng 
+  lên nhau thay vì nằm cạnh nhau */
+
+@media screen and (max-width: 600px) {
+    .col-25,
+    .col-75,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+    .button_form {
+        margin-bottom: 10px;
+        margin-right: 0px;
+    }
+    .button_formDelete {
+        margin-bottom: 10px;
+        margin-right: 0px;
+    }
+}
+
+
+/* Form EditBlog */
+
+#formEditBlog {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    transform: scale(1.2)
+}
+
+#formEditBlog:target {
+    transform: scale(1);
+    background: rgba(0, 0, 0, .2);
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: 999999999999;
+    transition: .5s
+}
+
+.formEditBlog_ {
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #FFC700;
+    z-index: 999;
+    width: 600px;
+    max-width: 100%;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .1)
+}
+
+.formEditBlog_ h2 {
+    margin: 0 0 .75em;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    font-family: OpenSans;
+    color: black;
+    background-color: #FFC700;
+    height: 100%;
+}
+
+
+/* Form DeleteBlog */
+
+#formDeleteBlog {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    transform: scale(1.2)
+}
+
+#formDeleteBlog:target {
+    transform: scale(1);
+    background: rgba(0, 0, 0, .2);
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: 999999999999;
+    transition: .5s
+}
+
+.formDeleteBlog_ {
+    background: #fff;
+    border-radius: 15px;
+    border: 1px solid #FFC700;
+    z-index: 999;
+    width: 500px;
+    max-width: 100%;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 100px rgba(0, 0, 0, .1)
+}
+
+.formDeleteBlog_ h5 {
+    margin: 0 0 .75em;
+    padding: 0;
+    text-align: center;
+    font-family: OpenSans;
+    color: black;
+    height: 100%;
+}
+
+.fa--check {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.fa-check-circle {
+    font-size: 70px;
+}
+
+.button_formDelete {
+    width: 90px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+
+/* Form SeenBlog */
+
+
 /* pagination */
 
 .pagination {
@@ -408,6 +751,11 @@
     display: none;
 }
 
+#carouselExampleInterval img {
+    height: 80vh;
+    max-height: 500px;
+}
+
 @media (max-width: 1000px) {
     * {
         font-family: Opensans;
@@ -455,12 +803,16 @@
     .blog-edit1 {
         position: absolute;
         z-index: 5;
-        top: 50%;
+        top: 40%;
         left: 50%;
         right: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    #carouselExampleInterval img {
+        height: 60vh;
+        max-height: 400px;
     }
 }
 
@@ -482,6 +834,10 @@
         text-decoration: none;
         margin-left: 15px;
         padding-left: 0px;
+    }
+    #carouselExampleInterval img {
+        height: 30vh;
+        max-height: 300px;
     }
 }
 

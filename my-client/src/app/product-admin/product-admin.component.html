@@ -8,8 +8,7 @@
     <title>Sản phẩm</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- <script src="../JS/sanPham.js"></script>
     <script src="../JS/sanPhamStorage.js"></script> -->
 </head>
@@ -17,7 +16,7 @@
 <body>
     <div class="app">
         <app-header></app-header>
-        
+
         <div class="app__container">
             <div class="grid-wide">
                 <div class="search">
@@ -73,7 +72,7 @@
                                 <i class="fa fa-plus"></i>
                             </div>
                         </div>
-                        
+
                         <div class="home-product dsSanPham1">
                             <div class="row" id="dsSanPham1">
                                 <div class="col-md-3">
@@ -87,7 +86,7 @@
                                             <span class="home-product-item__price-curent">500.000đ</span>
                                             <span class="home-product-item__price-old">590.000đ</span>
                                         </div>
-                                        
+
                                     </a>
                                 </div>
                             </div>
@@ -118,7 +117,7 @@
                                 </span>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -142,22 +141,18 @@
                     <li class="nav__mobile-item nav__mobile-item--active">
                         <a href="#category-item" class="nav__mobile-item__link" id="sanpham-category2">Sản phẩm
                         </a>
-                    <li class="nav__mobile-item nav__mobile-item-1">
-                        <a href="#category-item" class="nav__mobile-item__link" id="thucanchocho2"
-                            onclick="hienDanhMucThucAnChoCho_Mobile(),removeChecked()">Thức ăn cho chó</a>
-                    </li>
-                    <li class="nav__mobile-item nav__mobile-item-1">
-                        <a href="#category-item" class="nav__mobile-item__link" id="thucanchomeo2"
-                            onclick="hienDanhMucThucAnChoMeo_Mobile(),removeChecked()">Thức ăn cho mèo</a>
-                    </li>
-                    <li class="nav__mobile-item nav__mobile-item-1">
-                        <a href="#category-item" class="nav__mobile-item__link" id="phukienchocho2"
-                            onclick="hienDanhMucPhuKienChoCho_Mobile(),removeChecked()">Phụ kiện cho chó</a>
-                    </li>
-                    <li class="nav__mobile-item nav__mobile-item-1">
-                        <a href="#category-item" class="nav__mobile-item__link" id="phukienchomeo2"
-                            onclick="hienDanhMucPhuKienChoMeo_Mobile(),removeChecked()">Phụ kiện cho mèo</a>
-                    </li>
+                        <li class="nav__mobile-item nav__mobile-item-1">
+                            <a href="#category-item" class="nav__mobile-item__link" id="thucanchocho2" onclick="hienDanhMucThucAnChoCho_Mobile(),removeChecked()">Thức ăn cho chó</a>
+                        </li>
+                        <li class="nav__mobile-item nav__mobile-item-1">
+                            <a href="#category-item" class="nav__mobile-item__link" id="thucanchomeo2" onclick="hienDanhMucThucAnChoMeo_Mobile(),removeChecked()">Thức ăn cho mèo</a>
+                        </li>
+                        <li class="nav__mobile-item nav__mobile-item-1">
+                            <a href="#category-item" class="nav__mobile-item__link" id="phukienchocho2" onclick="hienDanhMucPhuKienChoCho_Mobile(),removeChecked()">Phụ kiện cho chó</a>
+                        </li>
+                        <li class="nav__mobile-item nav__mobile-item-1">
+                            <a href="#category-item" class="nav__mobile-item__link" id="phukienchomeo2" onclick="hienDanhMucPhuKienChoMeo_Mobile(),removeChecked()">Phụ kiện cho mèo</a>
+                        </li>
                 </ul>
             </nav>
             <!-- cover -->
@@ -188,13 +183,12 @@
                                     <div class="form-description">
                                         <div class="form-group">
                                             <label for="name_product" class="label-format">Tên sản phẩm:</label>
-                                            <input type="text" id="name_product" name="name_sp" class="form-control"
-                                                placeholder="Nhập tên sản phẩm">
+                                            <input type="text" id="name_product" name="name_sp" class="form-control" placeholder="Nhập tên sản phẩm">
                                         </div>
                                         <div class="form-group">
                                             <label for="price_product" class="label-format">Giá gốc:</label>
                                             <input type="number" id="price_product" name="price_sp" class="form-control" placeholder="VND">
-                            
+
                                         </div>
                                         <div class="form-group">
                                             <label for="price_product" class="label-format">Giá bán:</label>
@@ -202,15 +196,14 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
-                                            <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="form-control"
-                                                placeholder="Nhập mô tả sản phẩm"></textarea>
+                                            <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
                                             <input type="file" name=upload_file class="button-addimg" id="image_product">
                                         </div>
                                         <div class="add-image">
-                            
+
                                         </div>
                                         <div class="form-button">
                                             <button class="save-button" type="submit">Lưu</button>
@@ -236,13 +229,12 @@
                                     <div class="form-description">
                                         <div class="form-group">
                                             <label for="name_product" class="label-format">Tên sản phẩm:</label>
-                                            <input type="text" id="name_product" name="name_sp" class="form-control"
-                                                placeholder="Nhập tên sản phẩm">
+                                            <input type="text" id="name_product" name="name_sp" class="form-control" placeholder="Nhập tên sản phẩm">
                                         </div>
                                         <div class="form-group">
                                             <label for="price_product" class="label-format">Giá gốc:</label>
                                             <input type="number" id="price_product" name="price_sp" class="form-control" placeholder="VND">
-                            
+
                                         </div>
                                         <div class="form-group">
                                             <label for="price_product" class="label-format">Giá bán:</label>
@@ -250,15 +242,14 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
-                                            <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="form-control"
-                                                placeholder="Nhập mô tả sản phẩm"></textarea>
+                                            <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
                                             <input type="file" name=upload_file class="button-addimg" id="image_product">
                                         </div>
                                         <div class="add-image">
-                            
+
                                         </div>
                                         <div class="form-button">
                                             <button class="save-button" type="submit">Lưu</button>
@@ -291,7 +282,7 @@
                     </div>
                 </div>
             </div>
-        </div>     
+        </div>
         <!-- <app-footer></app-footer> -->
     </div>
     <!-- <script>
