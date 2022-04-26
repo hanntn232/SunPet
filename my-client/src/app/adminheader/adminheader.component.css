@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: OpenSans;
     src: url(/assets/font/OpenSans-Regular.ttf);
@@ -51,6 +52,53 @@ div.dropdown-menu {
 }
 
 .user--position {
+
+.topbar {
+    position: fixed;
+    background-color: #FFA800;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08); */
+    width: 100%;
+    padding: 0 20px;
+    height: 60px;
+    display: grid;
+    grid-template-columns: 3fr 5fr 4fr 1fr;
+    align-items: center;
+    z-index: 10;
+}
+
+.brand-logo {
+    display: flex;
+    float: left;
+    align-items: center;
+}
+
+.logo p {
+    padding-top: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: x-large;
+}
+
+.brand-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.admin-avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.search {
+
     position: relative;
     z-index: 10000000;
 }
@@ -78,6 +126,7 @@ button.btn:focus {
 .display__desktop{
     display: block;
 }
+
 .display__mobile{
     display: none;
 }
@@ -263,4 +312,12 @@ button.btn:focus {
     .mg__Infor{
         margin-left: 50px !important;
     }
+
+
+.user {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    justify-self: right;
+
 }

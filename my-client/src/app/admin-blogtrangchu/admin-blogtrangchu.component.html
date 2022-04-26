@@ -5,27 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
     <title>Blog Trang tong the</title>
 </head>
 
 <body>
     <!-- phần Header -->
-    <app-header></app-header>
+    <div>
+        <app-adminheader></app-adminheader>
+    </div>
+    <!-- chua done -->
+    <!-- <app-adminnavbar></app-adminnavbar> -->
     <!-- Phần body -->
-    <div class="page__bg">
+    <div class="page__bg  ">
         <div class="welcom__page">
-            <!-- <h1 class="title_page">Tin tức</h1> -->
             <div class="container">
                 <div class="box-left">
                     <h1 class="title_page">Tin tức</h1>
-
                 </div>
-                <div class="box-right">
-                    <button class="btn-header "> 
-                    <span><i class="fa fa-plus fa-lg"></i></span>
+                <div class="box-right" onclick="addBlog()">
+                    <a href="#formAddBlog">
+                        <button class="btn-header "> 
+                    <span><i class="fa-solid fa-plus" style="font-size:25px"></i></span>
+                    
                      Thêm bài viết</button>
 
-                    <span class="add-mobile" onclick="addBlog()"><i class="fa fa-plus fa-lg"></i></span>
+                        <span class="add-mobile" onclick="addBlog()"><i class="fa fa-plus "></i></span></a>
                 </div>
                 <br>
             </div>
@@ -38,34 +47,37 @@
                                 <a href="../HTML_chitiet_blog/blog_chitiet_MeoDiVS.html" title="Cách ít người biết để dạy mèo đi vệ sinh đúng chỗ">
                                     <img src="assets/image/cun1.jpg" alt="Cách ít người biết để dạy mèo đi vệ sinh đúng chỗ" class="img-responsive ">
                                     <div class="blog-edit">
-                                        <button class="btn-edit"> <span>
+                                        <a href="#formEditBlog">
+                                            <button class="btn-edit"> <span>
                                             <i class=" fa-solid fa-pen-to-square"></i>
                                         </span>
                                             Sửa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                     <div class="blog-edit1">
                                         <div id="btn-mobile1">
-
                                             <i class="fas fa-eye fa-lg"></i>
+                                            <!-- <i class="fa-light fa-eye"></i> -->
                                         </div>
                                         <div id="btn-mobile2">
-
-                                            <i class=" fa-solid fa-pen-to-square"></i>
+                                            <a href="#formEditBlog">
+                                                <i class=" fa-solid fa-pen-to-square"></i></a>
                                         </div>
                                         <div id="btn-mobile3">
-                                            <i class="fa-solid fa-trash-can"></i>
+                                            <a href="#formDeleteBlog">
+                                                <i class="fa-solid fa-trash-can"></i></a>
                                         </div>
                                     </div>
-
-
                                     <div class="blog-delete">
-                                        <button class="btn-delete">
+                                        <a href="#formDeleteBlog">
+                                            <button class="btn-delete">
                                             <span>
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </span>
                                             Xóa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                 </a>
                             </div>
@@ -111,33 +123,36 @@
                                 <a href="../HTML_chitiet_blog/blog_chitiet_ChovaBeGai.html" title="Tình yêu giống như một con chó, mình đuổi thì nó chạy mình chạy thì nó lại đuổi">
                                     <img src="assets/image/cun2.jpg" alt="Tình yêu giống như một con chó, mình đuổi thì nó chạy mình chạy thì nó lại đuổi" class="img-responsive " data-was-processed="true">
                                     <div class="blog-edit">
-                                        <button class="btn-edit"> <span>
+                                        <a href="#formEditBlog">
+                                            <button class="btn-edit"> <span>
                                             <i class=" fa-solid fa-pen-to-square"></i>
                                         </span>
-        
                                             Sửa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                     <div class="blog-edit1">
                                         <div id="btn-mobile1">
-
                                             <i class="fas fa-eye fa-lg"></i>
                                         </div>
                                         <div id="btn-mobile2">
-
-                                            <i class=" fa-solid fa-pen-to-square"></i>
+                                            <a href="#formEditBlog">
+                                                <i class=" fa-solid fa-pen-to-square"></i></a>
                                         </div>
                                         <div id="btn-mobile3">
-                                            <i class="fa-solid fa-trash-can"></i>
+                                            <a href="#formDeleteBlog">
+                                                <i class="fa-solid fa-trash-can"></i></a>
                                         </div>
                                     </div>
                                     <div class="blog-delete">
-                                        <button class="btn-delete">
+                                        <a href="#formDeleteBlog">
+                                            <button class="btn-delete">
                                             <span>
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </span>
                                             Xóa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                 </a>
                             </div>
@@ -181,33 +196,36 @@
                                 <a href="../HTML_chitiet_blog/blog_chitiet_ChoHusky.html" title="Nên nuôi chó Husky hay Alaska">
                                     <img src="assets/image/cun3.jpg" alt="Nên nuôi chó Husky hay Alaska" class="img-responsive " data-was-processed="true">
                                     <div class="blog-edit">
-                                        <button class="btn-edit"> <span>
+                                        <a href="#formEditBlog">
+                                            <button class="btn-edit"> <span>
                                             <i class=" fa-solid fa-pen-to-square"></i>
                                         </span>
-        
                                             Sửa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                     <div class="blog-edit1">
                                         <div id="btn-mobile1">
-
                                             <i class="fas fa-eye fa-lg"></i>
                                         </div>
                                         <div id="btn-mobile2">
-
-                                            <i class=" fa-solid fa-pen-to-square"></i>
+                                            <a href="#formEditBlog">
+                                                <i class=" fa-solid fa-pen-to-square"></i></a>
                                         </div>
                                         <div id="btn-mobile3">
-                                            <i class="fa-solid fa-trash-can"></i>
+                                            <a href="#formDeleteBlog">
+                                                <i class="fa-solid fa-trash-can"></i></a>
                                         </div>
                                     </div>
                                     <div class="blog-delete">
-                                        <button class="btn-delete">
+                                        <a href="#formDeleteBlog">
+                                            <button class="btn-delete">
                                             <span>
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </span>
                                             Xóa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                 </a>
                             </div>
@@ -251,34 +269,36 @@
                                 <a href="../HTML_chitiet_blog/blog_chitiet_TSCTNVN.html" title="Tại sao chó thích ngủ với người? dấu hiệu cún cứng yêu bạn">
                                     <img src="assets/image/cun4.jpg" alt="Tại sao chó thích ngủ với người? dấu hiệu cún cứng yêu bạn" class="img-responsive " data-was-processed="true">
                                     <div class="blog-edit">
-                                        <button class="btn-edit"> <span>
+                                        <a href="#formEditBlog">
+                                            <button class="btn-edit"> <span>
                                             <i class=" fa-solid fa-pen-to-square"></i>
                                         </span>
-        
                                             Sửa bài viết
                                         </button>
+                                        </a>
                                     </div>
-
                                     <div class="blog-edit1">
                                         <div id="btn-mobile1">
-
                                             <i class="fas fa-eye fa-lg"></i>
                                         </div>
                                         <div id="btn-mobile2">
-
-                                            <i class=" fa-solid fa-pen-to-square"></i>
+                                            <a href="#formEditBlog">
+                                                <i class=" fa-solid fa-pen-to-square"></i></a>
                                         </div>
                                         <div id="btn-mobile3">
-                                            <i class="fa-solid fa-trash-can"></i>
+                                            <a href="#formDeleteBlog">
+                                                <i class="fa-solid fa-trash-can"></i></a>
                                         </div>
                                     </div>
                                     <div class="blog-delete">
-                                        <button class="btn-delete">
+                                        <a href="#formDeleteBlog">
+                                            <button class="btn-delete">
                                             <span>
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </span>
                                             Xóa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                 </a>
                             </div>
@@ -322,33 +342,36 @@
                                 <a href="../HTML_chitiet_blog/blog_chitiet_TAChuotHamter.html" title="Thức ăn cho chuột hamster – những điều cần biết">
                                     <img src="assets/image/cun5.jpg" alt="Thức ăn cho chuột hamster – những điều cần biết" class="img-responsive " data-was-processed="true">
                                     <div class="blog-edit">
-                                        <button class="btn-edit"> <span>
+                                        <a href="#formEditBlog">
+                                            <button class="btn-edit"> <span>
                                             <i class=" fa-solid fa-pen-to-square"></i>
                                         </span>
-        
                                             Sửa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                     <div class="blog-edit1">
                                         <div id="btn-mobile1">
-
                                             <i class="fas fa-eye fa-lg"></i>
                                         </div>
                                         <div id="btn-mobile2">
-
-                                            <i class=" fa-solid fa-pen-to-square"></i>
+                                            <a href="#formEditBlog">
+                                                <i class=" fa-solid fa-pen-to-square"></i></a>
                                         </div>
                                         <div id="btn-mobile3">
-                                            <i class="fa-solid fa-trash-can"></i>
+                                            <a href="#formDeleteBlog">
+                                                <i class="fa-solid fa-trash-can"></i></a>
                                         </div>
                                     </div>
                                     <div class="blog-delete">
-                                        <button class="btn-delete">
+                                        <a href="#formDeleteBlog">
+                                            <button class="btn-delete">
                                             <span>
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </span>
                                             Xóa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                 </a>
                             </div>
@@ -395,33 +418,36 @@
                                 <a href="../HTML_chitiet_blog/blog_chitiet_HLCNL10P.html" title="Huấn luyện chó con nghe lời chỉ với 10 phút mỗi ngày">
                                     <img src="assets/image/cun6.jpg" alt="Huấn luyện chó con nghe lời chỉ với 10 phút mỗi ngày" class="img-responsive " data-was-processed="true">
                                     <div class="blog-edit">
-                                        <button class="btn-edit"> <span>
+                                        <a href="#formEditBlog">
+                                            <button class="btn-edit"> <span>
                                             <i class=" fa-solid fa-pen-to-square"></i>
                                         </span>
-        
                                             Sửa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                     <div class="blog-edit1">
                                         <div id="btn-mobile1">
-
                                             <i class="fas fa-eye fa-lg"></i>
                                         </div>
                                         <div id="btn-mobile2">
-
-                                            <i class=" fa-solid fa-pen-to-square"></i>
+                                            <a href="#formEditBlog">
+                                                <i class=" fa-solid fa-pen-to-square"></i></a>
                                         </div>
                                         <div id="btn-mobile3">
-                                            <i class="fa-solid fa-trash-can"></i>
+                                            <a href="#formDeleteBlog">
+                                                <i class="fa-solid fa-trash-can"></i></a>
                                         </div>
                                     </div>
                                     <div class="blog-delete">
-                                        <button class="btn-delete">
+                                        <a href="#formDeleteBlog">
+                                            <button class="btn-delete">
                                             <span>
                                                 <i class="fa-solid fa-trash-can"></i>
                                             </span>
                                             Xóa bài viết
                                         </button>
+                                        </a>
                                     </div>
                                 </a>
                             </div>
@@ -467,33 +493,36 @@
                                     <img src="assets/image/cun7.jpgg" alt="Pate cho chó - Giải pháp chuyên trị cho chó
                                                     kén ăn" class="img-responsive " data-was-processed="true">
                                     <div class="blog-edit">
-                                        <button class="btn-edit"> <span>
+                                        <a href="#formEditBlog">
+                                            <button class="btn-edit"> <span>
                                                             <i class=" fa-solid fa-pen-to-square"></i>
                                                         </span>
-                        
                                                             Sửa bài viết
                                                         </button>
+                                        </a>
                                     </div>
                                     <div class="blog-edit1">
                                         <div id="btn-mobile1">
-
                                             <i class="fas fa-eye fa-lg"></i>
                                         </div>
                                         <div id="btn-mobile2">
-
-                                            <i class=" fa-solid fa-pen-to-square"></i>
+                                            <a href="#formEditBlog">
+                                                <i class=" fa-solid fa-pen-to-square"></i></a>
                                         </div>
                                         <div id="btn-mobile3">
-                                            <i class="fa-solid fa-trash-can"></i>
+                                            <a href="#formDeleteBlog">
+                                                <i class="fa-solid fa-trash-can"></i></a>
                                         </div>
                                     </div>
                                     <div class="blog-delete">
-                                        <button class="btn-delete">
+                                        <a href="#formDeleteBlog">
+                                            <button class="btn-delete">
                                                             <span>
                                                                 <i class="fa-solid fa-trash-can"></i>
                                                             </span>
                                                             Xóa bài viết
                                                         </button>
+                                        </a>
                                     </div>
                                 </a>
                             </div>
@@ -616,8 +645,31 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <!-- <div>
                     <img src="assets/image/Sunpet shop (1).png" alt="Huấn luyện chó con nghe lời chỉ với 10 phút mỗi ngày" class="welcom__page lazyload loaded" data-was-processed="true">
+                </div> -->
+                <div id="carousel-container">
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="assets/image/AnhBiaBlog.png" class="d-block w-100" alt="">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="assets/image/AnhBiaBlog2.png" class="d-block w-100" alt="">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="assets/image/AnhBiaBlog3.png" class="d-block w-100" alt="">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
                 </div>
             </div>
             <!-- Phần từ khóa tìm kiếm -->
@@ -633,8 +685,154 @@
             </div>
         </div>
     </div>
+    <!-- Form -->
+    <!-- Form AddBlog -->
+    <div id='formAddBlog'>
+        <div class='formAddBlog_' tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="form-title" role="document">
+                <h3 class="title-text">Thêm thông tin bài viết</h3>
+                <a href="" class="close">x</a>
+            </div>
+
+            <div class="container1">
+                <form action="">
+                    <!-- /action_page.php -->
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="tieude">Tiêu đề:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="tieude" name="tieude" placeholder="Nhập tiêu đề">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="noidung">Nội dung bài viết:</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="noidung" name="noidung" placeholder="Viết gì đó..." style="height:100px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Hình ảnh:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="submit" value="Thêm hình ảnh">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                        </div>
+                        <div class="col-75">
+                            <i class="fa fa-image"></i>
+                            <i class="fa fa-image"></i>
+                            <i class="fa fa-image"></i>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                        </div>
+                        <div class="col-75">
+                            <input class="button_form" type="submit" value="Hủy">
+                            <input class="button_form" type="submit" value="Lưu">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Form EditBlog -->
+    <div id='formEditBlog'>
+        <div class='formEditBlog_' tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="form-title" role="document">
+                <h3 class="title-text">Sửa thông tin bài viết</h3>
+                <a href="" class="close">x</a>
+            </div>
+
+            <div class="container1">
+                <form action="">
+                    <!-- /action_page.php -->
+
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="tieude">Tiêu đề:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="tieude" name="tieude" placeholder="Nhập tiêu đề">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="noidung">Nội dung bài viết:</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea id="noidung" name="noidung" placeholder="Viết gì đó..." style="height:100px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="fname">Hình ảnh:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="submit" value="Thêm hình ảnh">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                        </div>
+                        <div class="col-75">
+                            <i class="fa fa-image"></i>
+                            <i class="fa fa-image"></i>
+                            <i class="fa fa-image"></i>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                        </div>
+                        <div class="col-75">
+                            <input class="button_form" type="submit" value="Hủy">
+                            <input class="button_form" type="submit" value="Lưu">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Form DeleteBlog -->
+    <div id='formDeleteBlog'>
+        <div class='formDeleteBlog_'>
+            <div class="form-title">
+                <h3 class="title-text">Bạn có muốn xóa bài viết không?</h3>
+                <a href="" class="close">x</a>
+            </div>
+            <div class="fa--check">
+                <i class="fas fa-check-circle" style="color: green"></i>
+            </div>
+            <div class="container">
+                <form action="">
+                    <div class="row">
+                        <div class="col-25">
+                        </div>
+                        <div class="col-75">
+                            <input class="button_formDelete" type="submit" value="Không">
+                            <input class="button_formDelete" type="submit" value="Có">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Form SeenBlog -->
+
     <!-- Phần footer -->
-    <app-footer></app-footer>
+    <div>
+
+        <app-adminfooter></app-adminfooter>
+    </div>
 </body>
 
 </html>
