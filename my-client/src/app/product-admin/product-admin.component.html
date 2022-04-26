@@ -10,14 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <!-- <script src="../JS/sanPham.js"></script>
-    <script src="../JS/sanPhamStorage.js"></script> -->
 </head>
 
 <body>
+    
     <div class="app">
-        <app-header></app-header>
-        
+        <app-adminheader></app-adminheader>
         <div class="app__container">
             <div class="grid-wide">
                 <div class="search">
@@ -27,7 +25,47 @@
                 <div class="row sm-gutter app__content">
                     <!-- menu -->
                     <div class="col-md-3">
-
+                        <div class="sidebar">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-house"></i>
+                                        <div>Quản lý chung</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-cart-shopping"></i>
+                                        <div>Sản phẩm</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-newspaper"></i>
+                                        <div>Bài viết</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-list-check"></i>
+                                        <div>Đơn hàng</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-earth-asia"></i>
+                                        <!-- <i class="fas fa-chart-bar"></i> -->
+                                        <div>Website</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-cog"></i>
+                                        <div>Cài đặt</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <!-- product -->
                     <div class="col-md-9">
@@ -73,21 +111,33 @@
                                 <i class="fa fa-plus"></i>
                             </div>
                         </div>
-                        
                         <div class="home-product dsSanPham1">
                             <div class="row" id="dsSanPham1">
                                 <div class="col-md-3">
                                     <!-- Product item -->
-                                    <a class="home-product-item" href="../HTML_Chitiet_sanpham/Detail1.html" target="_self">
+                                    <a class="home-product-item">
                                         <div class="product-image">
-                                            <img src="https://bizweb.dktcdn.net/thumb/large/100/432/370/products/sua-bot-cho-meo-dr-kyan-precaten-anh.jpg?v=1626752115000" alt="Image" class="hoverable">
+                                            <img src="https://bizweb.dktcdn.net/thumb/large/100/432/370/products/sua-bot-cho-meo-dr-kyan-precaten-anh.jpg?v=1626752115000" alt="Image">
                                         </div>
                                         <h4 class="home-product-item__name">Sữa bột cho mèo 110g Dr.Kyan Precaten</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-curent">500.000đ</span>
                                             <span class="home-product-item__price-old">590.000đ</span>
                                         </div>
-                                        
+                                        <!-- cover -->
+                                        <div class="cover-product">
+                                            <div class="icon-edit-delete">
+                                                <button class="icon-change d-inline-flex align-self-center" data-bs-toggle="modal"
+                                                    data-bs-target="#formChangeProduct">
+                                                    <i class="fa fa-pen-to-square"></i>
+                                                    <p>Sửa</p>
+                                                </button>
+                                                <button class="icon-change d-inline-flex" data-bs-toggle="modal" data-bs-target="#formDeleteProduct">
+                                                    <i class="fa fa-trash-can"></i>
+                                                    <p>Xóa</p>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -160,30 +210,18 @@
                     </li>
                 </ul>
             </nav>
-            <!-- cover -->
-            <div class="cover-product">
-                <div class="icon-edit-delete">
-                    <button class="icon-change d-inline-flex align-self-center" data-bs-toggle="modal" data-bs-target="#formChangeProduct">
-                        <i class="fa fa-pen-to-square"></i>
-                        <p>Sửa</p>
-                    </button>
-                    <button class="icon-change d-inline-flex" data-bs-toggle="modal" data-bs-target="#formDeleteProduct">
-                        <i class="fa fa-trash-can"></i>
-                        <p>Xóa</p>
-                    </button>
-                </div>
-            </div>
+            
             <!-- form -->
             <!-- form add product -->
             <div class="container-fluid-form modal fade" id="formAddProduct" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                 <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
+                    <div class="modal-content modal--content--fix">
                         <div class="modal-body">
                             <div class="row">
                                 <form action="">
-                                    <div class="modal-header">
-                                        <h5 class="text-center">Điền thông tin sản phẩm</h5>
-                                        <button type="button" class="btn-close" aria-label="Close" data-dismiss="modal"></button>
+                                    <div class="modal--header">
+                                        <button type="button" class="btn-close modal--close" aria-label="Close" data-dismiss="modal"></button>
+                                        <h5 class="modal--header-content">Điền thông tin sản phẩm</h5>
                                     </div>
                                     <div class="form-description">
                                         <div class="form-group">
@@ -193,12 +231,14 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="price_product" class="label-format">Giá gốc:</label>
-                                            <input type="number" id="price_product" name="price_sp" class="form-control" placeholder="VND">
+                                            <input type="number" id="price_product" name="price_sp" class="form-control">
+                                            <span class="input-group-text">VND</span>
                             
                                         </div>
                                         <div class="form-group">
                                             <label for="price_product" class="label-format">Giá bán:</label>
-                                            <input type="number" id="price_discount" name="price_new" class="form-control" placeholder="VND">
+                                            <input type="text" id="price_discount" name="price_new" class="form-control">
+                                            <span class="input-group-text">VND</span>
                                         </div>
                                         <div class="form-group">
                                             <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
@@ -209,6 +249,7 @@
                                             <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
                                             <input type="file" name=upload_file class="button-addimg" id="image_product">
                                         </div>
+                                        
                                         <div class="add-image">
                             
                                         </div>
@@ -223,42 +264,45 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid-form modal fade" id="formChangeProduct" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <!-- formchange -->
+            <div class="container-fluid-form modal fade" id="formChangeProduct" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
                 <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
+                    <div class="modal-content modal--content--fix">
                         <div class="modal-body">
                             <div class="row">
                                 <form action="">
-                                    <div class="modal-header">
-                                        <h5 class="text-center">Sửa thông tin sản phẩm</h5>
-                                        <button type="button" class="btn-close" aria-label="Close" data-dismiss="modal"></button>
+                                    <div class="modal--header">
+                                        <button type="button" class="btn-close modal--close" aria-label="Close" data-dismiss="modal"></button>
+                                        <h5 class="modal--header-content">Sửa thông tin sản phẩm</h5>
                                     </div>
                                     <div class="form-description">
                                         <div class="form-group">
                                             <label for="name_product" class="label-format">Tên sản phẩm:</label>
                                             <input type="text" id="name_product" name="name_sp" class="form-control"
-                                                placeholder="Nhập tên sản phẩm">
+                                                placeholder="Sữa bột cho mèo 110g Dr.Kyan Precaten">
                                         </div>
                                         <div class="form-group">
                                             <label for="price_product" class="label-format">Giá gốc:</label>
-                                            <input type="number" id="price_product" name="price_sp" class="form-control" placeholder="VND">
-                            
+                                            <input type="number" id="price_product" name="price_sp" class="form-control">
+                                            <span class="input-group-text">VND</span>
                                         </div>
                                         <div class="form-group">
                                             <label for="price_product" class="label-format">Giá bán:</label>
-                                            <input type="number" id="price_discount" name="price_new" class="form-control" placeholder="VND">
+                                            <input type="text" id="price_discount" name="price_new" class="form-control">
+                                            <span class="input-group-text">VND</span>
                                         </div>
                                         <div class="form-group">
                                             <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
                                             <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="form-control"
                                                 placeholder="Nhập mô tả sản phẩm"></textarea>
                                         </div>
+                                        
                                         <div class="form-group">
                                             <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
-                                            <input type="file" name=upload_file class="button-addimg" id="image_product">
+                                            <input type="file" name="upload_file" class="form-control-file" id="image_product">
                                         </div>
+                                        <img src="" width="90%" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-left,rounded-bottom,rounded-circle|}">
                                         <div class="add-image">
-                            
                                         </div>
                                         <div class="form-button">
                                             <button class="save-button" type="submit">Lưu</button>
@@ -277,22 +321,20 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="row">
-                            <div class="icon-popupdelete">
-                                <i class="fa fa-close"></i>
-                            </div>
+                            <button type="button" class="btn-close modal--close--1" aria-label="Close" data-dismiss="modal"></button>
                             <div class="popup-delete-content">
                                 <p>Bạn có muốn xóa sản phẩm không?</p>
                                 <div class="popup-button">
-                                    <button class="save-button" type="submit">Có</button>
-                                    <button class="cancel-button" data-dismiss="modal" type="button">Không</button>
+                                    <button class="button--yes" type="submit">Có</button>
+                                    <button class="button--no" data-dismiss="modal" type="button">Không</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>     
-        <!-- <app-footer></app-footer> -->
+        </div>   
+        <app-adminfooter></app-adminfooter> 
     </div>
     <!-- <script>
         taoDanhSachSanPham();
