@@ -52,7 +52,9 @@ div.dropdown-menu {
 }
 
 .user--position {
-
+    position: relative;
+    z-index: 10000000;
+}
 .topbar {
     position: fixed;
     background-color: #FFA800;
@@ -320,4 +322,5 @@ button.btn:focus {
     height: 50px;
     justify-self: right;
 
+}
 }
