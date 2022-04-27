@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormthemsanphamComponent } from './formthemsanpham.component';
+import { AdminBlogtrangchuComponent } from './admin-blogtrangchu.component';
 
-describe('FormthemsanphamComponent', () => {
-  let component: FormthemsanphamComponent;
-  let fixture: ComponentFixture<FormthemsanphamComponent>;
+describe('AdminBlogtrangchuComponent', () => {
+  let component: AdminBlogtrangchuComponent;
+  let fixture: ComponentFixture<AdminBlogtrangchuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormthemsanphamComponent ]
+      declarations: [ AdminBlogtrangchuComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormthemsanphamComponent);
+    fixture = TestBed.createComponent(AdminBlogtrangchuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
