@@ -13,15 +13,14 @@
     <!-- <script src="../JS/sanPham.js"></script>
     <script src="../JS/sanPhamStorage.js"></script> -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    
+
     <div class="app">
 
-        <app-header></app-header>
+        <!-- <app-header></app-header> -->
 
 
         <app-adminheader></app-adminheader>
@@ -144,8 +143,7 @@
                                         <!-- cover -->
                                         <div class="cover-product">
                                             <div class="icon-edit-delete">
-                                                <button class="icon-change d-inline-flex align-self-center" data-bs-toggle="modal"
-                                                    data-bs-target="#formChangeProduct">
+                                                <button class="icon-change d-inline-flex align-self-center" data-bs-toggle="modal" data-bs-target="#formChangeProduct">
                                                     <i class="fa fa-pen-to-square"></i>
                                                     <p>Sửa</p>
                                                 </button>
@@ -224,7 +222,7 @@
                         </li>
                 </ul>
             </nav>
-            
+
             <!-- form -->
             <!-- form add product -->
             <div class="container-fluid-form modal fade" id="formAddProduct" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
@@ -250,7 +248,7 @@
 
                                             <input type="number" id="price_product" name="price_sp" class="form-control">
                                             <span class="input-group-text">VND</span>
-                            
+
 
                                         </div>
                                         <div class="form-group">
@@ -266,7 +264,7 @@
                                             <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
                                             <input type="file" name=upload_file class="button-addimg" id="image_product">
                                         </div>
-                                        
+
                                         <div class="add-image">
 
                                         </div>
@@ -303,8 +301,7 @@
                                             <input type="number" id="price_product" name="price_sp" class="form-control" placeholder="VND">
 
 
-                                            <input type="text" id="name_product" name="name_sp" class="form-control"
-                                                placeholder="Sữa bột cho mèo 110g Dr.Kyan Precaten">
+                                            <input type="text" id="name_product" name="name_sp" class="form-control" placeholder="Sữa bột cho mèo 110g Dr.Kyan Precaten">
                                         </div>
                                         <div class="form-group">
                                             <label for="price_product" class="label-format">Giá gốc:</label>
@@ -321,7 +318,7 @@
                                             <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
                                             <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm"></textarea>
                                         </div>
-                                        
+
                                         <div class="form-group">
                                             <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
                                             <input type="file" name="upload_file" class="form-control-file" id="image_product">
@@ -365,10 +362,10 @@
 
         </div>
         <!-- <app-footer></app-footer> -->
-        </div>   
-        <app-adminfooter></app-adminfooter> 
-
     </div>
+    <app-adminfooter></app-adminfooter>
+
+
     <!-- <script>
         taoDanhSachSanPham();
         //Load sản phẩm trang 1 khi mở trang lên
