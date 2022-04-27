@@ -48,7 +48,7 @@ html {
 .sidebar {
     position: fixed;
     top: 60px;
-    width: 260px;
+    /* width: 260px; */
     height: calc(100% - 60px);
     background: #FFC700;
     overflow-x: hidden;
@@ -60,9 +60,15 @@ html {
     margin-top: 20px;
 }
 
+.sidebar>ul {
+    padding: 0px;
+}
+
 .sidebar ul li {
     width: 100%;
     list-style: none;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .sidebar ul li:hover {
