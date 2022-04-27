@@ -37,10 +37,14 @@ html {
     padding-top: 10px;
 }
 
+
 /* .grid.wide {
     margin: 0px 5px;
 } */
+
+
 /* navbar */
+
 .sidebar {
     position: fixed;
     top: 60px;
@@ -83,7 +87,10 @@ html {
     font-size: 24px;
     text-align: center;
 }
+
+
 /*  */
+
 .category {
     padding: 0px 5px;
 }
@@ -226,12 +233,9 @@ html {
     margin-bottom: 0;
 }
 
-
 .search .fas.fa-search:hover {
     background-color: #FFD541;
 }
-
-
 
 
 /* container app + popup */
@@ -268,7 +272,10 @@ html {
     position: relative;
     top: 90px;
 } */
+
+
 /* modal */
+
 .modal-body {
     margin: 0;
     padding: 0;
@@ -278,9 +285,11 @@ html {
     border-radius: 15px;
     border: 1px solid #FFC700;
 }
-.modal-content{
+
+.modal-content {
     border: none;
 }
+
 .modal--header {
     background-color: #FFC700;
     border-radius: 15px 15px 0 0;
@@ -293,13 +302,15 @@ html {
     font-weight: bold;
 }
 
-.modal--header--content{
+.modal--header--content {
     position: absolute;
 }
-.modal--close{
+
+.modal--close {
     position: absolute;
     right: 10px;
 }
+
 .title-text {
     position: relative;
     font-weight: bold;
@@ -328,9 +339,11 @@ html {
     line-height: 15px;
     width: 70%;
 }
-.input-group-text{
+
+.input-group-text {
     background-color: #FFC700;
 }
+
 .button-addimg {}
 
 .form-button {
@@ -345,7 +358,6 @@ html {
     border: 2px solid #FFC700;
     background-color: #FFC700;
     padding: 5px 10px;
-    
 }
 
 .cancel-button {
@@ -355,6 +367,8 @@ html {
     background-color: #A3A2A1;
     padding: 5px 10px;
 }
+
+
 /* close form */
 
 
@@ -375,22 +389,23 @@ html {
 .icon-popupdelete {
     text-align: right;
     margin-right: 20px;
-    
 }
 
 .popup-delete-content {
     text-align: center;
-    margin-top:20px ;
+    margin-top: 20px;
 }
 
 .popup-button {
     margin-bottom: 10px;
 }
-.modal--close--1{
+
+.modal--close--1 {
     position: absolute;
     right: 5px;
     margin: 3px;
 }
+
 .button--yes {
     margin-right: 10px;
     border-radius: 7px;
@@ -408,6 +423,8 @@ html {
     padding: 5px 10px;
     width: 30%;
 }
+
+
 /* Product item */
 
 .home-product {
@@ -432,7 +449,8 @@ html {
     cursor: pointer;
     overflow: hidden;
 }
-.home-product-item::after{
+
+.home-product-item::after {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -441,13 +459,16 @@ html {
     background: rgba(0, 0, 0, 0.3);
     top: 0;
     left: -100%;
-    
 }
+
 .home-product-item:hover::after {
     left: 0;
 }
+
+
 /* hover hien nut sua xoa */
-.home-product-item .cover-product{
+
+.home-product-item .cover-product {
     position: absolute;
     top: 40%;
     left: 3.5%;
@@ -455,12 +476,16 @@ html {
     width: 100%;
     height: 100%;
 }
-.home-product-item:hover .cover-product{
+
+.home-product-item:hover .cover-product {
     opacity: 1;
     transition: 0.5s;
     z-index: 1;
 }
+
+
 /*  */
+
 div#dsSanPham1>div {
     height: auto;
     width: 200px;
@@ -736,7 +761,10 @@ div#dsSanPham1>div {
 .nav__input:checked~.nav__mobile {
     transform: translateX(0);
 }
+
+
 /* modal */
+
 
 /* Định dạng frame footer */
 
