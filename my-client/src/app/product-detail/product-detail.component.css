@@ -320,6 +320,7 @@ html {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    width: 100%;
 }
 
 .home-product-item1__name {

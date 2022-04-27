@@ -7,7 +7,7 @@ import { IDblog } from '../model/blog';
   providedIn: 'root'
 })
 export class BlogchitietService {
-  public urlBlog: string = "assets/data/blog.json"
+  public urlBlog: string = "http://localhost:3000/blogs"
 
   constructor(private _http: HttpClient) { }
 
