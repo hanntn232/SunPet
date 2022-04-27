@@ -135,6 +135,78 @@ button.btn:focus {
 .display_img{
     display: none;
 }
+/* menu-slidebar */
+.container-menu{
+    z-index: 1000000000;
+    position: relative;
+}
+.menu-slidebar{
+    display: block;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+.menu-slidebar>i{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/*  */
+/* icon menu */
+
+.navbar--overlay--menu{
+    position:fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+    height: 100vh;
+}
+.nav--bar--menu{
+    display: none;
+}
+.nav__list--menu{
+    margin-top: 50px;
+    background-color: #FFC700;
+    height: 100%;
+
+}
+.nav__list--menu>li{
+    border-bottom: 2px solid black;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+
+.nav__list--menu i{
+    margin-right: 10px;
+}
+
+.nav--bar--menu ul{
+    list-style-type: none;
+}
+
+.nav--bar--menu a:hover{
+    color: white; 
+}
+
+.nav--link--menu{
+    color: black;
+    text-decoration: none;
+    display: flex;
+}
+.nav__input--menu{
+    display: none;
+}
+.nav__input--menu:checked ~ .nav--bar--menu{
+    transform: translateX(0%);
+}
+.nav__input--menu:checked ~ .nav__list--menu{
+    transform: translateX(0%);
+}
+
+/*  */
 @media screen and (max-width: 820px) {
     .navbar{
         margin: 0 !important;
@@ -165,6 +237,7 @@ button.btn:focus {
         display: none;
     }
 }
+
 @media screen and (max-width: 768px) {
     .search--input {
         border-top-left-radius: 7px;
@@ -179,6 +252,25 @@ button.btn:focus {
     .display__navbar{
         display: none;
     }
+    /* icon menu slidebar */
+    .nav__input--menu:checked ~ .nav--bar--menu{
+        display: block;
+    }
+    .nav--bar--menu{
+        position: fixed;
+        top: 0px;
+        right: 0;
+        bottom: 0;
+        width: 250px;
+        max-width: 100%;
+        transform: translateX(-100%);
+        background-color: #FFC700;
+    }
+
+    .nav__input--menu:checked ~ .navbar--overlay--menu{
+        display: block;
+    }
+    /*  */
 }
 @media screen and (max-width: 680px) {
     .display__Infor{
