@@ -59,14 +59,14 @@ export class LineChartComponent{
           color: "#000",
           top: 18,
           left: 7,
-          blur: 10,
+          blur: 5,
           opacity: 0.2
         },
         toolbar: {
           show: false
         }
       },
-      colors: ["#77B6EA", "#545454"],
+      colors: ["#4CDFE8", "#48FB77"],
       dataLabels: {
         enabled: true
       },
@@ -85,7 +85,7 @@ export class LineChartComponent{
         }
       },
       markers: {
-        size: 1
+        size: 0.1
       },
       xaxis: {
         categories: ["1", "2", "3", "4", "5", "6", "7","8","9","10","11","12"],

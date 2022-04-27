@@ -36,6 +36,9 @@ import { AdminfooterComponent } from './adminfooter/adminfooter.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { PiechartComponent } from './piechart/piechart.component';
+import { AdmintasklistComponent } from './admintasklist/admintasklist.component';
+import { ChatlistComponent } from './chatlist/chatlist.component';
+import { ChatboxComponent } from './chatbox/chatbox.component';
 
 
 @NgModule({
@@ -72,6 +75,9 @@ import { PiechartComponent } from './piechart/piechart.component';
     AdminfooterComponent,
     LineChartComponent,
     PiechartComponent,
+    AdmintasklistComponent,
+    ChatlistComponent,
+    ChatboxComponent,
   ],
   imports: [
     BrowserModule,

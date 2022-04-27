@@ -1,91 +1,58 @@
-<!-- <div class="side-menu">
-      <div class="brand-name">
-            <img class="brand-logo" src="../assets/image/logo_white.png">
-            <h1>SUNPET</h1>
+
+  <div>
+    <input type="checkbox" id="sidebar-toggle">
+      <div class="sidebar">
+          <div class="sidebar-header">
+              <h3 class="brand">
+                <img class="brand-logo" src="../assets/image/logo_white.png">
+                  <span class="align-middle text-light">SUNPET</span>
+              </h3> 
+              <label for="sidebar-toggle" class="ti-menu-alt"><i class="fa-solid fa-bars"></i></label>
+          </div>
+          
+          <div class="sidebar-menu">
+              <ul>
+                  <li>
+                      <a href="">
+                        <i class="fa-solid fa-gauge"></i>
+                          <span>Quản lý chung</span>
+                      </a>
+                  </li>
+                  <li>
+                    <a href="">
+                      <i class="fa-solid fa-cart-shopping"></i>
+                        <span>Sản phẩm</span>
+                    </a>
+                </li>
+                  <li>
+                      <a href="">
+                        <i class="fa-solid fa-image"></i>
+                          <span>Bài viết</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="">
+                        <i class='fas fa-money-check'></i>
+                          <span>Đơn hàng</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="">
+                        <i class="fa-solid fa-earth-asia"></i>
+                          <span>Website</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="">
+                        <i class="fas fa-cog"></i>
+                          <span>Cài đặt</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
       </div>
-      <ul>
-            <li><i class="fa-solid fa-house-window"></i> &nbsp; <span>Quản lý chung</span> </li>
-            <li><i class="fa-solid fa-cart-shopping"></i> &nbsp;<span>Sản phẩm</span> </li>
-            <li><i class="fa-solid fa-memo"></i> &nbsp;<span>Bài viết</span> </li>
-            <li><i class="fa-solid fa-ballot-check"></i> &nbsp;<span>Đơn hàng</span> </li>
-            <li><i class="fa-solid fa-browsers"></i> &nbsp;<span>Website</span> </li>
-            <li><i class="fa-solid fa-gear"></i> &nbsp; <span>Cài đặt</span></li>
-      </ul>
-</div> -->
-<div class="sidebar">
-      <ul>
-          <li>
-              <a href="#">
-                  <i class="fa-solid fa-house-window"></i>
-                  <!-- <i class="fas fa-th-large"></i> -->
-                  <div>Quản lý chung</div>
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <i class=" fa fa-solid fa-cart-shopping"></i>
-                  <!-- <i class="fas fa-user-graduate"></i> -->
-                  <div>Sản phẩm</div>
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <i class="fa-solid fa-memo"></i>
-                  <!-- <i class="fas fa-chalkboard-teacher"></i> -->
-                  <div>Bài viết</div>
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <i class="fa-solid fa-ballot-check"></i>
-                  <!-- <i class="fas fa-users"></i> -->
-                  <div>Đơn hàng</div>
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <i class="fa-solid fa-browsers"></i>
-                  <!-- <i class="fas fa-chart-bar"></i> -->
-                  <div>Website</div>
-              </a>
-          </li>
-          <li>
-              <a href="#">
-                  <i class="fas fa-cog"></i>
-                  <div>Cài đặt</div>
-              </a>
-          </li>
-      </ul>
-  </div>
-  <label for="nav--input" class="nav__bars-btn">
-    <i class="fas fa-bars"></i>
-</label>
-
-<input type="checkbox" class="nav__input" id="nav--input">
-
-<label for="nav--input" class="navbar--overlay"></label>
-<nav for="nav--input" class="nav--bar">
-    <label for="nav--input" class="nav--bar--close">
-        <i class="fas fa-times"></i>
-    </label>
-    <ul class="nav__list">
-        <li>
-            <a class="nav--link" href="#"><i class="fas fa-home"></i>Quản lý chung</a>
-        </li>
-        <li>
-            <a href="Contact.html" class="nav--link"><i class="fas fa-phone"></i> Sản phẩm </a>
-        </li>
-        <li>
-            <a href="Product.html" class="nav--link"><i class="fas fa-dolly"></i>Bài viết </a>
-        </li>
-        <li>
-            <a href="Blog_Trangchu.html" class="nav--link"><i class="fas fa-newspaper"></i>Đơn hàng</a>
-        </li>
-        <li>
-            <a href="Blog_Trangchu.html" class="nav--link"><i class="fas fa-newspaper"></i>Website</a>
-        </li>
-        <li>
-            <a href="Blog_Trangchu.html" class="nav--link"><i class="fas fa-newspaper"></i>Cài đặt</a>
-        </li>
-    </ul>
-</nav>
+      <div class="main-content">
+        <div class="header"><app-adminheader></app-adminheader></div>
+        <div class="main"><app-admindashboard></app-admindashboard></div>  
+          
+      </div>

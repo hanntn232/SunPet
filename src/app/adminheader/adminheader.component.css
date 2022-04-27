@@ -2,7 +2,6 @@
   .topbar {
     position: fixed;
     background-color: #FFA800;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08); */
     width: 100%;
     padding: 0 20px;
     height: 60px;
@@ -32,17 +31,18 @@
     object-fit: cover;
 }
 .admin-avatar{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 80%;
-    object-fit: cover;
+    display: block;
+      width: 45px;
+      height: 45px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      -moz-border-radius: 50px;
+      -webkit-border-radius: 50px;
+
 }
 
-/* .logo h2 {
-    color: #FFFFFF;
-} */
+
 
 .search {
     position: relative;
@@ -74,3 +74,91 @@
     height: 50px;
     justify-self: right;
 }
+.user-dropdown ul li{
+    list-style: none;
+}
+.user-dropdown > ul > li:hover{
+    background:#FFA800;
+}
+.user-dropdown > ul {
+    display:inline-block;
+    background:#FFFFFF;
+    color:black;
+    width:200px;
+}
+
+
+.notification_wrap{
+	width: 500px;
+	margin: 120px auto 0;
+}
+
+.notification_wrap .notification_icon{
+	position: relative;
+	width: 50px;
+	height: 50px;
+	font-size: 32px;
+	margin: 0 auto;
+	text-align: center;
+	color: #605dff;
+}
+
+.notification_wrap .notification_icon .fa-bell{
+	cursor: pointer;
+}
+
+.notification_wrap .dropdown{
+	width: 350px;
+	height: auto;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.125);
+	margin: 15px auto 0;
+	padding: 15px;
+	position: relative;
+	display: none;
+}
+
+.notification_wrap .dropdown .notify_item{
+	display: flex;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid #dbdaff;
+}
+
+.notification_wrap .dropdown .notify_item:last-child{
+	border-bottom: 0px;
+}
+
+.notification_wrap .dropdown .notify_item .notify_img{
+	margin-right: 15px;
+}
+
+.notification_wrap .dropdown .notify_item .notify_info p{
+	margin-bottom: 5px;
+}
+
+.notification_wrap .dropdown .notify_item .notify_info p span{
+	color: #605dff;
+	margin-left: 5px;
+}
+
+.notification_wrap .dropdown .notify_item .notify_info .notify_time{
+	color: #c5c5e6;
+	font-size: 12px;
+}
+
+.notification_wrap .dropdown:before{
+	content: "";
+	position: absolute;
+	top: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 15px solid;
+	border-color: transparent transparent #fff transparent;
+}
+
+.notification_wrap .dropdown :active{
+	display: block;
+}
+
