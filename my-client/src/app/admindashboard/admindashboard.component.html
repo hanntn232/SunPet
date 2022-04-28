@@ -1,69 +1,144 @@
-<div class="container">
-    <app-adminheader></app-adminheader>
-    <app-adminnavbar></app-adminnavbar>
-    <div class="main">
-        <div class="col-lg-6 col-md-6 cards">
-            <div class="card">
-                <div class="box">
-                    <h5>Doanh thu</h5>
-                    <h3>7,482,120&nbsp;<small class="text-success">+5,2%</small></h3>
+<div class="container-fluid" style="background-color: #FEF8E1;">
+    <div class="row row-1">
+          <div class="col-lg-12 col-md-12 col-sm-12 cards p-5">
+                <div class="card">
+                      <div class="box">
+                            <h5 class="text-light">Doanh thu</h5>
+                            <h3 class="text-light">7,482,120&nbsp;<small class="text-success">+5,2%</small></h3>
+                      </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="box">
-                    <h5>Doanh thu</h5>
-                    <h3>7,482,120&nbsp;<small class="text-primary">+5,2%</small></h3>
+                <div class="card">
+                      <div class="box">
+                            <h5 class="text-light">Doanh thu</h5>
+                            <h3 class="text-light">7,482,120&nbsp;<small class="text-primary">+5,2%</small></h3>
+                      </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="box">
-                    <h5>Doanh thu</h5>
-                    <h3>7,482,120 &nbsp;<small class="text-primary">+5,2%</small></h3>
+                <div class="card">
+                      <div class="box">
+                            <h5 class="text-light">Doanh thu</h5>
+                            <h3 class="text-light">7,482,120 &nbsp;<small class="text-primary">+5,2%</small></h3>
+                      </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="box">
-                    <h5>Doanh thu</h5>
-                    <h3>7,482,120&nbsp;<small class="text-primary">+5,2%</small></h3>
+                <div class="card">
+                      <div class="box">
+                            <h5 class="text-light">Doanh thu</h5>
+                            <h3 class="text-light">7,482,120&nbsp;<small class="text-primary">+5,2%</small></h3>
+                      </div>
                 </div>
-            </div>
-        </div>
-        <div class="content-2">
-            <div class="recent-payments">
-                <div class="title">
-                    <h2>Bán chạy</h2>
-                    <a href="#" class="btn">Hàng tháng</a>
+          </div>
+    </div>
+
+    <div class="row row-2">
+          <div class="col-lg-6 col-md-6 col-sm-12 p-5">
+                <div class="charts">
+                      <div class="select-one">
+                            <label class="select float-end" for="slct">
+                                  <select id="slct" required="required">
+                                    <option value="" disabled="disabled" selected="selected">Chọn</option>
+                                    <option value="#">Hằng tuần</option>
+                                    <option value="#">Hằng tháng</option>
+                                    <option value="#">Hằng năm</option>
+                                  </select>
+                                  <svg>
+                                    <use xlink:href="#select-arrow-down"></use>
+                                  </svg>
+                                </label>
+                                <!-- SVG Sprites-->
+                                <svg class="sprites">
+                                  <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                                    <polyline points="1 1 5 5 9 1"></polyline>
+                                  </symbol>
+                                </svg>
+                      </div>
+                      <!-- <a href="#" class="btn">Hàng tháng<i class="fa-solid fa-caret-down"></i></a> -->
+                      <app-piechart></app-piechart>
                 </div>
-                <table>
-                    <tr>
-                        <th>Tên sản phẩm</th>
-                        <th>Mã sản phẩm</th>
-                        <th>Giá</th>
-                        <th>Trạng thái</th>
-                    </tr>
-                    <tr>
-                        <td>Sữa bột cho mèo</td>
-                        <td>M15314</td>
-                        <td>500.000đ</td>
-                        <td>Đã duyệt</td>
-                    </tr>
-                    <tr>
-                        <td>Sữa bột cho mèo</td>
-                        <td>M15314</td>
-                        <td>500.000đ</td>
-                        <td>Đã duyệt</td>
-                    </tr>
-                    <tr>
-                        <td>Sữa bột cho mèo</td>
-                        <td>M15314</td>
-                        <td>500.000đ</td>
-                        <td>Đã duyệt</td>
-                    </tr>
-                </table>
-            </div>
-            <div class="">
-                <app-line-chart></app-line-chart>
-            </div>
-        </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 p-5">
+                <div class="charts">
+                      <input style ="width:100px" class="" type="number" min="1900" max="2099" step="1" value="2016" />
+                      <!-- <a href="#" class="btn">Hàng tháng<i class="fa-solid fa-caret-down"></i></a> -->
+                      <app-line-chart></app-line-chart>
+                </div>
+          </div>
+    </div>
+
+
+    <div class="row row-3">
+          <div class="content-2 col-lg-12 col-md-12 col-sm-12 cards p-5">
+                <div class="recent-payments">
+                      <div class="title">
+                            <h2 class="float-start">Bán chạy</h2>
+                            <label class="select float-end" for="slct">
+                                  <select id="slct" required="required">
+                                    <option value="" disabled="disabled" selected="selected">Chọn</option>
+                                    <option value="#">Hằng tuần</option>
+                                    <option value="#">Hằng tháng</option>
+                                    <option value="#">Hằng năm</option>
+                                  </select>
+                                  <svg>
+                                    <use xlink:href="#select-arrow-down"></use>
+                                  </svg>
+                                </label>
+                                <!-- SVG Sprites-->
+                                <svg class="sprites">
+                                  <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                                    <polyline points="1 1 5 5 9 1"></polyline>
+                                  </symbol>
+                                </svg>
+                      </div>
+                      <table>
+                            <!-- <caption>Statement Summary</caption> -->
+                            <thead>
+                                  <tr>
+                                        <th scope="col">Tên sản phẩm</th>
+                                        <th scope="col">Mã sản phẩm</th>
+                                        <th scope="col">Giá</th>
+                                        <th scope="col">Trạng thái</th>
+                                  </tr>
+                            </thead>
+                            <tbody>
+                                  <tr>
+                                        <td data-label="TenSP">Sữa bột cho mèo</td>
+                                        <td data-label="MaSP">M15314</td>
+                                        <td data-label="Gia">500.000đ</td>
+                                        <td data-label="TrangThai">Đã duyệt</td>
+                                  </tr>
+                                  <tr>
+                                        <td data-label="TenSP">Sữa bột cho mèo</td>
+                                        <td data-label="MaSP">M15314</td>
+                                        <td data-label="Gia">500.000đ</td>
+                                        <td data-label="TrangThai">Đã duyệt</td>
+                                  </tr>
+                                  <tr>
+                                        <td data-label="TenSP">Sữa bột cho mèo</td>
+                                        <td data-label="MaSP">M15314</td>
+                                        <td data-label="Gia">500.000đ</td>
+                                        <td data-label="TrangThai">Đã duyệt</td>
+                                  </tr>
+                                  <tr>
+                                        <td data-label="TenSP">Sữa bột cho mèo</td>
+                                        <td data-label="MaSP">M15314</td>
+                                        <td data-label="Gia">500.000đ</td>
+                                        <td data-label="TrangThai">Đã duyệt</td>
+                                  </tr>
+                                  <tr>
+                                        <td data-label="TenSP">Sữa bột cho mèo</td>
+                                        <td data-label="MaSP">M15314</td>
+                                        <td data-label="Gia">500.000đ</td>
+                                        <td data-label="TrangThai">Đã duyệt</td>
+                                  </tr>
+                            </tbody>
+                      </table>
+                </div>
+          </div>
+    </div>
+    <div class="row row-4">
+          <div class="col-lg-6 col-md-6 col-sm-12 ">
+                <app-admintasklist></app-admintasklist>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 p-5">
+                <app-adminchatbox></app-adminchatbox>
+          </div>
     </div>
 </div>

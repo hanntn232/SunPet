@@ -40,6 +40,9 @@ import { AdminBlogtrangchuComponent } from './admin-blogtrangchu/admin-blogtrang
 import { RouterModule } from '@angular/router';
 import { PopupLydohuyComponent } from './popup-lydohuy/popup-lydohuy.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdmintasklistComponent } from './admintasklist/admintasklist.component';
+import { AdminchatboxComponent } from './adminchatbox/adminchatbox.component';
+import { PiechartComponent } from './piechart/piechart.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +81,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormThemSanphamAdminAndroidComponent,
     AdminBlogtrangchuComponent,
     PopupLydohuyComponent,
+    AdmintasklistComponent,
+    AdminchatboxComponent,
+    PiechartComponent,
   ],
   imports: [
     BrowserModule,
