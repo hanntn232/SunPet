@@ -5,15 +5,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.main {
-    position: absolute;
-    top: 60px;
-    width: calc(100% - 260px);
-    min-height: calc(100vh - 60px);
-    left: 260px;
-    background: #f5f5f5;
+.container {
+  position: relative;
+  margin-left: 240px;
+  transition: margin-left 500ms;
 }
-
 .title {
     display: flex;
     align-items: center;
@@ -23,13 +19,35 @@
 }
 
 table {
-    padding: 10px;
+  border: 1px solid #fff;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
 }
 
-th,
-td {
-    text-align: left;
-    padding: 8px;
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #fdda2b;
+  border: 1px solid #fff;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 .cards {
@@ -39,17 +57,15 @@ td {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 .cards .card {
     width: 250px;
     height: 150px;
-    background: #FFA800;
+    background: #FFC500;
     margin: 20px 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border-radius: 20px;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    border-radius: 10px;
 }
 
 .content-2 {
@@ -65,48 +81,135 @@ td {
     flex: 5;
     background: white;
     margin: 0 25px 25px 25px;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     display: flex;
     flex-direction: column;
 }
-
-@media screen and (max-width: 1050px) {
-    .side-menu li {
-        font-size: 18px;
-    }
+.charts {
+  display: grid;
+  /* grid-template-columns: 2fr 1fr; */
+  /* grid-gap: 20px; */
+  width: 100%;
+  padding: 20px;
+  padding-top: 0;
 }
 
-@media screen and (max-width: 940px) {
-    .side-menu li span {
-        display: none;
-    }
-    .side-menu {
-        align-items: center;
-    }
-    .side-menu li img {
-        width: 40px;
-        height: 40px;
-    }
-    .side-menu li:hover {
-        background: #FFA800;
-        padding: 8px 38px;
-        /* border: 2px solid white; */
-    }
+.select {
+  position: relative;
+  min-width: 200px;
+}
+.select svg {
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 3px);
+  width: 10px;
+  height: 6px;
+  stroke-width: 2px;
+  stroke: #9098a9;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.select select {
+  -webkit-appearance: none;
+  padding: 7px 40px 7px 12px;
+  width: 100%;
+  border: 1px solid #e8eaed;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 3px -2px #9098a9;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 150ms ease;
+}
+.select select:required:invalid {
+  color: #5a667f;
+}
+.select select option {
+  color: #223254;
+}
+.select select option[value=""][disabled] {
+  display: none;
+}
+.select select:focus {
+  outline: none;
+  border-color: #07f;
+  box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
+}
+.select select:hover + svg {
+  stroke: #07f;
+}
+.sprites {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+}
+/* -------------- */
+
+@media only screen and (max-width: 1200px) {
+  
+  .container {
+      margin-left: 60px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #fff;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #fff;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label không được đọc tên trong bảng
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
 }
 
 @media screen and (max-width:536px) {
-    .brand-name h1 {
-        font-size: 16px;
-    }
-    .cards {
+.cards {
         justify-content: center;
     }
-    .side-menu li img {
-        width: 30px;
-        height: 30px;
-    }
-    .content-2 .recent-payments table th:nth-child(2),
-    .content-2 .recent-payments table td:nth-child(2) {
+.content-2 .recent-payments table th:nth-child(2),
+.content-2 .recent-payments table td:nth-child(2) {
         display: none;
     }
 }
