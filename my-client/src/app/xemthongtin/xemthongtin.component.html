@@ -26,26 +26,26 @@
                     </div>
                     <div class="form-row">
                         <div class="input-data">
-                            <input type="text" required id="ho" autocomplete="off">
+                            <input type="text" required id="ho" autocomplete="off" value="{{Users[0].ho}}">
                             <div class="underline"></div>
                             <label for="">Họ:</label>
                         </div>
                         <div class="input-data">
-                            <input type="text" required id="ten" autocomplete="off">
+                            <input type="text" required id="ten" autocomplete="off" value="{{Users[0].ten}}">
                             <div class="underline"></div>
                             <label for="">Tên:</label>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="input-data">
-                            <input type="text" required id="sdt" autocomplete="off">
+                            <input type="text" required id="sdt" autocomplete="off" value="{{Users[0].sdt}}">
                             <div class="underline"></div>
                             <label for="">SĐT</label>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="input-data textarea">
-                            <textarea rows="8" cols="80" required id="diachi" autocomplete="off"></textarea>
+                            <textarea rows="8" cols="80" required id="diachi" autocomplete="off" value="{{Users[0].diaChi}}"></textarea>
                             <br/>
                             <div class="underline"></div>
                             <label for="">Địa chỉ:</label>
@@ -63,4 +63,5 @@
     <!-- Footer -->
     <app-footer></app-footer>
 </body>
+
 </html>

@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const product = require("../model/product")
 const blog = require("../model/blog")
+const user = require("../model/user")
 
 router.get('/', function(req, res) {
     res.send("Chào mừng bạn đến với Website SunPet")
@@ -27,6 +28,17 @@ router.get('/products', function(req, res) {
 //Get all blogs
 router.get("/blogs", function(req, res) {
     blog.find({}, function(err, data) {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(data)
+        }
+    })
+})
+
+//Get all users
+router.get("/users", function(req, res) {
+    user.find({}, function(err, data) {
         if (err) {
             res.send(err)
         } else {
