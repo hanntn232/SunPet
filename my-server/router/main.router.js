@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const product = require("../model/product")
 const blog = require("../model/blog")
-    // const user = require("../model/")
+const user = require("../model/user")
 
 router.get('/', function(req, res) {
     res.send("Chào mừng bạn đến với Website SunPet")
@@ -39,7 +39,7 @@ router.get("/blogs", function(req, res) {
 
 //Get all user
 router.get("/users", function(req, res) {
-    .find({}, function(err, data) {
+    user.find({}, function(err, data) {
         if (err) {
             res.send(err)
         } else {

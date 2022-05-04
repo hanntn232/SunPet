@@ -15,22 +15,22 @@
     <div class="dangnhap--container col-12">
         <div class="dangnhap--title">ĐĂNG NHẬP</div>
         <div>Nếu bạn có tài khoản, xin vui lòng đăng nhập.</div>
-        <form action="HOME.html" method="get" class="col-12">
+        <form class="col-12" #loginForm="ngForm" (ngSubmit)="dangNhap(loginForm)">
             <div class="dangnhap--sdt">
                 <label for="sdt" class="col-12">Số điện thoại <span>*</span></label>
-                <input type="text" placeholder="Số điện thoại" id="sdt" name="sdt" class="col-12 input">
+                <input type="text" placeholder="Số điện thoại" id="sdt" name="sdt" class="col-12 input" [(ngModel)]="user.sdt">
             </div>
 
             <div class="dangnhap--matkhau">
                 <label for="mk" class="col-12">Mật khẩu <span>*</span></label>
-                <input type="password" placeholder="Mật khẩu" id="mk" name="mk" class="col-12 input">
+                <input type="password" placeholder="Mật khẩu" id="mk" name="matKhau" class="col-12 input" [(ngModel)]="user.matKhau">
             </div>
             <div class="btn--dangnhap center">
                 <input type="submit" class="btn-primary" value="Đăng nhập">
             </div>
             <div class="dangnhap--dangky">
                 Bạn chưa có tài khoản?
-               <a href="Dang_ky.html">Đăng ký tại đây</a> 
+                <a href="Dang_ky.html">Đăng ký tại đây</a>
             </div>
             <div class="dangnhap--google center">
                 <label for="">Hoặc đăng nhập bằng</label>
