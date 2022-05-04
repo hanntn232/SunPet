@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError, catchError, retry, Observable } from 'rxjs';
+import { IDuser } from './model/user';
 const baseUrl: string = "http://localhost:3000"
 const API_URL = 'http://localhost:3000/api/test/';
 @Injectable({
