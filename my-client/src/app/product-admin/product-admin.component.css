@@ -45,15 +45,15 @@ html {
 
 /* navbar */
 
-.sidebar {
+/* .sidebar {
     position: fixed;
     top: 60px;
-    /* width: 260px; */
+    /* width: 260px; 
     height: calc(100% - 60px);
     background: #FFC700;
     overflow-x: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    z-index: 2;
+    z-index: 0;
 }
 
 .sidebar ul {
@@ -92,7 +92,7 @@ html {
     min-width: 60px;
     font-size: 24px;
     text-align: center;
-}
+} */
 
 
 /*  */
@@ -303,13 +303,16 @@ html {
     color: black;
     position: relative;
     padding: 10px;
-    text-align: center;
+    
     padding-top: 13px;
-    font-weight: bold;
+    
 }
 
-.modal--header--content {
-    position: absolute;
+.modal--header-content {
+    /* position: absolute; */
+    /* text-align: center;
+    justify-content: center; */
+    font-weight: bold;
 }
 
 .modal--close {
@@ -350,7 +353,7 @@ html {
     background-color: #FFC700;
 }
 
-.button-addimg {}
+/* .button-addimg {} */
 
 .form-button {
     text-align: center;
@@ -699,7 +702,6 @@ div#dsSanPham1>div {
     right: 0;
     display: none;
     z-index: 3;
-    display: none;
 }
 
 .nav__overlay {
@@ -789,7 +791,53 @@ div#dsSanPham1>div {
     height: 400px;
     overflow: hidden;
 }
+.hover__bg{
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 15px;
+}
 
+/* Bố cục lại */
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: 60px;
+}
+ 
+#sidebar-toggle:checked ~ .main-content .header {
+    left: 60px;
+    width: calc(100% - 60px);
+}
+.row__ft{
+    --bs-gutter-x: -1.5rem !important;
+}
+/* .hover__bg:hover {
+    background-color: var(--orange-color);
+    color: white;
+} */
+/* .btn-close{
+    box-sizing:border-box;
+    opacity: 1;
+} */
+
+/* Chọn file */
+/* .btn-file {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+  } */
 
 /* tablet */
 

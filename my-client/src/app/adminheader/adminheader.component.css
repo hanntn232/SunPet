@@ -7,9 +7,9 @@
 * {
     font-family: Opensans;
 }
-/* .img-size{
-    width: 40px;
-} */
+.navbar{
+    padding: 0px !important;
+}
 
 h3{
     font-weight: bolder;
@@ -58,7 +58,6 @@ div.dropdown-menu {
 .topbar {
     position: fixed;
     background-color: #FFA800;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08); */
     width: 100%;
     padding: 0 20px;
     height: 60px;
@@ -100,7 +99,7 @@ div.dropdown-menu {
 }
 
 .search {
-
+    outline: none;
     position: relative;
     z-index: 10000000;
 }
@@ -149,9 +148,6 @@ button.btn:focus {
     font-size: 25px;
     cursor: pointer;
 }
-
-/*  */
-/* icon menu */
 
 .navbar--overlay--menu{
     position:fixed;
@@ -252,9 +248,36 @@ button.btn:focus {
     .display__navbar{
         display: none;
     }
-    /* icon menu slidebar */
-    .nav__input--menu:checked ~ .nav--bar--menu{
+    .nav--bar--menu{
+        position: fixed;
+        top: 0px;
+        right: 0;
+        bottom: 0;
+        width: 250px;
+        max-width: 100%;
+        transform: translateX(-100%);
+        background-color: #FFC700;
+    }
+    .nav__input--menu:checked ~ .navbar--overlay--menu{
         display: block;
+    }
+}
+@media screen and (max-width: 690px) {
+    .search--input {
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px;
+        border: 1px;
+        width: 235px;
+        padding: 5px 10px;
+    }
+    .display_img{
+        display: none;
+    }
+    .display__navbar{
+        display: none;
+    }
+    .display__Infor{
+        display: none;
     }
     .nav--bar--menu{
         position: fixed;
@@ -266,11 +289,9 @@ button.btn:focus {
         transform: translateX(-100%);
         background-color: #FFC700;
     }
-
     .nav__input--menu:checked ~ .navbar--overlay--menu{
         display: block;
     }
-    /*  */
 }
 @media screen and (max-width: 680px) {
     .display__Infor{
@@ -289,6 +310,9 @@ button.btn:focus {
     .display__navbar{
         display: none;
     }
+    .display__Name{
+        display: none;
+    }
 }
 @media screen and (max-width: 576px) {
     .display__Infor{
@@ -298,7 +322,7 @@ button.btn:focus {
         border-top-left-radius: 7px;
         border-bottom-left-radius: 7px;
         border: 1px;
-        width: 200px;
+        width: 190px;
         padding: 5px 10px;
     }
     .display__Name{
@@ -335,47 +359,7 @@ button.btn:focus {
         border-top-left-radius: 7px;
         border-bottom-left-radius: 7px;
         border: 1px;
-        width: 100px;
-        padding: 5px 10px;
-    }
-    .display__Name{
-        display: none;
-    }
-    .display__user{
-        display: none;
-    }
-    .display_img{
-        display: block;
-    }
-    .display_img1{
-        display: none;
-    }
-    .mb__img{
-        margin-bottom: 20px;
-    }
-    .display__navbar{
-        display: block;
-    }
-    .size__navbar{
-        width: 60px;
-        height: 60px;
-    }
-    .width__img{
-        width: 30px;
-    }
-    .mg__Infor{
-        margin-left: 50px !important;
-    }
-}
-@media screen and (max-width: 520px) {
-    .display__Infor{
-        display: none;
-    }
-    .search--input {
-        border-top-left-radius: 7px;
-        border-bottom-left-radius: 7px;
-        border: 1px;
-        width: 200px;
+        width: 180px;
         padding: 5px 10px;
     }
     .display__Name{
