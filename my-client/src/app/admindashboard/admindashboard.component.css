@@ -147,6 +147,7 @@ table th {
   pointer-events: none;
   user-select: none;
 }
+
 /* -------------- */
 
 @media only screen and (max-width: 1200px) {
@@ -155,6 +156,14 @@ table th {
       margin-left: 60px;
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  
+  .container {
+      margin-left: 60px;
+  }
+}
+
 
 @media screen and (max-width: 600px) {
   table {

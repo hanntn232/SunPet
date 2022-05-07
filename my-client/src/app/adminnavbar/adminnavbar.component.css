@@ -12,11 +12,11 @@
 
 .sidebar {
     height: 100%;
-    width: 240px;
+    /* width: 240px; */
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 0;
     background: #FFC700;
     color: #333;
     overflow-y: auto;
@@ -28,18 +28,14 @@
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    padding: 0rem 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-.sidebar-header img {
-    height: 60px;
-    width: 60px;
-    object-fit: cover;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-}
 .sidebar-menu {
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
 }
 
 .sidebar li {
@@ -60,6 +56,7 @@
 }
 
 #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+#sidebar-toggle:checked ~ .sidebar .sidebar-header h3 img,
 #sidebar-toggle:checked ~ .sidebar li span:last-child {
     display: none;
 }
@@ -69,33 +66,15 @@
     display: flex;
     justify-content: center;
 }
+/* Thêm chỉnh sửa */
+/* .mt-container{
+    margin-top: 100px;
+} */
 
-#sidebar-toggle:checked ~ .main-content {
-    margin-left: 60px;
-}
-
-#sidebar-toggle:checked ~ .main-content header {
-    left: 60px;
-    width: calc(100% - 60px);
-}
-
-.main-content {
-    position: relative;
-    margin-left: 240px;
-    transition: margin-left 500ms;
-}
-
-main {
-    margin-top: 60px;
-    background: #f1f5f9;
-    min-height: 90vh;
-    padding: 1rem 3rem;
-}
-
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 992px) {
     .sidebar {
         width: 60px;
-        z-index: 150;
+        z-index: 0;
     }
 
     .sidebar .sidebar-header h3 span,
@@ -118,11 +97,12 @@ main {
         width: calc(100% - 60px);
     }
     
-    #sidebar-toggle:checked ~ .sidebar {
+    /* #sidebar-toggle:checked ~ .sidebar {
         width: 240px;
-    }
+    } */
 
     #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+    #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 img,
     #sidebar-toggle:checked ~ .sidebar li span:last-child {
         display: inline;
     }
@@ -149,10 +129,10 @@ main {
     }
 }
 
-@media only screen and (max-width: 860px) {
-    
-    .sidebar-header img {
-        display:none;
+@media only screen and (max-width: 576px) {
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
