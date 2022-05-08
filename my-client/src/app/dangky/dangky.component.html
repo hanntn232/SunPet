@@ -51,10 +51,10 @@
             <div class="dangky--matkhau">
                 <label for="nhapLaiMatKhau" class="col-12">Nhập lại mật khẩu <span>*</span></label>
                 <input type="password" placeholder="Nhập lại mật khẩu" id="nhapLaiMatKhau" name="nhapLaiMatKhau" class="col-12 input form-control" formControlName="nhapLaiMatKhau" [class.is-invalid]="nhapLaiMatKhau.invalid && nhapLaiMatKhau.touched" [class.red-border]="nhapLaiMatKhau.invalid && nhapLaiMatKhau.touched">
-                <div *ngIf="nhapLaiMatKhau.invalid && nhapLaiMatKhau.touched">
+                <div *ngIf="nhapLaiMatKhau.invalid && nhapLaiMatKhau.touched || regForm.errors?.['misMatch']">
                     <small class="text-danger" *ngIf="nhapLaiMatKhau.errors?.['required']">Bạn cần nhập mật khẩu</small>
                     <!-- <small class="text-danger" *ngIf="nhapLaiMatKhau.errors?.['minlength'] && nhapLaiMatKhau.value">Mật khẩu tối thiểu 5 ký tự</small> -->
-                    <small class="text-danger" *ngIf="regForm.errors?.['misMatch'] && nhapLaiMatKhau.value">Mật khẩu không trùng khớp</small>
+                    <small class="text-danger" *ngIf="regForm.errors?.['misMatch']">Mật khẩu không trùng khớp</small>
                 </div>
 
             </div>
