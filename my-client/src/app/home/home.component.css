@@ -143,6 +143,14 @@ button.btn:focus {
     background-color: #FFC700 !important;
 }
 
+.dropdown-item.active {
+    background-color: white;
+}
+
+#dangxuat:hover {
+    cursor: pointer;
+}
+
 .dropdown-item:focus {
     background-color: #FFDE59 !important;
 }

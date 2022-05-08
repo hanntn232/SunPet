@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'sanpham/:id', component: ProductDetailComponent},
   {path: 'thongtinfooter', component: ThongtinfooterComponent},
   {path: 'xemthongtin', component: XemthongtinComponent},
-  {path: '', component: HomeComponent}
+  {path: '**', component: HomeComponent}
 ]
 
 @NgModule({

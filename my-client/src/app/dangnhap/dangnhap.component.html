@@ -15,7 +15,7 @@
     <div class="dangnhap--container col-12">
         <div class="dangnhap--title">ĐĂNG NHẬP</div>
         <div>Nếu bạn có tài khoản, xin vui lòng đăng nhập.</div>
-        <form action="#" class="col-12" #loginForm="ngForm" (ngSubmit)="dangNhap(loginForm)">
+        <form class="col-12" [formGroup]="logForm" (ngSubmit)="dangNhap(logForm)">
             <div class="dangnhap--sdt">
                 <label for="sdt" class="col-12">Số điện thoại <span>*</span></label>
                 <input type="text" placeholder="Số điện thoại" id="sdt" name="sdt" class="col-12 form-control input" [(ngModel)]="user.sdt" formControlName="sdt" [class.warning]="sdt.invalid && sdt.touched" [class.is-invalid]="sdt.invalid && sdt.touched" maxlength="10">
@@ -28,7 +28,7 @@
             <div class="dangnhap--matkhau">
                 <label for="mk" class="col-12">Mật khẩu <span>*</span></label>
                 <input type="password" placeholder="Mật khẩu" id="mk" name="mk" class="col-12 input form-control" [(ngModel)]="user.matKhau" formControlName="matKhau" [ngClass]="{'is-invalid warning': matKhau.invalid && matKhau.touched}">
-                <div *ngIf="matKhau.invalid && matKhau.touched" >
+                <div *ngIf="matKhau.invalid && matKhau.touched">
                     <small *ngIf="matKhau.errors?.['required']" class="text-danger">Bạn cần nhập mật khẩu</small>
                     <small *ngIf="matKhau.errors?.['minlength'] && matKhau.value" class="text-danger">Mật khẩu phải có ít nhất 5 ký tự</small>
                 </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="dangnhap--dangky">
                 Bạn chưa có tài khoản?
-                <a href="Dang_ky.html">Đăng ký tại đây</a>
+                <a routerLink="/dangky" routerLinkActive="active">Đăng ký tại đây</a>
             </div>
             <div class="dangnhap--google center">
                 <label for="">Hoặc đăng nhập bằng</label>

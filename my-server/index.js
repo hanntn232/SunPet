@@ -8,6 +8,7 @@ const morgan = require('morgan')
 app.use(morgan('combined'));
 
 const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
 app.use(bodyParser.json());
 
 //Enable CORS
