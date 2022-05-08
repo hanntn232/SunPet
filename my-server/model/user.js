@@ -7,6 +7,8 @@ const UserSchema = new Schema({
     sdt: { type: String, required: true },
     diaChi: { type: String, required: true },
     matKhau: { type: String, required: true },
+    token: { type: String, required: true },
+
     CreatedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

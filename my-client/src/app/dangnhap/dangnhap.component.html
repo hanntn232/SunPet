@@ -15,27 +15,26 @@
     <div class="dangnhap--container col-12">
         <div class="dangnhap--title">ĐĂNG NHẬP</div>
         <div>Nếu bạn có tài khoản, xin vui lòng đăng nhập.</div>
-        <form action="#" class="col-12" [formGroup]="logForm">
+        <form action="#" class="col-12" #loginForm="ngForm" (ngSubmit)="dangNhap(loginForm)">
             <div class="dangnhap--sdt">
                 <label for="sdt" class="col-12">Số điện thoại <span>*</span></label>
-                <input type="text" placeholder="Số điện thoại" id="sdt" name="sdt" class="col-12 form-control input" formControlName="sdt" [class.warning]="sdt.invalid && sdt.touched" [class.is-invalid]="sdt.invalid && sdt.touched" maxlength="10">
+                <input type="text" placeholder="Số điện thoại" id="sdt" name="sdt" class="col-12 form-control input" [(ngModel)]="user.sdt" formControlName="sdt" [class.warning]="sdt.invalid && sdt.touched" [class.is-invalid]="sdt.invalid && sdt.touched" maxlength="10">
                 <div *ngIf="sdt.invalid && sdt.touched">
                     <small *ngIf="sdt.errors?.['required'] === true" class="text-danger">Bạn cần nhập số điện thoại</small>
                     <small *ngIf="(sdt.errors?.['nameNotMatch']) && sdt.value" class="text-danger">Số điện thoại phải có 10 số, bắt đầu bằng số 0, chỉ được chứa số từ 0 đến 9</small>
                 </div>
-
             </div>
 
             <div class="dangnhap--matkhau">
                 <label for="mk" class="col-12">Mật khẩu <span>*</span></label>
-                <input type="password" placeholder="Mật khẩu" id="mk" name="mk" class="col-12 input form-control" formControlName="matKhau" [ngClass]="{'is-invalid warning': matKhau.invalid && matKhau.touched}">
-                <div *ngIf="matKhau.invalid && matKhau.touched">
+                <input type="password" placeholder="Mật khẩu" id="mk" name="mk" class="col-12 input form-control" [(ngModel)]="user.matKhau" formControlName="matKhau" [ngClass]="{'is-invalid warning': matKhau.invalid && matKhau.touched}">
+                <div *ngIf="matKhau.invalid && matKhau.touched" >
                     <small *ngIf="matKhau.errors?.['required']" class="text-danger">Bạn cần nhập mật khẩu</small>
                     <small *ngIf="matKhau.errors?.['minlength'] && matKhau.value" class="text-danger">Mật khẩu phải có ít nhất 5 ký tự</small>
                 </div>
             </div>
             <div class="btn--dangnhap center">
-                <input type="submit" class="btn-primary" value="Đăng nhập" (click)="onSubmit()">
+                <input type="submit" class="btn-primary" value="Đăng nhập">
             </div>
             <div class="dangnhap--dangky">
                 Bạn chưa có tài khoản?

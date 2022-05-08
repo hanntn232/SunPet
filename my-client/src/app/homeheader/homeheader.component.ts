@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-homeheader',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeheaderComponent implements OnInit {
 
-  constructor() { }
+  public isLogin: boolean = false;
+
+  constructor(private _service: UserService) { }
 
   ngOnInit(): void {
+    var token = localStorage.getItem("token");
+    this.isLogin = this._service.kiemTraDangNhap(token);
   }
 
 }

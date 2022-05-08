@@ -6,6 +6,7 @@ export interface IDuser{
     sdt: String,
     diaChi: String,
     matKhau: String,
+    token: string,
     CreatedAt: any,
     updatedAt: any
 }

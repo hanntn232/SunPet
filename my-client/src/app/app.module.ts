@@ -45,6 +45,7 @@ import { AdminchatboxComponent } from './adminchatbox/adminchatbox.component';
 import { PiechartComponent } from './piechart/piechart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,7 +93,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NgApexchartsModule,
     BrowserAnimationsModule,
-    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],
