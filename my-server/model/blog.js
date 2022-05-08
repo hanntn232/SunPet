@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 const BlogSchema = new Schema({
-    id: { type: String },
+    _id: { type: String },
     date: { type: String },
     title: { type: String, required: true },
     content: { type: Object, required: true },

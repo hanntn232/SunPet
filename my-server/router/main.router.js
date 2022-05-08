@@ -3,6 +3,8 @@ const router = express.Router();
 const product = require("../model/product")
 const blog = require("../model/blog")
 const user = require('../model/user');
+const cart = require('../model/cart')
+const order = require('../model/order')
 
 router.get('/', function(req, res) {
     res.send("Chào mừng bạn đến với Website SunPet")
@@ -70,4 +72,27 @@ router.post('/users', async function(req, res) {
     } catch (err) {
         res.json({ message: err.message })
     }
+})
+
+
+//Get all carts
+router.get("/carts", function(req, res) {
+    cart.find({}, function(err, data) {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(data)
+        }
+    })
+})
+
+//Get all orders
+router.get("/orders", function(req, res) {
+    order.find({}, function(err, data) {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(data)
+        }
+    })
 })
