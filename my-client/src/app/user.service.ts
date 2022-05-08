@@ -34,4 +34,13 @@ export class UserService {
   handleError(error: HttpErrorResponse) {
     return throwError(() => new Error(error.message))
   }
+
+
+  kiemTraDangNhap(token: string | null){
+    if(token != null){
+      return true
+    }
+    else 
+    return false;
+  }
 }

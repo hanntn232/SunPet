@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../user.service';
 import { User } from '../model2/user';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dangnhap',
   templateUrl: './dangnhap.component.html',
@@ -13,7 +14,7 @@ export class DangnhapComponent implements OnInit {
   public user = new User();
   public errMsg: any;
 
-  constructor(private _service: UserService) { }
+  constructor(private _service: UserService, private _router: Router) { }
 
   ngOnInit(): void {
     // this._service.getAllUsers().subscribe({
@@ -54,21 +55,27 @@ export class DangnhapComponent implements OnInit {
         userTrungKhop.role = users[i].role,
         userTrungKhop.token = users[i].token,
         userTrungKhop._id = users[i]._id,
-        userTrungKhop.diaChi = users[i].diaChi
+        userTrungKhop.diaChi = users[i].diaChi,
+        localStorage.setItem("token", userTrungKhop.token)
         return userTrungKhop;
       }
     }
-    return ("Không tìm thấy user")
+    return ("User not found")
   }
 
   dangNhap(form: NgForm){
     this._service.getAllUsers().subscribe({
       next: data => {
         this.users = data;
-        var tonTaiUser = this.kiemTraUser(form.value.sdt, form.value.matKhau, this.users);
-        console.log(tonTaiUser);
-        // console.log(data); 
-        // console.log(this.users[0])
+        var tonTaiUser: string | User;
+        tonTaiUser = this.kiemTraUser(form.value.sdt, form.value.matKhau, this.users);
+        tonTaiUser
+        if(tonTaiUser != "User not found"){
+          this._router.navigate(['/home']);
+        }
+        else{
+          alert(tonTaiUser);
+        }
       },
       error: err => this.errMsg = err
     })
