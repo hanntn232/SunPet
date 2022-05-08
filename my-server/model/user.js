@@ -8,6 +8,7 @@ const UserSchema = new Schema({
     diaChi: { type: String, required: true },
     matKhau: { type: String, required: true },
     token: { type: String, required: true },
+
     CreatedAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now }
 })

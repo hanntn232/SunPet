@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Work+Sans&display=swap" rel="stylesheet">
 <!-- Chưa có responsive -->
-<div class="display__desktop">
-      <nav class="navbar navbar-expand-sm bg-color d-flex justify-content-between">
+<div class="display__desktop ">
+      <nav class="navbar navbar-expand-sm bg-color justify-content-between row">
             <!-- Brand/logo -->
-            <div class="d-flex ml-3">
+            <div class="d-flex ml-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-1">
                   <div><a class="navbar-brand" href="#" routerLink="/home" routerLinkActive="active">
                               <img src="../assets/image/logo_white.png" alt="logo" style="width:55px;">
                         </a></div>
@@ -13,7 +13,7 @@
                   </div>
             </div>
             <!-- Search -->
-            <div class="d-flex pl-5 mr-auto">
+            <div class="d-flex pl-5 mr-auto  col-xl-7 col-lg-6 col-md-6 col-sm-6 col-2">
                   <div>
                         <input type="text" value="" name="search" id="search" placeholder="search" autocomplete="off"
                               class="search--input">
@@ -21,7 +21,7 @@
                   <button class="search--button"><i class="fas fa-search"></i></button>
             </div>
             <!-- User -->
-            <div class="d-flex mr-4 mt-2">
+            <div class="d-flex mr-4 mt-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 col-2">
                   <div class="mr-2">
                         <p>Tường Vy <br><span>Tp.HCM</span></p>
                   </div>
@@ -48,9 +48,9 @@
 </div>
 <!-- Có responsive -->
 <div class="display__mobile">
-      <nav class="navbar navbar-expand-sm bg-color d-flex justify-content-between ">
+      <nav class="navbar navbar-expand-sm bg-color d-flex justify-content-between container-fluid row">
             <!-- Brand/logo -->
-            <div class="d-flex ml-3">
+            <div class="d-flex ml-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-1">
                   <div><a class="navbar-brand" href="#" routerLink="/home" routerLinkActive="active">
                               <img src="../assets/image/logo_white.png" alt="logo" style="width:55px;">
                         </a></div>
@@ -59,7 +59,7 @@
                   </div>
             </div>
             <!-- Search -->
-            <div class="d-flex pl-5 mr-auto">
+            <div class="d-flex pl-5 mr-auto col-xl-7 col-lg-6 col-md-6 col-sm-6 col-2">
                   <div>
                         <input type="text" value="" name="search" id="search" placeholder="search" autocomplete="off"
                               class="search--input">
@@ -67,7 +67,7 @@
                   <button class="search--button"><i class="fas fa-search"></i></button>
             </div>
             <!-- User -->
-            <div class="d-flex mr-4 mt-2 mg__Infor">
+            <div class="d-flex mr-4 mt-2 mg__Infor col-xl-2 col-lg-3 col-md-3 col-sm-3 col-2">
                   <div class="mr-2 display__Infor">
                         <p>Tường Vy <br><span>Tp.HCM</span></p>
                   </div>
@@ -90,55 +90,6 @@
                                     routerLinkActive="active"><i class="fa-solid fa-right-from-bracket"></i> Đăng
                                     xuất</a>
                         </div>
-                  </div>
-                  <div class="container-menu">
-                        <!-- <button class="btn size__navbar" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-bars"></i></button> -->
-                        <label class="menu-slidebar" for="input--menu">
-                              <i class="fa fa-bars"></i>
-                        </label>
-                        <input type="checkbox" class="nav__input--menu" id="input--menu">
-                        <label for="input--menu" class="navbar--overlay--menu"></label>
-                        <nav for="input--menu" class="nav--bar--menu">
-                              
-                              <ul class="nav__list--menu">
-                                    <li>
-                                          <a href="#" class="nav--link--menu">
-                                                <i class="fa fa-house"></i>
-                                                <div>Quản lý chung</div>
-                                          </a>
-                                    </li>
-                                    <li>
-                                          <a href="#" class="nav--link--menu">
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                                <div>Sản phẩm</div>
-                                          </a>
-                                    </li>
-                                    <li>
-                                          <a href="#" class="nav--link--menu">
-                                                <i class="fa fa-newspaper"></i>
-                                                <div>Bài viết</div>
-                                          </a>
-                                    </li>
-                                    <li>
-                                          <a href="#" class="nav--link--menu">
-                                                <i class="fa fa-list-check"></i>
-                                                <div>Đơn hàng</div>
-                                          </a>
-                                    </li>
-                                    <li>
-                                          <a href="#" class="nav--link--menu">
-                                                <i class="fa-solid fa-earth-asia"></i>
-                                                <div>Website</div>
-                                          </a>
-                                    </li>
-                                    <li>
-                                          <a href="#" class="nav--link--menu">
-                                                <i class="fas fa-cog"></i>
-                                                <div>Cài đặt</div>
-                                          </a>
-                                    </li>
-                              </ul>
-                        </nav>
                   </div>
             </div>
       </nav>

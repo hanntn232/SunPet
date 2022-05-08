@@ -3,6 +3,9 @@ import { NgForm } from '@angular/forms';
 import { UserService } from '../user.service';
 import { User } from '../model2/user';
 import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms'; 
+import { customValidator } from '../validators/dangky.validators';
+
 @Component({
   selector: 'app-dangnhap',
   templateUrl: './dangnhap.component.html',
@@ -13,8 +16,9 @@ export class DangnhapComponent implements OnInit {
   // public JSONusers: any;
   public user = new User();
   public errMsg: any;
+  logForm: any;
 
-  constructor(private _service: UserService, private _router: Router) { }
+  constructor(private _service: UserService, private _router: Router,private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     // this._service.getAllUsers().subscribe({
@@ -25,6 +29,17 @@ export class DangnhapComponent implements OnInit {
     //   },
     //   error: err => this.errMsg = err
     // })
+    
+    this.logForm = this._formBuilder.group({
+      sdt: ['', [Validators.required, Validators.minLength(10), customValidator(/^[0][0-9]{9}/g)]],
+      matKhau: ['',[Validators.required, Validators.minLength(5)]]
+    })
+  }
+  get sdt(){
+    return this.logForm.controls['sdt']
+  }
+  get matKhau(){
+    return this.logForm.controls['matKhau']
   }
   // khoiTaoUser(){
   //   this._service.getAllUsers().subscribe({
@@ -80,5 +95,5 @@ export class DangnhapComponent implements OnInit {
       error: err => this.errMsg = err
     })
   }
-
 }
+

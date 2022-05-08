@@ -36,8 +36,6 @@ router.get("/blogs", function(req, res) {
     })
 })
 
-
-//Get all user
 router.get("/users", function(req, res) {
     user.find({}, function(err, data) {
         if (err) {
