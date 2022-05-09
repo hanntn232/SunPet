@@ -94,7 +94,7 @@ import { ToastrModule } from 'ngx-toastr';
     AdmintasklistComponent,
     AdminchatboxComponent,
     PiechartComponent,
-    TestComponent,
+    // TestComponent,
   ],
   imports: [
     BrowserModule,
