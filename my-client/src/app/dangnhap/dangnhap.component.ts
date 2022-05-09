@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserService } from '../user.service';
 import { User } from '../model2/user';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms'; 
 import { customValidator } from '../validators/dangky.validators';
+import { Observable, Subject } from 'rxjs';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-dangnhap',
@@ -13,7 +14,6 @@ import { customValidator } from '../validators/dangky.validators';
 })
 export class DangnhapComponent implements OnInit {
   public users: any;
-  // public JSONusers: any;
   public user = new User();
   public errMsg: any;
   logForm: any;

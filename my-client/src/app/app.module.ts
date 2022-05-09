@@ -44,8 +44,12 @@ import { AdmintasklistComponent } from './admintasklist/admintasklist.component'
 import { AdminchatboxComponent } from './adminchatbox/adminchatbox.component';
 import { PiechartComponent } from './piechart/piechart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TestComponent } from './test/test.component';
+
+// import { TestComponent } from './test/test.component';
 // import { FormsModule } from '@angular/forms';
+
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -100,6 +104,14 @@ import { TestComponent } from './test/test.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut:3000,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      preventDuplicates: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

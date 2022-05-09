@@ -1,11 +1,11 @@
 export interface IDuser{
     _id: string,
     role: string,
-    ho: String,
-    ten: String,
-    sdt: String,
-    diaChi: String,
-    matKhau: String,
+    ho: string,
+    ten: string,
+    sdt: string,
+    diaChi: string,
+    matKhau: string,
     token: string,
     CreatedAt: any,
     updatedAt: any

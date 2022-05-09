@@ -43,7 +43,7 @@
 
                             <a class="dropdown-item" id="xemthongtin" routerLink="/xemthongtin" routerLinkActive="active" *ngIf="isLogin==true">Xem thông tin</a>
 
-                            <a class="dropdown-item" href="#" id="dangxuat" onclick="dangXuat()" *ngIf="isLogin==true">Đăng xuất</a>
+                            <a class="dropdown-item" id="dangxuat" (click)="logOut()" *ngIf="isLogin==true">Đăng xuất</a>
                         </div>
                     </div>
                 </div>

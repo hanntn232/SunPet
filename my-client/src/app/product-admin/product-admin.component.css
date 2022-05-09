@@ -806,9 +806,7 @@ div#dsSanPham1>div {
     left: 60px;
     width: calc(100% - 60px);
 }
-.row__ft{
-    --bs-gutter-x: -1.5rem !important;
-}
+
 /* .hover__bg:hover {
     background-color: var(--orange-color);
     color: white;
@@ -819,7 +817,7 @@ div#dsSanPham1>div {
 } */
 
 /* Chọn file */
-/* .btn-file {
+.btn-file {
     position: relative;
     overflow: hidden;
   }
@@ -837,7 +835,7 @@ div#dsSanPham1>div {
     background: white;
     cursor: inherit;
     display: block;
-  } */
+  }
 
 /* tablet */
 

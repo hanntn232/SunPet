@@ -15,20 +15,20 @@
     <div class="dangky--container col-12">
         <div class="dangky--title">ĐĂNG KÝ</div>
         <div>THÔNG TIN CÁ NHÂN</div>
-        <form action="#" method="get" class="col-12" [formGroup]="regForm">
+        <form method="get" class="col-12" [formGroup]="regForm">
             <div class="dangky--ho">
                 <label for="ho" class="col-12">Họ <span>*</span></label>
-                <input type="text" placeholder="Họ" id="ho" name="ho" class="col-12 input form-control" required formControlName="ho" [class.is-invalid]="ho.invalid && ho.touched" [class.red-border]="ho.invalid && ho.touched">
+                <input type="text" placeholder="Họ" id="ho" name="ho" class="col-12 input form-control" required formControlName="ho" [class.is-invalid]="ho.invalid && ho.touched" [class.red-border]="ho.invalid && ho.touched" [(ngModel)]="signUpUser.ho">
                 <small *ngIf="ho.invalid && ho.touched" class="text-danger">Bạn cần nhập họ</small>
             </div>
             <div class="dangky--ten">
                 <label for="ten" class="col-12">Tên <span>*</span></label>
-                <input type="text" placeholder="Tên" id="ten" name="ten" class="col-12 input form-control" required formControlName="ten" [class.is-invalid]="ten.invalid && ten.touched" [class.red-border]="ten.invalid && ten.touched">
+                <input type="text" placeholder="Tên" id="ten" name="ten" class="col-12 input form-control" required formControlName="ten" [class.is-invalid]="ten.invalid && ten.touched" [class.red-border]="ten.invalid && ten.touched" [(ngModel)]="signUpUser.ten">
                 <small *ngIf="ten.invalid && ten.touched" class="text-danger">Bạn cần nhập tên</small>
             </div>
             <div class="dangky--sdt">
                 <label for="sdt" class="col-12">Số điện thoại <span>*</span></label>
-                <input type="text" maxlength="10" placeholder="Số điện thoại" id="sdt" name="sdt" class="col-12 input form-control" required formControlName="sdt" [class.is-invalid]="sdt.invalid && sdt.touched" [class.red-border]="sdt.invalid && sdt.touched">
+                <input type="text" maxlength="10" placeholder="Số điện thoại" id="sdt" name="sdt" class="col-12 input form-control" required formControlName="sdt" [class.is-invalid]="sdt.invalid && sdt.touched" [class.red-border]="sdt.invalid && sdt.touched" [(ngModel)]="signUpUser.sdt">
                 <div *ngIf="sdt.invalid && sdt.touched">
                     <small class="text-danger" *ngIf="sdt.errors?.['required'] === true">Bạn cần nhập số điện thoại</small>
                     <small class="text-danger" *ngIf="(sdt.errors?.['nameNotMatch']) && sdt.value">Số điện thoại phải có 10 số, bắt đầu bằng số 0, chỉ được chứa số từ 0 đến 9 </small>
@@ -37,12 +37,12 @@
             </div>
             <div class="dangky--diachi">
                 <label for="diachi" class="col-12">Địa chỉ <span>*</span></label>
-                <input type="text" placeholder="Địa chỉ" id="diachi" name="diachi" class="col-12 input form-control" formControlName="diaChi" [class.is-invalid]="diaChi.invalid && diaChi.touched" [class.red-border]="diaChi.invalid && diaChi.touched">
+                <input type="text" placeholder="Địa chỉ" id="diachi" name="diaChi" class="col-12 input form-control" formControlName="diaChi" [class.is-invalid]="diaChi.invalid && diaChi.touched" [class.red-border]="diaChi.invalid && diaChi.touched" [(ngModel)]="signUpUser.diaChi">
                 <small *ngIf="diaChi.invalid && diaChi.touched" class="text-danger">Bạn cần nhập địa chỉ</small>
             </div>
             <div class="dangky--matkhau">
                 <label for="mk" class="col-12">Mật khẩu <span>*</span></label>
-                <input type="password" placeholder="Mật khẩu" id="mk" name="" class="col-12 input form-control" formControlName="matKhau" [class.is-invalid]="matKhau.invalid && matKhau.touched" [class.red-border]="matKhau.invalid && matKhau.touched">
+                <input type="password" placeholder="Mật khẩu" id="mk" name="" class="col-12 input form-control" formControlName="matKhau" [class.is-invalid]="matKhau.invalid && matKhau.touched" [class.red-border]="matKhau.invalid && matKhau.touched" [(ngModel)]="signUpUser.matKhau">
                 <div *ngIf="matKhau.invalid && matKhau.touched">
                     <small class="text-danger" *ngIf="matKhau.errors?.['required']">Bạn cần nhập mật khẩu</small>
                     <small class="text-danger" *ngIf="matKhau.errors?.['minlength']">Mật khẩu tối thiểu 5 ký tự</small>
@@ -59,11 +59,11 @@
 
             </div>
             <div class="btn--dangky center">
-                <input type="submit" class="btn-primary" value="Đăng ký" [disabled]="regForm.invalid" [class.submit-disable]="regForm.invalid">
+                <input type="submit" class="btn-primary" value="Đăng ký" [disabled]="regForm.invalid" [class.submit-disable]="regForm.invalid" (click)="signUp()">
             </div>
             <div class="dangky--dangnhap">
                 Bạn đã có tài khoản?
-                <a href="">Đăng nhập tại đây</a>
+                <a routerLink="/dangnhap" routerLinkActive="active">Đăng nhập tại đây</a>
             </div>
             <div class="dangnhap--google center">
                 <label for="">Hoặc đăng nhập bằng</label>
