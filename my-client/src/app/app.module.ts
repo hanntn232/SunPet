@@ -44,10 +44,14 @@ import { AdmintasklistComponent } from './admintasklist/admintasklist.component'
 import { AdminchatboxComponent } from './adminchatbox/adminchatbox.component';
 import { PiechartComponent } from './piechart/piechart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TestComponent } from './test/test.component';
+// import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
+    // declarations: [AppFooterComponent],
+    // AppFooterComponent,
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -86,6 +90,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AdmintasklistComponent,
     AdminchatboxComponent,
     PiechartComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,7 +98,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NgApexchartsModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
