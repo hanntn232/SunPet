@@ -12,7 +12,7 @@ export class ProductDetailService {
   constructor(private _http: HttpClient){ 
   }
   ngOnInit(): void {
-    
+    this.getProductList();
   }
 
   getProductList(): Observable<IDproduct[]>{
@@ -21,6 +21,15 @@ export class ProductDetailService {
       retry(3),
       catchError(this.handleError)
     )
+  }
+  postProduct(data:IDproduct){
+    return this._http.post<IDproduct[]>(`${baseUrlProduct}/products`, data);
+  }
+  updateProduct(id:string, newdata:IDproduct):Observable<any>{
+    return this._http.patch(`${baseUrlProduct}/products`, newdata);
+  }
+  deleteProduct(id:string){
+    return this._http.delete(`${baseUrlProduct}/${id}`);
   }
   handleError(error: HttpErrorResponse){
     return throwError(()=> new Error(error.message))
