@@ -1,93 +1,96 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Work+Sans&display=swap" rel="stylesheet">
 <!-- Chưa có responsive -->
-
-<div class=" display__desktop container-fluid ">
-    <nav class="navbar navbar-expand-sm bg-color justify-content-between row">
-        <!-- Brand/logo -->
-        <div class="d-flex ml-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-1">
-            <div>
-                <a class="navbar-brand" href="#" routerLink="/home" routerLinkActive="active">
-                    <img src="../assets/image/logo_white.png" alt="logo" style="width:55px;">
-                </a>
+<div class="display__desktop ">
+      <nav class="navbar navbar-expand-sm bg-color justify-content-between row">
+            <!-- Brand/logo -->
+            <div class="d-flex ml-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-1">
+                  <div><a class="navbar-brand" href="#" routerLink="/home" routerLinkActive="active">
+                              <img src="../assets/image/logo_white.png" alt="logo" style="width:55px;">
+                        </a></div>
+                  <div>
+                        <h3 class="text-white mt-3">SUNPET</h3>
+                  </div>
             </div>
-            <div>
-                <h3 class="text-white mt-3">SUNPET</h3>
+            <!-- Search -->
+            <div class="d-flex pl-5 mr-auto  col-xl-7 col-lg-6 col-md-6 col-sm-6 col-2">
+                  <div>
+                        <input type="text" value="" name="search" id="search" placeholder="search" autocomplete="off"
+                              class="search--input">
+                  </div>
+                  <button class="search--button"><i class="fas fa-search"></i></button>
             </div>
-        </div>
-        <!-- Search -->
-        <div class="d-flex pl-5 mr-auto  col-xl-7 col-lg-6 col-md-6 col-sm-6 col-2">
-            <div>
-                <input type="text" value="" name="search" id="search" placeholder="search" autocomplete="off" class="search--input">
-            </div>
-            <button class="search--button"><i class="fas fa-search"></i></button>
-        </div>
-        <!-- User -->
-        <div class="d-flex mr-4 mt-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 col-2">
-            <div class="mr-2">
-                <p>Tường Vy <br><span>Tp.HCM</span></p>
-            </div>
-            <div>
-                <img class="rounded-circle" src="../assets/image/admin-avatar.jpg" alt="logo" style="width:35px;">
-            </div>
-            <div class="btn-group dropdown__hover user--position dropdown">
-                <button class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-caret-down mb-4"></i>
+            <!-- User -->
+            <div class="d-flex mr-4 mt-2 col-xl-2 col-lg-3 col-md-3 col-sm-3 col-2">
+                  <div class="mr-2">
+                        <p>Tường Vy <br><span>Tp.HCM</span></p>
+                  </div>
+                  <div>
+                        <img class="rounded-circle" src="../assets/image/admin-avatar.jpg" alt="logo"
+                              style="width:35px;">
+                  </div>
+                  <div class="btn-group dropdown__hover user--position dropdown">
+                        <button class="btn" type="button" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="false"><i class="fa-solid fa-caret-down mb-4"></i>
                         </button>
-                <div class="dropdown-menu dropdown-menu-right dropdown-content ">
-                    <a class="dropdown-item" id="dangky" routerLink="/dangky" routerLinkActive="active"><i
+                        <div class="dropdown-menu dropdown-menu-right dropdown-content ">
+                              <a class="dropdown-item" id="dangky" routerLink="/dangky" routerLinkActive="active"><i
                                           class="fa-solid fa-user"></i> Hồ sơ</a>
-                    <a class="dropdown-item" id="dangnhap" routerLink="/dangnhap" routerLinkActive="active"><i
+                              <a class="dropdown-item" id="dangnhap" routerLink="/dangnhap" routerLinkActive="active"><i
                                           class="fa-solid fa-gear"></i> Cài đặt</a>
-                    <a class="dropdown-item" id="xemthongtin" routerLink="/xemthongtin" routerLinkActive="active"><i class="fa-solid fa-right-from-bracket"></i> Đăng
+                              <a class="dropdown-item" id="xemthongtin" routerLink="/xemthongtin"
+                                    routerLinkActive="active"><i class="fa-solid fa-right-from-bracket"></i> Đăng
                                     xuất</a>
-                </div>
+                        </div>
+                  </div>
             </div>
-        </div>
-    </nav>
+      </nav>
 </div>
 <!-- Có responsive -->
-<div class="display__mobile ">
-    <nav class="navbar navbar-expand-sm bg-color d-flex justify-content-between row">
-        <!-- Brand/logo -->
-        <div class="d-flex ml-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-1">
-            <div>
-                <a class="navbar-brand" href="#" routerLink="/home" routerLinkActive="active">
-                    <img src="../assets/image/logo_white.png" alt="logo" style="width:55px;">
-                </a>
+<div class="display__mobile">
+      <nav class="navbar navbar-expand-sm bg-color d-flex justify-content-between container-fluid row">
+            <!-- Brand/logo -->
+            <div class="d-flex ml-3 col-xl-3 col-lg-3 col-md-3 col-sm-3 col-1">
+                  <div><a class="navbar-brand" href="#" routerLink="/home" routerLinkActive="active">
+                              <img src="../assets/image/logo_white.png" alt="logo" style="width:55px;">
+                        </a></div>
+                  <div class="display__Name">
+                        <h3 class="text-white mt-3">SUNPET</h3>
+                  </div>
             </div>
-            <div class="display__Name">
-                <h3 class="text-white mt-3">SUNPET</h3>
+            <!-- Search -->
+            <div class="d-flex pl-5 mr-auto col-xl-7 col-lg-6 col-md-6 col-sm-6 col-2">
+                  <div>
+                        <input type="text" value="" name="search" id="search" placeholder="search" autocomplete="off"
+                              class="search--input">
+                  </div>
+                  <button class="search--button"><i class="fas fa-search"></i></button>
             </div>
-        </div>
-        <!-- Search -->
-        <div class="d-flex pl-5 mr-auto col-xl-7 col-lg-6 col-md-6 col-sm-6 col-2">
-            <div>
-                <input type="text" value="" name="search" id="search" placeholder="search" autocomplete="off" class="search--input">
-            </div>
-            <button class="search--button"><i class="fas fa-search"></i></button>
-        </div>
-        <!-- User -->
-        <div class="d-flex mr-4 mt-2 mg__Infor col-xl-2 col-lg-3 col-md-3 col-sm-3 col-2">
-            <div class="mr-2 display__Infor">
-                <p>Tường Vy <br><span>Tp.HCM</span></p>
-            </div>
-            <div>
-                <img class="rounded-circle display_img1 width__img" src="../assets/image/admin-avatar.jpg" alt="logo" style="width:35px;">
-            </div>
-            <div class="btn-group dropdown__hover user--position dropdown">
-                <button class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="rounded-circle display_img mb__img"
+            <!-- User -->
+            <div class="d-flex mr-4 mt-2 mg__Infor col-xl-2 col-lg-3 col-md-3 col-sm-3 col-2">
+                  <div class="mr-2 display__Infor">
+                        <p>Tường Vy <br><span>Tp.HCM</span></p>
+                  </div>
+                  <div>
+                        <img class="rounded-circle display_img1 width__img" src="../assets/image/admin-avatar.jpg"
+                              alt="logo" style="width:35px;">
+                  </div>
+                  <div class="btn-group dropdown__hover user--position dropdown">
+                        <button class="btn" type="button" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="false"><img class="rounded-circle display_img mb__img"
                                     src="../assets/image/admin-avatar.jpg" alt="logo" style="width:35px;"><i
                                     class="fa-solid fa-caret-down mb-4 display__user"></i>
                         </button>
-                <div class="dropdown-menu dropdown-menu-right dropdown-content ">
-                    <a class="dropdown-item" id="dangky" routerLink="/dangky" routerLinkActive="active"><i
+                        <div class="dropdown-menu dropdown-menu-right dropdown-content ">
+                              <a class="dropdown-item" id="dangky" routerLink="/dangky" routerLinkActive="active"><i
                                           class="fa-solid fa-user"></i> Hồ sơ</a>
-                    <a class="dropdown-item" id="dangnhap" routerLink="/dangnhap" routerLinkActive="active"><i
+                              <a class="dropdown-item" id="dangnhap" routerLink="/dangnhap" routerLinkActive="active"><i
                                           class="fa-solid fa-gear"></i> Cài đặt</a>
-                    <a class="dropdown-item" id="xemthongtin" routerLink="/xemthongtin" routerLinkActive="active"><i class="fa-solid fa-right-from-bracket"></i> Đăng
+                              <a class="dropdown-item" id="xemthongtin" routerLink="/xemthongtin"
+                                    routerLinkActive="active"><i class="fa-solid fa-right-from-bracket"></i> Đăng
                                     xuất</a>
-                </div>
+                        </div>
+                  </div>
             </div>
-        </div>
-    </nav>
+      </nav>
 </div>

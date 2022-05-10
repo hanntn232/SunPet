@@ -579,6 +579,8 @@
                             </div>
 
                         </div>
+                        <<<<<<< HEAD=======< /div>
+                            >>>>>>> parent of 88717ea (Merge branch 'main' of https://github.com/hanntn232/SunPet)
 
                     </section>
 
@@ -875,6 +877,181 @@
             </div>
         </div>
     </div>
+    <<<<<<< HEAD=======< !-- Form -->
+        <!-- Form AddBlog -->
+        <div class="dialog overlay" id="formAddBlog">
+            <a href="#" class="overlay-close"></a>
+
+            <div class="dialog-body">
+                <a class="dialog-close-btn" href="#">&times;</a>
+                <div class="form-title">
+                    <h3 class="title-text">Thêm thông tin bài viết</h3>
+                </div>
+                <div class="container1">
+                    <form action="">
+                        <!-- /action_page.php -->
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="tieude">Tiêu đề:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="tieude" name="tieude" placeholder="Nhập tiêu đề">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="noidung">Nội dung bài viết:</label>
+                            </div>
+                            <div class="col-75">
+                                <textarea id="noidung" name="noidung" placeholder="Viết gì đó..." style="height:100px"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">Hình ảnh:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="file" value="Thêm hình ảnh">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                            </div>
+                            <div class="col-75">
+                                <i class="fa fa-image"></i>
+                                <i class="fa fa-image"></i>
+                                <i class="fa fa-image"></i>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                            </div>
+                            <div class="col-75">
+                                <input class="button_form" type="submit" value="Hủy">
+                                <input class="button_form" type="submit" value="Lưu">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Form EditBlog -->
+        <div class="dialog overlay" id="formEditBlog">
+            <a href="#" class="overlay-close"></a>
+
+            <div class="dialog-body">
+                <a class="dialog-close-btn" href="#">&times;</a>
+                <div class="form-title">
+                    <h3 class="title-text">Sửa thông tin bài viết</h3>
+                    <!-- <a href="" class="close">x</a> -->
+                </div>
+
+                <div class="container1">
+                    <form action="">
+                        <!-- /action_page.php -->
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="tieude">Tiêu đề:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="tieude" name="tieude" placeholder="Nhập tiêu đề">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="noidung">Nội dung bài viết:</label>
+                            </div>
+                            <div class="col-75">
+                                <textarea id="noidung" name="noidung" placeholder="Viết gì đó..." style="height:100px"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="fname">Hình ảnh:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="file" value="Thêm hình ảnh">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                            </div>
+                            <div class="col-75">
+                                <i class="fa fa-image"></i>
+                                <i class="fa fa-image"></i>
+                                <i class="fa fa-image"></i>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-25">
+                            </div>
+                            <div class="col-75">
+                                <input class="button_form" type="submit" value="Hủy">
+                                <input class="button_form" type="submit" value="Lưu">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Form DeleteBlog -->
+        <div class="dialog overlay" id="formDeleteBlog">
+            <a href="#" class="overlay-close"></a>
+            <div class="dialog-body-delete">
+                <a class="dialog-close-btn" href="#">&times;</a>
+                <div class="form-title">
+                    <h3 class="title-text">Bạn có muốn xóa bài viết không?</h3>
+                </div>
+                <div class="fa--check">
+                    <i class="fas fa-check-circle" style="color: green"></i>
+                </div>
+                <div class="container">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-25">
+                            </div>
+                            <div class="col-75">
+                                <input class="button_formDelete " type="submit" value="Không">
+                                <a href="#formDeleleSucc">
+                                    <input class="button_formDelete" type="submit" value="Có">
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Form deleteSucc -->
+        <div class="dialog overlay" id="formDeleleSucc">
+            <a href="#" class="overlay-close"></a>
+            <div class="dialog-body-delete">
+                <a class="dialog-close-btn" href="#">&times;</a>
+                <div class="form-title">
+                    <h3 class="title-text">Đã xóa bài viết thành công!</h3>
+                </div>
+                <div class="fa--check">
+                    <i class="fas fa-check-circle" style="color: green"></i>
+                </div>
+
+                <div class="container">
+                    <form action="">
+                        <div class="">
+                            <a href=""> <input class="button_form" type="submit" value="Ok"></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần footer -->
+        <div>
+
+            <app-adminfooter></app-adminfooter>
+        </div>
+        >>>>>>> parent of 88717ea (Merge branch 'main' of https://github.com/hanntn232/SunPet)
 </body>
 
 </html>
