@@ -32,7 +32,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { AdminfooterComponent } from './adminfooter/adminfooter.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
-import { NgApexchartsModule} from 'ng-apexcharts'
+import { NgApexchartsModule } from 'ng-apexcharts'
 import { ProductAdminComponent } from './product-admin/product-admin.component';
 import { FormSuaSanphamAdminAndroidComponent } from './form-sua-sanpham-admin-android/form-sua-sanpham-admin-android.component';
 import { FormThemSanphamAdminAndroidComponent } from './form-them-sanpham-admin-android/form-them-sanpham-admin-android.component';
@@ -44,15 +44,11 @@ import { AdmintasklistComponent } from './admintasklist/admintasklist.component'
 import { AdminchatboxComponent } from './adminchatbox/adminchatbox.component';
 import { PiechartComponent } from './piechart/piechart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { ToastrModule } from 'ngx-toastr';
-
 
 
 @NgModule({
   declarations: [
-    // declarations: [AppFooterComponent],
-    // AppFooterComponent,
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -91,7 +87,6 @@ import { ToastrModule } from 'ngx-toastr';
     AdmintasklistComponent,
     AdminchatboxComponent,
     PiechartComponent,
-    // TestComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,11 +97,9 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut:3000,
-      progressBar: true,
-      progressAnimation: 'increasing',
-      // preventDuplicates: true
+      preventDuplicates: true
     })
   ],
   providers: [],

@@ -1,26 +1,33 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 <div>
     <!-- hearder chờ bỏ vào -->
-    <!-- Body  -->
-
+  <div>
+    <app-adminheader></app-adminheader>
+  </div>
+  
+  <!-- Body  -->
+  <div class=" mg-top">
     <div class="row">
+<<<<<<< HEAD
+<<<<<<< HEAD
         <div class=" col-xl-2 col-lg-2 col-md-1 col-sm-1 col-1">
             <app-adminnavbar></app-adminnavbar>
         </div>
         <!-- Phần cột bên phải do mình code -->
-        <div class="app col-lg-10 col-md-11 col-sm-11 col-11 main-content">
+        <div class="app col-xl-10 col-lg-10 col-md-11 col-sm-11 col-11 main-content">
             <!-- mg-subcontainer -->
             <div>
                 <app-adminheader></app-adminheader>
             </div>
-            <div class="container-fluid mg-bottom" style="background-color: #FEF8E1;">
+            <div class="container-fluid mg-bottom">
                 <div class="col-md-8">
                     <div class="d-flex flex-row">
                         <div class="mt-3">
@@ -316,52 +323,318 @@
                     </div>
                     <div>23, Võ Văn Ngân, phường Linh chiểu, quận Thủ Đức, tp Thủ Đức, Hồ Chí Minh, Việt Nam</div>
                 </div>
+=======
+        <!-- phân cột bên trái chờ bỏ vào -->
+      <div class="col-lg-2 col-md-2 col-sm-1 col-1">
+        <app-adminnavbar></app-adminnavbar>
+      </div>
+
+      <!-- Phần cột bên phải do mình code -->
+      <div class="mg-subcontainer col-lg-9 col-md-10 col-sm-11 col-11 row">
+        
+        <div class="col-md-8">
+          <div class="d-flex flex-row" >
+            <div class="mt-3">
+             <h3>Chi tiết đơn hàng</h3>
             </div>
-            <!-- Phần form -->
-            <div class="container-fluid-form modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <div class="row">
-                                <form action="">
-                                    <div class="modal-header">
-                                        <h5 class="text-center">Bạn có muốn huỷ đơn hàng không?</h5>
-                                        <button class="btn-close" aria-label="Close" data-dismiss="modal" onclick="myDialog.close()"></button>
-                                    </div>
-                                    <label for="">Lý do huỷ đơn hàng:</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input checked" type="checkbox" id="check1" name="option1" value="something">
-                                        <label class="form-check-label">Hết hàng</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input checked" type="checkbox" id="check2" name="option2" value="something">
-                                        <label class="form-check-label">Hàng bị lỗi</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input checked" type="checkbox" id="check3" name="option3" value="something">
-                                        <label class="form-check-label">Không có Shiper</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input checked" type="checkbox" id="check4" name="option4" value="something">
-                                        <label class="form-check-label">Khách yêu cầu</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input checked" type="checkbox" id="check5" name="option5" value="something">
-                                        <label class="form-check-label">Khác</label>
-                                    </div>
-                                    <div class="form-button d-flex flex-row justify-content-center">
-                                        <div class="mr-4"><button class="save-button btn btn-sm bg-color" type="submit" id="btnco" onclick="clicked()">Có</button></div>
-                                        <div><button class="cancel-button btn btn-sm btn-secondary " data-dismiss="modal" onclick="myDialog.close()">Không</button></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <hr class="hr hr__display">
+          <div class="d-flex flex-row row">
+            <div class="p-2 col-sm-3 col-5">
+              <img src="assets/image/Detail8_1.png" class="rounded w-100 " alt="sanpham">
+>>>>>>> parent of 88717ea (Merge branch 'main' of https://github.com/hanntn232/SunPet)
             </div>
-            <div>
-                <app-adminfooter></app-adminfooter>
+            <div class="p-2 col-sm-3 col-7">
+              <div><p class="w-100">Balo vận chuyển chó mèo Phi hành</p></div>
+              <div><p>Giá: <span class="color--red bold">400.000đ</span></p></div>
+            </div> 
+            <div class="p-2 col-sm-3 col-6 d-flex justify-content-end">400.000đ x 4 <span class="ml-3">=</span></div>
+            <div class="p-2 col-sm-2 col-6 ">1.600.000đ</div>
+          </div>
+
+          <div class="d-flex flex-row row mt-1">
+            <div class="col-md-5 ">
+              <div class="p-2"><h5>Ghi chú</h5></div>
+              <div class="p-2"><input type="text" for="" value="Thêm ghi chú..." class="border border-warning rounded w-100 h-100 pb-4 p-1 text-secondary"></div>
+              <div class="p-2"><button class="btn bg-color">Gửi</button></div>
             </div>
+            <div class="row col-md-7">
+              <div class="d-flex flex-row row mt-2">
+                <div class="col-sm-9 col-9"><p>Tổng giá trị sản phẩm: </p></div>
+                <div class="col-sm-3 col-3"><p>1.600.000đ</p> </div>
+              </div>
+              <div class="d-flex flex-row row">
+                <div class="col-sm-9 col-9"><p>Vận chuyển: </p></div>
+                <div class="col-sm-3 col-3"><p>20.000đ</p></div>
+              </div>
+              <div class="d-flex flex-row row">
+                <div class="col-sm-9 col-9"><p>Số tiền phải thanh toán: </p></div>
+                <div class="col-sm-3 col-3"><p>1.620.000đ</p></div>
+              </div>
+              <hr class="hr hr__display mt-0">
+              <div class="d-flex flex-row row">
+                <div class="col-sm-9 col-9"><p>Số tiền đã thanh toán: </p></div>
+                <div class="col-sm-3 col-3"><p>1.620.000đ</p></div>
+              </div>
+              <div class="d-flex flex-row row">
+                <div class="col-sm-9 col-9"><p>Số tiền thực nhận: </p></div>
+                <div class="col-sm-3 col-3"><p>1.620.000đ</p></div>
+              </div>
+              <div class="d-flex flex-row row">
+                <div class="col-sm-9 col-9"><p>Số tiền chưa thanh toán: </p></div>
+                <div class="col-sm-3 col-3"><p>0đ</p></div>
+              </div>
+            </div>
+=======
+        <!-- phân cột bên trái chờ bỏ vào -->
+      <div class="col-lg-2 col-md-2 col-sm-1 col-1">
+        <app-adminnavbar></app-adminnavbar>
+      </div>
+
+      <!-- Phần cột bên phải do mình code -->
+      <div class="mg-subcontainer col-lg-9 col-md-10 col-sm-11 col-11 row">
+        
+        <div class="col-md-8">
+          <div class="d-flex flex-row" >
+            <div class="mt-3">
+             <h3>Chi tiết đơn hàng</h3>
+            </div>
+          </div>
+          <hr class="hr hr__display">
+          <div class="d-flex flex-row row">
+            <div class="p-2 col-sm-3 col-5">
+              <img src="assets/image/Detail8_1.png" class="rounded w-100 " alt="sanpham">
+            </div>
+            <div class="p-2 col-sm-3 col-7">
+              <div><p class="w-100">Balo vận chuyển chó mèo Phi hành</p></div>
+              <div><p>Giá: <span class="color--red bold">400.000đ</span></p></div>
+            </div> 
+            <div class="p-2 col-sm-3 col-6 d-flex justify-content-end">400.000đ x 4 <span class="ml-3">=</span></div>
+            <div class="p-2 col-sm-2 col-6 ">1.600.000đ</div>
+          </div>
+
+          <div class="d-flex flex-row row mt-1">
+            <div class="col-md-5 ">
+              <div class="p-2"><h5>Ghi chú</h5></div>
+              <div class="p-2"><input type="text" for="" value="Thêm ghi chú..." class="border border-warning rounded w-100 h-100 pb-4 p-1 text-secondary"></div>
+              <div class="p-2"><button class="btn bg-color">Gửi</button></div>
+            </div>
+            <div class="row col-md-7">
+              <div class="d-flex flex-row row mt-2">
+                <div class="col-sm-9 col-9"><p>Tổng giá trị sản phẩm: </p></div>
+                <div class="col-sm-3 col-3"><p>1.600.000đ</p> </div>
+              </div>
+              <div class="d-flex flex-row row">
+                <div class="col-sm-9 col-9"><p>Vận chuyển: </p></div>
+                <div class="col-sm-3 col-3"><p>20.000đ</p></div>
+              </div>
+              <div class="d-flex flex-row row">
+                <div class="col-sm-9 col-9"><p>Số tiền phải thanh toán: </p></div>
+                <div class="col-sm-3 col-3"><p>1.620.000đ</p></div>
+              </div>
+              <hr class="hr hr__display mt-0">
+              <div class="d-flex flex-row row">
+                <div class="col-sm-9 col-9"><p>Số tiền đã thanh toán: </p></div>
+                <div class="col-sm-3 col-3"><p>1.620.000đ</p></div>
+              </div>
+              <div class="d-flex flex-row row">
+                <div class="col-sm-9 col-9"><p>Số tiền thực nhận: </p></div>
+                <div class="col-sm-3 col-3"><p>1.620.000đ</p></div>
+              </div>
+              <div class="d-flex flex-row row">
+                <div class="col-sm-9 col-9"><p>Số tiền chưa thanh toán: </p></div>
+                <div class="col-sm-3 col-3"><p>0đ</p></div>
+              </div>
+            </div>
+>>>>>>> parent of 88717ea (Merge branch 'main' of https://github.com/hanntn232/SunPet)
+          </div>
         </div>
 
+        <div class=" col-md-4 mt-3 border border-warning rounded kh_display check__display">
+          <div class="d-flex flex-row row mt-2">
+            <div class="col-sm-10 col-11 col-md-9"><h3>Khách hàng</h3></div>
+            <div class="p-2 col-sm-2 col-1 col-md-3 text-warning size__user">
+              <h5><i class="fas fa-user"></i></h5>
+              </div>
+          </div>
+          <div><p>Nguyễn Văn A</p></div>
+          <div class="d-flex flex-row row">
+            <div class="col-6">Số lượng:</div>
+            <div class="col-6">4 sản phẩm</div>
+          </div>
+          <hr class="hr hr__display mt-3">
+          <div><h4>Địa chỉ giao hàng</h4></div>
+          <div><p>Nguyễn Văn A</p></div>
+          <div><p>SĐT: 0333315625</p></div>
+          <div>23, Võ Văn Ngân, phường Linh chiểu, quận Thủ Đức, tp Thủ Đức, Hồ Chí Minh, Việt Nam</div>
+        </div>
+
+        <div class="note__display">
+          <div class="p-2"><h5>Ghi chú</h5></div>
+          <div><input type="text" for="" value="Thêm ghi chú..." class="border border-warning rounded w-100 h-100 pb-4 p-1 text-secondary"></div>
+          <div><button class="btn bg-color">Gửi</button></div>
+        </div>
+
+
+        <div class="mt-3">
+          <div class="d-flex flex-row row  container__color">
+            <div class="col d-flex justify-content-center"><p><i class="fas fa-circle xn__display"></i></p></div>
+            <div class="col d-flex justify-content-center"><p><i class="fas fa-check-circle xn__display"></i></p></div>
+            <div class="col d-flex justify-content-center"><p><i class="fas fa-circle xn__display"></i></p></div>
+            <div class="col d-flex justify-content-center"><p><i class="fas fa-circle xn__display"></i></p></div>
+            <div class="col d-flex justify-content-center"><p><i class="fas fa-circle xn__display"></i></p></div>
+          </div>
+          <div><hr class="hr hr__display xn__display"></div>
+          <div class="d-flex flex-row row">
+            <div class="col status_display--md">
+              <div class=""><h5 class="text-center">Chờ xác nhận</h5></div>
+              <div class="d-flex justify-content-center"><button class="btn bg-color">Xác nhận</button></div>
+              <div class="p-3 d-flex justify-content-center"><button class="btn bg-color "type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Huỷ</button></div>
+            </div>
+            <div class="col status_display--md">
+              <div><h5  class="text-center">Chờ đóng gói</h5></div>
+              <div class="d-flex justify-content-center"><button class="btn bg-color">Hoàn tất</button></div>
+            </div>
+            <div class="col status_display--md">
+              <div><h5  class="text-center">Chờ giao hàng</h5></div>
+              <div class="d-flex justify-content-center"><button class="btn bg-color">Hoàn tất</button></div>
+            </div>
+            <div class="col status_display--md">
+              <div><h5  class="text-center">Đã giao</h5></div>
+              <div class="d-flex justify-content-center"><button class="btn bg-color">Hoàn tất</button></div>
+            </div>
+            <div class="col status_display--md">
+              <div><h5  class="text-center">Đã huỷ</h5></div>
+              <div class="d-flex justify-content-center"><button class="btn bg-color" >Huỷ</button></div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-row row">
+            <div class="col status_display--lg">
+              <div class=""><h5 class="text-center">Chờ xác nhận</h5></div>
+              <div class="d-flex justify-content-center"><button class="btn bg-color btn-sm">Xác nhận</button></div>
+              <div class="p-3 d-flex justify-content-center"><button class="btn bg-color btn-sm"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Huỷ</button></div>
+            </div>
+            <div class="col status_display--lg">
+              <div><h5  class="text-center">Chờ đóng gói</h5></div>
+              <div class="d-flex justify-content-center"><button class="btn bg-color btn-sm">Hoàn tất</button></div>
+            </div>
+            <div class="col status_display--lg">
+              <div><h5  class="text-center">Chờ giao hàng</h5></div>
+              <div class="d-flex justify-content-center"><button class="btn bg-color btn-sm">Hoàn tất</button></div>
+            </div>
+            <div class="col status_display--lg">
+              <div><h5  class="text-center">Đã giao</h5></div>
+              <div class="d-flex justify-content-center"><button class="btn bg-color btn-sm">Hoàn tất</button></div>
+            </div>
+            <div class="col status_display--lg">
+              <div><h5 class="text-center">Đã huỷ</h5></div>
+              <div class="d-flex justify-content-center"><button class="btn bg-color btn-sm">Huỷ</button></div>
+            </div>
+          </div>
+        </div>
+
+       <div>
+        
+        <div class=" row  container__color repi__display--576">
+          <div class="d-flex justify-content-left "><p class=""><i class="fas fa-circle __display"></i></p></div>
+          <div class="mt-4 d-flex justify-content-left"><p><i class="fas fa-check-circle __display"></i></p></div>
+          <div class="mt-3 d-flex justify-content-left"><p><i class="fas fa-circle __display"></i></p></div>
+          <div class="mt-3 d-flex justify-content-left"><p><i class="fas fa-circle __display"></i></p></div>
+          <div class="mt-3 d-flex justify-content-left"><p><i class="fas fa-circle __display"></i></p></div>
+        </div>
+        <div class=" d-flex flex-column ">
+          <div class="pl-4 d-flex flex-row row ">
+            <div class="col-5 repi__display--576"><h6 class="">Chờ xác nhận</h6></div>
+            <div class="col-4 repi__display--576"><button class="btn btn-sm bg-color">Xác nhận</button></div>
+            <div class="col-2 repi__display--576"><button class="btn btn-sm bg-color" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Huỷ</button></div>
+          </div>
+          <div class="pl-4 mt-4 d-flex flex-row row">
+            <div class="col-5 repi__display--576"><h6>Chờ đóng gói</h6></div>
+            <div class="col-7 repi__display--576"><button class="btn btn-sm bg-color">Hoàn tất</button></div>
+          </div>
+          <div class="pl-4 mt-4 d-flex flex-row row ">
+            <div  class="col-5 repi__display--576"><h6 >Chờ giao hàng</h6></div>
+            <div class="col-7 repi__display--576"><button class="btn btn-sm bg-color">Hoàn tất</button></div>
+          </div>
+          <div class="pl-4 mt-4 d-flex flex-row row">
+            <div  class="col-5 repi__display--576"><h6 >Đã giao</h6></div>
+            <div class="col-7 repi__display--576"><button class="btn btn-sm bg-color">Hoàn tất</button></div>
+          </div>
+          <div class="pl-4 mt-4 d-flex flex-row row ">
+            <div class="col-5 repi__display--576"><h6  >Đã huỷ</h6></div>
+            <div class="col-7 repi__display--576"><button class="btn btn-sm bg-color">Huỷ</button></div>
+          </div>
+        </div>
+       </div>
+        
+        <div class=" mt-3 border border-warning rounded customer_display--md">
+          <div class="d-flex flex-row row mt-2">
+            <div class="col-sm-10 col-md-9"><h3>Khách hàng</h3></div>
+            <div class="pt-2 pl-4 col-sm-2 col-md-3 text-warning size__user">
+              <h5><i class="fas fa-user"></i></h5>
+              </div>
+          </div>
+          <div><p>Nguyễn Văn A</p></div>
+          <div class="d-flex flex-row row">
+            <div class="col-sm-5 col-5">Số lượng:</div>
+            <div class="col-sm-7 col-7">4 sản phẩm</div>
+          </div>
+          <hr class="hr hr__display mt-3">
+          <div><h4>Địa chỉ giao hàng</h4></div>
+          <div><p>Nguyễn Văn A</p></div>
+          <div><p>SĐT: 0333315625</p></div>
+          <div>23, Võ Văn Ngân, phường Linh chiểu, quận Thủ Đức, tp Thủ Đức, Hồ Chí Minh, Việt Nam</div>
+        </div>
+      </div>
     </div>
+     
+    <!-- Phần form -->
+    <div class="container-fluid-form modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <div class="row">
+                      <form action="">
+                          <div class="modal-header">
+                              <h5 class="text-center">Bạn có muốn huỷ đơn hàng không?</h5>
+                              <button  class="btn-close" aria-label="Close" data-dismiss="modal" onclick="myDialog.close()"></button>
+                          </div>
+                          <label for="">Lý do huỷ đơn hàng:</label>
+                          <div class="form-check">
+                            <input class="form-check-input checked" type="checkbox" id="check1" name="option1" value="something">
+                            <label class="form-check-label">Hết hàng</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input checked" type="checkbox" id="check2" name="option2" value="something">
+                            <label class="form-check-label">Hàng bị lỗi</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input checked" type="checkbox" id="check3" name="option3" value="something">
+                            <label class="form-check-label">Không có Shiper</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input checked" type="checkbox" id="check4" name="option4" value="something">
+                            <label class="form-check-label">Khách yêu cầu</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input checked" type="checkbox" id="check5" name="option5" value="something">
+                            <label class="form-check-label">Khác</label>
+                          </div>
+                          <div class="form-button d-flex flex-row justify-content-center">
+                            <div class="mr-4"><button class="save-button btn btn-sm bg-color" type="submit" id="btnco" onclick="clicked()">Có</button></div>
+                            <div><button class="cancel-button btn btn-sm btn-secondary " data-dismiss="modal" onclick="myDialog.close()">Không</button></div>
+                        </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div>
+    <app-adminfooter></app-adminfooter>
+  </div>
+</div>
+  
+

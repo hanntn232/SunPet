@@ -2,6 +2,14 @@
     font-family: OpenSans;
     src: url(/assets/font/OpenSans-Regular.ttf);
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+* {
+    /* /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .hr {
     height: 4px;
@@ -10,122 +18,156 @@
     background-color: #FFC700;
 }
 
+.btn {
+    width: 80px;
+    text-align: center;
+    padding: 5px
+}
+
+.main-content {
+    padding: 0;
+}
+
 .color--red {
+=======
+.hr{
+    height:4px;
+    border-width:0;
+    color:#FFC700;
+    background-color:#FFC700;
+}
+
+.color--red{
+>>>>>>> parent of 88717ea (Merge branch 'main' of https://github.com/hanntn232/SunPet)
+=======
+.hr{
+    height:4px;
+    border-width:0;
+    color:#FFC700;
+    background-color:#FFC700;
+}
+
+.color--red{
+>>>>>>> parent of 88717ea (Merge branch 'main' of https://github.com/hanntn232/SunPet)
     color: red;
     font-weight: bolder;
 }
 
-.bg-color {
+.bg-color{
     background-color: #FFC700;
 }
 
-.container__color {
+.container__color{
     color: #FFC700;
     height: 0px;
 }
-
-.mg-top {
+.mg-top{
     padding-top: 70px;
 }
-
-.checked {
+.checked{
     border-color: #FFC700 !important;
 }
-
-.form-check .form-check-input:checked {
+.form-check .form-check-input:checked{
     border-color: #FFC700;
     background-color: #FFC700;
 }
-
-.btn-close {
-    box-sizing: border-box;
+.btn-close{
+    box-sizing:border-box;
     opacity: 1;
 }
-
-.modal-body {
+.modal-body{
     padding-left: 30px;
 }
-
-.mg-bottom {
-    padding-bottom: 30px;
+.mg-subcontainer{
+    margin-left: 15px;
 }
-
-.mg-subcontainer {
-    margin-left: 30px;
-}
-
 @media screen and (max-width: 1700px) {
-    .status_display--lg {
+    
+    .status_display--lg{
         display: none;
     }
-    .customer_display--md {
+    .customer_display--md{
         display: none;
     }
-    .note__display {
+
+    .note__display{
         display: none;
     }
-    .repi__display--576 {
+    .repi__display--576{
         display: none;
     }
+   
 }
 
 @media screen and (max-width: 992px) {
-    .status_display--md {
+    
+    .status_display--md{
         display: none;
     }
-    .status_display--lg {
+
+    .status_display--lg{
         display: block;
     }
-    .check__display {
+   
+    .check__display{
         display: block;
     }
-    .note__display {
+
+    .note__display{
         display: none;
     }
-    .repi__display--576 {
+    .repi__display--576{
         display: none;
     }
 }
 
 @media screen and (max-width: 576px) {
-    .container {
+    .container{
         margin: 0 !important;
         min-width: 300px;
         padding-left: 0px !important;
-        font-size: 15px;
+        font-size: 15px; 
     }
-    .repi__display--576 {
+
+    .repi__display--576{
         width: 1px;
         size: 500px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .container {
+    .container{
         margin: 0 !important;
         min-width: 300px;
         padding-left: 0px !important;
-        font-size: 15px;
+        font-size: 15px; 
     }
-    .status_display--lg {
+
+    .status_display--lg{
         display: none;
     }
-    .kh_display {
+
+    .kh_display{
         display: none;
     }
-    .xn__display {
+
+    .xn__display{
         display: none;
     }
-    .customer_display--md {
+   
+    .customer_display--md{
         display: block;
     }
-    .note__display {
+
+    .note__display{
         display: none;
     }
-    .repi__display--576 {
+
+    .repi__display--576{
         display: block;
     }
-    .size-border {
+
+    .size-border{
         border-width: 30px;
     }
 }

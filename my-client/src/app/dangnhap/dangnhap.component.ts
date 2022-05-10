@@ -6,6 +6,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { customValidator } from '../validators/dangky.validators';
 import { Observable, Subject } from 'rxjs';
 import { UserService } from '../service/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dangnhap',
@@ -18,7 +19,11 @@ export class DangnhapComponent implements OnInit {
   public errMsg: any;
   logForm: any;
 
-  constructor(private _service: UserService, private _router: Router,private _formBuilder: FormBuilder) { }
+  constructor(private _service: UserService, 
+    private _router: Router,
+    private _formBuilder: FormBuilder,
+    private _toastr: ToastrService
+    ) { }
 
   ngOnInit(): void {
     // this._service.getAllUsers().subscribe({
@@ -74,6 +79,8 @@ export class DangnhapComponent implements OnInit {
         localStorage.setItem("token", userTrungKhop.token)
         return userTrungKhop;
       }
+      if(users[i].sdt == sdt && users[i].matKhau != matKhau)
+      return ("Incorrect password")
     }
     return ("User not found")
   }
@@ -84,12 +91,14 @@ export class DangnhapComponent implements OnInit {
         this.users = data;
         var tonTaiUser: string | User;
         tonTaiUser = this.kiemTraUser(form.value.sdt, form.value.matKhau, this.users);
-        tonTaiUser
-        if(tonTaiUser != "User not found"){
+        if(tonTaiUser != "User not found" && tonTaiUser != "Incorrect password"){
           this._router.navigate(['/home']);
         }
+        else if(tonTaiUser == "Incorrect password"){
+          this._toastr.error("Mật khẩu không đúng","Đăng nhập không thành công")
+        }
         else{
-          alert(tonTaiUser);
+          this._toastr.error("Số điện thoại chưa đăng ký","Đăng nhập không thành công")
         }
       },
       error: err => this.errMsg = err
