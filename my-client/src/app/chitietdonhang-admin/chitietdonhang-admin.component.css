@@ -3,11 +3,27 @@
     src: url(/assets/font/OpenSans-Regular.ttf);
 }
 
+* {
+    /* /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .hr {
     height: 4px;
     border-width: 0;
     color: #FFC700;
     background-color: #FFC700;
+}
+
+.btn {
+    width: 80px;
+    text-align: center;
+    padding: 5px
+}
+
+.main-content {
+    padding: 0;
 }
 
 .color--red {
