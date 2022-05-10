@@ -8,13 +8,6 @@
     font-size: 18px;
 }
 
-nav {
-    float: left;
-    width: 20%;
-    height: 100vh;
-    background-color: #ffc700
-}
-
 
 /* css cho content bên trong của trang blog chính */
 
@@ -90,7 +83,7 @@ nav {
 
 .main {
     position: absolute;
-    top: 93px;
+    top: 60px;
     width: calc(100% - 260px);
     min-height: calc(100vh - 60px);
     left: 260px;
