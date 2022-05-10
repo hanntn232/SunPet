@@ -13,6 +13,7 @@ import { ThongtinfooterComponent } from './thongtinfooter/thongtinfooter.compone
 import { Router, RouterModule, Routes } from '@angular/router';
 import { XemthongtinComponent } from './xemthongtin/xemthongtin.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductAdminComponent } from './product-admin/product-admin.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'sanpham/:id', component: ProductDetailComponent},
   {path: 'thongtinfooter', component: ThongtinfooterComponent},
   {path: 'xemthongtin', component: XemthongtinComponent},
+  {path: 'admin-product', component: ProductAdminComponent},
   {path: '**', component: HomeComponent}
 ]
 

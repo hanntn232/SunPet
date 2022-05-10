@@ -15,8 +15,7 @@
 </head>
 
 <body>
-    
-<div>
+
     <div class="row">
         <!-- Sidebar -->
         <div class=" col-xl-2 col-lg-2 col-md-1 col-sm-1 col-1">
@@ -25,9 +24,11 @@
         <!-- Container -->
         <div class=" app col-xl-10 col-lg-10 col-md-11 col-sm-11 col-11 main-content">
             <!-- Header -->
-        <div><app-adminheader></app-adminheader></div>
+            <div>
+                <app-adminheader></app-adminheader>
+            </div>
             <!-- Content -->
-            <div> 
+            <div>
                 <div class="app__container">
                     <div class="grid-wide">
                         <div class="search">
@@ -79,54 +80,60 @@
                                         <i class="fa fa-plus"></i>
                                     </div>
                                 </div>
-        
-                                <div class="home-product dsSanPham1">
-                                    <div class="row" id="dsSanPham1">
-                                        <div class="col-md-3">
-                                            <!-- Product item -->
-                                            <a class="home-product-item">
-                                                <div class="product-image">
-                                                    <img src="https://bizweb.dktcdn.net/thumb/large/100/432/370/products/sua-bot-cho-meo-dr-kyan-precaten-anh.jpg?v=1626752115000" alt="Image">
-                                                </div>
-                                                <h4 class="home-product-item__name">Sữa bột cho mèo 110g Dr.Kyan Precaten</h4>
-                                                <div class="home-product-item__price">
-                                                    <span class="home-product-item__price-curent">500.000đ</span>
-                                                    <span class="home-product-item__price-old">590.000đ</span>
-                                                </div>
-        
-        
-        
-                                                <!-- cover -->
-                                                <div class="cover-product">
-                                                    <div class="icon-edit-delete">
-                                                        <button class="icon-change d-inline-flex align-self-center" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
-                                                            <i class="fa fa-pen-to-square"></i>
-                                                            <p>Sửa</p>
-                                                        </button>
-                                                        <button class="icon-change d-inline-flex" data-bs-toggle="modal" data-bs-target="#formDeleteProduct">
-                                                            <i class="fa fa-trash-can"></i>
-                                                            <p>Xóa</p>
-                                                        </button>
+
+                                <!-- Danh sách sản phẩm -->
+                                <div class="row d-flex justify-content-around">
+
+                                    <div class="home-product dsSanPham1 col-xl-3 col-lg-3 col-md-4 col-sm-4 col" *ngFor="let p of products">
+                                        <div class="row" id="dsSanPham1">
+                                            <div class="col-md-3">
+                                                <!-- Product item -->
+                                                <a class="home-product-item">
+                                                    <div class="product-image">
+                                                        <img src={{p.hinhAnh}} alt="Image">
                                                     </div>
-                                                </div>
-        
-                                            </a>
+                                                    <h4 class="home-product-item__name">{{p.ten}}</h4>
+                                                    <div class="home-product-item__price">
+                                                        <span class="home-product-item__price-curent">{{p.giaGoc}}</span>
+                                                        <span class="home-product-item__price-old">{{p.giaBan}}</span>
+                                                    </div>
+
+
+
+                                                    <!-- cover -->
+                                                    <div class="cover-product">
+                                                        <div class="icon-edit-delete">
+                                                            <button class="icon-change d-inline-flex align-self-center" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" (click)="onEdit(p)">
+                                                                <i class="fa fa-pen-to-square"></i>
+                                                                <p>Sửa</p>
+                                                            </button>
+                                                            <button class="icon-change d-inline-flex" data-bs-toggle="modal" data-bs-target="#formDeleteProduct">
+                                                                <i class="fa fa-trash-can"></i>
+                                                                <p>Xóa</p>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
+
                                 <div class="home-product dsSanPham2">
                                     <div class="row" id="dsSanPham2">
                                     </div>
                                 </div>
                                 <ul class="pagination home-product__pagination">
-        
+
                                     <li class="pagination-item pagination-item--active">
                                         <a href="#category-item" class="pagination-item__link " id="page-1">1</a>
                                     </li>
                                     <li class="pagination-item">
                                         <a href="#category-item" class="pagination-item__link " id="page-2">2</a>
                                     </li>
-        
+
                                     <li class="pagination-item">
                                         <span href="#category-item" class="pagination-item__link ">
                                             <i class="pagination-item_icon fas fa-angle-right" id="next"></i>
@@ -140,7 +147,7 @@
                                         </span>
                                     </div>
                                 </div>
-        
+
                             </div>
                         </div>
                     </div>
@@ -149,7 +156,7 @@
         
                     </label>
                     <input type="checkbox" hidden class="nav__input" id="nav-mobile-input">
-        
+
                     <label for="nav-mobile-input" class="nav__overlay">
         
                     </label>
@@ -178,63 +185,62 @@
                                 </li>
                         </ul>
                     </nav>
-        
+
                     <!-- form -->
                     <!-- form add product -->
-                    <div class="container-fluid-form modal fade" id="formAddProduct" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+                    <div class="container-fluid-form modal fade" id="formAddProduct" tabindex="-1" role="dialog" aria-labelledby="formAddProductTitle" aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content modal--content--fix">
                                 <div class="modal-body">
                                     <div class="row">
-                                        <form action="">
+                                        <form action="" #productForm="ngForm" (ngSubmit)="submitData(productForm)">
                                             <div class="modal--header">
-                                                <button type="button" class="btn-close modal--close" aria-label="Close" data-dismiss="modal"></button>
+                                                <button class="btn-close modal--close" aria-label="Close" data-dismiss="modal" onclick="myDialog.close()"></button>
                                                 <h5 class="modal--header-content">Điền thông tin sản phẩm</h5>
                                             </div>
                                             <div class="form-description">
                                                 <div class="form-group">
                                                     <label for="name_product" class="label-format">Tên sản phẩm:</label>
-                                                    <input type="text" id="name_product" name="name_sp" class="form-control" placeholder="Nhập tên sản phẩm">
+                                                    <input type="text" id="name_product" name="name" class="form-control" placeholder="Nhập tên sản phẩm" [(ngModel)]="product['ten']">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="price_product" class="label-format">Giá gốc:</label>
-                                                    <input type="number" min="0" id="price_product" name="price_sp" class="form-control" placeholder="VND">
+                                                    <input type="number" min="0" id="price_product" name="giaGoc" class="form-control" placeholder="VND" [(ngModel)]="product['giaGoc']">
                                                     <!-- <input type="number" id="price_product" name="price_sp" class="form-control"> -->
                                                     <span class="input-group-text">VND</span>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="price_product" class="label-format">Giá bán:</label>
-                                                    <input type="number" min="0" id="price_discount" name="price_new" class="form-control">
+                                                    <input type="number" min="0" id="price_discount" name="giaBan" class="form-control" [(ngModel)]="product['giaBan']">
                                                     <span class="input-group-text">VND</span>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="san_pham" class="label-format">Tất cả sản phẩm: </label>
-                                                    <select id="san_pham" name="san_pham" class="form-control hover__bg">
-                                                        <option value="none">----------</option>
-                                                        <option> Thức ăn cho chó</option>
-                                                        <option> Thức ăn cho mèo</option>
-                                                        <option> Phụ kiện cho chó</option>
-                                                        <option> Phụ kiện cho mèo</option>
+                                                    <select id="san_pham" name="danhMuc" class="form-control hover__bg" [(ngModel)]="product['danhMuc']">
+                                                        <option value="Thức ăn cho chó"> Thức ăn cho chó</option>
+                                                        <option value="Thức ăn cho mèo"> Thức ăn cho mèo</option>
+                                                        <option value="Phụ kiện cho chó"> Phụ kiện cho chó</option>
+                                                        <option value="Phụ kiện cho mèo"> Phụ kiện cho mèo</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
-                                                    <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm"></textarea>
+                                                    <textarea name="moTa" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm" [(ngModel)]="product['moTa']"></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
-                                                    <input type="file" name=upload_file class="button-addimg" id="image_product">
+                                                    <!-- <input type="file" name=upload_file class="button-addimg" id="image_product"> -->
                                                     <!-- Chọn file -->
-                                                    <!-- <span class="btn btn-warning btn-file">
-                                                        Browse...<input type="file">
-                                                    </span> -->
+                                                    <span class="btn btn-warning btn-file">
+                                                        Browse...<input type="file" [(ngModel)]="product['hinhAnh']" name="hinhAnh">
+                                                    </span>
                                                 </div>
                                                 <div class="add-image">
-        
+
                                                 </div>
                                                 <div class="form-button">
-                                                    <button class="save-button" type="submit">Lưu</button>
-                                                    <button class="cancel-button" data-dismiss="modal" type="button">Hủy</button>
+                                                    <button type="submit" class="save-button btn bg-color" id="btnco">Lưu</button>
+                                                    <button class="cancel-button btn" data-dismiss="modal" onclick="myDialog.close()">Hủy</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -249,51 +255,57 @@
                             <div class="modal-content modal--content--fix">
                                 <div class="modal-body">
                                     <div class="row">
-                                        <form action="">
-                                            <div class="modal--header d-flex justify-content-center">
-                                                <div><h5 class="modal--header-content">Sửa thông tin sản phẩm</h5></div>
-                                                <div><button class="btn-close ml-auto" aria-label="Close" data-dismiss="modal" onclick="myDialog.close()"></button></div>
+                                        <form action="" #productForm="ngForm" (ngSubmit)="submitData(productForm)" (click)="onEdit(product)">
+                                            <div class="modal--header d-flex justify-content-center ">
+                                                <div class="col-md-11 col-sm-11 col-11 d-flex flex-row-reverse justify-content-end">
+                                                    <h5 class="modal--header-content">Sửa thông tin sản phẩm</h5>
+                                                </div>
+                                                <div class="col-md-1 col-sm-1 col-1"><button class="btn-close ml-auto" aria-label="Close" data-dismiss="modal" onclick="myDialog.close()"></button></div>
                                             </div>
                                             <div class="form-description">
                                                 <div class="form-group">
                                                     <label for="name_product" class="label-format">Tên sản phẩm:</label>
-        
-                                                    <input type="text" id="name_product" name="name_sp" class="form-control" placeholder="Nhập tên sản phẩm">
+
+                                                    <input type="text" id="name_product" name="ten" class="form-control" placeholder="Sữa bột cho mèo 110g Dr.Kyan Precaten" [(ngModel)]="product['ten']">
                                                 </div>
-    
+
                                                 <div class="form-group">
                                                     <label for="price_product" class="label-format">Giá gốc:</label>
-                                                    <input type="number" id="price_product" name="price_sp" class="form-control" placeholder="VND">
-        
-        
-                                                    <input type="text" id="name_product" name="name_sp" class="form-control" placeholder="Sữa bột cho mèo 110g Dr.Kyan Precaten">
-                                                </div>
-    
-                                                <div class="form-group">
-                                                    <label for="price_product" class="label-format">Giá gốc:</label>
-                                                    <input type="number" min="0" id="price_product" name="price_sp" class="form-control">
+                                                    <input type="number" min="0" id="price_product" name="giaGoc" class="form-control" [(ngModel)]="product['giaGoc']">
                                                     <span class="input-group-text">VND</span>
-        
+
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="price_product" class="label-format">Giá bán:</label>
-                                                    <input type="number" min="0" id="price_discount" name="price_new" class="form-control">
+                                                    <input type="number" min="0" id="price_discount" name="giaBan" class="form-control" [(ngModel)]="product['giaBan']">
                                                     <span class="input-group-text">VND</span>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
-                                                    <textarea name="descrip_sp" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm"></textarea>
+                                                    <label for="san_pham" class="label-format">Tất cả sản phẩm: </label>
+                                                    <select id="san_pham" name="danhMuc" class="form-control hover__bg" [(ngModel)]="product['danhMuc']">
+                                                        <option value="Thức ăn cho chó"> Thức ăn cho chó</option>
+                                                        <option value="Thức ăn cho mèo"> Thức ăn cho mèo</option>
+                                                        <option value="Phụ kiện cho chó"> Phụ kiện cho chó</option>
+                                                        <option value="Phụ kiện cho mèo"> Phụ kiện cho mèo</option>
+                                                    </select>
                                                 </div>
-        
+                                                <div class="form-group">
+                                                    <label for="descrip_product" class="label-format">Mô tả sản phẩm:</label>
+                                                    <textarea name="moTa" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm" [(ngModel)]="product['moTa']"></textarea>
+                                                </div>
+
                                                 <div class="form-group">
                                                     <label for="image_product" class="label-format">Hình ảnh sản phẩm:</label>
-                                                    <input type="file" name="upload_file" class="form-control-file" id="image_product">
+                                                    <input type="file" name="hinhAnh" class="form-control-file" id="image_product" [(ngModel)]="product['hinhAnh']">
+                                                    <!-- <span class="btn btn-warning btn-file">
+                                                        Browse...<input type="file">
+                                                    </span> -->
                                                 </div>
                                                 <img src="" width="90%" alt="" class="img-fluid ${3|rounded-top,rounded-right,rounded-left,rounded-bottom,rounded-circle|}">
                                                 <div class="add-image">
                                                 </div>
                                                 <div class="form-button">
-                                                    <button class="save-button btn bg-color" type="submit" id="btnco" onclick="clicked()">Lưu</button>
+                                                    <button class="save-button btn bg-color" type="submit" id="btnco">Lưu</button>
                                                     <button class="cancel-button btn" data-dismiss="modal" onclick="myDialog.close()"> Huỷ</button>
                                                 </div>
                                             </div>
@@ -309,28 +321,32 @@
                         <div class="modal-content">
                             <div class="modal-body">
                                 <div class="row">
-                                    <button class="btn-close ml-auto modal--close--1" aria-label="Close" data-dismiss="modal" onclick="myDialog.close()"></button>
-                                    <!-- <button type="button" class="btn-close modal--close--1" aria-label="Close" data-dismiss="modal"></button> -->
-                                    <div class="popup-delete-content">
-                                        <p>Bạn có muốn xóa sản phẩm không?</p>
-                                        <div class="popup-button">
-                                            <button class="button--yes" type="submit">Có</button>
-                                            <button class="button--no" data-dismiss="modal" type="button">Không</button>
+                                    <form action="" #productForm="ngForm" (ngSubmit)="submitData(productForm)">
+                                        <button class="btn-close ml-auto modal--close--1" aria-label="Close" data-dismiss="modal" onclick="myDialog.close()"></button>
+                                        <!-- <button type="button" class="btn-close modal--close--1" aria-label="Close" data-dismiss="modal"></button> -->
+                                        <div class="popup-delete-content">
+                                            <p>Bạn có muốn xóa sản phẩm không?</p>
+                                            <div class="popup-button">
+                                                <button class="button--yes" type="submit" (click)="onDelete(products._id)">Có</button>
+                                                <button class="button--no" data-dismiss="modal" type="button">Không</button>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-        
+
                 </div>
-            </div> 
+            </div>
             <!-- footer -->
-            
-            <div class="row__ft" style="border: black solid 10px;"><app-adminfooter></app-adminfooter></div>
+            <div class="row__ft">
+                <app-adminfooter></app-adminfooter>
+            </div>
         </div>
+
     </div>
-</div>
+
 
     <!-- <script>
         taoDanhSachSanPham();
