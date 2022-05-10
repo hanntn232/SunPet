@@ -32,7 +32,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { AdminfooterComponent } from './adminfooter/adminfooter.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
-import { NgApexchartsModule} from 'ng-apexcharts'
+import { NgApexchartsModule } from 'ng-apexcharts'
 import { ProductAdminComponent } from './product-admin/product-admin.component';
 import { FormSuaSanphamAdminAndroidComponent } from './form-sua-sanpham-admin-android/form-sua-sanpham-admin-android.component';
 import { FormThemSanphamAdminAndroidComponent } from './form-them-sanpham-admin-android/form-them-sanpham-admin-android.component';
@@ -99,7 +99,7 @@ import { ToastrModule } from 'ngx-toastr';
     RouterModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-            preventDuplicates: true
+      preventDuplicates: true
     })
   ],
   providers: [],
