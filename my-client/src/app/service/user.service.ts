@@ -21,7 +21,7 @@ export class UserService {
   // handleError(error: HttpErrorResponse){
   //   return throwError(()=> new Error(error.message))
   // }
-  logOut(){
+  logOut() {
     return localStorage.removeItem('token');
   }
 
@@ -60,8 +60,8 @@ export class UserService {
             user.token = data[i].token,
             user._id = data[i]._id,
             user.diaChi = data[i].diaChi
-            // console.log(user.token);
-            // console.log(token)
+          console.log(user.token);
+          console.log(token)
           return user;
         }
       }
@@ -70,7 +70,7 @@ export class UserService {
     )
   }
 
-  postUser(user: User): Observable<any>{
+  postUser(user: User): Observable<any> {
     return this.http.post<User>(`${baseUrl}/users`, user);
   }
 }

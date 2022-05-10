@@ -58,7 +58,6 @@ export class DangkyComponent implements OnInit {
       next: data => {
         for (var i = 0; i < data.length; i++) {
           if (this.signUpUser.sdt == data[i].sdt) {
-            this._toast.clear();
             this._toast.error("Số điện thoại đã tồn tại. Vui lòng chọn đăng nhập hoặc đăng ký với số điện thoại khác", "Đăng ký thất bại")
             return;
           }

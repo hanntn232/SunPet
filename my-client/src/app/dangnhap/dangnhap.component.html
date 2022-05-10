@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="btn--dangnhap center">
-                <input type="submit" class="btn-primary" value="Đăng nhập">
+                <input type="submit" class="btn-primary" [class.submit-disable]="logForm.invalid" value="Đăng nhập" [disabled]="logForm.invalid">
             </div>
             <div class="dangnhap--dangky">
                 Bạn chưa có tài khoản?

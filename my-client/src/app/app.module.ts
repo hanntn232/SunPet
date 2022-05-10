@@ -98,7 +98,9 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     RouterModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      preventDuplicates: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
