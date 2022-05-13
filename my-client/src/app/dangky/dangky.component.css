@@ -5,7 +5,7 @@
 
 * {
     font-family: Opensans;
-    font-size: 18px;
+    /* font-size: 18px; */
 }
 
 .dangky--container {
@@ -33,7 +33,15 @@
 }
 
 form>* {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+form>div>label {
+    padding: 0px;
+}
+
+form {
+    padding: 0px;
 }
 
 .dangky--matkhau>label,
@@ -60,7 +68,11 @@ form>* {
 .dangky--ho>input:focus,
 .dangky--ten>input:focus,
 .dangky--diachi>input:focus {
-    outline: 1px solid #FFD541;
+    /* outline: 1px solid #FFD541; */
+}
+
+.form-control:focus {
+    box-shadow: none;
 }
 
 
@@ -78,6 +90,11 @@ form>* {
 
 .input {
     padding: 5px 10px;
+}
+
+.submit-disable {
+    background-color: lightgray !important;
+    color: black;
 }
 
 
@@ -100,6 +117,10 @@ form>* {
     box-shadow: none !important;
     background-color: #FFD541;
     border: 1px solid #FFC700;
+}
+
+.red-border {
+    border: 1px solid red !important;
 }
 
 .btn--google {

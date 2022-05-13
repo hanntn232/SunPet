@@ -30,13 +30,13 @@
               class="fas fa-user"></i>
           </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-content ">
-                        <a class="dropdown-item" id="dangky" routerLink="/dangky" routerLinkActive="active">Đăng ký</a>
+                        <a class="dropdown-item" id="dangky" routerLink="/dangky" routerLinkActive="active" *ngIf="isLogin==false">Đăng ký</a>
 
-                        <a class="dropdown-item" id="dangnhap" routerLink="/dangnhap" routerLinkActive="active">Đăng nhập</a>
+                        <a class="dropdown-item" id="dangnhap" routerLink="/dangnhap" routerLinkActive="active" *ngIf="isLogin==false">Đăng nhập</a>
 
-                        <a class="dropdown-item" id="xemthongtin" routerLink="/xemthongtin" routerLinkActive="active">Xem thông tin</a>
+                        <a class="dropdown-item" id="xemthongtin" routerLink="/xemthongtin" routerLinkActive="active" *ngIf="isLogin==true">Xem thông tin</a>
 
-                        <a class="dropdown-item" href="#" id="dangxuat" onclick="dangXuat()">Đăng xuất</a>
+                        <a class="dropdown-item" id="dangxuat" (click)="logOut()" *ngIf="isLogin==true">Đăng xuất</a>
                     </div>
                 </div>
             </div>

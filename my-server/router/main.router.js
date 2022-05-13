@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const product = require("../model/product")
 const blog = require("../model/blog")
+const user = require('../model/user');
+const cart = require('../model/cart')
+const order = require('../model/order')
 
 router.get('/', function(req, res) {
     res.send("Chào mừng bạn đến với Website SunPet")
@@ -27,6 +30,65 @@ router.get('/products', function(req, res) {
 //Get all blogs
 router.get("/blogs", function(req, res) {
     blog.find({}, function(err, data) {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(data)
+        }
+    })
+})
+
+
+//Get all users
+router.get("/users", function(req, res) {
+    user.find({}, function(err, data) {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(data)
+        }
+    })
+})
+
+
+//Insert user
+//Insert product
+router.post('/users', async function(req, res) {
+    // console.log("Data from client: ", req.body)
+    // res.send("Server đã nhận dữ liệu")
+    let userImport = new user({
+        role: req.body.role,
+        ho: req.body.ho,
+        ten: req.body.ten,
+        sdt: req.body.sdt,
+        diaChi: req.body.diaChi,
+        matKhau: req.body.matKhau,
+        token: req.body.token
+    })
+
+    try {
+        p = await userImport.save();
+        res.json({ message: "success" })
+    } catch (err) {
+        res.json({ message: err.message })
+    }
+})
+
+
+//Get all carts
+router.get("/carts", function(req, res) {
+    cart.find({}, function(err, data) {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(data)
+        }
+    })
+})
+
+//Get all orders
+router.get("/orders", function(req, res) {
+    order.find({}, function(err, data) {
         if (err) {
             res.send(err)
         } else {
