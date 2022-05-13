@@ -806,7 +806,7 @@ div#dsSanPham1>div {
     left: 60px;
     width: calc(100% - 60px);
 }
- 
+
 /* .hover__bg:hover {
     background-color: var(--orange-color);
     color: white;
@@ -836,7 +836,7 @@ div#dsSanPham1>div {
     cursor: inherit;
     display: block;
   }
- 
+
 /* tablet */
  
 @media(max-width: 739.5px) {
