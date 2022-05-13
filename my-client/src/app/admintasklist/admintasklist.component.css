@@ -1,16 +1,16 @@
 outer-wrapper {
       margin: 10px;
-      /* margin-left: 20px;
-        margin-right: 20px; */
-      /* max-width: fit-content; */
-      /* max-height: fit-content; */
+      margin-left: 20px;
+        margin-right: 20px;
+      max-width: fit-content;
+      max-height: fit-content;
   }
   
   .table-wrapper {
       overflow-y: scroll;
         /* overflow-x: scroll; */
       scroll-snap-type: both mandatory;
-      /* height: fit-content; */
+      height: fit-content;
       max-height: 66.4vh;
       margin-top: 22px;
       margin: 5px;
@@ -126,59 +126,4 @@ outer-wrapper {
       margin-right: 0;
   }
 
-  /* Thêm chỉnh sửa */
-  .cards {
-    padding: 20px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.content-2 {
-    min-height: 60vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.content-2 .recent-payments {
-    min-height: 50vh;
-    flex: 5;
-    background: white;
-    margin: 0 25px 25px 25px;
-    display: flex;
-    flex-direction: column;
-}
-
-.container__color{
-    background-color: #FEF8E1;
-}
-
-
-.hr{
-    height:2px;
-    border-width:0;
-    color:#FFC700;
-    background-color:#FFC700;
-    margin: 0px !important;
-}
-
-
-@media screen and (max-width: 576px) {
-    .container{
-        margin: 0 !important;
-        min-width: 300px;
-        padding-left: 0px !important;
-        font-size: 15px; 
-    }
-
-   .status__display{
-       display: none;
-   }
-    .hr__display{
-        display: block;
-    }
-   
-}
+  
