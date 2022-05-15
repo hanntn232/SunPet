@@ -281,7 +281,7 @@ a:visited {
     .giohang--container {
         border-top: 1px solid lightgray;
         border-bottom: 1px solid lightgray;
-        min-width: 300px;
+        /* min-width: 300px; */
     }
     .frame--footer--container {
         min-width: 300px;
