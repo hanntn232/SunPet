@@ -27,7 +27,8 @@
                   </td>
                   <td data-label="TenSP">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1" style="width: 55px; height: auto;">
+                      class="shadow-1-strong rounded-circle" alt="avatar 1"
+                      style="width: 55px; height: auto;">
                     <span class="ms-2">{{t.name}}</span>
                   </td>
                   <td class="align-middle" data-label="TenSP">
@@ -49,7 +50,8 @@
                   </td>
                   <td data-label="TenSP">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-4.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1" style="width: 55px; height: auto;">
+                      class="shadow-1-strong rounded-circle" alt="avatar 1"
+                      style="width: 55px; height: auto;">
                     <span class="ms-2">Kate Moss</span>
                   </td>
                   <td class="align-middle" data-label="TenSP">Make payment to Bluedart</td>
@@ -69,7 +71,8 @@
                   </td>
                   <td data-label="">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1" style="width: 55px; height: auto;">
+                      class="shadow-1-strong rounded-circle" alt="avatar 1"
+                      style="width: 55px; height: auto;">
                     <span class="ms-2">Danny McChain</span>
                   </td>
                   <td class="align-middle" data-label="">Office rent</td>
@@ -89,7 +92,8 @@
                   </td>
                   <td data-label="">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-3.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1" style="width: 55px; height: auto;">
+                      class="shadow-1-strong rounded-circle" alt="avatar 1"
+                      style="width: 55px; height: auto;">
                     <span class="ms-2">Alexa Chung</span>
                   </td>
                   <td class="align-middle" data-label="">Office grocery shopping</td>
@@ -109,7 +113,8 @@
                   </td>
                   <td class="" data-label="">
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-8.webp"
-                      class="shadow-1-strong rounded-circle" alt="avatar 1" style="width: 55px; height: auto;">
+                      class="shadow-1-strong rounded-circle" alt="avatar 1"
+                      style="width: 55px; height: auto;">
                     <span class="ms-2">Ben Smith</span>
                   </td>
                   <td class="align-middle" data-label="">Ask for Lunch to Clients</td>
@@ -125,15 +130,18 @@
                 </tr>
               </tbody>
             </table>
-
-
           </div>
+
           <div class="card-footer text-end p-3">
             <button class="me-2 btn btn btn-secondary">Hủy</button>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
               data-bs-target="#staticBackdrop">Thêm</button>
 
+
+            <!-- <div class="container">
+
             <div class="container">
+
               <div class="row d-flex justify-content-center align-items-center h-100 ">
                 <div class="outer-wrapper p-5">
                   <div class="card m-1">
@@ -142,6 +150,68 @@
                     </div>
                     <div class="card-body table-wrapper p-0" id="scrollbar" data-mdb-perfect-scrollbar="true"
                       style="position: relative; height: 400px">
+
+
+                      
+
+                    </div>
+                    <div class="card-footer text-end p-3">
+                      <button class="me-2 btn btn btn-secondary">Hủy</button>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">Thêm</button>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div> -->
+          </div>
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">CẦN LÀM</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-wrapper">
+                    <form #todoForm="ngForm" (ngSubmit)="submitData(todoForm)" class="form" autocomplete="off"
+                      novalidate>
+                      <input type="hidden" name="id" [(ngModel)]="todo['id']">
+                      <fieldset>
+                        <label for="card-member">Thành viên:</label>
+                        <input type="text" id="card-member" name="card-member" class="form-control"
+                          [(ngModel)]="todo['name']" />
+                      </fieldset>
+                      <fieldset>
+                        <label for="card-task">Nhiệm vụ:</label>
+                        <input type="text" id="card-task" name="card-task" class="form-control"
+                          [(ngModel)]="todo['task']" />
+                      </fieldset>
+                      <fieldset>
+                        <label for="card-level">Mức độ</label>
+                        <input type="text" id="card-level" name="card-level" class="form-control"
+                          [(ngModel)]="todo['level']" />
+                      </fieldset>
+                      <fieldset>
+                        <label for="card-date">Thời hạn:</label>
+                        <input type="num" id="card-date" class="input-cart-date" maxlength="4" />
+                        <input type="num" id="card-date-1" class="input-cart-date" maxlength="4" />
+                        <input type="num" id="card-date-2" class="input-cart-date" maxlength="4" />
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                  <button type="submit" class="btn btn-warning text-light">Thêm</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
                       <table class="table">
                         <thead>
@@ -322,8 +392,10 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
   </div>
+
 </section>
