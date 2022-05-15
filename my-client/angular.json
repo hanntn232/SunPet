@@ -24,7 +24,10 @@
                         "tsConfig": "tsconfig.app.json",
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets"
+                            "src/assets",
+                            "src/manifest.webmanifest",
+                            "src/manifest.webmanifest",
+                            "src/manifest.webmanifest"
                         ],
                         "styles": [
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -38,19 +41,21 @@
                             "./src/assets/js/productDetail.js",
                             "./src/assets/js/blogchitiet.js",
                             "node_modules/apexcharts/dist/apexcharts.min.js"
-                        ]
+                        ],
+                        "serviceWorker": true,
+                        "ngswConfigPath": "ngsw-config.json"
                     },
                     "configurations": {
                         "production": {
                             "budgets": [{
                                     "type": "initial",
-                                    "maximumWarning": "500kb",
-                                    "maximumError": "1mb"
+                                    "maximumWarning": "1.5mb",
+                                    "maximumError": "2mb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
-                                    "maximumError": "4kb"
+                                    "maximumWarning": "20kb",
+                                    "maximumError": "30kb"
                                 }
                             ],
                             "fileReplacements": [{
@@ -97,7 +102,10 @@
                         "karmaConfig": "karma.conf.js",
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets"
+                            "src/assets",
+                            "src/manifest.webmanifest",
+                            "src/manifest.webmanifest",
+                            "src/manifest.webmanifest"
                         ],
                         "styles": [
                             "src/styles.css"
