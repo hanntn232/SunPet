@@ -45,6 +45,8 @@ import { AdminchatboxComponent } from './adminchatbox/adminchatbox.component';
 import { PiechartComponent } from './piechart/piechart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 @NgModule({
@@ -99,8 +101,9 @@ import { ToastrModule } from 'ngx-toastr';
     RouterModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      preventDuplicates: true
-    })
+    preventDuplicates: true
+    }),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
