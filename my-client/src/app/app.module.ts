@@ -45,9 +45,9 @@ import { AdminchatboxComponent } from './adminchatbox/adminchatbox.component';
 import { PiechartComponent } from './piechart/piechart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
 
 @NgModule({
   declarations: [
@@ -101,6 +101,9 @@ import { environment } from '../environments/environment';
     RouterModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
+    preventDuplicates: true
+    }),
+    NgxPaginationModule
       preventDuplicates: true
     }),
     ServiceWorkerModule.register('ngsw-worker.js', {

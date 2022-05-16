@@ -314,7 +314,7 @@ div#dsSanPham1>div {
 
 /* pagination */
 
-.pagination {
+/* .pagination {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -349,8 +349,73 @@ div#dsSanPham1>div {
     text-align: center;
     line-height: 30px;
     border-radius: 2px;
+} */
+/* ------------Customize cho phân trang mới ------------ */
+.paginator /deep/ .ngx-pagination{
+    display: flex !important;
+    flex-direction: row;
+    flex-direction: row;
+    margin: 30px 0 30px 0;
+    display:block;
+    justify-content: center !important;
+    margin-left: 0 !important;
+    margin-bottom: 1rem !important;
+    line-height: 20px !important;
+    padding: 7px 15px 7px !important;
+    font-size: 12px !important;
 }
 
+/* .paginator /deep/ .ngx-pagination::before,
+.paginator /deep/ .ngx-pagination::after { 
+  content: '' !important;
+  display: inline-block !important; 
+} */
+.paginator /deep/ .ngx-pagination a,
+.paginator /deep/ .ngx-pagination button {
+  /* color: #0a0a0a !important; */
+  display: block !important;
+  background-color: #ffffff !important;
+  /* color: black !important; */
+  /* border: 2px solid #8b8b8b !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 9% !important; */
+}
+
+  .paginator /deep/ .ngx-pagination li {
+    margin-right: 0.2rem !important;
+    border-radius: 0 !important;
+  }
+  .paginator /deep/ .ngx-pagination::after {
+  clear: both !important;
+}
+.paginator /deep/ .ngx-pagination .current {
+    background: #FFC800 !important;
+    color: #333 !important;
+    cursor: default !important;
+    /* padding: 0.5rem 1rem !important; */
+  }
+.paginator /deep/ .ngx-pagination a:hover,
+.paginator /deep/ .ngx-pagination button:hover {
+  background: #FFC700 !important;
+}
+
+  .paginator /deep/ .ngx-pagination .pagination-previous a::before,
+  .paginator /deep/ .ngx-pagination .pagination-previous.disabled::before {
+  font-family: FontAwesome;
+  content: "\f053" !important;
+  display: inline-block !important;
+  margin-right: 0rem !important;
+}
+
+.paginator /deep/ .ngx-pagination .pagination-next a::after,
+.paginator /deep/ .ngx-pagination .pagination-next.disabled::after {
+  font-family: FontAwesome !important;
+  content: "\f054" !important;
+  display: inline-block !important;
+  margin-left: 0rem !important;
+}
+
+/* --------XEM THEM---------- */
 .xemthem {
     display: none;
     text-align: center;
@@ -506,8 +571,11 @@ div#dsSanPham1>div {
     .nav__input:checked~.nav__overlay {
         display: block;
     }
-    .home-product__pagination {
+    /* .home-product__pagination {
         display: none !important;
+    } */
+    .paginator{
+        display: none !important; 
     }
     .xemthem {
         display: block;

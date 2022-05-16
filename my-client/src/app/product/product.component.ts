@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductDetailService } from '../service/product-detail.service';
+import { NgxPaginationModule,} from 'ngx-pagination';
 
 @Component({
   selector: 'app-product',
@@ -11,6 +12,10 @@ export class ProductComponent implements OnInit {
   productList: any;
   errMsg: any;
   selectedId: any;
+  t: number = 1;
+
+  page: number = 1;
+  total: number = 50;
 
   constructor(private _service: ProductDetailService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -19,6 +24,7 @@ export class ProductComponent implements OnInit {
       next: (data) => this.productList = data,
       error: (err) => this.errMsg = err
     })
+    
 
     this.activatedRoute.paramMap.subscribe((params) => {
       let id = params.get("id");
@@ -26,6 +32,7 @@ export class ProductComponent implements OnInit {
         this.selectedId = id.toString();
       }
     })
+    
   }
 
   onSelected(data: any): void{
