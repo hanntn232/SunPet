@@ -26,14 +26,16 @@
 }
 
 section.giohang1 {
-    margin: auto;
-    width: 80%;
-    display: flex;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    /* width: 80%; */
+    /* display: flex; */
     flex-direction: column;
     margin-top: 50px;
     margin-bottom: 50px;
-    min-width: 1000px;
+    min-width: 975px;
     padding-left: 2%;
+    align-items: center;
 }
 
 .giohang2 {
@@ -48,6 +50,7 @@ section.giohang1 {
 .giohang--container {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .group--column1,
@@ -56,12 +59,24 @@ section.giohang1 {
     flex-direction: row;
 }
 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .giohang--head,
 .giohang--item {
     display: flex;
     flex-direction: row;
     text-align: center;
     width: 100%;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .giohang--item,
@@ -376,11 +391,11 @@ a:visited {
 /* Định dạng header */
 
 .header {
-    min-width: 1016px;
+    min-width: 1000px;
 }
 
 .header>.header--overlay {
-    min-width: 1016px;
+    min-width: 1000px;
 }
 
 @media screen and (max-width: 720px) {

@@ -2,8 +2,8 @@ export class SanPhamGioHang{
     id: string;
     anhSanPham: string;
     tenSanPham: string;
-    donGia: Number;
-    soLuong: Number;
+    donGia: number;
+    soLuong: number;
     thanhTien: number
     constructor(){
         this.id = "";

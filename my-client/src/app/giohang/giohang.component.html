@@ -40,22 +40,22 @@
                         </div>
                         <div class="giohang--dongia col-2">
                             <p>
-                                {{p.donGia}}
+                                {{formatter.format(p.donGia)}}
                             </p>
                         </div>
                         <div class="giohang--soluong col-2">
 
-                            <button class="fas fa-minus btn-giam" onclick="giamSoLuong('5594_1642320928406','74442428_1636817383654')"></button>
+                            <button class="fas fa-minus btn-giam" (click)="giamSoLuong(p.id)"></button>
                             <span class="soluong"> {{p.soLuong}} </span>
                             <button class="fas fa-plus btn-tang" (click)="tangSoLuong(p.id)"></button>
                         </div>
                         <div class="giohang--thanhtien col-2">
                             <p>
-                                {{p.thanhTien}}
+                                {{formatter.format(p.thanhTien)}}
                             </p>
                         </div>
                         <div class="giohang--xoa col-1">
-                            <button class="far fa-trash-alt btn-xoa" onclick="xoaItem('5594_1642320928406','74442428_1636817383654')"></button>
+                            <button class="far fa-trash-alt btn-xoa" (click)="xoaSanPham(p.id)"></button>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 bold">
-                    <div class="tongtien">Tổng tiền: <span id="tongtien1">{{this.tongTien}}</span></div>
+                    <div class="tongtien">Tổng tiền: <span id="tongtien1"> {{formatter.format(tongTien)}}</span></div>
                 </div>
             </div>
 
@@ -103,24 +103,24 @@
                             <div class="giohang--dongia">
                                 <span style="float: left;">Giá:&nbsp;</span>
                                 <p>
-                                    {{p.donGia}}
+                                    {{formatter.format(p.donGia)}}
                                 </p>
                             </div>
                         </div>
                         <div class="item--group2">
                             <div class="giohang--soluong">
-                                <button class="fas fa-minus btn-giam" onclick="giamSoLuong('5594_1642320928406','74442428_1636817383654')"></button>
+                                <button class="fas fa-minus btn-giam" (click)="giamSoLuong(p.id)"></button>
                                 <span class="soluong">{{p.soLuong}}</span>
-                                <button class="fas fa-plus btn-tang" onclick="tangSoLuong('5594_1642320928406','74442428_1636817383654')"></button>
+                                <button class="fas fa-plus btn-tang" (click)="tangSoLuong(p.id)"></button>
                             </div>
                             <div class="giohang--thanhtien">
                                 <div>Thành tiền:</div>
                                 <p>
-                                    {{p.thanhTien}}
+                                    {{formatter.format(p.thanhTien)}}
                                 </p>
                             </div>
                             <div class="giohang--xoa">
-                                <button class="btn-xoa" onclick="xoaItem('5594_1642320928406','74442428_1636817383654')">Xóa</button>
+                                <button class="btn-xoa" (click)="p.id">Xóa</button>
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
             </div>
             <div class="giohang2--footer">
                 <div class="col-sm-12 col-xs-12 bold">
-                    <div class="tongtien">Tổng tiền: <span id="tongtien2"> {{tongTien}} </span></div>
+                    <div class="tongtien">Tổng tiền: <span id="tongtien2">  {{formatter.format(tongTien)}} </span></div>
                 </div>
                 <div class="col-sm-12 col-xs-12 bold pttt">
                     <div>Phương thức thanh toán</div>

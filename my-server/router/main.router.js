@@ -231,7 +231,7 @@ router.patch("/carts/:_id", async(req, res) => {
         await cart.updateOne({ _id: req.params._id }, {
             $set: { productList: req.body.productList }
         })
-        res.json({ message: "success" })
+        res.json({ message: "success", body: req.body.productList })
     } catch (err) {
         console.log(err.message);
         res.json({ message: err.message });
