@@ -2,22 +2,32 @@
     font-family: OpenSans;
     src: url(/assets/font/OpenSans-Regular.ttf);
 }
-*{
+
+* {
     font-family: Opensans;
     font-size: 20px;
 }
-.giohang1{
+
+.giohang1 {
     margin: 0px;
+    margin-right: 0px !important;
     padding: 0px 0px !important;
 }
-.donhang--container{
+
+.title {
+    text-align: center;
+}
+
+.donhang--container {
+    /* margin: 20px; */
+    padding-left: 10px;
+    align-self: center;
+    min-width: 1000px;
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 100%;
-    padding-left: 10px;
-    min-width: 1000px;
 }
-.donhang--container>.donhang--title{
+
+.donhang--container>.donhang--title {
     margin: auto;
     margin-bottom: 20px;
     padding: 10px 30px;
@@ -27,21 +37,23 @@
     background-color: #FFC700;
     justify-content: center;
     border-radius: 5px;
- 
 }
 
+
 /* Pop up thay đổi thông tin đặt hàng */
-.pop-up-change{
+
+.pop-up-change {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 10;
-    background-color: rgba(0, 0, 0,0.5);
-    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all .5s ease-in-out;
 }
-.pop-up-content{
+
+.pop-up-content {
     width: 50%;
     height: 500px;
     margin: 80px 25vw;
@@ -51,12 +63,14 @@
     background-color: white;
     position: relative;
 }
-.khachhang--title{
+
+.khachhang--title {
     font-weight: bold;
     text-align: center;
     width: 100%;
 }
-.btn--close{
+
+.btn--close {
     float: right;
     position: absolute;
     top: 10px;
@@ -65,28 +79,34 @@
     background-color: white;
     font-weight: bold;
 }
-.form--row{
+
+.form--row {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
     justify-content: center;
     align-items: center;
 }
-.form--row>input{
+
+.form--row>input {
     border: 1px solid black;
     border-radius: 5px;
     height: 40px;
     padding: 5px 10px;
 }
-.form--row>label:nth-of-type(1){
+
+.form--row>label:nth-of-type(1) {
     width: 30%;
     margin-right: 20px;
     font-weight: bold;
 }
-.form--row>input, .form--row>label:nth-of-type(2){
+
+.form--row>input,
+.form--row>label:nth-of-type(2) {
     flex-grow: 1;
 }
-.btn--change{
+
+.btn--change {
     width: 150px;
     height: 50px;
     border: none;
@@ -96,63 +116,91 @@
     font-weight: bold;
 }
 
-
-.donhang--khachhang2{
+.donhang--khachhang2 {
     display: none;
 }
-.donhang--khachhang1>div,.donhang--khachhang2>div{
+
+.donhang--khachhang1>div,
+.donhang--khachhang2>div {
     border: 1px solid lightgray;
     padding-top: 5px;
     padding-bottom: 5px;
 }
-.donhang--khachhang1,.donhang--khachhang2{
+
+.donhang--khachhang1,
+.donhang--khachhang2 {
     font-weight: bold;
     width: 80%;
     margin: auto;
     min-width: 720px;
 }
-.donhang--khachhang1 span,.donhang--khachhang2 span{
+
+.donhang--khachhang1 span,
+.donhang--khachhang2 span {
     font-weight: normal;
 }
-.btn--thaydoi{
+
+.btn--thaydoi {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.btn--thaydoi>div{
+
+.btn--thaydoi>div {
     text-align: center;
 }
-.btn--thaydoi>div>button{
+
+.btn--thaydoi>div>button {
     border: 1px solid #ABAAAA;
     border-radius: 5px;
     background-color: #ABAAAA;
     font-weight: bold;
     padding: 10px 20px;
+}
 
+.btn--thaydoi>div>button:hover {
+    background-color: lightgray;
+    ;
 }
-.btn--thaydoi>div>button:hover{
-    background-color: lightgray;;
+
+.giohang--bgr {
+    width: 100%;
 }
-.giohang1--footer>div{
+
+.giohang1--footer>div {
     text-align: right;
 }
 
+
 /* Định dạng header */
-.header.col-12{
-    min-width: 1030px;
-}
-.header.col-12>.header--overlay{
-    min-width: 1030px;
+
+.header.col-12 {
+    /* min-width: 1030px; */
+    padding: 0px;
 }
 
+.row.giohang--pttt,
+.row.giohang1--footer {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.row.giohang--pttt>div,
+.row.giohang1--footer>div {
+    padding: 0px !important;
+}
+
+
 /* Định dạng frame footer */
-.frame--footer--container{
+
+.frame--footer--container {
     width: 100%;
     height: 350px;
     position: relative;
     min-width: 1030px;
 }
-.frame--footer{
+
+.frame--footer {
     position: absolute;
     bottom: 0;
     min-width: 1030px;
@@ -162,84 +210,80 @@
 }
 
 @media screen and (max-width: 720px) {
-    .donhang--container{
+    .donhang--container {
         margin: 0 !important;
         min-width: 300px;
         padding-left: 0px !important;
     }
     /* Định dạng pop up */
-    .pop-up-change{
+    .pop-up-change {
         min-width: 300px;
         margin-right: 0px;
     }
-    .pop-up-content{
+    .pop-up-content {
         padding: 10px;
         min-width: 150px;
-        height: 300px;
+        height: 330px;
     }
-    .form--row{
+    .form--row {
         display: flex;
         flex-direction: column;
         margin-top: 10px;
     }
-    .form--row>*{
+    .form--row>* {
         width: 100% !important;
     }
-    .form--row>label:nth-of-type(1){
+    .form--row>label:nth-of-type(1) {
         margin-right: 0px;
         margin-bottom: 5px;
     }
-    .form--row>input{
+    .form--row>input {
         height: 30px;
     }
-    .btn--change{
+    .btn--change {
         width: 80px !important;
         height: 20px;
     }
-
-
-
-   .donhang--khachhang1{
-       display: none;
-   }
-   .donhang--khachhang2{
-    display: block;
-    width: 100% !important;
-    margin-right: 0px !important;
-    min-width: 300px;
-   }
-   *{
+    .donhang--khachhang1 {
+        display: none;
+    }
+    .donhang--khachhang2 {
+        display: block;
+        width: 100% !important;
+        margin-right: 0px !important;
+        min-width: 300px;
+    }
+    * {
         font-size: 10px;
     }
-   .donhang--title{
-    padding: 10px 30px;
-    width: 200px !important;
-    margin-top: 20px !important;
-   }
-   .btn--thaydoi>div>button{
-       padding: 5px 10px;
-       margin: 0px auto;
-       width: 70px;
-   }
-   .btn-tienhanhdathang{
-    padding: 5px 10px !important;
-    margin: 5px auto !important;
-    width: 70px !important;
-   }
-   /* Định dạng header */
-    .header.col-12{
+    .donhang--title {
+        padding: 10px 30px;
+        width: 200px !important;
+        margin-top: 20px !important;
+    }
+    .btn--thaydoi>div>button {
+        padding: 5px 10px;
+        margin: 0px auto;
+        width: 70px;
+    }
+    .btn-tienhanhdathang {
+        padding: 5px 10px !important;
+        margin: 5px auto !important;
+        width: 70px !important;
+    }
+    /* Định dạng header */
+    .header.col-12 {
         min-width: 300px;
     }
-    .header.col-12>.header--overlay{
+    .header.col-12>.header--overlay {
         min-width: 300px;
     }
-
     /* Định dạng frame footer */
-    .frame--footer--container{
+    .frame--footer--container {
         min-width: 300px;
         height: 450px;
     }
-    .frame--footer{
+    .frame--footer {
         min-width: 300px;
         height: 450px;
     }

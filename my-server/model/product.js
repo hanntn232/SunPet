@@ -1,6 +1,7 @@
 const mogoose = require('mongoose')
 const Schema = mogoose.Schema;
 const ProductSchema = new Schema({
+    _id: { type: Schema.Types.ObjectId },
     id: { type: String },
     ten: { type: String, required: true },
     giaGoc: { type: Number },

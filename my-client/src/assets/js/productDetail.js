@@ -13,3 +13,14 @@ function chuyenAnh() {
 function mangBlog(mang, start, end) {
     return mang.slice(start, end)
 }
+
+//Hàm hiển thị form thay đổi thông tin đặt hàng
+function hienThiFormThayDoi() {
+    document.getElementById('pop-up').style.display = "block";
+}
+
+//Hàm ẩn form thay đổi thông tin đặt hàng
+function anFormThayDoi() {
+    document.getElementById('pop-up').style.display = "none";
+    console.log("Đã ẩn")
+}

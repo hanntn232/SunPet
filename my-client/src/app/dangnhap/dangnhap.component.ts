@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { User } from '../model2/user';
+import { User } from '../model/user';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms'; 
 import { customValidator } from '../validators/dangky.validators';

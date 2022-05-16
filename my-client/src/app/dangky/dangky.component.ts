@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { User } from '../model2/user';
+import { User } from '../model/user';
 import { UserService } from '../service/user.service';
 import { customValidator, passValidator } from '../validators/dangky.validators';
 

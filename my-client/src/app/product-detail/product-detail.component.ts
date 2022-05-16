@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { User } from '../model2/user';
+import { Cart } from '../model/cart';
+import { User } from '../model/user';
 import { DathangService } from '../service/dathang.service';
 import { ProductDetailService } from '../service/product-detail.service';
 import { UserService } from '../service/user.service';
@@ -25,6 +26,7 @@ export class ProductDetailComponent implements OnInit {
   public productList: any;
   public errMsg: any;
   public selectedId: string = ""
+  public quantity = 1;
 
   ngOnInit(): void {
     this._service.getProductList().subscribe({
@@ -54,43 +56,102 @@ export class ProductDetailComponent implements OnInit {
       this._toastr.error("Bạn cần phải đăng nhập để thêm vào giỏ hàng", "Không thành công")
     }
     else {
-      // var user = this._userService.getUserBytoken();
-      // var product = this.getProductInfo(this.selectedId);
-      // // if(product != "Product not found"){
-
-      // // }
-      // console.log(user);
-      // console.log(product);
       var productID = this.selectedId;
-      this._service.getProductList().subscribe({
-        next: productList => {
-          for (var i = 0; i < productList.length; i++) {
-            if (productList[i].id == productID) {
-              var product = productList[i];
-              var token = localStorage.getItem('token');
-              var customerID = "";
-              this._userService.getAllUsers().subscribe(data => {
-                for (var i = 0; i < data.length; i++) {
-                  if (data[i].token == token) {
-                      customerID = data[i]._id
-                    // console.log(user.token);
-                    // console.log(token)
-                    //Đang thực hiện dở
+      var cart = new Cart();
+      var token = localStorage.getItem('token');
+      this._userService.getAllUsers().subscribe({
+        next: users => {
+          var countToken = 0;
+          for (let i = 0; i < users.length; i++) {
+            if (token == users[i].token) {
+              countToken = 1;
+              // console.log("token: " + token + "; " + "user[i].token: " + users[i].token)
+              var customerID = users[i]._id;
+              this._userService.getAllCarts().subscribe({
+                next: carts => {
+                  var countCart = 0;
+                  for (let i = 0; i < carts.length; i++) {
+                    //Nếu như khách hàng này đã có ID giỏ hàng rồi --> update giỏ hàng
+                    if (customerID == carts[i].customerID) {
+                      countCart = 1;
+                      cart = carts[i];
+                      var count = 0;
+                      //Xét danh sách sản phẩm trong giỏ hàng của KH đã có sản phẩm muốn thêm hay chưa
+                      for (let i = 0; i < cart.productList.length; i++) {
+                        if (productID == cart.productList[i].productID) {
+                          //Tăng số lượng sản phẩm trong giỏ hàng
+                          cart.productList[i].quantity += this.quantity;
+                          this._userService.updateCart(cart._id, cart).subscribe({
+                            next: res => {
+                              let resData = JSON.parse(JSON.stringify(res));
+                              if (resData.message == "success") {
+                                // alert("success")
+                                this._toastr.success("Đã thêm sản phẩm vào giỏ hàng", "Thành công!")
+                              }
+                              else {
+                                this._toastr.error("Có lỗi xảy ra khi thêm vào giỏ hàng", "Thất bại")
+                                console.log(res.message)
+                              }
+                            }
+                          });
+                          count = 1;
+                          // this._toastr.success("Đã thêm sản phẩm vào giỏ hàng 3", "Thành công!")
+                          break;
+                        }
+                      }
+                      if (count == 0) {
+                        //Nếu không có sản phẩm trong giỏ hàng thì sẽ thêm mới
+                        cart.productList.push({
+                          productID: productID,
+                          quantity: this.quantity
+                        })
+                        this._userService.updateCart(cart._id, cart).subscribe({
+                          next: res => {
+                            let resData = JSON.parse(JSON.stringify(res));
+                            if (resData.message == "success") {
+                              this._toastr.success("Đã thêm sản phẩm vào giỏ hàng", "Thành công!")
+                            }
+                            else {
+                              this._toastr.error("Có lỗi xảy ra khi thêm vào giỏ hàng", "Thất bại")
+                            }
+                          }
+                        })
+                        break;
+                      }
+                    }
+                  }
+                  if (countCart == 0) {
+                    //Nếu khách hàng chưa có dữ liệu giỏ hàng từ trước --> Tạo giỏ hàng mới cho KH với SP và Số lượng khách hàng muốn add to shopping cart
+                    cart.customerID = customerID;
+                    cart.productList[0] = {
+                      productID: productID,
+                      quantity: this.quantity
+                    };
+                    this._userService.postCart(cart).subscribe({
+                      next: res => {
+                        let resData = JSON.parse(JSON.stringify(res));
+                        if (resData.message == "success") {
+                          // alert("success")
+                          this._toastr.success("Đã thêm sản phẩm vào giỏ hàng", "Thành công!")
+                        }
+                        else {
+                          // console.log(cart);
+                          // console.log(res.message)
+                          this._toastr.error("Có lỗi xảy ra khi thêm vào giỏ hàng", "Thất bại")
+                        }
+                      }
+                    })
                   }
                 }
-                return "User not found"
-              }
-              )
-              return;
+              })
             }
           }
-          return "Product not found"
-        },
-        error: err => {
-          return console.log(err.message)
+          if (countToken == 0) {
+            console.log("Token không hợp lệ !!!");
+            // return "Token không hợp lệ !!!"
+          }
         }
       })
-      console.log("NOT")
     }
   }
 
