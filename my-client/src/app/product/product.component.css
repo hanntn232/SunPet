@@ -372,13 +372,8 @@ div#dsSanPham1>div {
 } */
 .paginator /deep/ .ngx-pagination a,
 .paginator /deep/ .ngx-pagination button {
-  /* color: #0a0a0a !important; */
   display: block !important;
   background-color: #ffffff !important;
-  /* color: black !important; */
-  /* border: 2px solid #8b8b8b !important;
-  padding: 0.5rem 1rem !important;
-  border-radius: 9% !important; */
 }
 
   .paginator /deep/ .ngx-pagination li {
