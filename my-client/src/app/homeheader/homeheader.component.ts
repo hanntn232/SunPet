@@ -21,7 +21,6 @@ export class HomeheaderComponent implements OnInit {
   logOut(){
     this._service.logOut();
     this._router.navigate(['/home']);
-    window.location.reload();
   }
 
 }

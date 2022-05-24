@@ -81,6 +81,13 @@
     margin: 0px !important;
 }
 
+@media screen and ( max-width: 1000px){
+    .padding--ph{
+        padding-right: 30px
+    }
+};
+    
+
 
 @media screen and (max-width: 768px) {
     .container{
@@ -113,5 +120,6 @@
     .hr__display{
         display: block;
     }
+
    
 }

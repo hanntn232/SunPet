@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError, catchError, retry, Observable } from 'rxjs';
-import { User } from '../model2/user';
+import { User } from '../model/user';
+import { Cart } from '../model/cart';
 const baseUrl: string = "http://localhost:3000"
 const API_URL = 'http://localhost:3000/api/test/';
 @Injectable({
@@ -33,6 +34,7 @@ export class UserService {
       )
   }
 
+
   handleError(error: HttpErrorResponse) {
     return throwError(() => new Error(error.message))
   }
@@ -46,7 +48,7 @@ export class UserService {
       return false;
   }
 
-  getUserBytoken(){
+  getUserBytoken() {
     var token = localStorage.getItem('token');
     var user = new User();
     this.getAllUsers().subscribe(data => {
@@ -72,5 +74,33 @@ export class UserService {
 
   postUser(user: User): Observable<any> {
     return this.http.post<User>(`${baseUrl}/users`, user);
+  }
+
+
+  //Get all user's cart
+  getAllCarts(): Observable<Cart[]> {
+    return this.http.get<Cart[]>(`${baseUrl}/carts`)
+      .pipe(
+        retry(3),
+        catchError(this.handleError)
+      )
+  }
+  //Get cart by id
+  getCartById(cartID: string): Observable<Cart> {
+    return this.http.get<Cart>(`${baseUrl}/carts/${cartID}`)
+      .pipe(
+        retry(3),
+        catchError(this.handleError)
+      )
+  }
+
+  //postCart
+  postCart(data: Cart): Observable<any> {
+    return this.http.post<Cart>(`${baseUrl}/carts`, data);
+  }
+
+  //updateCart
+  updateCart(_id: string, newData: Cart): Observable<any> {
+    return this.http.patch(`${baseUrl}/carts/${_id}`, newData)
   }
 }
