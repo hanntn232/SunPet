@@ -19,7 +19,7 @@
     <div>
         <div class="row">
             <!-- Sidebar -->
-            <div class=" col-xl-2 col-lg-2 col-md-1 col-sm-1 col-1">
+            <div class=" col-xl-2 col-lg-2 col-md-1 col-sm-1 col-1 nav-admin">
                 <app-adminnavbar></app-adminnavbar>
             </div>
             <!-- Container -->
@@ -85,7 +85,7 @@
 
                                     <!-- Danh sách sản phẩm -->
                                     <div class="row d-flex justify-content-around">
-                                        <div class=" row col-xl-10 col-lg-10">
+                                        <div class=" row col-xl-10 col-lg-10 flex-sp">
                                             <div class="home-product dsSanPham1 col-xl-3 col-lg-3 col-md-4 col-sm-4 col" *ngFor="let p of products">
                                                 <div class="row" id="dsSanPham1">
                                                     <div class="col-md-3">
@@ -96,10 +96,8 @@
                                                             </div>
                                                             <h4 class="home-product-item__name">{{p.ten}}</h4>
                                                             <div class="home-product-item__price">
-                                                                <span
-                                                                    class="home-product-item__price-curent">{{p.giaBan}}</span>
-                                                                <span
-                                                                    class="home-product-item__price-old">{{p.giaGoc}}</span>
+                                                                <span class="home-product-item__price-curent">{{p.giaBan}}</span>
+                                                                <span class="home-product-item__price-old">{{p.giaGoc}}</span>
                                                             </div>
                                                             <!-- cover -->
                                                             <div class="cover-product">
@@ -108,9 +106,7 @@
                                                                         <i class="fa fa-pen-to-square"></i>
                                                                         <p>Sửa</p>
                                                                     </button>
-                                                                    <button class="icon-change d-inline-flex"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#formDeleteProduct">
+                                                                    <button class="icon-change d-inline-flex" data-bs-toggle="modal" data-bs-target="#formDeleteProduct">
                                                                         <i class="fa fa-trash-can"></i>
                                                                         <p>Xóa</p>
                                                                     </button>
@@ -200,9 +196,9 @@
                                                 <div class="modal-body">
                                                     <div class="row">
                                                         <form action="" #productForm="ngForm" (ngSubmit)="submitData(productForm)">
-                                                        <!-- <form action="" [formGroup]="testForm" (ngSubmit)="onSubmit(testForm.value)"> -->
+                                                            <!-- <form action="" [formGroup]="testForm" (ngSubmit)="onSubmit(testForm.value)"> -->
                                                             <div class="modal--header">
-                                                                <button type="button" class="btn-close modal--close" aria-label="Close" data-dismiss="modal"></button>
+                                                                <button type="button" class="btn-close modal--close" aria-label="Close" data-dismiss="modal" onclick="closeModal('formAddProduct')"></button>
                                                                 <h5 class="modal--header-content">Điền thông tin sản phẩm
                                                                 </h5>
                                                             </div>
@@ -211,9 +207,7 @@
                                                                 <div class="form-group">
                                                                     <label for="name_product" class="label-format">Tên
                                                                         sản phẩm:</label>
-                                                                    <input type="text" id="name_product" name="ten"
-                                                                        class="form-control"
-                                                                        placeholder="Nhập tên sản phẩm" [(ngModel)]="product['ten']" ormControlName="ten">
+                                                                    <input type="text" id="name_product" name="ten" class="form-control" placeholder="Nhập tên sản phẩm" [(ngModel)]="product['ten']" ormControlName="ten">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="price_product" class="label-format">Giá
@@ -246,8 +240,7 @@
                                                                 <div class="form-group">
                                                                     <label for="image_product" class="label-format">Hình
                                                                         ảnh sản phẩm:</label>
-                                                                    <input type="file" name="hinhAnh"
-                                                                        class="button-addimg" id="image_product" [(ngModel)]="product['hinhAnh']" (change)="onSelect($event)">
+                                                                    <input type="file" name="hinhAnh" class="button-addimg" id="image_product" [(ngModel)]="product['hinhAnh']" (change)="onSelect($event)">
                                                                     <!-- Chọn file -->
                                                                     <!-- <span class="btn btn-warning btn-file">
                                                         Browse...<input type="file">
@@ -345,8 +338,7 @@
                                                         <p>Bạn có muốn xóa sản phẩm không?</p>
                                                         <div class="popup-button">
                                                             <button class="button--yes" type="submit" (click)="onDelete(products.id,productForm)">Có</button>
-                                                            <button class="button--no" data-dismiss="modal"
-                                                                type="button">Không</button>
+                                                            <button class="button--no" data-dismiss="modal" type="button">Không</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -368,6 +360,11 @@
         </div>
 
     </div>
+    <script>
+        function closeModal(idModal) {
+            document.getElementById(idModal).modal('toggle');
+        }
+    </script>
     <!-- <script>
         taoDanhSachSanPham();
         //Load sản phẩm trang 1 khi mở trang lên
