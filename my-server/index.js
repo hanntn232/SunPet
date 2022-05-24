@@ -2,7 +2,8 @@ const exress = require('express')
 const app = exress()
 const port = 3000;
 
-const morgan = require('morgan')
+const morgan = require('morgan');
+const multer = require("multer");
 
 //Http request legger
 app.use(morgan('combined'));
@@ -53,3 +54,30 @@ app.post("/push", (req, res) => {
     //import router
 const mainRouter = require('./router/main.router')
 app.use("/", mainRouter)
+
+// create storage
+var storage = multer.diskStorage({
+    destination: "images",
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    },
+});
+let maxSize = 10 * 1024 * 1024; //10MB
+var upload = multer({
+    storage: storage,
+    limits: {
+        fileSize: maxSize,
+    },
+}).single("file");
+
+//API upload file
+app.post("/upload", (req, res) => {
+    upload(req, res, (err) => {
+        if (err) {
+            res.json({ message: err.message });
+        } else {
+            console.log("File received:", req.file.filename);
+            res.json({ message: "Success!" });
+        }
+    });
+});
