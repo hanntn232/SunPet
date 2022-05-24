@@ -111,9 +111,9 @@
                                                             <h4 class="home-product-item__name">{{p.ten}}</h4>
                                                             <div class="home-product-item__price">
                                                                 <span
-                                                                    class="home-product-item__price-curent">{{p.giaGoc}}</span>
+                                                                    class="home-product-item__price-curent">{{p.giaBan}}</span>
                                                                 <span
-                                                                    class="home-product-item__price-old">{{p.giaBan}}</span>
+                                                                    class="home-product-item__price-old">{{p.giaGoc}}</span>
                                                             </div>
                                                             <!-- cover -->
                                                             <div class="cover-product">
@@ -127,7 +127,7 @@
                                                                     </button>
                                                                     <button class="icon-change d-inline-flex"
                                                                         data-bs-toggle="modal"
-                                                                        data-bs-target="#formDeleteProduct" (click)="onDelete(p.id)">
+                                                                        data-bs-target="#formDeleteProduct">
                                                                         <i class="fa fa-trash-can"></i>
                                                                         <p>Xóa</p>
                                                                     </button>
@@ -229,6 +229,7 @@
                                                 <div class="modal-body">
                                                     <div class="row">
                                                         <form action="" #productForm="ngForm" (ngSubmit)="submitData(productForm)">
+                                                        <!-- <form action="" [formGroup]="testForm" (ngSubmit)="onSubmit(testForm.value)"> -->
                                                             <div class="modal--header">
                                                                 <button type="button" class="btn-close modal--close"
                                                                     aria-label="Close" data-dismiss="modal"></button>
@@ -236,12 +237,13 @@
                                                                     phẩm</h5>
                                                             </div>
                                                             <div class="form-description">
+                                                                <input type="hidden" class="form-control" name="id" [(ngModel)]="product['id']">
                                                                 <div class="form-group">
                                                                     <label for="name_product" class="label-format">Tên
                                                                         sản phẩm:</label>
                                                                     <input type="text" id="name_product" name="ten"
                                                                         class="form-control"
-                                                                        placeholder="Nhập tên sản phẩm" [(ngModel)]="product['ten']">
+                                                                        placeholder="Nhập tên sản phẩm" [(ngModel)]="product['ten']" ormControlName="ten">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="price_product" class="label-format">Giá
@@ -281,7 +283,7 @@
                                                                     <label for="image_product" class="label-format">Hình
                                                                         ảnh sản phẩm:</label>
                                                                     <input type="file" name="hinhAnh"
-                                                                        class="button-addimg" id="image_product" [(ngModel)]="product['hinhAnh']">
+                                                                        class="button-addimg" id="image_product" [(ngModel)]="product['hinhAnh']" (change)="onSelect($event)">
                                                                     <!-- Chọn file -->
                                                                     <!-- <span class="btn btn-warning btn-file">
                                                         Browse...<input type="file">
@@ -310,7 +312,7 @@
                                             <div class="modal-content modal--content--fix">
                                                 <div class="modal-body">
                                                     <div class="row">
-                                                        <form action="">
+                                                        <form action="" #productForm="ngForm" (ngSubmit)="updateForm(productForm)">
                                                             <div class="modal--header">
                                                                 <button type="button" class="btn-close modal--close"
                                                                     aria-label="Close" data-dismiss="modal"></button>
@@ -318,6 +320,7 @@
                                                                     phẩm</h5>
                                                             </div>
                                                             <div class="form-description">
+                                                                <input type="hidden" class="form-control" name="id" [(ngModel)]="product['id']">
                                                                 <div class="form-group">
                                                                     <label for="name_product" class="label-format">Tên
                                                                         sản phẩm:</label>
@@ -394,7 +397,7 @@
                                                     <div class="popup-delete-content">
                                                         <p>Bạn có muốn xóa sản phẩm không?</p>
                                                         <div class="popup-button">
-                                                            <button class="button--yes" type="submit">Có</button>
+                                                            <button class="button--yes" type="submit" (click)="onDelete(products.id,productForm)">Có</button>
                                                             <button class="button--no" data-dismiss="modal"
                                                                 type="button">Không</button>
                                                         </div>

@@ -27,7 +27,7 @@ router.get('/products', function(req, res) {
 })
 
 // Get product by id
-router.get('/:productId', async function(req,res) {
+router.get('/products/:productId', async function(req,res) {
     // console.log(req.params.productId)
     try {
         const data = await IDproduct.findById(req.params.productId)
@@ -60,7 +60,7 @@ router.post("/products", async(req,res) => {
     }
 })
 // update product
-router.patch(":/productId", async (req,res) => {
+router.patch("/:productId", async (req,res) => {
     try{
         await IDproduct.updateOne({id: req.params.productId},{
             $set: {ten: req.body.ten,
@@ -100,11 +100,11 @@ router.get('/blogs', function(req, res) {
 })
 
 // Get blog by id
-router.get('/:blogId', async function(req,res) {
+router.get('/blogs/:id', async function(req,res) {
     // console.log(req.params.blogId)
     try {
         const data = await IDblog.findById(req.params.blogId)
-        res.json({ message: "success"})
+        res.json({ message: "successfull"})
     }
     catch (err) {
         res.json({message: err.message})
@@ -115,22 +115,45 @@ router.post("/blogs", async(req,res) => {
     // console.log("Data from client", req.body);
     // res.send("Server received!");
 
+    // blog.date = req.body.date,
+    //     blog.title = req.body.title,
+    //     blog.content = {
+    //         part1: req.body.part1,
+    //         part2: req.body.part2,
+    //         part3: req.body.part3,
+    //     }, 
+    //     blog.image = {
+    //         img1: req.body.img1,
+    //         img2: req.body.img2,
+    //         img3: req.body.img3,
+    //     }
+
     let blog = new IDblog({
         date: req.body.date,
         title: req.body.title,
-        content: req.body.content,
-        image: req.body.image,
+        // content:{
+        //     part1: req.body.part1,
+        //     part2: req.body.part2,
+        //     part3: req.body.part3,
+        // },
+        content:req.body.content,
+        image: req.body.image
+        // image:{
+        //     img1: req.body.img1,
+        //     img2: req.body.img2,
+        //     img3: req.body.img3,
+        // }
     })
     try{
         p = await blog.save();
-        res.json({message: "success"})
+        res.json({message: "successfull"})
     }
     catch(err){
         res.json({message: err.message})
     }
 })
 // update blog
-router.patch(":/blogId", async (req,res) => {
+router.patch("/blogs/:id", async (req,res) => {
     try{
         await IDblog.updateOne({id: req.params.blogId},{
             $set: {date: req.body.date,
@@ -138,7 +161,7 @@ router.patch(":/blogId", async (req,res) => {
                 content: req.body.content,
                 image: req.body.image}
         })
-        res.json({message: "success"})
+        res.json({message: "successfull"})
     }
     catch(err){
         console.log(err.message);
@@ -146,10 +169,10 @@ router.patch(":/blogId", async (req,res) => {
     }
 })
 // Delete blog
-router.delete("/:blogId", async (req,res) => {
+router.delete("/blogs/:id", async (req,res) => {
     try{
         await IDblog.deleteOne({id: req.params.blogId});
-        res.json({message: "success"})
+        res.json({message: "successfull"})
     }
     catch (err){
         res.json({message:err.message})

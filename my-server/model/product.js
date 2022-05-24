@@ -1,7 +1,6 @@
-const mogoose = require('mongoose')
+const mogoose = require('mongoose');
 const Schema = mogoose.Schema;
 const ProductSchema = new Schema({
-    id: { type: String },
     ten: { type: String, required: true },
     giaGoc: { type: Number },
     giaBan: { type: Number, required: true },
@@ -13,4 +12,5 @@ const ProductSchema = new Schema({
 
 })
 
-module.exports = mogoose.model("Product", ProductSchema)
+
+module.exports = mogoose.model("product", ProductSchema)
