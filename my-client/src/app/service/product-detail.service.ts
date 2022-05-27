@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, retry, throwError, catchError } from 'rxjs';
 import {HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http'
 import { IDproduct } from '../model/product';
+import { updateProduct } from '../model/updateProduct';
 const baseUrlProduct: string="http://localhost:3000"
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,8 @@ export class ProductDetailService {
   postProduct(data:IDproduct){
     return this._http.post<IDproduct[]>(`${baseUrlProduct}/products`, data);
   }
-  updateProduct(id:string, newdata:IDproduct):Observable<any>{
-    return this._http.patch(`${baseUrlProduct}/products`, newdata);
+  updateProduct(id: any,update_Product: updateProduct):Observable<any>{
+    return this._http.patch(`${baseUrlProduct}/products/${id}`, update_Product);
   }
   deleteProduct(id:string){
     return this._http.delete(`${baseUrlProduct}/${id}`);

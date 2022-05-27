@@ -19,7 +19,7 @@
     <div>
         <div class="row">
             <!-- Sidebar -->
-            <div class=" col-xl-2 col-lg-2 col-md-1 col-sm-1 col-1">
+            <div class=" col-xl-2 col-lg-2 col-md-1 col-sm-1 col-1 nav-admin">
                 <app-adminnavbar></app-adminnavbar>
             </div>
             <!-- Container -->
@@ -85,21 +85,19 @@
 
                                     <!-- Danh sách sản phẩm -->
                                     <div class="row d-flex justify-content-around">
-                                        <div class=" row col-xl-10 col-lg-10">
+                                        <div class=" row col-xl-10 col-lg-10 flex-sp">
                                             <div class="home-product dsSanPham1 col-xl-3 col-lg-3 col-md-4 col-sm-4 col" *ngFor="let p of products">
                                                 <div class="row" id="dsSanPham1">
                                                     <div class="col-md-3">
                                                         <!-- Product item -->
                                                         <a class="home-product-item">
                                                             <div class="product-image">
-                                                                <img src={{p.hinhAnh[0]}} alt="Image">
+                                                                <img src="http://localhost:3000/{{p.hinhAnh[0]}}" alt="Image">
                                                             </div>
                                                             <h4 class="home-product-item__name">{{p.ten}}</h4>
                                                             <div class="home-product-item__price">
-                                                                <span
-                                                                    class="home-product-item__price-curent">{{p.giaBan}}</span>
-                                                                <span
-                                                                    class="home-product-item__price-old">{{p.giaGoc}}</span>
+                                                                <span class="home-product-item__price-curent">{{p.giaBan}}</span>
+                                                                <span class="home-product-item__price-old">{{p.giaGoc}}</span>
                                                             </div>
                                                             <!-- cover -->
                                                             <div class="cover-product">
@@ -108,9 +106,7 @@
                                                                         <i class="fa fa-pen-to-square"></i>
                                                                         <p>Sửa</p>
                                                                     </button>
-                                                                    <button class="icon-change d-inline-flex"
-                                                                        data-bs-toggle="modal"
-                                                                        data-bs-target="#formDeleteProduct">
+                                                                    <button class="icon-change d-inline-flex" data-bs-toggle="modal" data-bs-target="#formDeleteProduct">
                                                                         <i class="fa fa-trash-can"></i>
                                                                         <p>Xóa</p>
                                                                     </button>
@@ -199,39 +195,37 @@
                                             <div class="modal-content modal--content--fix">
                                                 <div class="modal-body">
                                                     <div class="row">
-                                                        <form action="" #productForm="ngForm" (ngSubmit)="submitData(productForm)">
-                                                        <!-- <form action="" [formGroup]="testForm" (ngSubmit)="onSubmit(testForm.value)"> -->
+                                                        <form #productForm="ngForm" (ngSubmit)="submitData(productForm)">
+                                                            <!-- <form action="" [formGroup]="testForm" (ngSubmit)="onSubmit(testForm.value)"> -->
                                                             <div class="modal--header">
-                                                                <button type="button" class="btn-close modal--close" aria-label="Close" data-dismiss="modal"></button>
+                                                                <button type="button" class="btn-close modal--close" aria-label="Close" data-bs-dismiss="modal"></button>
                                                                 <h5 class="modal--header-content">Điền thông tin sản phẩm
                                                                 </h5>
                                                             </div>
                                                             <div class="form-description">
-                                                                <input type="hidden" class="form-control" name="id" [(ngModel)]="product['id']">
+                                                                <input type="hidden" class="form-control" name="id" [(ngModel)]="product.id">
                                                                 <div class="form-group">
                                                                     <label for="name_product" class="label-format">Tên
                                                                         sản phẩm:</label>
-                                                                    <input type="text" id="name_product" name="ten"
-                                                                        class="form-control"
-                                                                        placeholder="Nhập tên sản phẩm" [(ngModel)]="product['ten']" ormControlName="ten">
+                                                                    <input type="text" id="name_product" name="ten" class="form-control" placeholder="Nhập tên sản phẩm" [(ngModel)]="product.ten">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="price_product" class="label-format">Giá
                                                                         gốc:</label>
-                                                                    <input type="number" min="0" id="price_product" name="giaGoc" class="form-control" placeholder="VND" [(ngModel)]="product['giaGoc']">
+                                                                    <input type="number" min="0" id="price_product" name="giaGoc" class="form-control" placeholder="VND" [(ngModel)]="product.giaGoc">
                                                                     <!-- <input type="number" id="price_product" name="price_sp" class="form-control"> -->
                                                                     <span class="input-group-text">VND</span>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="price_product" class="label-format">Giá
                                                                         bán:</label>
-                                                                    <input type="number" min="0" id="price_discount" name="giaBan" class="form-control" [(ngModel)]="product['giaBan']">
+                                                                    <input type="number" min="0" id="price_discount" name="giaBan" class="form-control" [(ngModel)]="product.giaBan">
                                                                     <span class="input-group-text">VND</span>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="san_pham" class="label-format">Tất cả
                                                                         sản phẩm: </label>
-                                                                    <select id="san_pham" name="danhMuc" class="form-control" [(ngModel)]="product['danhMuc']">
+                                                                    <select id="san_pham" name="danhMuc" class="form-control" [(ngModel)]="product.danhMuc">
                                                                         <option value="Thức ăn cho chó"> Thức ăn cho chó</option>
                                                                         <option value="Thức ăn cho mèo"> Thức ăn cho mèo</option>
                                                                         <option value="Phụ kiện cho chó"> Phụ kiện cho chó</option>
@@ -241,13 +235,13 @@
                                                                 <div class="form-group">
                                                                     <label for="descrip_product" class="label-format">Mô
                                                                         tả sản phẩm:</label>
-                                                                    <textarea name="moTa" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm" [(ngModel)]="product['moTa']"></textarea>
+                                                                    <textarea name="moTa" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm" [(ngModel)]="product.moTa"></textarea>
                                                                 </div>
+
                                                                 <div class="form-group">
                                                                     <label for="image_product" class="label-format">Hình
                                                                         ảnh sản phẩm:</label>
-                                                                    <input type="file" name="hinhAnh"
-                                                                        class="button-addimg" id="image_product" [(ngModel)]="product['hinhAnh']" (change)="onSelect($event)">
+                                                                    <input type="file" name="hinhAnh" class="button-addimg" id="image_product" [(ngModel)]="product.hinhAnh" (change)="onSelect($event)">
                                                                     <!-- Chọn file -->
                                                                     <!-- <span class="btn btn-warning btn-file">
                                                         Browse...<input type="file">
@@ -258,7 +252,7 @@
                                                                 </div>
                                                                 <div class="form-button">
                                                                     <button class="save-button" type="submit">Lưu</button>
-                                                                    <button class="cancel-button" data-dismiss="modal" type="button">Hủy</button>
+                                                                    <button class="cancel-button" data-bs-dismiss="modal" type="button">Hủy</button>
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -273,36 +267,36 @@
                                             <div class="modal-content modal--content--fix">
                                                 <div class="modal-body">
                                                     <div class="row">
-                                                        <form action="" #productForm="ngForm" (ngSubmit)="updateForm(productForm)">
+                                                        <form #productForm="ngForm" (ngSubmit)="updateForm(productForm)">
                                                             <div class="modal--header">
-                                                                <button type="button" class="btn-close modal--close" aria-label="Close" data-dismiss="modal"></button>
+                                                                <button type="button" class="btn-close modal--close" aria-label="Close" data-bs-dismiss="modal"></button>
                                                                 <h5 class="modal--header-content">Sửa thông tin sản phẩm
                                                                 </h5>
                                                             </div>
                                                             <div class="form-description">
-                                                                <input type="hidden" class="form-control" name="id" [(ngModel)]="product['id']">
+                                                                <input type="hidden" class="form-control" name="id" [(ngModel)]="product.id">
                                                                 <div class="form-group">
                                                                     <label for="name_product" class="label-format">Tên
                                                                         sản phẩm:</label>
-                                                                    <input type="text" id="name_product" name="name" class="form-control" placeholder="Nhập tên sản phẩm" [(ngModel)]="product['ten']">
+                                                                    <input type="text" id="name_product" name="name" class="form-control" placeholder="Nhập tên sản phẩm" [(ngModel)]="product.ten">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="price_product" class="label-format">Giá
                                                                         gốc:</label>
-                                                                    <input type="number" min="0" id="price_product" name="giaGoc" class="form-control" placeholder="VND" [(ngModel)]="product['giaGoc']">
+                                                                    <input type="number" min="0" id="price_product" name="giaGoc" class="form-control" placeholder="VND" [(ngModel)]="product.giaGoc">
                                                                     <!-- <input type="number" id="price_product" name="price_sp" class="form-control"> -->
                                                                     <span class="input-group-text">VND</span>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="price_product" class="label-format">Giá
                                                                         bán:</label>
-                                                                    <input type="number" min="0" id="price_discount" name="giaBan" class="form-control" [(ngModel)]="product['giaBan']">
+                                                                    <input type="number" min="0" id="price_discount" name="giaBan" class="form-control" [(ngModel)]="product.giaBan">
                                                                     <span class="input-group-text">VND</span>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="san_pham" class="label-format">Tất cả
                                                                         sản phẩm: </label>
-                                                                    <select id="san_pham" name="danhMuc" class="form-control" [(ngModel)]="product['danhMuc']">
+                                                                    <select id="san_pham" name="danhMuc" class="form-control" [(ngModel)]="product.danhMuc">
                                                                         <option value="Thức ăn cho chó"> Thức ăn cho chó</option>
                                                                         <option value="Thức ăn cho mèo"> Thức ăn cho mèo</option>
                                                                         <option value="Phụ kiện cho chó"> Phụ kiện cho chó</option>
@@ -312,19 +306,27 @@
                                                                 <div class="form-group">
                                                                     <label for="descrip_product" class="label-format">Mô
                                                                         tả sản phẩm:</label>
-                                                                    <textarea name="moTa" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm" [(ngModel)]="product['moTa']"></textarea>
+                                                                    <textarea name="moTa" id="descrip_product" cols="30" rows="5" class="form-control" placeholder="Nhập mô tả sản phẩm" [(ngModel)]="product.moTa"></textarea>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="image_product" class="label-format">Hình
                                                                         ảnh sản phẩm:</label>
-                                                                    <input type="file" name="hinhAnh" class="button-addimg" id="image_product" [(ngModel)]="product['hinhAnh']">
+                                                                    <div>
+                                                                        <div class="image-previous">
+                                                                            <div *ngFor="let i of product.hinhAnh" class="image-overlay">
+                                                                                <img src="http://localhost:3000/{{i}}">
+                                                                                <button class="image-delete" (click)="deleteImage(i)">x</button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <input type="file" name="hinhAnh" class="button-addimg form-control mb-3" id="image_product" multiple (change)="onChangeFile($event)">
+                                                                    </div>
                                                                 </div>
                                                                 <div class="add-image">
 
                                                                 </div>
                                                                 <div class="form-button">
                                                                     <button class="save-button" type="submit">Lưu</button>
-                                                                    <button class="cancel-button" data-dismiss="modal" type="button">Hủy</button>
+                                                                    <button class="cancel-button" data-bs-dismiss="modal" type="button">Hủy</button>
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -339,14 +341,13 @@
                                         <div class="modal-content">
                                             <div class="modal-body">
                                                 <div class="row">
-                                                    <button class="btn-close ml-auto modal--close--1" aria-label="Close" data-dismiss="modal" onclick="myDialog.close()"></button>
-                                                    <!-- <button type="button" class="btn-close modal--close--1" aria-label="Close" data-dismiss="modal"></button> -->
+                                                    <button class="btn-close ml-auto modal--close--1" aria-label="Close" data-bs-dismiss="modal" onclick="myDialog.close()"></button>
+                                                    <!-- <button type="button" class="btn-close modal--close--1" aria-label="Close" data-bs-dismiss="modal"></button> -->
                                                     <div class="popup-delete-content">
                                                         <p>Bạn có muốn xóa sản phẩm không?</p>
                                                         <div class="popup-button">
-                                                            <button class="button--yes" type="submit" (click)="onDelete(products.id,productForm)">Có</button>
-                                                            <button class="button--no" data-dismiss="modal"
-                                                                type="button">Không</button>
+                                                            <button class="button--yes" type="submit" (click)="onDelete(products.id)">Có</button>
+                                                            <button class="button--no" data-bs-dismiss="modal" type="button">Không</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -368,6 +369,8 @@
         </div>
 
     </div>
+    <script>
+    </script>
     <!-- <script>
         taoDanhSachSanPham();
         //Load sản phẩm trang 1 khi mở trang lên

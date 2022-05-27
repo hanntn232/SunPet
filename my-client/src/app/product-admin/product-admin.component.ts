@@ -3,6 +3,7 @@ import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { IDproduct } from '../model/product';
 import { ProductDetailService } from '../service/product-detail.service';
+import { updateProduct } from '../model/updateProduct';
 
 @Component({
   selector: 'app-product-admin',
@@ -15,18 +16,30 @@ export class ProductAdminComponent implements OnInit {
   errorMessage: any;
   message: any;
   product: IDproduct = new IDproduct();
+  // public productForm: any; 
   // image
-  file:any;
+  files:any;
+
+  constructor(private _service: ProductDetailService, private _toast: ToastrService, private _formBuilder: FormBuilder) { }
+
   public testForm = this._formBuilder.group({
     "name": ['', [Validators.required, Validators.minLength(3)]],
     "file": ['']
   })
-  constructor(private _service: ProductDetailService, private _toast: ToastrService, private _formBuilder: FormBuilder) { }
-
+  
   ngOnInit(): void {
     this.getProductList();
+
+    // this.productForm = this._formBuilder.group({
+    //   "ten": [''],
+    //   "giaGoc": [0],
+    //   "giaBan": [0],
+    //   "danhMuc": [''],
+    //   "moTa": [''],
+    //   "hinhAnh": ['']
+    // })
   }
-  submitData(form:NgForm) {
+  submitData(form: NgForm) {
     // console.log("Form data:", form.value);
     // console.log("Model:", this.product)
     if (this.product.id == '') {
@@ -44,8 +57,14 @@ export class ProductAdminComponent implements OnInit {
     }
   }
   updateForm(form:NgForm){
+    const formData = new FormData();
+    formData.append("files", this.files)
+    const update_Product = new updateProduct();
+    update_Product.product = this.product;
+    update_Product.formImg = formData;
+    console.log(update_Product)
     if(this.product.id !== ''){
-      this._service.updateProduct(this.product.id, this.product).subscribe(res => {
+      this._service.updateProduct(this.product.id, update_Product).subscribe(res => {
         console.log("No oke")
         let resData = JSON.parse(JSON.stringify(res));
         if (resData.message === "success") {
@@ -54,10 +73,19 @@ export class ProductAdminComponent implements OnInit {
           this.onReset(form);
           this.getProductList();
         }else {
+          this._toast.error("Có lỗi xảy ra", "Thất bại!")
           alert(resData.message)
         }
       })
     }
+  }
+  onChangeFile(event: any){
+    if(event.target.files.length > 0){
+      this.files = event.target.files;
+      // console.log("Files: ", event.target.files)
+    }
+    else
+    this.files = null;
   }
   getProductList() {
     this._service.getProductList().subscribe({
@@ -77,7 +105,7 @@ export class ProductAdminComponent implements OnInit {
     }
     this.product = new IDproduct();
   }
-  onDelete(id: any,form:NgForm){
+  onDelete(id: any){
       this._service.deleteProduct(id).subscribe(res => {
         let resData = JSON.parse(JSON.stringify(res));
         if (resData.message == "success") {
@@ -97,17 +125,17 @@ export class ProductAdminComponent implements OnInit {
   onSelect(event:any){
     if(event.target.files.length > 0){
       // console.log("File info: ", event.target.files[0])
-      this.file = event.target.files[0];
+      this.files = event.target.files[0];
     }
     else{
-      this.file=null;
+      this.files=null;
     }
   }
   onSubmit(data: any){
     // console.log("Name: ", dataForm.name)
     const formData = new FormData();
     formData.append("ten", data.ten);
-    formData.append("file", this.file);
+    formData.append("file", this.files);
 
     // console.log("formData: ", formData);
     for(let pair of formData.entries()){
@@ -117,6 +145,13 @@ export class ProductAdminComponent implements OnInit {
   // get name
   get nameInput(){
     return this.testForm.controls["ten"];
+  }
+
+  deleteImage(imageRemove: any){
+    //Không cho phép xóa hết ảnh sản phẩm
+    if(this.product.hinhAnh.length>= 1){
+      this.product.hinhAnh.splice(this.product.hinhAnh.indexOf(imageRemove), 1);
+    }
   }
 
 }
