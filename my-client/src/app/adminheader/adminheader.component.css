@@ -70,6 +70,10 @@ div.dropdown-menu {
     z-index: 10;
 }
 
+.navbar {
+    margin: 0px !important;
+}
+
 .brand-logo {
     display: flex;
     float: left;
@@ -151,6 +155,11 @@ button.btn:focus {
 .container-menu {
     z-index: 1000000000;
     position: relative;
+}
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 .menu-slidebar {
