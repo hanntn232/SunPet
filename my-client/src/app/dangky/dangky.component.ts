@@ -70,6 +70,7 @@ export class DangkyComponent implements OnInit {
           }
           else {
             this._toast.error("Có lỗi xảy ra trong quá trình đăng ký", "Đăng ký thất bại")
+            console.log(res.message)
           }
         })
       }

@@ -216,6 +216,7 @@ router.get("/users", function(req, res) {
 router.post('/users', async function(req, res) {
     // console.log("Data from client: ", req.body)
     // res.send("Server đã nhận dữ liệu")
+    user.init();
     let userImport = new user({
         role: req.body.role,
         ho: req.body.ho,
