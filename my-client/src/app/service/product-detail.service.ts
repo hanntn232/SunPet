@@ -23,11 +23,11 @@ export class ProductDetailService {
       catchError(this.handleError)
     )
   }
-  postProduct(data:IDproduct){
-    return this._http.post<IDproduct[]>(`${baseUrlProduct}/products`, data);
+  postProduct(data:FormData){
+    return this._http.post(`${baseUrlProduct}/products`, data);
   }
-  updateProduct(id: any,update_Product: updateProduct):Observable<any>{
-    return this._http.patch(`${baseUrlProduct}/products/${id}`, update_Product);
+  updateProduct(id: any,data: FormData):Observable<any>{
+    return this._http.patch(`${baseUrlProduct}/products/${id}`, data);
   }
   deleteProduct(id:string){
     return this._http.delete(`${baseUrlProduct}/${id}`);

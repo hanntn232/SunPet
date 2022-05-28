@@ -24,3 +24,10 @@ function anFormThayDoi() {
     document.getElementById('pop-up').style.display = "none";
     console.log("Đã ẩn")
 }
+
+//Hàm clear dữ liệu modal admin change product
+// function clearDataChange(idClear) {
+//     document.getElementById(idClear).on('hidden.bs.modal', function() {
+//         clear()
+//     });
+// }

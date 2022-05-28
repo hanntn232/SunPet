@@ -4,7 +4,7 @@ export class Product{
     giaGoc: number
     giaBan: number
     danhMuc: string
-    hinhAnh: string
+    hinhAnh: string;
     moTa: any
     constructor(){
         this.id = "";

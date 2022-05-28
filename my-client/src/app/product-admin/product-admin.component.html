@@ -77,7 +77,7 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="button-addproduct ml-auto" onclick="addProduct()" data-bs-toggle="modal" data-bs-target="#formAddProduct">
+                                        <div class="button-addproduct ml-auto" (click)="addProduct()" data-bs-toggle="modal" data-bs-target="#formAddProduct">
                                             <i class="fa fa-plus"></i>
                                         </div>
                                     </div>
@@ -195,7 +195,7 @@
                                             <div class="modal-content modal--content--fix">
                                                 <div class="modal-body">
                                                     <div class="row">
-                                                        <form #productForm="ngForm" (ngSubmit)="submitData(productForm)">
+                                                        <form #productForm="ngForm" (ngSubmit)="submitData()">
                                                             <!-- <form action="" [formGroup]="testForm" (ngSubmit)="onSubmit(testForm.value)"> -->
                                                             <div class="modal--header">
                                                                 <button type="button" class="btn-close modal--close" aria-label="Close" data-bs-dismiss="modal"></button>
@@ -241,7 +241,7 @@
                                                                 <div class="form-group">
                                                                     <label for="image_product" class="label-format">Hình
                                                                         ảnh sản phẩm:</label>
-                                                                    <input type="file" name="hinhAnh" class="button-addimg" id="image_product" [(ngModel)]="product.hinhAnh" (change)="onSelect($event)">
+                                                                    <input type="file" name="hinhAnh" class="button-addimg" id="image_product" (change)="onSelect($event)">
                                                                     <!-- Chọn file -->
                                                                     <!-- <span class="btn btn-warning btn-file">
                                                         Browse...<input type="file">
@@ -318,7 +318,7 @@
                                                                                 <button class="image-delete" (click)="deleteImage(i)">x</button>
                                                                             </div>
                                                                         </div>
-                                                                        <input type="file" name="hinhAnh" class="button-addimg form-control mb-3" id="image_product" multiple (change)="onChangeFile($event)">
+                                                                        <input type="file" accept=".jpg, .png" name="hinhAnh" class="button-addimg form-control mb-3" id="image_product" multiple (change)="onChangeFile($event)">
                                                                     </div>
                                                                 </div>
                                                                 <div class="add-image">
