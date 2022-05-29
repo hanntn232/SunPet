@@ -109,22 +109,17 @@ app.patch("/products/:id", async(req, res) => {
                     res.json({ message: "Success" });
                 }
             } else {
-                var filesArray = [];
-                for (let i = 0; i < req.files.length; i++) {
-                    const file = req.files[i].filename
-                    filesArray.push(file);
-                }
-                if (req.body.hinhAnh == '') {
-                    var hinhAnhArray = []
-                } else {
-                    hinhAnhArray = req.body.hinhAnh.split(',')
-                        // var hinhAnhArray = JSON.parse(req.body.hinhAnh)[0];
-                        // console.log("so luong anh: ", hinhAnhArray)
-                }
-                Array.prototype.push.apply(hinhAnhArray, filesArray);
-                // console.log("File received:", hinhAnhArray)
-                // console.log(req.body);
-                // console.log("Files length: ", filesArray)
+                // if (req.body.hinhAnh == '') {
+                //     var hinhAnhArray = []
+                // } else {
+                hinhAnhArray = req.body.hinhAnh.split(',')
+                console.log("ArrayImg: ", hinhAnhArray)
+                    //         // var hinhAnhArray = JSON.parse(req.body.hinhAnh)[0];
+                    //         // console.log("so luong anh: ", hinhAnhArray)
+                    // }
+                    // console.log("File received:", hinhAnhArray)
+                    // console.log(req.body);
+                    // console.log("Files length: ", filesArray)
                 await IDproduct.updateOne({ id: req.params.id }, {
                     $set: {
                         ten: req.body.ten,
@@ -161,14 +156,14 @@ app.post("/products", async(req, res) => {
                         const file = req.files[i].filename
                         filesArray.push(file);
                     }
-                    if (req.body.hinhAnh == "") {
-                        var hinhAnhArray = []
-                    } else {
-                        hinhAnhArray = req.body.hinhAnh.split(',')
-                            // var hinhAnhArray = JSON.parse(req.body.hinhAnh)[0];
-                            // console.log("so luong anh: ", hinhAnhArray)
-                    }
-                    Array.prototype.push.apply(hinhAnhArray, filesArray);
+                    // if (req.body.hinhAnh == "") {
+                    //     var hinhAnhArray = []
+                    // } else {
+                    //     hinhAnhArray = req.body.hinhAnh.split(',')
+                    //         // var hinhAnhArray = JSON.parse(req.body.hinhAnh)[0];
+                    //         // console.log("so luong anh: ", hinhAnhArray)
+                    // }
+                    // Array.prototype.push.apply(hinhAnhArray, filesArray);
                     // console.log("File received:", hinhAnhArray)
                     // console.log(req.body);
                     // console.log("Files length: ", filesArray)
@@ -180,7 +175,7 @@ app.post("/products", async(req, res) => {
                         hinhAnh: req.body.hinhAnh,
                         danhMuc: req.body.danhMuc,
                         moTa: req.body.moTa,
-                        hinhAnh: hinhAnhArray
+                        hinhAnh: filesArray
                     })
                     try {
                         p = await product.save();
@@ -196,6 +191,22 @@ app.post("/products", async(req, res) => {
     } catch (err) {
         // console.log(err.message);
         res.json({ message: err.message });
+    }
+})
+
+//delete products
+app.delete("/products/:id", async(req, res) => {
+    try {
+        await IDproduct.deleteOne({ id: req.params.id }, (err) => {
+            if (err) {
+                console.log(req.params.id)
+                res.json({ message: err.message })
+            } else {
+                res.json({ message: "success" })
+            }
+        });
+    } catch (err) {
+        res.json({ message: err.message })
     }
 })
 

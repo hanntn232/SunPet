@@ -44,6 +44,7 @@ export class ProductAdminComponent implements OnInit {
   }
   submitData() {
     this.product.id = this.taoProductID();
+    console.log("ProductID: ",this.product.id);
     const formData = new FormData();
     if (this.files != null) {
       for (let i = 0; i < this.files.length; i++) {
@@ -92,6 +93,7 @@ export class ProductAdminComponent implements OnInit {
     formData.append("moTa", this.product.moTa)
     formData.append("danhMuc", this.product.danhMuc)
     formData.append("hinhAnh", this.product.hinhAnh)
+    // console.log("hình ảnh: ", this.product.hinhAnh);
     // const update_Product = new updateProduct();
     // update_Product.product = this.product;
     // update_Product.formImg = formData;
@@ -151,7 +153,7 @@ export class ProductAdminComponent implements OnInit {
         this.onReset();
         this.getProductList();
       } else {
-        alert(resData.message)
+        this._toast.error(resData.message, "thất bại!")
       }
     })
   }
@@ -192,7 +194,7 @@ export class ProductAdminComponent implements OnInit {
   }
 
   addProduct() {
-    this.product = new Product();
+    this.product = new IDproduct();
     this.files = null;
   }
 

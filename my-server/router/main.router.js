@@ -88,14 +88,14 @@ router.get('/products/:productId', async function(req, res) {
 
 
 //     // Delete product
-router.delete("/products/:productId", async(req, res) => {
-    try {
-        await IDproduct.deleteOne({ id: req.params.productId });
-        res.json({ message: "success" })
-    } catch (err) {
-        res.json({ message: err.message })
-    }
-})
+// router.delete("/products/:productId", async(req, res) => {
+//     try {
+//         await IDproduct.deleteOne({ id: req.params.productId });
+//         res.json({ message: "success" })
+//     } catch (err) {
+//         res.json({ message: err.message })
+//     }
+// })
 
 // //Get all blogs
 router.get('/blogs', function(req, res) {

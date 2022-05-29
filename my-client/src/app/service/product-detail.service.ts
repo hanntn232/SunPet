@@ -30,7 +30,7 @@ export class ProductDetailService {
     return this._http.patch(`${baseUrlProduct}/products/${id}`, data);
   }
   deleteProduct(id:string){
-    return this._http.delete(`${baseUrlProduct}/${id}`);
+    return this._http.delete(`${baseUrlProduct}/products/${id}`);
   }
   handleError(error: HttpErrorResponse){
     return throwError(()=> new Error(error.message))
