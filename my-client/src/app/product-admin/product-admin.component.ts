@@ -20,6 +20,8 @@ export class ProductAdminComponent implements OnInit {
   // public productForm: any; 
   // image
   files: any;
+  modal = true;
+  location = window.location;
 
   constructor(private _service: ProductDetailService, private _toast: ToastrService, private _formBuilder: FormBuilder) { }
 
@@ -44,7 +46,7 @@ export class ProductAdminComponent implements OnInit {
   }
   submitData() {
     this.product.id = this.taoProductID();
-    console.log("ProductID: ",this.product.id);
+    console.log("ProductID: ", this.product.id);
     const formData = new FormData();
     if (this.files != null) {
       for (let i = 0; i < this.files.length; i++) {
@@ -68,9 +70,11 @@ export class ProductAdminComponent implements OnInit {
       let resData = JSON.parse(JSON.stringify(res))
       if (resData.message === "success") {
         // alert("Succesfully!")
+        setTimeout(() => this.location.reload(),1000)
         this._toast.success("Thêm sản phẩm thành công", "Thành công!")
-        this.getProductList();
+        // this.getProductList();
         this.onReset();
+
       } else {
         this._toast.error(resData.message, "Thất bại!")
       }
@@ -103,14 +107,16 @@ export class ProductAdminComponent implements OnInit {
     // }
 
     if (this.product.id !== '') {
-      this._service.updateProduct(this.product.id, formData).subscribe(res => {
+      this._service.updateProduct(this.product.id, formData).subscribe( async (res) => {
         // console.log("No oke")
         let resData = JSON.parse(JSON.stringify(res));
         if (resData.message == "Success") {
-          // alert("Updated sucessfully")
+          setTimeout(() => this.location.reload(),1000)
+          // this.location.reload();
           this._toast.success("Cập nhật thành công", "Thành công!")
           this.onReset(form);
           this.getProductList();
+          // alert("Updated sucessfully")
         } else {
           this._toast.error("Có lỗi xảy ra", "Thất bại!")
           alert(resData.message)
@@ -144,14 +150,21 @@ export class ProductAdminComponent implements OnInit {
     }
     this.product = new IDproduct();
   }
+
+
   onDelete(id: any) {
+    const formDetele = document.querySelector('body');
+    // const overlay = document.getElementsByClassName('body')
     this._service.deleteProduct(id).subscribe(res => {
       let resData = JSON.parse(JSON.stringify(res));
       if (resData.message == "success") {
         // alert("Delete sucessfully")
+        setTimeout(() => this.location.reload(),1000)
         this._toast.success("Xóa sản phẩm thành công", "Thành công!")
+        if (formDetele != null) {
+          formDetele.classList.remove('modal-open')
+        }
         this.onReset();
-        this.getProductList();
       } else {
         this._toast.error(resData.message, "thất bại!")
       }

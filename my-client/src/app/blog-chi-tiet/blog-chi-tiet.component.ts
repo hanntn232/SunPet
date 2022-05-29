@@ -43,4 +43,6 @@ export class BlogChiTietComponent implements OnInit {
   onSelected(data: any): void{
     this.router.navigate(['/blog', data.id])
   }
+
+
 }

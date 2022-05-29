@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <div>
         <div class="row">
             <!-- Sidebar -->
@@ -106,7 +105,7 @@
                                                                         <i class="fa fa-pen-to-square"></i>
                                                                         <p>Sửa</p>
                                                                     </button>
-                                                                    <button class="icon-change d-inline-flex" data-bs-toggle="modal" data-bs-target="#formDeleteProduct">
+                                                                    <button class="icon-change d-inline-flex" data-bs-toggle="modal" data-bs-target="#formDeleteProduct" (click)="onEdit(p)">
                                                                         <i class="fa fa-trash-can"></i>
                                                                         <p>Xóa</p>
                                                                     </button>
@@ -347,7 +346,7 @@
                                                     <div class="popup-delete-content">
                                                         <p>Bạn có muốn xóa sản phẩm không?</p>
                                                         <div class="popup-button">
-                                                            <button class="button--yes" type="submit" (click)="onDelete(products.id)">Có</button>
+                                                            <button class="button--yes" type="submit" (click)="onDelete(product.id)">Có</button>
                                                             <button class="button--no" data-bs-dismiss="modal" type="button">Không</button>
                                                         </div>
                                                     </div>

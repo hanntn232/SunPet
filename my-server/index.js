@@ -5,6 +5,7 @@ const path = require("path")
 const morgan = require('morgan');
 const multer = require("multer");
 const IDproduct = require("./model/product")
+const IDblog = require("./model/blog")
 
 //Http request legger
 app.use(morgan('combined'));
@@ -70,6 +71,13 @@ var upload = multer({
         fileSize: maxSize,
     },
 }).array("files", 3);
+
+var uploadBlog = multer({
+    storage: storage,
+    limits: {
+        fileSize: maxSize,
+    },
+}).single("file");
 
 
 // update product
@@ -197,14 +205,94 @@ app.post("/products", async(req, res) => {
 //delete products
 app.delete("/products/:id", async(req, res) => {
     try {
-        await IDproduct.deleteOne({ id: req.params.id }, (err) => {
-            if (err) {
-                console.log(req.params.id)
-                res.json({ message: err.message })
-            } else {
-                res.json({ message: "success" })
-            }
-        });
+        await IDproduct.deleteOne({ id: req.params.id });
+        // console.log(req.body.id + '/ ' + req.params.id)
+        res.json({ message: "success" })
+    } catch (err) {
+        res.json({ message: err.message })
+    }
+})
+
+
+
+
+// Insert blog
+app.post("/blogs", async(req, res) => {
+        try {
+            upload(req, res, async(err) => {
+                // console.log("Dữ liệu files 2: ", req.body)
+                if (req.body.files != '') {
+                    if (err) {
+                        res.json({ message: err.message });
+                    } else {
+                        let blog = new IDblog({
+                            id: req.body.id,
+                            title: req.body.title,
+                            content: req.body.content,
+                            image: req.files[0].filename,
+                            date: req.body.date
+                        })
+                        try {
+                            b = await blog.save();
+                            // console.log("Đã save: ", blog)
+                            res.json({ message: "successfull" });
+                        } catch (err) {
+                            res.json({ message: err.message })
+                        }
+                    }
+                } else {
+                    res.json({ message: 'Bạn phải upload ảnh!' })
+                }
+            });
+        } catch (err) {
+            // console.log(err.message);
+            res.json({ message: err.message });
+        }
+    })
+    // update blog
+app.patch("/blogs/:id", async(req, res) => {
+        try {
+            upload(req, res, async(err) => {
+                if (req.body.files != '') {
+                    // console.log("Files Req2: ", req.body.files)
+                    // console.log("Files Req1: ", req.files[0].filename)
+                    if (err) {
+                        res.json({ message: err.message });
+                    } else {
+                        await IDblog.updateOne({ id: req.params.id }, {
+                            $set: {
+                                date: req.body.date,
+                                title: req.body.title,
+                                content: req.body.content,
+                                image: req.files[0].filename
+                            }
+                        })
+                        res.json({ message: "successfull" });
+                    }
+                } else {
+                    console.log("Files Reqs: ", req.body.files)
+                    await IDblog.updateOne({ id: req.params.id }, {
+                        $set: {
+                            date: req.body.date,
+                            title: req.body.title,
+                            content: req.body.content,
+                            image: req.body.image
+                        }
+                    })
+                    res.json({ message: "successfull" });
+                }
+            });
+        } catch (err) {
+            // console.log(err.message);
+            res.json({ message: err.message });
+        }
+    })
+    // Delete blog
+app.delete("/blogs/:id", async(req, res) => {
+    try {
+        await IDblog.deleteOne({ id: req.params.id });
+        console.log(req.body.id + '/ ' + req.params.id)
+        res.json({ message: "successfull" })
     } catch (err) {
         res.json({ message: err.message })
     }
