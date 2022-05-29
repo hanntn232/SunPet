@@ -6,7 +6,6 @@ const user = require('../model/user');
 const cart = require('../model/cart')
 const order = require('../model/order')
 const Todo = require('../model/todo');
-const multer = require("multer");
 
 router.get('/', function(req, res) {
     res.send("Chào mừng bạn đến với Website SunPet")
@@ -14,19 +13,7 @@ router.get('/', function(req, res) {
 
 module.exports = router;
 
-var storage = multer.diskStorage({
-    destination: "images",
-    filename: (req, file, cb) => {
-        cb(null, `${file.originalname}`);
-    },
-});
-let maxSize = 10 * 1024 * 1024; //10MB
-var upload = multer({
-    storage: storage,
-    limits: {
-        fileSize: maxSize,
-    },
-}).array("file", 10);
+
 
 // //Get all product
 router.get('/products', function(req, res) {
@@ -46,122 +33,69 @@ router.get('/products', function(req, res) {
 router.get('/products/:productId', async function(req, res) {
         // console.log(req.params.productId)
         try {
-            const data = await IDproduct.findById(req.params.productId)
-                // res.json({ message: "success" })
-            res.send(data)
-        } catch (err) {
-            res.json({ message: err.message })
-        }
-    })
-    // Insert product 
-router.post("/products", async(req, res) => {
-        // console.log("Data from client", req.body);
-        // res.send("Server received!");
-
-        let product = new IDproduct({
-            ten: req.body.ten,
-            giaGoc: req.body.giaGoc,
-            giaBan: req.body.giaBan,
-            hinhAnh: req.body.hinhAnh,
-            danhMuc: req.body.danhMuc,
-            moTa: req.body.moTa,
-        })
-        try {
-            p = await product.save();
+            const data = await IDproduct.find({ id: req.params.productId })
             res.json({ message: "success" })
         } catch (err) {
             res.json({ message: err.message })
         }
     })
-    // update product
-    // router.patch("/:productId", async(req, res) => {
-    //     try {
-    //         await IDproduct.updateOne({ id: req.params.productId }, {
-    //             $set: {
-    //                 ten: req.body.ten,
-    //                 giaGoc: req.body.giaGoc,
-    //                 giaBan: req.body.giaBan,
-    //                 hinhAnh: req.body.hinhAnh,
-    //                 danhMuc: req.body.danhMuc,
-    //                 moTa: req.body.moTa
-    //             }
-    //         })
-    //         try {
-    //             p = await product.save();
-    //             res.json({ message: "success" })
-    //         } catch (err) {
-    //             res.json({ message: err.message })
-    //         }
-    //     } catch (err) {
-    //         res.json({ message: err.message })
-    //     }
-    // })
+    //     // Insert product 
+    // router.post("/products", async(req, res) => {
+    //         // console.log("Data from client", req.body);
+    //         // res.send("Server received!");
 
-//     // update product
-router.patch("/products/:productId", async(req, res) => {
-        if (req.body.formImg != null) {
-            try {
-                await IDproduct.updateOne({ id: req.params.productId }, {
-                    $set: {
-                        ten: req.body.product.ten,
-                        giaGoc: req.body.product.giaGoc,
-                        giaBan: req.body.product.giaBan,
-                        hinhAnh: req.body.product.hinhAnh,
-                        danhMuc: req.body.product.danhMuc,
-                        moTa: req.body.product.moTa
-                    }
-                })
-                res.json({ message: "success" })
-            } catch (err) {
-                console.log(err.message);
-                res.json({ message: err.message });
-            }
-        } else {
-            try {
-                await
-                upload(req, res, async(err) => {
-                    if (err) {
-                        res.json({ message: err.message });
-                    } else {
-                        IDproduct.updateOne({ id: req.params.productId }, {
-                            $set: {
-                                ten: req.body.product.ten,
-                                giaGoc: req.body.product.giaGoc,
-                                giaBan: req.body.product.giaBan,
-                                hinhAnh: req.body.product.hinhAnh.push(req.formImg.filename),
-                                danhMuc: req.body.product.danhMuc,
-                                moTa: req.body.product.moTa
-                            }
-                        })
-                        res.json({ message: "success" })
-
-                        // // console.log("File received:", req.file.filename);
-                        // let productInfo = new Product({
-                        //     name: req.body.name,
-                        //     thumbPath: req.file.filename
-                        // })
-                        // await productInfo.save();
-                        // res.json({ message: "Success!" });
-                    }
-                });
+//         let product = new IDproduct({
+//             ten: req.body.ten,
+//             giaGoc: req.body.giaGoc,
+//             giaBan: req.body.giaBan,
+//             hinhAnh: req.body.hinhAnh,
+//             danhMuc: req.body.danhMuc,
+//             moTa: req.body.moTa,
+//         })
+//         try {
+//             p = await product.save();
+//             res.json({ message: "success" })
+//         } catch (err) {
+//             res.json({ message: err.message })
+//         }
+//     })
+// update product
+// router.patch("/:productId", async(req, res) => {
+//     try {
+//         await IDproduct.updateOne({ id: req.params.productId }, {
+//             $set: {
+//                 ten: req.body.ten,
+//                 giaGoc: req.body.giaGoc,
+//                 giaBan: req.body.giaBan,
+//                 hinhAnh: req.body.hinhAnh,
+//                 danhMuc: req.body.danhMuc,
+//                 moTa: req.body.moTa
+//             }
+//         })
+//         try {
+//             p = await product.save();
+//             res.json({ message: "success" })
+//         } catch (err) {
+//             res.json({ message: err.message })
+//         }
+//     } catch (err) {
+//         res.json({ message: err.message })
+//     }
+// })
 
 
-            } catch (err) {
-                console.log(err.message);
-                res.json({ message: err.message });
-            }
-        }
 
-    })
-    //     // Delete product
-router.delete("/products/:productId", async(req, res) => {
-    try {
-        await IDproduct.deleteOne({ id: req.params.productId });
-        res.json({ message: "success" })
-    } catch (err) {
-        res.json({ message: err.message })
-    }
-})
+
+
+//     // Delete product
+// router.delete("/products/:productId", async(req, res) => {
+//     try {
+//         await IDproduct.deleteOne({ id: req.params.productId });
+//         res.json({ message: "success" })
+//     } catch (err) {
+//         res.json({ message: err.message })
+//     }
+// })
 
 // //Get all blogs
 router.get('/blogs', function(req, res) {
