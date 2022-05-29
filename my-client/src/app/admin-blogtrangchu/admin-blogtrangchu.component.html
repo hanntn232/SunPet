@@ -30,7 +30,7 @@
                             <h1 class="title_page">Tin tức</h1>
                         </div>
                         <div class="box-right">
-                            <a href="#formAddBlog">
+                            <a (click)="openAddForm()">
                                 <button class="btn-header "> 
                     <span><i class="fa-solid fa-plus" style="font-size:25px"></i></span>
                     
@@ -63,12 +63,12 @@
                                                         <i class="fas fa-eye fa-lg"></i>
                                                     </div>
                                                 </a>
-                                                <a (click)="openEditForm()">
+                                                <a (click)="openEditForm(b)">
                                                     <div id="btn-mobile2">
                                                         <i class="fa-solid fa-pen-to-square"></i>
                                                     </div>
                                                 </a>
-                                                <a href="#formDeleteBlog">
+                                                <a (click)="openDeleteForm(b)">
                                                     <div id="btn-mobile3">
                                                         <i class="fa-solid fa-trash-can"></i>
                                                     </div>
@@ -443,10 +443,10 @@
                             <div class="blog_item">
                                 <div>
                                     <div class="blog__position">
-                                        <a href="../HTML_chitiet_blog/blog_chitiet_HLCNL10P.html" title="Huấn luyện chó con nghe lời chỉ với 10 phút mỗi ngày">
-                                            <img src="assets/image/cun6.jpg" alt="Huấn luyện chó con nghe lời chỉ với 10 phút mỗi ngày" class="img-responsive " data-was-processed="true">
+                                        <a title="Huấn luyện chó con nghe lời chỉ với 10 phút mỗi ngày">
+                                            <img src="http://localhost:3000/cun6.jpg" alt="Huấn luyện chó con nghe lời chỉ với 10 phút mỗi ngày" class="img-responsive " data-was-processed="true">
                                             <div class="blog-edit">
-                                                <a href="#formEditBlog">
+                                                <a>
                                                     <button class="btn-edit"> <span>
                                             <i class=" fa-solid fa-pen-to-square"></i>
                                         </span>
@@ -519,12 +519,12 @@
                             <div class="blog_item">
                                 <div>
                                     <div class="blog__position">
-                                        <a href="../HTML_chitiet_blog/blog_chitiet_Patechocho.html" title="Pate cho chó - Giải pháp chuyên trị cho chó
+                                        <a title="Pate cho chó - Giải pháp chuyên trị cho chó
                                                 kén ăn">
-                                            <img src="assets/image/cun7.jpgg" alt="Pate cho chó - Giải pháp chuyên trị cho chó
+                                            <img src="http://localhost:3000/cun7.jpg" alt="Pate cho chó - Giải pháp chuyên trị cho chó
                                                     kén ăn" class="img-responsive " data-was-processed="true">
                                             <div class="blog-edit">
-                                                <a href="#formEditBlog">
+                                                <a>
                                                     <button class="btn-edit"> <span>
                                                             <i class=" fa-solid fa-pen-to-square"></i>
                                                         </span>
@@ -538,11 +538,11 @@
                                                         <i class="fas fa-eye fa-lg"></i>
                                                     </div>
                                                     <div id="btn-mobile2">
-                                                        <a href="#formEditBlog">
+                                                        <a>
                                                             <i class=" fa-solid fa-pen-to-square"></i></a>
                                                     </div>
                                                     <div id="btn-mobile3">
-                                                        <a href="#formDeleteBlog">
+                                                        <a>
                                                             <i class="fa-solid fa-trash-can"></i></a>
                                                     </div>
                                                 </div>
@@ -627,7 +627,7 @@
                             <div class="loop-blog">
                                 <div class="">
                                     <a href="../HTML_chitiet_blog/blog_chitiet_NNKCTNHD.html">
-                                        <img class="blog__width--baiviet " src="assets/image/cun8.jpg" title="Nguyên nhân khiến chó trở nên hung dữ" alt="Nguyên nhân khiến chó trở nên hung dữ" data-was-processed="true">
+                                        <img class="blog__width--baiviet " src="http://localhost:3000/cun8.jpg" title="Nguyên nhân khiến chó trở nên hung dữ" alt="Nguyên nhân khiến chó trở nên hung dữ" data-was-processed="true">
 
                                     </a>
                                 </div>
@@ -639,26 +639,26 @@
 
                             <div class="loop-blog clearfix">
                                 <div class="thumb-left">
-                                    <a href="../HTML_chitiet_blog/blog_chitiet_HLCMNDCHQua.html">
-                                        <img class="blog__width--baiviet" src="assets/image/cun9.jpg" title="Huấn luyện chó mèo ngủ đúng chỗ hiệu quả nhất!" alt="Huấn luyện chó mèo ngủ đúng chỗ hiệu quả nhất!" data-was-processed="true">
+                                    <a>
+                                        <img class="blog__width--baiviet" src="http://localhost:3000/cun9.jpg" title="Huấn luyện chó mèo ngủ đúng chỗ hiệu quả nhất!" alt="Huấn luyện chó mèo ngủ đúng chỗ hiệu quả nhất!" data-was-processed="true">
 
                                     </a>
                                 </div>
                                 <div class="name-right">
-                                    <h3><a href="../HTML_chitiet_blog/blog_chitiet_HLCMNDCHQua.html" class="readmore btn-transition" title="Huấn luyện chó mèo ngủ đúng chỗ hiệu quả nhất!">Huấn luyện chó
+                                    <h3><a class="readmore btn-transition" title="Huấn luyện chó mèo ngủ đúng chỗ hiệu quả nhất!">Huấn luyện chó
                                     mèo ngủ đúng chỗ hiệu quả nhất!</a></h3>
                                 </div>
                             </div>
 
                             <div class="loop-blog clearfix">
                                 <div class="thumb-left">
-                                    <a href="../HTML_chitiet_blog/blog_chitiet_CDGTVMeo.html">
-                                        <img class="blog__width--baiviet" src="assets/image/cun10.jpg" title="Cách để giao tiếp với mèo" alt="Cách để giao tiếp với mèo" data-was-processed="true">
+                                    <a>
+                                        <img class="blog__width--baiviet" src="http://localhost:3000/cun10.jpg" title="Cách để giao tiếp với mèo" alt="Cách để giao tiếp với mèo" data-was-processed="true">
 
                                     </a>
                                 </div>
                                 <div class="name-right">
-                                    <h3><a href="../HTML_chitiet_blog/blog_chitiet_CDGTVMeo.html" class="readmore btn-transition" title="Cách để giao tiếp với mèo">Cách để giao
+                                    <h3><a class="readmore btn-transition" title="Cách để giao tiếp với mèo">Cách để giao
                                     tiếp với
                                     mèo</a></h3>
                                 </div>
@@ -667,7 +667,7 @@
                             <div class="loop-blog clearfix">
                                 <div class="thumb-left">
                                     <a href="../HTML_chitiet_blog/blog_chitiet_CTTMeoCXN.html">
-                                        <img class="blog__width--baiviet" src="assets/image/cun11.jpg" title="Cách tính tuổi mèo chính xác nhất" alt="Cách tính tuổi mèo chính xác nhất" data-was-processed="true">
+                                        <img class="blog__width--baiviet" src="http://localhost:3000/cun11.jpg" title="Cách tính tuổi mèo chính xác nhất" alt="Cách tính tuổi mèo chính xác nhất" data-was-processed="true">
                                     </a>
                                 </div>
                                 <div class="name-right">
@@ -684,13 +684,13 @@
                             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active" data-bs-interval="5000">
-                                        <img src="assets/image/AnhBiaBlog.png" class="d-block w-100" alt="">
+                                        <img src="http://localhost:3000/AnhBiaBlog.png" class="d-block w-100" alt="">
                                     </div>
                                     <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="assets/image/AnhBiaBlog2.png" class="d-block w-100" alt="">
+                                        <img src="http://localhost:3000/AnhBiaBlog2.png" class="d-block w-100" alt="">
                                     </div>
                                     <div class="carousel-item" data-bs-interval="5000">
-                                        <img src="assets/image/AnhBiaBlog3.png" class="d-block w-100" alt="">
+                                        <img src="http://localhost:3000/AnhBiaBlog3.png" class="d-block w-100" alt="">
                                     </div>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -723,12 +723,12 @@
                 <a href="#" class="overlay-close"></a>
 
                 <div class="dialog-body">
-                    <a class="dialog-close-btn" href="#">&times;</a>
+                    <a class="dialog-close-btn" (click)="closeAddForm()">&times;</a>
                     <div class="form-title">
                         <h3 class="title-text">Thêm thông tin bài viết</h3>
                     </div>
                     <div class="container1">
-                        <form #blogForm="ngForm" (ngSubmit)="submitData(blogForm)">
+                        <form #blogForm="ngForm" (ngSubmit)="submitData()">
                             <!-- /action_page.php -->
                             <div class="row">
                                 <div class="col-25">
@@ -751,24 +751,21 @@
                                     <label for="fname">Hình ảnh:</label>
                                 </div>
                                 <div class="col-75">
-                                    <input type="file" value="Thêm hình ảnh" name="image" [(ngModel)]="blog.image">
+                                    <input type="file" name="image" (change)="onChangeFile($event)">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-25">
                                 </div>
                                 <div class="col-75">
-                                    <i class="fa fa-image"></i>
-                                    <i class="fa fa-image"></i>
-                                    <i class="fa fa-image"></i>
-                                    <i class="fa fa-plus"></i>
+                                    <!-- <img src="http://localhost:3000/{{blog.image}}" style="height: 60px;"> -->
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-25">
                                 </div>
                                 <div class="col-75">
-                                    <input class="button_form" type="submit" value="Hủy">
+                                    <input class="button_form" type="button" value="Hủy" (click)="closeEditForm()">
                                     <input class="button_form" type="submit" value="Lưu">
                                 </div>
                             </div>
@@ -781,21 +778,21 @@
             <div class="dialog overlay" id="formEditBlog">
                 <a href="#" class="overlay-close"></a>
                 <div class="dialog-body">
-                    <a class="dialog-close-btn" href="#">&times;</a>
+                    <a class="dialog-close-btn" (click)="closeEditForm()">&times;</a>
                     <div class="form-title">
                         <h3 class="title-text">Sửa thông tin bài viết</h3>
                         <!-- <a href="" class="close">x</a> -->
                     </div>
 
                     <div class="container1">
-                        <form action="" #blogForm="ngForm" (ngSubmit)="updateBlog(blogForm)">
+                        <form #blogForm="ngForm" (ngSubmit)="updateBlog()">
                             <!-- /action_page.php -->
                             <div class="row">
                                 <div class="col-25">
                                     <label for="tieude">Tiêu đề:</label>
                                 </div>
                                 <div class="col-75">
-                                    <input type="text" id="tieude" name="title" placeholder="Nhập tiêu đề" [(ngModel)]="blog['title']">
+                                    <input type="text" id="tieude" name="title" placeholder="Nhập tiêu đề" [(ngModel)]="blog.title">
                                 </div>
                             </div>
                             <div class="row">
@@ -811,24 +808,21 @@
                                     <label for="fname">Hình ảnh:</label>
                                 </div>
                                 <div class="col-75">
-                                    <input type="file" value="Thêm hình ảnh" name="image" [(ngModel)]="blog.image">
+                                    <input type="file" value="Thêm hình ảnh" name="image" (change)="onChangeFile($event)">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-25">
                                 </div>
                                 <div class="col-75">
-                                    <i class="fa fa-image"></i>
-                                    <i class="fa fa-image"></i>
-                                    <i class="fa fa-image"></i>
-                                    <i class="fa fa-plus"></i>
+                                    <img src="http://localhost:3000/{{blog.image}}" style="height: 60px;">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-25">
                                 </div>
                                 <div class="col-75">
-                                    <input class="button_form" type="submit" value="Hủy">
+                                    <input class="button_form" type="button" value="Hủy" (click)="closeEditForm()">
                                     <input class="button_form" type="submit" value="Lưu">
                                 </div>
                             </div>
@@ -838,9 +832,9 @@
             </div>
             <!-- Form DeleteBlog -->
             <div class="dialog overlay" id="formDeleteBlog">
-                <a href="#" class="overlay-close"></a>
+                <a class="overlay-close"></a>
                 <div class="dialog-body-delete">
-                    <a class="dialog-close-btn" href="#">&times;</a>
+                    <a class="dialog-close-btn" (click)="closeDeleteForm()">&times;</a>
                     <div class="form-title">
                         <h3 class="title-text">Bạn có muốn xóa bài viết không?</h3>
                     </div>
@@ -848,13 +842,13 @@
                         <i class="fas fa-check-circle" style="color: green"></i>
                     </div>
                     <div class="container">
-                        <form action="" #blogForm="ngForm" (ngSubmit)="onDelete(blogs.id,blogForm)">
+                        <form #blogForm="ngForm" (ngSubmit)="onDelete(blog.id)">
                             <div class="row">
                                 <div class="col-25">
                                 </div>
                                 <div class="col-75">
-                                    <input class="button_formDelete " type="submit" value="Không">
-                                    <a href="#formDeleleSucc">
+                                    <input class="button_formDelete" type="button" value="Không">
+                                    <a>
                                         <input class="button_formDelete" type="submit" value="Có">
                                     </a>
                                 </div>
@@ -867,7 +861,7 @@
             <div class="dialog overlay" id="formDeleleSucc">
                 <a href="#" class="overlay-close"></a>
                 <div class="dialog-body-delete">
-                    <a class="dialog-close-btn" href="#">&times;</a>
+                    <a class="dialog-close-btn" (click)="closeDeleteSucc()">&times;</a>
                     <div class="form-title">
                         <h3 class="title-text">Đã xóa bài viết thành công!</h3>
                     </div>
