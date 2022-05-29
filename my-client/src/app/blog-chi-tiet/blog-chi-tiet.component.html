@@ -46,15 +46,15 @@
                                     <div>{{errMsg}}</div>
                                     <div class="article-content clearfix">
                                         <div class="post-detail">
-                                            <div *ngIf="blogList[0].content.part1">
-                                                <p class="content-part1" [innerHTML]="blogList[0].content.part1"></p>
+                                            <div>
+                                                <p class="content-part1" [innerHTML]="b.content"></p>
                                             </div>
 
-                                            <div *ngIf="blogList[0].image.img1">
-                                                <p><img src="{{blogList[0].image.img1}}" class="image-content w-100 image-img1" /></p>
+                                            <div>
+                                                <p><img src="http://localhost:3000/{{b.image}}" class="image-content w-100 image-img1" /></p>
                                             </div>
 
-                                            <div *ngIf="blogList[0].content.part2">
+                                            <!-- <div *ngIf="blogList[0].content.part2">
                                                 <p class="content-part2" [innerHTML]="blogList[0].content.part2"></p>
                                             </div>
 
@@ -68,7 +68,7 @@
 
                                             <div *ngIf="blogList[0].image.img3">
                                                 <p><img src="{{blogList[0].image.img3}}" class="image-content w-100" /></p>
-                                            </div>
+                                            </div> -->
 
                                         </div>
                                         <div class="share_social">
@@ -98,7 +98,7 @@
                                                 <div>
                                                     <div class="blog__position">
                                                         <a title="{{blogList[1].title}}">
-                                                            <img src="{{blogList[1].image.img1}} " alt="{{blogList[1].title}}" class="img-responsive ">
+                                                            <img src="http://localhost:3000/{{blogList[1].image}}" alt="{{blogList[1].title}}" class="img-responsive ">
                                                         </a>
                                                     </div>
                                                     <div class="content_blog">
@@ -129,7 +129,7 @@
                                                 <div>
                                                     <div class="blog__position">
                                                         <a title="{{blogList[2].title}}">
-                                                            <img src="{{blogList[2].image.img1}}" alt="{{blogList[2].title}}" class="img-responsive " data-was-processed="true">
+                                                            <img src="http://localhost:3000/{{blogList[2].image}}" alt="{{blogList[2].title}}" class="img-responsive " data-was-processed="true">
                                                         </a>
                                                     </div>
                                                     <div class="content_blog">
@@ -170,7 +170,7 @@
                                     <article class="article">
                                         <div class="d-flex">
                                             <a>
-                                                <img src="{{b.image.img1}}" class="cart-avar px-1" alt="">
+                                                <img src="http://localhost:3000/{{b.image}}" class="cart-avar px-1" alt="">
                                             </a>
                                             <div class="cart-body">
                                                 <a class="text-title display-3 text-dark">

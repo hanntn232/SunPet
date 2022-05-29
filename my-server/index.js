@@ -197,14 +197,9 @@ app.post("/products", async(req, res) => {
 //delete products
 app.delete("/products/:id", async(req, res) => {
     try {
-        await IDproduct.deleteOne({ id: req.params.id }, (err) => {
-            if (err) {
-                console.log(req.params.id)
-                res.json({ message: err.message })
-            } else {
-                res.json({ message: "success" })
-            }
-        });
+        await IDproduct.deleteOne({ id: req.params.id });
+        console.log(req.body.id + '/ ' + req.params.id)
+        res.json({ message: "success" })
     } catch (err) {
         res.json({ message: err.message })
     }

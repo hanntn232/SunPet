@@ -45,29 +45,27 @@
                         <div class="row_blog_responsive" *ngFor="let b of blogs">
                             <div class="blog_item">
                                 <div class="blog__position">
-                                    <a href="../HTML_chitiet_blog/blog_chitiet_MeoDiVS.html" title={{b.title}}>
-                                        <img src={{b.image.img1}} alt={{b.title}} class="img-responsive ">
+                                    <a title={{b.title}}>
+                                        <img src="http://localhost:3000/{{b.image}}" alt={{b.title}} class="img-responsive ">
                                         <div class="blog-edit" (click)="onEdit(b)">
                                             <a href="#formEditBlog">
                                                 <button class="btn-edit"> <span>
                                                         <i class=" fa-solid fa-pen-to-square"></i>
                                                     </span>
-
                                                     Sửa bài viết
                                                 </button>
                                             </a>
                                         </div>
                                         <div class="cover-icon ">
                                             <div class="blog-edit1">
-                                                <a href="#my-dialog" class="dialog-btn">
+                                                <a routerLink="/admin/blogs/{{b.id}}" class="dialog-btn">
                                                     <div id="btn-mobile1">
                                                         <i class="fas fa-eye fa-lg"></i>
                                                     </div>
                                                 </a>
-                                                <a href="#formEditBlog">
+                                                <a (click)="openEditForm()">
                                                     <div id="btn-mobile2">
-
-                                                        <i class=" fa-solid fa-pen-to-square"></i>
+                                                        <i class="fa-solid fa-pen-to-square"></i>
                                                     </div>
                                                 </a>
                                                 <a href="#formDeleteBlog">
@@ -76,7 +74,7 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                            <a href="#formDeleteBlog">
+                                            <!-- <a href="#formDeleteBlog">
                                                 <div class="blog-delete">
                                                     <button class="btn-delete">
                                                     <span>
@@ -85,11 +83,10 @@
                                                     Xóa bài viết
                                                 </button>
                                                 </div>
-                                            </a>
+                                            </a> -->
                                         </div>
-                                        <a href="#formDeleteBlog">
+                                        <!-- <a href="#formDeleteBlog">
                                             <div class="blog-delete">
-                                        
                                                 <button class="btn-delete">
                                                     <span>
                                                         <i class="fa-solid fa-trash-can"></i>
@@ -97,19 +94,18 @@
                                                     Xóa bài viết
                                                 </button>
                                             </div>
-                                        </a>
+                                        </a> -->
                                     </a>
                                 </div>
-
                                 <div class="content_blog">
                                     <div class="content_margin--cun1">
                                         <div class="title__margin">
-                                            <h3><a href="../HTML_chitiet_blog/blog_chitiet_MeoDiVS.html" title={{b.title}} class="a--title">{{b.title}}</a>
+                                            <h3><a href="#" title={{b.title}} class="a--title">{{b.title}}</a>
                                             </h3>
                                         </div>
                                         <br>
                                         <div class="summary_blog">
-                                            <p [innerHTML]="b.content.part1"></p>
+                                            <p [innerHTML]="b.content"></p>
                                         </div>
 
                                         <div class="blog_bottom">
@@ -133,8 +129,8 @@
                                 </div>
 
                             </div>
-
-                            <!-- <div class="blog_item">
+                            <!-- 
+                            <div class="blog_item">
                                 <div>
                                     <div class="blog__position">
                                         <a href="../HTML_chitiet_blog/blog_chitiet_ChovaBeGai.html" title="Tình yêu giống như một con chó, mình đuổi thì nó chạy mình chạy thì nó lại đuổi">
@@ -214,7 +210,7 @@
                             <div class="blog_item">
                                 <div>
                                     <div class="blog__position">
-                                        <a href="../HTML_chitiet_blog/blog_chitiet_ChoHusky.html" title="Nên nuôi chó Husky hay Alaska">
+                                        <a href="#" title="Nên nuôi chó Husky hay Alaska">
                                             <img src="assets/image/cun3.jpg" alt="Nên nuôi chó Husky hay Alaska" class="img-responsive " data-was-processed="true">
                                             <div class="blog-edit">
                                                 <a href="#formEditBlog">
@@ -439,7 +435,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </section>
                     <section class="mobile" id="mobile">
@@ -598,7 +594,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
 
                         </div>
                     </section>
@@ -732,7 +728,7 @@
                         <h3 class="title-text">Thêm thông tin bài viết</h3>
                     </div>
                     <div class="container1">
-                        <form action="" #blogForm="ngForm" (ngSubmit)="submitData(blogForm)">
+                        <form #blogForm="ngForm" (ngSubmit)="submitData(blogForm)">
                             <!-- /action_page.php -->
                             <div class="row">
                                 <div class="col-25">
@@ -747,7 +743,7 @@
                                     <label for="noidung">Nội dung bài viết:</label>
                                 </div>
                                 <div class="col-75">
-                                    <textarea id="noidung" name="content" placeholder="Viết gì đó..." style="height:100px" [(ngModel)]="blog.content.part1"></textarea>
+                                    <textarea id="noidung" name="content" placeholder="Viết gì đó..." style="height:100px" [(ngModel)]="blog.content"></textarea>
                                 </div>
                             </div>
                             <div class="row">
@@ -755,7 +751,7 @@
                                     <label for="fname">Hình ảnh:</label>
                                 </div>
                                 <div class="col-75">
-                                    <input type="file" value="Thêm hình ảnh" name="image" [(ngModel)]="blog.image.img1">
+                                    <input type="file" value="Thêm hình ảnh" name="image" [(ngModel)]="blog.image">
                                 </div>
                             </div>
                             <div class="row">
@@ -780,10 +776,10 @@
                     </div>
                 </div>
             </div>
+
             <!-- Form EditBlog -->
             <div class="dialog overlay" id="formEditBlog">
                 <a href="#" class="overlay-close"></a>
-
                 <div class="dialog-body">
                     <a class="dialog-close-btn" href="#">&times;</a>
                     <div class="form-title">
@@ -794,7 +790,6 @@
                     <div class="container1">
                         <form action="" #blogForm="ngForm" (ngSubmit)="updateBlog(blogForm)">
                             <!-- /action_page.php -->
-
                             <div class="row">
                                 <div class="col-25">
                                     <label for="tieude">Tiêu đề:</label>
@@ -808,7 +803,7 @@
                                     <label for="noidung">Nội dung bài viết:</label>
                                 </div>
                                 <div class="col-75">
-                                    <textarea id="noidung" name="content" placeholder="Viết gì đó..." style="height:100px"  [(ngModel)]="blog.content.part1"></textarea>
+                                    <textarea id="noidung" name="content" placeholder="Viết gì đó..." style="height:100px" [(ngModel)]="blog.content"></textarea>
                                 </div>
                             </div>
                             <div class="row">
@@ -816,7 +811,7 @@
                                     <label for="fname">Hình ảnh:</label>
                                 </div>
                                 <div class="col-75">
-                                    <input type="file" value="Thêm hình ảnh" name="image" [(ngModel)]="blog.image.img1">
+                                    <input type="file" value="Thêm hình ảnh" name="image" [(ngModel)]="blog.image">
                                 </div>
                             </div>
                             <div class="row">
@@ -898,3 +893,4 @@
 </body>
 
 </html>
+<router-outlet></router-outlet>

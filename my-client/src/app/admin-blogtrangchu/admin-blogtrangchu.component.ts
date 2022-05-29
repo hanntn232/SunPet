@@ -82,5 +82,14 @@ export class AdminBlogtrangchuComponent implements OnInit {
         }
       })
   }
+
+  openEditForm(){
+    const editForm = document.getElementById('formEditBlog')
+    if(editForm != null){
+      editForm.style.display = 'block'
+      console.log('1')
+    }
+    console.log('2')
+  }
   
 }
