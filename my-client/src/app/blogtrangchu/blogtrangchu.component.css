@@ -92,13 +92,19 @@
     color: black;
 }
 
-.summary_blog>p {
+.summary_blog {
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     line-height: 1.5rem;
     height: auto;
+    font-size: 1rem !important;
+}
+
+.summary_blog h4 {
+    font-size: 1rem !important;
+    font-weight: normal !important;
 }
 
 .content_margin--cun1 {

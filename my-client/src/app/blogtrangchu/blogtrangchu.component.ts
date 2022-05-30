@@ -13,12 +13,13 @@ export class BlogtrangchuComponent implements OnInit {
   blogList: any;
   errMsg: any;
   selectedId: any;
+  mangBlog: any;
 
   constructor(private _service: BlogchitietService, private router: Router) { }
 
   ngOnInit(): void {
     this._service.getBlogList().subscribe({
-      next: (data) => this.blogList = data,
+      next: (data) => {this.blogList = data, this.mangBlog = this.mangBlog2(this.blogList,0,4)},
       error: (err) => this.errMsg = err
     });
   }
@@ -27,7 +28,8 @@ export class BlogtrangchuComponent implements OnInit {
     return text;
   }
 
-  mangBlog2(mang: any, start: number, end: number){
+  mangBlog2(mang: Array<any>, start: number, end: number){
+    console.log("mangBlog: ",this.blogList)
     return mangBlog(mang, start, end)
   }
 

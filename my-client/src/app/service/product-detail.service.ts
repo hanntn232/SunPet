@@ -24,7 +24,6 @@ export class ProductDetailService {
     )
   }
 
-
   getProductById(id:String): Observable<any>{
     return this._http.get<any>(`${baseUrlProduct}/products/${id}`).pipe(retry(2),
     catchError(this.handleError))
@@ -37,9 +36,6 @@ export class ProductDetailService {
       catchError(this.handleError)
     )
   }
-
-  postProduct(data:IDproduct){
-    return this._http.post<IDproduct[]>(`${baseUrlProduct}/products`, data);
 
   postProduct(data:FormData){
     return this._http.post(`${baseUrlProduct}/products`, data);

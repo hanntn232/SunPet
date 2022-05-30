@@ -37,10 +37,10 @@
             <section>
                 <div class="row_blog_responsive">
                     <div class="blog_item" *ngFor="let b of blogList" (click)="onSelected(b)">
-                        <div class="">
+                        <div>
                             <div class="blog__position">
                                 <a title="{{b.title}}">
-                                    <img src="{{b.image.img1}}" alt="{{b.title}}" class="img-responsive ">
+                                    <img src="http://localhost:3000/{{b.image}}" alt="{{b.title}}" class="img-responsive ">
                                 </a>
                             </div>
                             <div class="content_blog">
@@ -48,9 +48,9 @@
                                     <div class="title__margin">
                                         <h3><a title="{{b.title}}" class="a--title">{{b.title}}</a></h3>
                                     </div>
-                                    <div class="summary_blog">
+                                    <div class="summary_blog" [innerHTML]="b.content">
                                         <p>
-                                            {{layDuLieuTextTuHTML2(b.content.part1)}}
+                                            <!-- {{layDuLieuTextTuHTML2(b.content)}} -->
                                         </p>
                                     </div>
 
@@ -68,7 +68,7 @@
                                         <span class="readmore ">|</span>
                                         </span>
                                         <div class="content__underline">
-                                            <a class="readmore " href="#" title="Xem tiếp">Xem tiếp</a>
+                                            <a class="readmore" title="Xem tiếp">Xem tiếp</a>
                                         </div>
                                     </div>
                                 </div>
@@ -362,10 +362,10 @@
             <div>
                 <h1><a href="" class="title-head title_page" title="Bài viết nổi bật">Bài viết nổi bật</a></h1>
                 <div class="blog-list blog-image-list">
-                    <div class="loop-blog" *ngFor="let b of mangBlog2(blogList,0,4)" (click)="onSelected(b)">
+                    <div class="loop-blog" *ngFor="let b of mangBlog" (click)="onSelected(b)">
                         <div class="">
                             <a>
-                                <img class="blog__width--baiviet " src="{{b.image.img1}}" title="{{b.title}}" data-was-processed="true">
+                                <img class="blog__width--baiviet " src="http://localhost:3000/{{b.image}}" title="{{b.title}}" data-was-processed="true">
                             </a>
                         </div>
                         <div class="name-right">
