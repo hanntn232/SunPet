@@ -28,19 +28,32 @@ export class PiechartComponent {
     this.chartOptions = {
       series: [44, 55, 13, 43, 22],
       chart: {
-        type: "donut"
+        type: "donut",
       },
-      labels: ["Mạng xã hội", "Công cụ tìm kiếm", "Chiến dịch quảng cáo", "Truy cập trực tiếp", "Khác"],
+      labels:["Mạng xã hội", "Công cụ tìm kiếm", "Chiến dịch quảng cáo", "Truy cập trực tiếp", "Khác"],
+      title: {
+        text: "Nguồn truy cập",
+        align: "left",
+        style: {
+          fontSize: "22px",
+          fontFamily: "Helvetica, Arial, sans-serif",
+          fontWeight: "bold"
+        }
+      },
       responsive: [
         {
-          breakpoint: 480,
+          breakpoint: 350,
           options: {
             chart: {
-              width: 200
+              width: 150
             },
             legend: {
               position: "bottom"
-            }
+            },
+            size: '60%'
+            // label:{
+            //   position:"bottom"
+            // }
           }
         }
       ]

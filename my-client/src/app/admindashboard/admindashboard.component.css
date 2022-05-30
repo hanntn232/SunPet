@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+  box-sizing: border-box;
 }
 
 .container {
@@ -15,11 +18,11 @@ transition: margin-left 500ms;
   align-items: center;
   justify-content: space-around;
   padding: 15px 10px;
-  /* border-bottom: 2px solid #999; */
 }
-
+/* -----Sản phẩm bán chạy -------- */
 table {
-border: 1px solid #fff;
+/* min-width: fit-content; */
+border: none;
 border-collapse: collapse;
 margin: 0;
 padding: 0;
@@ -27,14 +30,9 @@ width: 100%;
 table-layout: fixed;
 }
 
-table caption {
-font-size: 1.5em;
-margin: .5em 0 .75em;
-}
 
 table tr {
-background-color: #fdda2b;
-border: 1px solid #fff;
+background-color: #fff;
 padding: .35em;
 }
 
@@ -47,9 +45,9 @@ text-align: center;
 table th {
 font-size: .85em;
 letter-spacing: .1em;
-text-transform: uppercase;
+/* text-transform: uppercase; */
 }
-
+/* -----Doanh thu, lượng truy cập ---- */
 .cards {
   padding: 20px 15px;
   display: flex;
@@ -92,10 +90,10 @@ width: 100%;
 padding: 20px;
 padding-top: 0;
 }
-
+/* ----- Menu chọn ------- */
 .select {
 position: relative;
-min-width: 200px;
+min-width: 150px;
 }
 .select svg {
 position: absolute;
@@ -147,89 +145,240 @@ height: 0;
 pointer-events: none;
 user-select: none;
 }
-
-/* Thêm chỉnh sửa  */
-.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
+/* ----- Sidebar ------- */
+#sidebar-toggle {
+  display: none;
 }
 
-.no-gutters > .col,
-.no-gutters > [class*="col-"] {
-  padding-right: 0;
-  padding-left: 0;
+.sidebar {
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: #FFC700;
+  color: #333;
+  overflow-y: auto;
+  transition: width 150ms;
 }
-/* -------------- */
 
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0rem 1rem;
+}
+.sidebar-menu {
+  padding: 1rem;
+}
+
+.sidebar li {
+  margin-bottom: 1.5rem;
+  margin: 10px;
+  padding: 10px;
+
+}
+
+.sidebar a {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.sidebar a span:last-child {
+  padding-left: .6rem;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+  width: 60px;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+#sidebar-toggle:checked ~ .sidebar li span:last-child {
+  display: none;
+}
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header,
+#sidebar-toggle:checked ~ .sidebar li {
+  display: flex;
+  justify-content: center;
+}
+
+#sidebar-toggle:checked ~ .main-content {
+  margin-left: 60px;
+}
+
+#sidebar-toggle:checked ~ .main-content header {
+  left: 60px;
+  width: calc(100% - 60px);
+}
+
+.main-content {
+  position: relative;
+  margin-left: 240px;
+  transition: margin-left 150ms;
+}
+/* -----Responsive--- */
 @media only screen and (max-width: 1200px) {
-
-.container {
-    margin-left: 60px;
-}
-}
-
-@media only screen and (max-width: 1200px) {
-
-.container {
-    margin-left: 60px;
-}
-}
-
-
-@media screen and (max-width: 600px) {
-table {
-  border: 0;
-}
-
-table caption {
-  font-size: 1.3em;
-}
-
-table thead {
-  border: none;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-table tr {
-  border-bottom: 3px solid #fff;
-  display: block;
-  margin-bottom: .625em;
-}
-
-table td {
-  border-bottom: 1px solid #fff;
-  display: block;
-  font-size: .8em;
-  text-align: right;
-}
-
-table td::before {
-  /*
-  * aria-label không được đọc tên trong bảng
-  */
-  content: attr(data-label);
-  float: left;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-table td:last-child {
-  border-bottom: 0;
-}
-}
-
-@media screen and (max-width:536px) {
-.cards {
-      justify-content: center;
+  .sidebar {
+      width: 60px;
+      z-index: 150;
   }
-.content-2 .recent-payments table th:nth-child(2),
-.content-2 .recent-payments table td:nth-child(2) {
+
+  .sidebar .sidebar-header h3 span,
+  .sidebar li span:last-child {
       display: none;
   }
+
+  .sidebar .sidebar-header,
+  .sidebar li {
+      display: flex;
+      justify-content: center;
+  }
+
+  .main-content {
+      margin-left: 60px;
+  }
+
+  .main-content header {
+      left: 60px;
+      width: calc(100% - 60px);
+  }
+
+  #sidebar-toggle:checked ~ .sidebar {
+      width: 240px;
+  }
+
+  #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+  #sidebar-toggle:checked ~ .sidebar li span:last-child {
+      display: inline;
+  }
+
+  #sidebar-toggle:checked ~ .sidebar .sidebar-header {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  #sidebar-toggle:checked ~ .sidebar .sidebar-header img {
+      display:none;
+  }
+
+  #sidebar-toggle:checked ~ .sidebar li {
+      display: block;
+  }
+
+  #sidebar-toggle:checked ~ .main-content {
+      margin-left: 60px;
+  }
+
+  #sidebar-toggle:checked ~ .main-content header {
+      left: 60px;
+  }
 }
+
+@media only screen and (max-width: 768px) {
+
+  .sidebar-header img {
+      display:none;
+  }
+}
+@media screen and (max-width: 536px) {
+  table {
+    border: 0;
+    min-width: fit-content;
+  }
+  
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #fff;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #fff;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label không được đọc tên trong bảng
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+  }
+  .cards {
+        justify-content: center;
+    }
+
+@media only screen and (max-width: 450px) {
+  .cards {
+    justify-content: center;
+}
+}
+
+/* Responsive */
+/* Lỗi */
+/* .sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0rem 1rem;
+}
+.main-content{
+  position: relative;
+  margin-left: 240px;
+  transition: margin-left 500ms;
+}
+ 
+#sidebar-toggle:checked ~ .adminnav {
+  width: 60px;
+}
+
+.adminnav /deep/ #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+#sidebar-toggle:checked ~ .sidebar li span:last-child {
+  display: inline;
+}
+
+.adminnav /deep/ #sidebar-toggle:checked ~ .sidebar .sidebar-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.adminnav /deep/ #sidebar-toggle:checked ~ .sidebar .sidebar-header img {
+  display:none;
+}
+
+.adminnav /deep/ #sidebar-toggle:checked ~ .sidebar li {
+  display: block;
+}
+
+.adminnav /deep/ #sidebar-toggle:checked ~ .main-content header {
+  left: 60px;
+  width: calc(100% - 60px);
+} */

@@ -132,7 +132,6 @@ button.btn:focus {
     display: block;
     width: 100%;
     min-width: 300px;
-    /* padding-left: 5px */
 }
 
 .display__mobile {

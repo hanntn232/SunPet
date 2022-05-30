@@ -1,157 +1,210 @@
-<div class="row no-gutters">
-      <div  class=" col-xl-2 col-lg-2 col-md-1 col-sm-1 col-1">
-            <app-adminnavbar></app-adminnavbar>
+<div class="container-fluid">
+      <input type="checkbox" id="sidebar-toggle">
+      <div class="sidebar">
+            <div class="sidebar-header">
+                  <label for="sidebar-toggle" class="ti-menu-alt"><i class="fa-solid fa-bars"></i></label>
+            </div>
+            <div class="sidebar-menu">
+                  <ul>
+                        <li>
+                              <a a routerLink="/admin/dashboard" routerLinkActive="active">
+                                    <i class="fa-solid fa-gauge"></i>
+                                    <span>Quản lý chung</span>
+                              </a>
+                        </li>
+                        <li>
+                              <a routerLink="/admin/sanpham" routerLinkActive="active" >
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <span>Sản phẩm</span>
+                              </a>
+                        </li>
+                        <li>
+                              <a routerLink="/admin/blogs" routerLinkActive="active">
+                                    <i class="fa-solid fa-image"></i>
+                                    <span>Bài viết</span>
+                              </a>
+                        </li>
+                        <li>
+                              <a routerLink="/admin/donhang" routerLinkActive="active">
+                                    <i class='fas fa-money-check'></i>
+                                    <span><span>Đơn hàng</span>&nbsp;
+                                          <span class="badge badge-danger p-2">4</span></span>
+                              </a>
+                        </li>
+                        <li>
+                              <a routerLink="/home" routerLinkActive="active">
+                                    <i class="fa-solid fa-earth-asia"></i>
+                                    <span>Website</span>
+                              </a>
+                        </li>
+                        <li>
+                              <a href="">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Cài đặt</span>
+                              </a>
+                        </li>
+                  </ul>
+            </div>
       </div>
-      <div class=" app col-xl-10 col-lg-10 col-md-11 col-sm-11 col-11 main-content">
-            <div><app-adminheader></app-adminheader></div>
-            <div class="container-fluid" style="background-color: #FEF8E1;">
-                  <div class="row no-gutters row-1 cards p-5 display_desktop">
-                          <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 row d-flex justify-content-around">
-                                <div class="  card">
-                                      <div class="box">
-                                            <h5 class="text-light">Doanh thu</h5>
-                                            <h3 class="text-light">7,482,120&nbsp;<small class="text-success">+5,2%</small></h3>
-                                      </div>
-                                </div>
-                                <div class=" card">
-                                      <div class="box">
-                                            <h5 class="text-light">Doanh thu</h5>
-                                            <h3 class="text-light">7,482,120&nbsp;<small class="text-primary">+5,2%</small></h3>
-                                      </div>
-                                </div>
-                          </div>
-                          <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 row d-flex justify-content-around">
-                                <div class=" card">
-                                      <div class="box">
-                                            <h5 class="text-light">Doanh thu</h5>
-                                            <h3 class="text-light">7,482,120 &nbsp;<small class="text-primary">+5,2%</small></h3>
-                                      </div>
-                                </div>
-                                <div class=" card">
-                                      <div class="box">
-                                            <h5 class="text-light">Doanh thu</h5>
-                                            <h3 class="text-light">7,482,120&nbsp;<small class="text-primary">+5,2%</small></h3>
-                                      </div>
-                                </div>
-                          </div>
-                    </div>
-
-            <div class="row row-2">
-                  <div class="col-lg-6  col-md-12 col-sm-10 p-5">
-                        <div class="charts">
-                              <div class="select-one">
-                                    <label class="select float-end" for="slct">
-                                          <select id="slct" required="required">
-                                            <option value="" disabled="disabled" selected="selected">Chọn</option>
-                                            <option value="#">Hằng tuần</option>
-                                            <option value="#">Hằng tháng</option>
-                                            <option value="#">Hằng năm</option>
-                                          </select>
-                                          <svg>
-                                            <use xlink:href="#select-arrow-down"></use>
-                                          </svg>
-                                        </label>
-                                        <!-- SVG Sprites-->
-                                        <svg class="sprites">
-                                          <symbol id="select-arrow-down" viewbox="0 0 10 6">
-                                            <polyline points="1 1 5 5 9 1"></polyline>
-                                          </symbol>
-                                        </svg>
+      <!-- -----Nội dung Dashboard----- -->
+      <div class="row main-content">
+            <app-adminheader class="header"></app-adminheader>
+            <div class="app col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                  <div class="container-fluid" style="background-color: #FEF8E1;">
+                        <nav aria-label="breadcrumb" class="p-5">
+                              <ol class="breadcrumb" style="background-color: #FEF8E1;">
+                                    <li class="breadcrumb-item" style="font-size:20px; font-weight:300;"><a href="#">Quản lý chung</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><i
+                                                class="fa-solid fa-pencil"></i>&nbsp;<i
+                                                class="fa-solid fa-link-simple"></i>
+                                          </li>
+                              </ol>
+                        </nav>
+                        <div class="row row-1 cards p-xl-5 p-lg-3 p-md-2 p-sm-1 display_desktop">
+                              <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 row d-flex justify-content-around">
+                                    <div class="  card">
+                                          <div class="box">
+                                                <h5 class="text-light">Doanh thu</h5>
+                                                <h3 class="text-light">7,482,120&nbsp;<small
+                                                            class="text-success">+5,2%</small></h3>
+                                          </div>
+                                    </div>
+                                    <div class=" card">
+                                          <div class="box">
+                                                <h5 class="text-light">Doanh thu</h5>
+                                                <h3 class="text-light">7,482,120&nbsp;<small
+                                                            class="text-primary">+5,2%</small></h3>
+                                          </div>
+                                    </div>
                               </div>
-                              <!-- <a href="#" class="btn">Hàng tháng<i class="fa-solid fa-caret-down"></i></a> -->
-                              <app-piechart></app-piechart>
+                              <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 row d-flex justify-content-around">
+                                    <div class=" card">
+                                          <div class="box">
+                                                <h5 class="text-light">Doanh thu</h5>
+                                                <h3 class="text-light">7,482,120 &nbsp;<small
+                                                            class="text-primary">+5,2%</small></h3>
+                                          </div>
+                                    </div>
+                                    <div class=" card">
+                                          <div class="box">
+                                                <h5 class="text-light">Doanh thu</h5>
+                                                <h3 class="text-light">7,482,120&nbsp;<small
+                                                            class="text-primary">+5,2%</small></h3>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                        <div class="row row-2 p-xl-5 p-lg-3 p-md-2 p-sm-1">
+                              <div class="col-lg-5 col-md-12 col-sm-12">
+                                    <div class="charts">
+                                          <div class="select-one">
+                                                <label class="select float-end" for="slct">
+                                                      <select id="slct" required="required">
+                                                            <option value="" disabled="disabled" selected="selected">
+                                                                  Chọn</option>
+                                                            <option value="#">Hằng tuần</option>
+                                                            <option value="#">Hằng tháng</option>
+                                                            <option value="#">Hằng năm</option>
+                                                      </select>
+                                                      <svg>
+                                                            <use xlink:href="#select-arrow-down"></use>
+                                                      </svg>
+                                                </label>
+                                                <!-- SVG Sprites-->
+                                                <svg class="sprites">
+                                                      <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                                                            <polyline points="1 1 5 5 9 1"></polyline>
+                                                      </symbol>
+                                                </svg>
+                                          </div>
+                                          <!-- <a href="#" class="btn">Hàng tháng<i class="fa-solid fa-caret-down"></i></a> -->
+                                          <app-piechart></app-piechart>
+                                    </div>
+                              </div>
+                              <div class="col-lg-7 col-md-12 col-sm-12">
+                                    <div class="charts">
+                                          <input style="width:100px" class="" type="number" min="1900" max="2099"
+                                                step="1" value="2016" />
+                                          <!-- <a href="#" class="btn">Hàng tháng<i class="fa-solid fa-caret-down"></i></a> -->
+                                          <app-line-chart></app-line-chart>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div class="row row-3 p-xl-5 p-lg-3 p-md-2 p-sm-1">
+                              <div class="content-2 col-lg-4 col-md-12 col-sm-12 cards">
+                                    <div class="recent-payments">
+                                          <div class="title">
+                                                <h3 class="float-start">Bán chạy</h3>
+                                                <label class="select float-end" for="slct">
+                                                      <select id="slct" required="required">
+                                                            <option value="" disabled="disabled" selected="selected">
+                                                                  Chọn</option>
+                                                            <option value="#">Hằng tuần</option>
+                                                            <option value="#">Hằng tháng</option>
+                                                            <option value="#">Hằng năm</option>
+                                                      </select>
+                                                      <svg>
+                                                            <use xlink:href="#select-arrow-down"></use>
+                                                      </svg>
+                                                </label>
+                                                <!-- SVG Sprites-->
+                                                <svg class="sprites">
+                                                      <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                                                            <polyline points="1 1 5 5 9 1"></polyline>
+                                                      </symbol>
+                                                </svg>
+                                          </div>
+                                          <table>
+                                                <!-- <caption>BÁN CHẠY</caption> -->
+                                                <thead>
+                                                      <tr>
+                                                            <th scope="col">Tên sản phẩm</th>
+                                                            <th scope="col">Số lượng</th>
+                                                      </tr>
+                                                </thead>
+                                                <tbody>
+                                                      <tr>
+                                                            <td data-label="Tên sản phẩm">Sữa bột cho mèo</td>
+                                                            <td data-label="Số lượng"><button type="button"
+                                                                        class="btn btn-warning p-2">249</button></td>
+                                                      </tr>
+                                                      <tr>
+                                                            <td data-label="Tên sản phẩm">Sữa bột cho chó</td>
+                                                            <td data-label="Số lượng"><button type="button"
+                                                                        class="btn btn-warning p-2">201</button></td>
+                                                      </tr>
+                                                      <tr>
+                                                            <td data-label="tên sản phẩm">Sữa bột cho mèo</td>
+                                                            <td data-label="Số lượng"><button type="button"
+                                                                        class="btn btn-warning p-2">190</button></td>
+                                                      </tr>
+                                                      <tr>
+                                                            <td data-label="Tên sản phẩm">Sữa bột cho mèo</td>
+                                                            <td data-label="Số lượng"><button type="button"
+                                                                        class="btn btn-warning p-2">171</button></td>
+                                                      </tr>
+                                                      <tr>
+                                                            <td data-label="Tên sản phẩm">Sữa bột cho mèo</td>
+                                                            <td data-label="Số lượng"><button type="button"
+                                                                        class="btn btn-warning p-2">153</button></td>
+                                                      </tr>
+                                                </tbody>
+                                          </table>
+                                    </div>
+                              </div>
+                              <div class="content-2 col-lg-8 col-md-12 col-sm-12 cards">
+                                    <app-adminchatbox></app-adminchatbox>
+                              </div>
+                        </div>
+                        <!-- <div class="row row-4"> -->
+                        <div class="p-xl-5 p-lg-3 p-md-2 p-sm-1">
+                              <app-admintasklist></app-admintasklist>
                         </div>
                   </div>
-                  <div class="col-lg-6 col-md-12 col-sm-10 p-5">
-                        <div class="charts">
-                              <input style ="width:100px" class="" type="number" min="1900" max="2099" step="1" value="2016" />
-                              <!-- <a href="#" class="btn">Hàng tháng<i class="fa-solid fa-caret-down"></i></a> -->
-                              <app-line-chart></app-line-chart>
-                        </div>
+                  <div>
+                        <app-adminfooter></app-adminfooter>
                   </div>
             </div>
-
-            <div class="row row-3">
-                  <div class="content-2 col-lg-12 col-md-12 col-sm-12 cards p-5">
-                        <div class="recent-payments">
-                              <div class="title">
-                                    <h2 class="float-start">Bán chạy</h2>
-                                    <label class="select float-end" for="slct">
-                                          <select id="slct" required="required">
-                                            <option value="" disabled="disabled" selected="selected">Chọn</option>
-                                            <option value="#">Hằng tuần</option>
-                                            <option value="#">Hằng tháng</option>
-                                            <option value="#">Hằng năm</option>
-                                          </select>
-                                          <svg>
-                                            <use xlink:href="#select-arrow-down"></use>
-                                          </svg>
-                                        </label>
-                                        <!-- SVG Sprites-->
-                                        <svg class="sprites">
-                                          <symbol id="select-arrow-down" viewbox="0 0 10 6">
-                                            <polyline points="1 1 5 5 9 1"></polyline>
-                                          </symbol>
-                                        </svg>
-                              </div>
-                              <table>
-                                    <!-- <caption>Statement Summary</caption> -->
-                                    <thead>
-                                          <tr>
-                                                <th scope="col">Tên sản phẩm</th>
-                                                <th scope="col">Mã sản phẩm</th>
-                                                <th scope="col">Giá</th>
-                                                <th scope="col">Trạng thái</th>
-                                          </tr>
-                                    </thead>
-                                    <tbody>
-                                          <tr>
-                                                <td data-label="TenSP">Sữa bột cho mèo</td>
-                                                <td data-label="MaSP">M15314</td>
-                                                <td data-label="Gia">500.000đ</td>
-                                                <td data-label="TrangThai">Đã duyệt</td>
-                                          </tr>
-                                          <tr>
-                                                <td data-label="TenSP">Sữa bột cho mèo</td>
-                                                <td data-label="MaSP">M15314</td>
-                                                <td data-label="Gia">500.000đ</td>
-                                                <td data-label="TrangThai">Đã duyệt</td>
-                                          </tr>
-                                          <tr>
-                                                <td data-label="TenSP">Sữa bột cho mèo</td>
-                                                <td data-label="MaSP">M15314</td>
-                                                <td data-label="Gia">500.000đ</td>
-                                                <td data-label="TrangThai">Đã duyệt</td>
-                                          </tr>
-                                          <tr>
-                                                <td data-label="TenSP">Sữa bột cho mèo</td>
-                                                <td data-label="MaSP">M15314</td>
-                                                <td data-label="Gia">500.000đ</td>
-                                                <td data-label="TrangThai">Đã duyệt</td>
-                                          </tr>
-                                          <tr>
-                                                <td data-label="TenSP">Sữa bột cho mèo</td>
-                                                <td data-label="MaSP">M15314</td>
-                                                <td data-label="Gia">500.000đ</td>
-                                                <td data-label="TrangThai">Đã duyệt</td>
-                                          </tr>
-                                    </tbody>
-                              </table>
-                        </div>
-                  </div>
-            </div>
-            <!-- <div class="row row-4"> -->
-                  <div>
-                        <app-admintasklist></app-admintasklist>
-                  </div>
-                  <div>
-                        <app-adminchatbox></app-adminchatbox>
-                  </div>
-            <!-- </div> -->
-        </div>
-            <div><app-adminfooter></app-adminfooter></div>
       </div>
-
-
 </div>
-
