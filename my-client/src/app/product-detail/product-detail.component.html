@@ -15,30 +15,30 @@
     <div class="app" id="topPage">
         <app-header></app-header>
         <div class="container">
-            <div class="app__container" *ngFor="let p of productList">
-                <div class="grid wide" *ngIf="soKhopId(p.id,selectedId)">
+            <div class="app__container">
+                <div class="grid wide">
                     <div class="row sm-gutter ">
                         <div class="col-hinh">
                             <div class="home-product-item">
                                 <div class="item-img">
-                                    <img src="{{p.hinhAnh[0]}}" alt="">
+                                    <img src="{{productDetail.hinhAnh[0]}}" alt="">
                                 </div>
                                 <div class="item-dt">
-                                    <img src="{{p.hinhAnh[0]}}" class="item-dt-1" alt="">
+                                    <img src="{{productDetail.hinhAnh[0]}}" class="item-dt-1" alt="">
 
-                                    <img src="{{p.hinhAnh[1]}}" class="item-dt-1" alt="">
+                                    <img src="{{productDetail.hinhAnh[1]}}" class="item-dt-1" alt="">
 
-                                    <img src="{{p.hinhAnh[2]}}" class="item-dt-1" alt="">
+                                    <img src="{{productDetail.hinhAnh[2]}}" class="item-dt-1" alt="">
 
-                                    <img src="{{p.hinhAnh[3]}}" class="item-dt-1" alt="">
+                                    <img src="{{productDetail.hinhAnh[3]}}" class="item-dt-1" alt="">
                                 </div>
                             </div>
                         </div>
                         <div class="col-thongtin">
-                            <h2 class="home-product-item__name">{{p.ten}}</h2>
+                            <h2 class="home-product-item__name">{{productDetail.ten}}</h2>
                             <div class="home-product-item__price">
-                                <span class="home-product-item__price-curent">{{p.giaBan}}đ</span>
-                                <span class="home-product-item__price-old">{{p.giaGoc}}đ</span>
+                                <span class="home-product-item__price-curent">{{productDetail.giaBan}}đ</span>
+                                <span class="home-product-item__price-old">{{productDetail.giaGoc}}đ</span>
                             </div>
                             <div class="home-product-item__sl">
                                 <label class="home-product-item__label"> Số lượng:</label>
@@ -55,7 +55,7 @@
                         <div class="home-product-item__mota">
                             <button class="btn-mota">MÔ TẢ SẢN PHẨM</button>
                         </div>
-                        <div class="mota" [innerHTML]="p.moTa">
+                        <div class="mota" [innerHTML]="productDetail.moTa">
                             <!-- <div class="text1">
                             <span class="inline">Thành Phần:</span> <br> Sữa bột nguyên kem, Sữa bột gầy, Nondairy creamer, Maltodextrin,Sucrose,Whey protein concentrate,Hương dùng trong thực phẩm,Chất xơ Inulin, Lysine, Nano - Precipitated Calcium Carbonate,Vitamin
                             C, Vitamin K1, Vitamin B6, Vitamin B1, VitaminB2, Vitamin D3, Vitamin A, Vitamin B12, Vitamin Axit Pantothenic, Biotine, Axit Folic... <br>

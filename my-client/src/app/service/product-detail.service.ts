@@ -23,8 +23,27 @@ export class ProductDetailService {
       catchError(this.handleError)
     )
   }
+
+
+  getProductById(id:String): Observable<any>{
+    return this._http.get<any>(`${baseUrlProduct}/products/${id}`).pipe(retry(2),
+    catchError(this.handleError))
+  }
+
+  getProductListByCategory(category: String): Observable<IDproduct[]>{
+    return this._http.get<IDproduct[]>(`${baseUrlProduct}/products/category/${category}`)
+    .pipe(
+      retry(3),
+      catchError(this.handleError)
+    )
+  }
+
+  postProduct(data:IDproduct){
+    return this._http.post<IDproduct[]>(`${baseUrlProduct}/products`, data);
+
   postProduct(data:FormData){
     return this._http.post(`${baseUrlProduct}/products`, data);
+
   }
   updateProduct(id: any,data: FormData):Observable<any>{
     return this._http.patch(`${baseUrlProduct}/products/${id}`, data);

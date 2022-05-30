@@ -20,22 +20,48 @@ export class ProductComponent implements OnInit {
   constructor(private _service: ProductDetailService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this._service.getProductList().subscribe({
-      next: (data) => this.productList = data,
-      error: (err) => this.errMsg = err
-    })
+    
+    // this._service.getProductListByCategory("ThucAnChoMeo").subscribe({
+      
+    //   next: (data) => this.productList =data,
+    //   error: (err) => this.errMsg = err
+    // })
+    this.hienThiTheoDanhMuc("")
     
 
-    this.activatedRoute.paramMap.subscribe((params) => {
-      let id = params.get("id");
-      if(id != null){
-        this.selectedId = id.toString();
-      }
-    })
+    // this.activatedRoute.paramMap.subscribe((params) => {
+    //   let id = params.get("id");
+    //   if(id != null){
+    //     this.selectedId = id.toString();
+    //   }
+    // })
     
   }
 
-  onSelected(data: any): void{
-    this.router.navigate(['/sanpham', data.id])
+  getNavigation(id: any){
+    this.router.navigate(['sanpham/', id])
+  }
+  onAlert(id: String){
+    alert(id)
+    // this._service.getProductById(id).subscribe(product => {
+    //   this.productDetail = product
+    // })
+  }
+
+  hienThiTheoDanhMuc(cate: String) {
+    if(cate === "") {
+      this._service.getProductList().subscribe({
+        next: (data) => this.productList = data,
+        error: (err) => this.errMsg = err
+      })
+    } else {
+      this._service.getProductListByCategory(cate).subscribe({
+      
+        next: (data) => this.productList =data,
+        error: (err) => this.errMsg = err
+      })
+      console.log(this.productList)
+    }
+    
   }
 }

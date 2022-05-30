@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Cart } from '../model/cart';
 import { User } from '../model/user';
@@ -17,23 +17,31 @@ declare function chuyenAnh(): any;
 export class ProductDetailComponent implements OnInit {
 
   constructor(private _service: ProductDetailService,
+    
     private activatedRoute: ActivatedRoute,
+    private router: Router,
     private _userService: UserService,
     private _datHangService: DathangService,
     private _toastr: ToastrService
   ) { }
 
   public productList: any;
+  public productDetail: any;
+  public productID: any;
   public errMsg: any;
   public selectedId: string = ""
   public quantity = 1;
 
   ngOnInit(): void {
-    this._service.getProductList().subscribe({
-      next: (data) => this.productList = data,
-      error: (err) => this.errMsg = err
-    });
-    chuyenAnh();
+    // this._service.getProductList().subscribe({
+    //   next: (data) => this.productList = data,
+    //   error: (err) => this.errMsg = err
+    // });
+
+    // chuyenAnh();
+    this.productID = this.activatedRoute.snapshot.params['id'];
+    this.loadProductDetail(this.productID);
+    
 
     this.activatedRoute.paramMap.subscribe((params) => {
       let id = params.get("id");
@@ -44,6 +52,16 @@ export class ProductDetailComponent implements OnInit {
 
   }
 
+  navigation(id: String) {
+    this.router.navigate(['/sanpham',id]);
+  }
+
+  loadProductDetail(id: String) {
+    this._service.getProductById(id).subscribe(product => {
+      this.productDetail = product
+    })
+  }
+
   soKhopId(id1: string, id2: string) {
     if (id1 == id2)
       return true
@@ -51,12 +69,25 @@ export class ProductDetailComponent implements OnInit {
       return false
   }
 
+  addCart() {
+    // Kiểm tra đăng nhập
+    if(this._userService.kiemTraDangNhap(localStorage.getItem('token')) == false) {
+      this._toastr.error("Bạn cần phải đăng nhập để thêm vào giỏ hàng", "Không thành công")
+    } else {
+      var productID = this.selectedId;
+      var token = localStorage.getItem('token');
+      this._userService.getUserBytoken
+    }
+  }
+
+
   themVaoGioHang() {
     if (this._userService.kiemTraDangNhap(localStorage.getItem('token')) == false) {
       this._toastr.error("Bạn cần phải đăng nhập để thêm vào giỏ hàng", "Không thành công")
     }
     else {
       var productID = this.selectedId;
+      alert(productID)
       var cart = new Cart();
       var token = localStorage.getItem('token');
       this._userService.getAllUsers().subscribe({

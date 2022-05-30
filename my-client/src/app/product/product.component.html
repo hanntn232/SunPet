@@ -41,21 +41,21 @@
                                     <a href="HOME.html" class="category-item__link">Trang chủ</a>
                                 </li>
                                 <li class="category-item category-item--active">
-                                    <a href="#category-item" class="category-item__link" id="sanpham-category">Sản phẩm
+                                    <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="sanpham-category" (click)="hienThiTheoDanhMuc('')">Sản phẩm
                                     </a>
                                     <li class="category-item category-item-1">
-                                        <a href="#category-item" class="category-item__link" onclick="hienDanhMucThucAnChoCho()" id="category--thucanchocho">Thức ăn cho
+                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" (click)="hienThiTheoDanhMuc('ThucAnChoCho')" id="category--thucanchocho">Thức ăn cho
                                         chó</a>
                                     </li>
                                     <li class="category-item category-item-1">
-                                        <a href="#category-item" class="category-item__link" id="category--thucanchomeo" onclick="hienDanhMucThucAnChoMeo()">Thức ăn cho mèo</a>
+                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="category--thucanchomeo" (click)="hienThiTheoDanhMuc('ThucAnChoMeo')">Thức ăn cho mèo</a>
                                     </li>
                                     <li class="category-item category-item-1">
-                                        <a href="#category-item" class="category-item__link" id="category--phukienchocho" onclick="hienDanhMucPhuKienChoCho()">Phụ kiện cho
+                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="category--phukienchocho" (click)="hienThiTheoDanhMuc('PhuKienChoCho')">Phụ kiện cho
                                         chó</a>
                                     </li>
                                     <li class="category-item category-item-1">
-                                        <a href="#category-item" class="category-item__link" id="category--phukienchomeo" onclick="hienDanhMucPhuKienChoMeo()">Phụ kiện cho mèo</a>
+                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="category--phukienchomeo" (click)="hienThiTheoDanhMuc('PhuKienChoMeo')">Phụ kiện cho mèo</a>
                                     </li>
 
                                     <li class="category-item">
@@ -89,9 +89,9 @@
                         <!-- Grid -> Row -> Column -->
                         <div class="home-product dsSanPham1">
                             <div class="row" id="dsSanPham1">
-                                <!-- <div class="col l-2-4 m-4 c-6" *ngFor="let p of productList"> -->
+                                <!-- <div class="col l-2-4 m-4 c-6" > -->
                                 <!-- Product item -->
-                                <a class="home-product-item" *ngFor="let p of productList | paginate: {itemsPerPage: 10, currentPage: t}" (click)="onSelected(p)">
+                                <a class="home-product-item" (click)="getNavigation(p._id)" *ngFor="let p of productList | paginate: {itemsPerPage: 10, currentPage: t}">
                                     <div class="home-product-item__img" style="background-image: url({{p.hinhAnh[0]}});">
                                     </div>
                                     <h4 class="home-product-item__name">{{p.ten}}</h4>
@@ -103,7 +103,7 @@
                                 <!-- </div> -->
                             </div>
                         </div>
-                        <div class="home-product dsSanPham2">
+                        <!-- <div class="home-product dsSanPham2">
                             <div class="row" id="dsSanPham2">
                                 <a class="home-product-item" *ngFor="let p of productList" (click)="onSelected(p)">
                                     <div class="home-product-item__img" style="background-image: url({{p.hinhAnh[0]}});">
@@ -115,7 +115,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- -----phân trang cũ (không dùng nữa)------------- -->
                         <!-- <ul class="pagination home-product__pagination">
 

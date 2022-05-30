@@ -7,6 +7,10 @@ const cart = require('../model/cart')
 const order = require('../model/order')
 const Todo = require('../model/todo');
 
+const multer = require("multer");
+const { query } = require('express');
+
+
 router.get('/', function(req, res) {
     res.send("Chào mừng bạn đến với Website SunPet")
 })
@@ -33,12 +37,49 @@ router.get('/products', function(req, res) {
 router.get('/products/:productId', async function(req, res) {
         // console.log(req.params.productId)
         try {
-            const data = await IDproduct.find({ id: req.params.productId })
-            res.json({ message: "success" })
+
+            const data = await IDproduct.findById(req.params.productId)
+                // res.json({ message: "success" })
+            res.send(data)
         } catch (err) {
             res.json({ message: err.message })
         }
     })
+
+// Get product by category
+router.get('/products/category/:cate', async function(req, res) {
+    try {
+        let train = await IDproduct.find({danhMuc: req.params.cate})
+        res.send(train)
+    } catch (error) {
+        res.json({ message: error.message })
+    }
+    
+})
+
+    // Insert product 
+//router.post("/products", async(req, res) => {
+        // console.log("Data from client", req.body);
+        // res.send("Server received!");
+
+       // let product = new IDproduct({
+           // ten: req.body.ten,
+           // giaGoc: req.body.giaGoc,
+           // giaBan: req.body.giaBan,
+          //  hinhAnh: req.body.hinhAnh,
+           // danhMuc: req.body.danhMuc,
+           // moTa: req.body.moTa,
+        //})
+        //try {
+          //  p = await product.save();
+
+          //  const data = await IDproduct.find({ id: req.params.productId })
+
+         //   res.json({ message: "success" })
+     //   } catch (err) {
+          //  res.json({ message: err.message })
+      //  }
+   // })
     //     // Insert product 
     // router.post("/products", async(req, res) => {
     //         // console.log("Data from client", req.body);
@@ -197,6 +238,16 @@ router.get("/users", function(req, res) {
     })
 })
 
+router.get("/user/:token", function(req, res) {
+    user.find({token: req.params.token},  function(err, data) {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(data)
+        }
+    })
+})
+
 
 // //Insert user
 // // Insert product
@@ -342,3 +393,13 @@ router.delete("/:todoID", async(req, res) => {
         res.json({ message: err.message });
     }
 })
+
+// Get products by category's dog
+// router.get("/product/:category", async function(req, res) {
+//     try {
+//         const data = await productList.findById(req.params.category)
+//         res.send(data)
+//     } catch (err) {
+//         res.json({ message: err.message})
+//     }
+// }) 

@@ -48,6 +48,10 @@ export class UserService {
       return false;
   }
 
+  // getUserByToken(token: String) {
+
+  // }
+
   getUserBytoken() {
     var token = localStorage.getItem('token');
     var user = new User();
