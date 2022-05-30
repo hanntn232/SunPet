@@ -90,7 +90,7 @@
                     <div id="giohang1">
                         <div class="giohang--item" *ngFor="let p of listOfCartProduct">
                             <div class="giohang--anhsp col-2">
-                                <img src="{{p.anhSanPham}}" alt="sanpham">
+                                <img src="http://localhost:3000/{{p.anhSanPham}}" alt="sanpham">
                             </div>
                             <div class="tensp col-4">
                                 <a routerLink="/products/{{p.id}}" routerLinkActive="active">{{p.tenSanPham}}</a><br>
@@ -102,7 +102,7 @@
                             </div>
                             <div class="giohang--soluong col-2">
 
-                                <span class="soluong">1</span>
+                                <span class="soluong">{{p.soLuong}}</span>
                             </div>
                             <div class="giohang--thanhtien col-2">
                                 <p>
@@ -134,7 +134,7 @@
                     <div id="giohang2">
                         <div class="giohang--item" *ngFor="let p of listOfCartProduct">
                             <div class="giohang--anhsp">
-                                <img src="{{p.anhSanPham}}" alt="sanpham">
+                                <img src="http://localhost:3000/{{p.anhSanPham}}" alt="sanpham">
                             </div>
                             <div class="item--group1">
                                 <div class="tensp">
@@ -149,7 +149,7 @@
                             </div>
                             <div class="item--group2">
                                 <div class="giohang--soluong">
-                                    <span class="soluong">1</span>
+                                    <span class="soluong">{{p.soLuong}}</span>
                                 </div>
                                 <div class="giohang--thanhtien">
                                     <div>Thành tiền:</div>

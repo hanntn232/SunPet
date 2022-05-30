@@ -28,11 +28,14 @@ export class GiohangComponent implements OnInit {
     //   console.log(this.mobile);
     // }
    this.loadGioHang();
+   console.log(this.listOfCartProduct);
   }
 
   loadGioHang(){
+    console.log("1")
     this._UserService.getAllUsers().subscribe({
       next: users => {
+        console.log("2")
         var countUser = 0
         for (let i = 0; i < users.length; i++) {
           //Nếu token KH trùng khớp
@@ -41,16 +44,20 @@ export class GiohangComponent implements OnInit {
             var customerID = users[i]._id;
             this._UserService.getAllCarts().subscribe({
               next: carts => {
+                console.log("4")
                 var countCart = 0;
                 for (let i = 0; i < carts.length; i++) {
                   //Nếu ID khách hàng trùng khớp với customerID trong cart thì lấy cardID truy xuất đến dữ liệu cart của KH
                   if (carts[i].customerID == customerID) {
+                    console.log("5")
                     countCart = 1;
                     var cartID = carts[i]._id;
                     this._UserService.getCartById(cartID).subscribe({
                       next: cart => {
+                        console.log("6: ", cart)
                         this._ProductService.getProductList().subscribe({
                           next: products => {
+                            console.log("7: ", products)
                             for (var m = 0; m < cart.productList.length; m++) {
                               for (var n = 0; n < products.length; n++) {
                                 if (cart.productList[m].productID == products[n].id) {
@@ -67,7 +74,6 @@ export class GiohangComponent implements OnInit {
                                 }
                               }
                             }
-
                           }
                         })
                       }

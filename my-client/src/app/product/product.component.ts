@@ -48,7 +48,7 @@ export class ProductComponent implements OnInit {
     // })
   }
 
-  hienThiTheoDanhMuc(cate: String) {
+  hienThiTheoDanhMuc(cate: string) {
     if(cate === "") {
       this._service.getProductList().subscribe({
         next: (data) => this.productList = data,
@@ -56,11 +56,10 @@ export class ProductComponent implements OnInit {
       })
     } else {
       this._service.getProductListByCategory(cate).subscribe({
-      
-        next: (data) => this.productList =data,
+        next: (data) => {this.productList =data},
         error: (err) => this.errMsg = err
       })
-      console.log(this.productList)
+      // console.log(this.productList)
     }
     
   }

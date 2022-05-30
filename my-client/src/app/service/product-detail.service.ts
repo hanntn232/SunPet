@@ -29,8 +29,8 @@ export class ProductDetailService {
     catchError(this.handleError))
   }
 
-  getProductListByCategory(category: String): Observable<IDproduct[]>{
-    return this._http.get<IDproduct[]>(`${baseUrlProduct}/products/category/${category}`)
+  getProductListByCategory(category: string): Observable<any>{
+    return this._http.get(`${baseUrlProduct}/products/category/${category}`)
     .pipe(
       retry(3),
       catchError(this.handleError)

@@ -35,55 +35,54 @@ router.get('/products', function(req, res) {
 
 // Get product by id
 router.get('/products/:productId', async function(req, res) {
-        // console.log(req.params.productId)
-        try {
+    // console.log(req.params.productId)
+    try {
 
-            const data = await IDproduct.findById(req.params.productId)
-                // res.json({ message: "success" })
-            res.send(data)
-        } catch (err) {
-            res.json({ message: err.message })
-        }
-    })
+        const data = await IDproduct.findOne({ id: req.params.productId })
+            // res.json({ message: "success" })
+        res.send(data)
+    } catch (err) {
+        res.json({ message: err.message })
+    }
+})
 
 // Get product by category
 router.get('/products/category/:cate', async function(req, res) {
     try {
-        let train = await IDproduct.find({danhMuc: req.params.cate})
+        let train = await IDproduct.find({ danhMuc: decodeURI(req.params.cate) })
         res.send(train)
     } catch (error) {
         res.json({ message: error.message })
     }
-    
 })
 
-    // Insert product 
+// Insert product 
 //router.post("/products", async(req, res) => {
-        // console.log("Data from client", req.body);
-        // res.send("Server received!");
+// console.log("Data from client", req.body);
+// res.send("Server received!");
 
-       // let product = new IDproduct({
-           // ten: req.body.ten,
-           // giaGoc: req.body.giaGoc,
-           // giaBan: req.body.giaBan,
-          //  hinhAnh: req.body.hinhAnh,
-           // danhMuc: req.body.danhMuc,
-           // moTa: req.body.moTa,
-        //})
-        //try {
-          //  p = await product.save();
+// let product = new IDproduct({
+// ten: req.body.ten,
+// giaGoc: req.body.giaGoc,
+// giaBan: req.body.giaBan,
+//  hinhAnh: req.body.hinhAnh,
+// danhMuc: req.body.danhMuc,
+// moTa: req.body.moTa,
+//})
+//try {
+//  p = await product.save();
 
-          //  const data = await IDproduct.find({ id: req.params.productId })
+//  const data = await IDproduct.find({ id: req.params.productId })
 
-         //   res.json({ message: "success" })
-     //   } catch (err) {
-          //  res.json({ message: err.message })
-      //  }
-   // })
-    //     // Insert product 
-    // router.post("/products", async(req, res) => {
-    //         // console.log("Data from client", req.body);
-    //         // res.send("Server received!");
+//   res.json({ message: "success" })
+//   } catch (err) {
+//  res.json({ message: err.message })
+//  }
+// })
+//     // Insert product 
+// router.post("/products", async(req, res) => {
+//         // console.log("Data from client", req.body);
+//         // res.send("Server received!");
 
 //         let product = new IDproduct({
 //             ten: req.body.ten,
@@ -239,7 +238,7 @@ router.get("/users", function(req, res) {
 })
 
 router.get("/user/:token", function(req, res) {
-    user.find({token: req.params.token},  function(err, data) {
+    user.find({ token: req.params.token }, function(err, data) {
         if (err) {
             res.send(err)
         } else {
@@ -402,4 +401,4 @@ router.delete("/:todoID", async(req, res) => {
 //     } catch (err) {
 //         res.json({ message: err.message})
 //     }
-// }) 
+// })

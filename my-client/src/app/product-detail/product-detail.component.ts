@@ -87,7 +87,7 @@ export class ProductDetailComponent implements OnInit {
     }
     else {
       var productID = this.selectedId;
-      alert(productID)
+      // alert(productID)
       var cart = new Cart();
       var token = localStorage.getItem('token');
       this._userService.getAllUsers().subscribe({

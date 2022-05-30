@@ -44,18 +44,18 @@
                                     <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="sanpham-category" (click)="hienThiTheoDanhMuc('')">Sản phẩm
                                     </a>
                                     <li class="category-item category-item-1">
-                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" (click)="hienThiTheoDanhMuc('ThucAnChoCho')" id="category--thucanchocho">Thức ăn cho
+                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" (click)="hienThiTheoDanhMuc('Thức ăn cho chó')" id="category--thucanchocho">Thức ăn cho
                                         chó</a>
                                     </li>
                                     <li class="category-item category-item-1">
-                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="category--thucanchomeo" (click)="hienThiTheoDanhMuc('ThucAnChoMeo')">Thức ăn cho mèo</a>
+                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="category--thucanchomeo" (click)="hienThiTheoDanhMuc('Thức ăn cho mèo')">Thức ăn cho mèo</a>
                                     </li>
                                     <li class="category-item category-item-1">
-                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="category--phukienchocho" (click)="hienThiTheoDanhMuc('PhuKienChoCho')">Phụ kiện cho
+                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="category--phukienchocho" (click)="hienThiTheoDanhMuc('Phụ kiện cho chó')">Phụ kiện cho
                                         chó</a>
                                     </li>
                                     <li class="category-item category-item-1">
-                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="category--phukienchomeo" (click)="hienThiTheoDanhMuc('PhuKienChoMeo')">Phụ kiện cho mèo</a>
+                                        <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="category--phukienchomeo" (click)="hienThiTheoDanhMuc('Phụ kiện cho mèo')">Phụ kiện cho mèo</a>
                                     </li>
 
                                     <li class="category-item">
@@ -91,7 +91,7 @@
                             <div class="row" id="dsSanPham1">
                                 <!-- <div class="col l-2-4 m-4 c-6" > -->
                                 <!-- Product item -->
-                                <a class="home-product-item" (click)="getNavigation(p._id)" *ngFor="let p of productList | paginate: {itemsPerPage: 10, currentPage: t}">
+                                <a class="home-product-item" (click)="getNavigation(p.id)" *ngFor="let p of productList | paginate: {itemsPerPage: 10, currentPage: t}">
                                     <div class="home-product-item__img" style="background-image: url(http://localhost:3000/{{p.hinhAnh[0]}});">
                                     </div>
                                     <h4 class="home-product-item__name">{{p.ten}}</h4>
