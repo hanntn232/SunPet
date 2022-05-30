@@ -24,6 +24,7 @@ export class ProductDetailService {
     )
   }
 
+
   getProductById(id:String): Observable<any>{
     return this._http.get<any>(`${baseUrlProduct}/products/${id}`).pipe(retry(2),
     catchError(this.handleError))
@@ -39,12 +40,16 @@ export class ProductDetailService {
 
   postProduct(data:IDproduct){
     return this._http.post<IDproduct[]>(`${baseUrlProduct}/products`, data);
+
+  postProduct(data:FormData){
+    return this._http.post(`${baseUrlProduct}/products`, data);
+
   }
-  updateProduct(id: any,update_Product: updateProduct):Observable<any>{
-    return this._http.patch(`${baseUrlProduct}/products/${id}`, update_Product);
+  updateProduct(id: any,data: FormData):Observable<any>{
+    return this._http.patch(`${baseUrlProduct}/products/${id}`, data);
   }
   deleteProduct(id:string){
-    return this._http.delete(`${baseUrlProduct}/${id}`);
+    return this._http.delete(`${baseUrlProduct}/products/${id}`);
   }
   handleError(error: HttpErrorResponse){
     return throwError(()=> new Error(error.message))

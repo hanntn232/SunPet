@@ -13,6 +13,11 @@ import { ThongtinfooterComponent } from './thongtinfooter/thongtinfooter.compone
 import { Router, RouterModule, Routes } from '@angular/router';
 import { XemthongtinComponent } from './xemthongtin/xemthongtin.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductAdminComponent } from './product-admin/product-admin.component';
+import { AdminBlogtrangchuComponent } from './admin-blogtrangchu/admin-blogtrangchu.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { DonhangAdminComponent } from './donhang-admin/donhang-admin.component';
+import { ChitietdonhangAdminComponent } from './chitietdonhang-admin/chitietdonhang-admin.component';
 
 
 const routes: Routes = [
@@ -28,6 +33,12 @@ const routes: Routes = [
   {path: 'sanpham/:id', component: ProductDetailComponent},
   {path: 'thongtinfooter', component: ThongtinfooterComponent},
   {path: 'xemthongtin', component: XemthongtinComponent},
+  {path: 'admin/sanpham', component: ProductAdminComponent},
+  {path: 'admin/blogs', component: AdminBlogtrangchuComponent},
+  {path: 'admin/blogs/:id', component: BlogChiTietComponent},
+  {path: 'admin/dashboard', component: AdmindashboardComponent},
+  {path: 'admin/donhang', component: DonhangAdminComponent},
+  {path: 'admin/donhang/:id', component: ChitietdonhangAdminComponent},
   {path: '**', component: HomeComponent}
 ]
 

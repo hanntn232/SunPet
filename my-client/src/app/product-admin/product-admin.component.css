@@ -31,7 +31,7 @@ html {
 }
 
 .app__container {
-    padding: 10px 10px 10px 0px;
+    padding: 10px 0px 0px 0px;
 }
 
 .app__content {
@@ -345,6 +345,8 @@ html {
 
 .image-previous>div>img {
     height: 60px;
+    width: 60px;
+    margin-right: 5px;
     position: absolute;
 }
 

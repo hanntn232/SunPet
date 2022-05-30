@@ -5,7 +5,11 @@
 
 * {
     font-family: Opensans;
-    font-size: 18px;
+    font-size: 15px;
+}
+
+a:hover {
+    cursor: pointer;
 }
 
 
@@ -115,6 +119,10 @@
     position: relative;
     z-index: 1;
     /* overflow: hidden; */
+}
+
+.blog__position img {
+    max-height: 350px;
 }
 
 
@@ -507,7 +515,8 @@ label {
     display: inline-block;
 }
 
-input[type=submit] {
+input[type=submit],
+input[type=button] {
     background-color: gray;
     color: black;
     padding: 12px 20px;
@@ -572,7 +581,8 @@ input[type=submit]:hover {
 @media screen and (max-width: 600px) {
     .col-25,
     .col-75,
-    input[type=submit] {
+    input[type=submit],
+    input[type=button] {
         width: 100%;
         margin-top: 0;
     }
