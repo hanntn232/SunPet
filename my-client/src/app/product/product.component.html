@@ -38,7 +38,7 @@
                             </h6>
                             <ul class="category-list">
                                 <li class="category-item" id="category-item">
-                                    <a href="HOME.html" class="category-item__link">Trang chủ</a>
+                                    <a class="category-item__link">Trang chủ</a>
                                 </li>
                                 <li class="category-item category-item--active">
                                     <a routerLink="/sanpham" routerLinkActive="active" class="category-item__link" id="sanpham-category" (click)="hienThiTheoDanhMuc('')">Sản phẩm
@@ -59,10 +59,10 @@
                                     </li>
 
                                     <li class="category-item">
-                                        <a href="Blog_Trangchu.html" class="category-item__link">Tin thú cưng</a>
+                                        <a class="category-item__link">Tin thú cưng</a>
                                     </li>
                                     <li class="category-item">
-                                        <a href="Contact.html" class="category-item__link">Liên hệ</a>
+                                        <a class="category-item__link">Liên hệ</a>
                                     </li>
                             </ul>
                         </nav>
@@ -92,7 +92,7 @@
                                 <!-- <div class="col l-2-4 m-4 c-6" > -->
                                 <!-- Product item -->
                                 <a class="home-product-item" (click)="getNavigation(p._id)" *ngFor="let p of productList | paginate: {itemsPerPage: 10, currentPage: t}">
-                                    <div class="home-product-item__img" style="background-image: url({{p.hinhAnh[0]}});">
+                                    <div class="home-product-item__img" style="background-image: url(http://localhost:3000/{{p.hinhAnh[0]}});">
                                     </div>
                                     <h4 class="home-product-item__name">{{p.ten}}</h4>
                                     <div class="home-product-item__price">
@@ -156,8 +156,8 @@
                           
                           </pagination-template> -->
                         <div class="paginators" style="justify-content: center; padding: 20px">
-                        <pagination-controls class="paginator" (pageChange) = "t= $event "></pagination-controls>
-                    </div>
+                            <pagination-controls class="paginator" (pageChange)="t= $event "></pagination-controls>
+                        </div>
                         <div class="xemthem" id="xemthem">
                             <div id="more" onclick="xemThem()">
                                 <span>
