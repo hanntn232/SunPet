@@ -32,12 +32,12 @@
                                         <span>{{t.task}}</span>
                                     </td>
                                     <td class="align-middle" data-label="TenSP">
-                                        <h6 class="mb-0"><span class="badge bg-danger">{{t.level}}}</span></h6>
+                                        <h6 class="mb-0"><span class="badge bg-danger">{{t.level}}</span></h6>
                                     </td>
                                     <td class="align-middle" data-label="TenSP" data-label="TenSP">
-                                        <a href="#!" data-mdb-toggle="tooltip" title="Done"><i class="fas fa-check text-success me-3"
+                                        <a data-mdb-toggle="tooltip" title="Done" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-check text-success me-3"
                         (click)="onEdit(t)"></i></a>
-                                        <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i class="fas fa-trash-alt text-danger"
+                                        <a data-mdb-toggle="tooltip" title="Remove"><i class="fas fa-trash-alt text-danger"
                         (click)="onDelete(t.id, todoForm)"></i></a>
                                     </td>
                                 </tr>
@@ -127,7 +127,7 @@
 
                     <div class="card-footer text-end p-3">
                         <button class="me-2 btn btn btn-secondary">Hủy</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Thêm</button>
+                        <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="onReset(todoForm)">Thêm</button>
                     </div>
 
 
@@ -164,7 +164,7 @@
 
             </div>
           </div> -->
-                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"></div>
+                    <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"></div> -->
                     <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -223,19 +223,19 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-wrapper">
-                        <form #todoForm="ngForm" (ngSubmit)="submitData(todoForm)" class="form" autocomplete="off" novalidate>
-                            <input type="hidden" name="id" [(ngModel)]="todo['id']">
+                        <form #todoForm="ngForm" class="form" autocomplete="off" novalidate>
+                            <input type="hidden" name="id" [(ngModel)]="todo.id">
                             <fieldset>
                                 <label for="card-member">Thành viên:</label>
-                                <input type="text" id="card-member" name="card-member" class="form-control" [(ngModel)]="todo['name']" />
+                                <input type="text" id="card-member" name="card-member" class="form-control" [(ngModel)]="todo.name" />
                             </fieldset>
                             <fieldset>
                                 <label for="card-task">Nhiệm vụ:</label>
-                                <input type="text" id="card-task" name="card-task" class="form-control" [(ngModel)]="todo['task']" />
+                                <input type="text" id="card-task" name="card-task" class="form-control" [(ngModel)]="todo.task" />
                             </fieldset>
                             <fieldset>
                                 <label for="card-level">Mức độ</label>
-                                <input type="text" id="card-level" name="card-level" class="form-control" [(ngModel)]="todo['level']" />
+                                <input type="text" id="card-level" name="card-level" class="form-control" [(ngModel)]="todo.level" />
                             </fieldset>
                             <fieldset>
                                 <label for="card-date">Thời hạn:</label>
@@ -248,7 +248,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                    <button type="submit" class="btn btn-warning text-light">Thêm</button>
+                    <button type="submit" class="btn btn-warning text-light" (click)="submitData(todoForm)">Thêm</button>
                 </div>
             </div>
         </div>

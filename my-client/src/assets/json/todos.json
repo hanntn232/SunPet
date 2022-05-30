@@ -1,0 +1,46 @@
+[{
+        "_id": "6294f1c1b212ac1a9743e227",
+        "id": "1",
+        "name": "Ngọc Hân",
+        "task": "Thêm sản phẩm mới vào danh sách",
+        "level": "Thấp",
+        "createdAt": "2022-05-30T18:00:52.972Z",
+        "updatedAt": "2022-05-30T18:00:52.972Z"
+    },
+    {
+        "_id": "6294f9b3b212ac1a9743e22a",
+        "id": "2",
+        "name": "Kim Quy",
+        "task": "Thêm sản phẩm mới vào danh sách",
+        "level": "Thấp",
+        "createdAt": "2022-05-30T18:00:52.972Z",
+        "updatedAt": "2022-05-30T18:00:52.973Z"
+    },
+    {
+        "_id": "6294f9d2b212ac1a9743e22c",
+        "id": "3",
+        "name": "Cẩm Tú",
+        "task": "Thêm sản phẩm mới vào danh sách",
+        "level": "Trung bình",
+        "createdAt": "2022-05-30T18:00:52.973Z",
+        "updatedAt": "2022-05-30T18:00:52.973Z"
+    },
+    {
+        "_id": "6294f9e4b212ac1a9743e22e",
+        "id": "4",
+        "name": "Như Quỳnh",
+        "task": "Thêm sản phẩm mới vào danh sách",
+        "level": "Cao",
+        "createdAt": "2022-05-30T18:00:52.973Z",
+        "updatedAt": "2022-05-30T18:00:52.973Z"
+    },
+    {
+        "_id": "6294f9fab212ac1a9743e230",
+        "id": "5",
+        "name": "Tườn Vy",
+        "task": "Thêm sản phẩm mới vào danh sách",
+        "level": "Thấp",
+        "createdAt": "2022-05-30T18:00:52.973Z",
+        "updatedAt": "2022-05-30T18:00:52.973Z"
+    }
+]

@@ -34,20 +34,29 @@ export class AdmintasklistComponent implements OnInit {
     });
   }
 
+  taoTaskID() {
+    var id = '';
+    id = Math.random().toString().substring(2, 9) + "_" + String(new Date().getTime());
+    return id;
+  }
+
   submitData(form: NgForm) {
     // console.log("Form data: ",  form.value);
     console.log('Model: ', this.todo);
-
     // Insert todoitems
     if (this.todo.id == '') {
+      this.todo.id = this.taoTaskID();
       this._service.postTodo(this.todo).subscribe((res) => {
         let resData = JSON.parse(JSON.stringify(res)); 
         if (resData.message === 'Success') {
           // alert('Success!');
           this._toast.success("Inserted successfully!", "Success!")
           this.getAllTodoItems();
+          this.onReset(form);
+          setTimeout(() => window.location.reload(),1000)
         } else {
-          alert('Fail!');
+          this._toast.error(resData.message, 'Fail!')
+          // alert('Fail!');
         }
       });
     }
@@ -61,13 +70,32 @@ export class AdmintasklistComponent implements OnInit {
             // alert('Update Successfully!');
             this._toast.success("Updated successfully!", "Success!")
             this.onReset(form);
+            setTimeout(() => window.location.reload(),1000)
             this.getAllTodoItems();
           } else {
-            alert(resData.message);
+            this._toast.error(resData.message, 'Fail!')
           }
         });
     }
   }
+  // editData(form: NgForm){
+  //   if (this.todo.id == ''){
+  //     this._service
+  //     .updateTodo(this.todo.id, this.todo)
+  //     .subscribe((res) => {
+  //       let resData = JSON.parse(JSON.stringify(res));
+  //       if (resData.message === 'Success') {
+  //         // alert('Update Successfully!');
+  //         this._toast.success("Updated successfully!", "Success!")
+  //         this.onReset(form);
+  //         setTimeout(() => window.location.reload(),1000)
+  //         this.getAllTodoItems();
+  //       } else {
+  //         this._toast.error(resData.message, 'Fail!')
+  //       }
+  //     });
+  //   }
+  // }
 
   onEdit(data: Todo) {
     this.todo = data;

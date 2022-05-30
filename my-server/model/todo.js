@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const TodoSchema = new Schema({
-    _id: { type: Schema.Types.ObjectId },
+    // _id: { type: Schema.Types.ObjectId },
     id: { type: String },
     name: { type: String, required: true },
     task: { type: String, required: true },

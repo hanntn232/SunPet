@@ -359,8 +359,10 @@ router.post("/todos", async function(req, res) {
     // console.log("Dara from client: ", req.body);
     // res.send("Server received data!");
     let todo = new Todo({
+        id: req.body.id,
+        task: req.body.task,
         name: req.body.name,
-        task: req.body.task
+        level: req.body.level
     })
     try {
         t = await todo.save();
@@ -371,19 +373,20 @@ router.post("/todos", async function(req, res) {
 })
 
 //update todoitem
-router.patch("/:todoID", async(req, res) => {
-        try {
-            await Todo.updateOne({ id: req.params.todoID }, {
-                $set: { name: req.body.name, task: req.body.task }
-            })
-            res.json({ message: "Success" })
+router.patch("/todos/:todoID", async(req, res) => {
+    try {
+        await Todo.updateOne({ id: req.params.todoID }, {
+            $set: { name: req.body.name, task: req.body.task, level: req.body.level }
+        })
+        res.json({ message: "Success" })
 
-        } catch (err) {
-            console.log(err.message);
-            res.json({ message: err.message });
-        }
-    })
-    //delete todoitem
+    } catch (err) {
+        console.log(err.message);
+        res.json({ message: err.message });
+    }
+})
+
+//delete todoitem
 router.delete("/:todoID", async(req, res) => {
     try {
         await Todo.deleteOne({ id: req.params.todoID });

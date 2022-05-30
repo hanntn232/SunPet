@@ -23,10 +23,10 @@ export class TasklistService {
     )
   }
   postTodo(data:Todo){
-    return this._http.post<Todo[]>(`${baseUrlTodo}/todos`, data);
+    return this._http.post<Todo>(`${baseUrlTodo}/todos`, data);
   }
   updateTodo(id:string, newdata:Todo):Observable<any>{
-    return this._http.patch(`${baseUrlTodo}/todos`, newdata);
+    return this._http.patch(`${baseUrlTodo}/todos/${id}`, newdata);
   }
   deleteTodo(id:string){
     return this._http.delete(`${baseUrlTodo}/${id}`);
