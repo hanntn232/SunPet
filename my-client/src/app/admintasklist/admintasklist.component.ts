@@ -109,12 +109,12 @@ export class AdmintasklistComponent implements OnInit {
   }
 
   onDelete(id: any, form: NgForm) {
-    if (confirm('Are you sure you want to delete this product?') == true) {
+    if (confirm('Are you sure you want to delete this task?') == true) {
       this._service.deleteTodo(id).subscribe((res) => {
         let resData = JSON.parse(JSON.stringify(res));
         if (resData.message === 'Success') {
           // alert('Delete Successfully!');
-          this._toast.info("Deleted successfully!", "Success!", {
+          this._toast.success("Deleted successfully!", "Success!", {
             timeOut: 2000
           })
           this.onReset(form);
