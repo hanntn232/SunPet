@@ -4,7 +4,10 @@ import { ChartComponent } from "ng-apexcharts";
 import {
   ApexNonAxisChartSeries,
   ApexResponsive,
-  ApexChart
+  ApexChart,
+  // ApexDataLabels,
+  // ApexTitleSubtitle,
+  ApexLegend,
 } from "ng-apexcharts";
 
 export type ChartOptions = {
@@ -12,6 +15,9 @@ export type ChartOptions = {
   chart: ApexChart;
   responsive: ApexResponsive[];
   labels: any;
+  // dataLabels: ApexDataLabels;
+  // title: ApexTitleSubtitle;
+  legend: ApexLegend;
 };
 
 @Component({
@@ -31,9 +37,18 @@ export class PiechartComponent {
         type: "donut"
       },
       labels: ["Mạng xã hội", "Công cụ tìm kiếm", "Chiến dịch quảng cáo", "Truy cập trực tiếp", "Khác"],
+      title: {
+        text: "Nguồn truy cập",
+        align: "left",
+        style: {
+          fontSize: "22px",
+          fontFamily: "Helvetica, Arial, sans-serif",
+          fontWeight: "bold"
+        }
+      },
       responsive: [
         {
-          breakpoint: 480,
+          breakpoint: 400,
           options: {
             chart: {
               width: 200
@@ -41,9 +56,10 @@ export class PiechartComponent {
             legend: {
               position: "bottom"
             }
-          }
+          },
+          size: '60%'
         }
       ]
-    };
   }
+}
 }
