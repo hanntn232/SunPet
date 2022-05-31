@@ -1,17 +1,14 @@
 outer-wrapper {
     margin: 10px;
     margin-left: 20px;
-      margin-right: 20px;
-
-
-     max-width: fit-content;
-
+    margin-right: 20px;
+    max-width: fit-content;
     max-height: fit-content;
 }
 
 .table-wrapper {
     overflow-y: scroll;
-      /* overflow-x: scroll; */
+    /* overflow-x: scroll; */
     scroll-snap-type: both mandatory;
     height: fit-content;
     max-height: 66.4vh;
@@ -129,3 +126,39 @@ table td {
     margin-right: 0;
 }
 
+@media screen and (max-width: 764px) {
+    table {
+        border: 0;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        display: block;
+        margin-bottom: .5em;
+    }
+
+    table td {
+        display: block;
+        font-size: .6em;
+        text-align: right;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}

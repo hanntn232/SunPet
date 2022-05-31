@@ -81,7 +81,8 @@ import {
   ApexMarkers,
   ApexYAxis,
   ApexTitleSubtitle,
-  ApexLegend
+  ApexLegend,
+  ApexTooltip,
 } from "ng-apexcharts";
 
 export type ChartOptions = {
@@ -89,13 +90,14 @@ export type ChartOptions = {
   chart: ApexChart;
   xaxis: ApexXAxis;
   dataLabels: ApexDataLabels;
-  stroke: ApexStroke; 
-  grid: ApexGrid; 
+  stroke: ApexStroke;
+  grid: ApexGrid;
   markers: ApexMarkers;
   yaxis: ApexYAxis;
   colors: string[];
   title: ApexTitleSubtitle;
   legend: ApexLegend;
+  tooltip: ApexTooltip;
 };
 
 @Component({
@@ -103,7 +105,7 @@ export type ChartOptions = {
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.css']
 })
-export class LineChartComponent{
+export class LineChartComponent {
   @ViewChild("chart")
   chart!: ChartComponent;
   public chartOptions!: Partial<ChartOptions> | any;
@@ -112,17 +114,25 @@ export class LineChartComponent{
     this.chartOptions = {
       series: [
         {
-          name: "High - 2013",
-          data: [28, 29, 33, 36, 32, 32, 33]
+          name: "Lượt xem",
+          data: [28, 29, 33, 36, 32, 32, 33],
+          style: {
+            fontSize: "20px",
+            fontFamily: "Helvetica, Arial, sans-serif"
+          }
         },
         {
-          name: "Low - 2013",
-          data: [12, 11, 14, 18, 17, 13, 13]
-        }
+          name: "Lượt mua",
+          data: [12, 11, 14, 18, 17, 13, 13],
+          style: {
+            fontSize: "20px",
+            fontFamily: "Helvetica, Arial, sans-serif"
+          }
+        },
       ],
       chart: {
         height: 350,
-        type: "line",
+        type: "area",
         dropShadow: {
           enabled: true,
           color: "#000",
@@ -135,16 +145,21 @@ export class LineChartComponent{
           show: false
         }
       },
-      colors: ["#77B6EA", "#545454"],
+      colors: ["#77B6EA", "#42e05f"],
       dataLabels: {
-        enabled: true
+        // enabled: true
+        enabled: false,
       },
       stroke: {
         curve: "smooth"
       },
       title: {
-        text: "Average High & Low Temperature",
-        align: "left"
+        text: "Hoạt động khách hàng",
+        align: "left",
+        style: {
+          fontSize: "20px",
+          fontFamily: "Helvetica, Arial, sans-serif"
+        }
       },
       grid: {
         borderColor: "#e7e7e7",
@@ -159,12 +174,20 @@ export class LineChartComponent{
       xaxis: {
         categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
         title: {
-          text: "Month"
-        }
+          text: "Tháng",
+          style: {
+            fontSize: "14px",
+            fontFamily: "Helvetica, Arial, sans-serif"
+          }
+        },
       },
       yaxis: {
         title: {
-          text: "Temperature"
+          text: "Lượt (nghìn)",
+          style: {
+            fontSize: "14px",
+            fontFamily: "Helvetica, Arial, sans-serif"
+          }
         },
         min: 5,
         max: 40

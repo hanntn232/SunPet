@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
 .container {
 position: relative;
 margin-left: 240px;
@@ -19,7 +18,7 @@ transition: margin-left 500ms;
 }
 
 table {
-border: 1px solid #fff;
+border: 1px solid #fdda2b;
 border-collapse: collapse;
 margin: 0;
 padding: 0;
@@ -27,14 +26,14 @@ width: 100%;
 table-layout: fixed;
 }
 
-table caption {
+/* table caption {
 font-size: 1.5em;
 margin: .5em 0 .75em;
-}
+} */
 
 table tr {
-background-color: #fdda2b;
-border: 1px solid #fff;
+background-color: #fff;
+border: 1px solid #fdda2b;
 padding: .35em;
 }
 
@@ -104,7 +103,7 @@ top: calc(50% - 3px);
 width: 10px;
 height: 6px;
 stroke-width: 2px;
-stroke: #9098a9;
+stroke: #fff;
 fill: none;
 stroke-linecap: round;
 stroke-linejoin: round;
@@ -134,11 +133,11 @@ display: none;
 }
 .select select:focus {
 outline: none;
-border-color: #07f;
+border-color: #FFC500;
 box-shadow: 0 0 0 2px rgba(0,119,255,0.2);
 }
 .select select:hover + svg {
-stroke: #07f;
+stroke: #FFC500;
 }
 .sprites {
 position: absolute;
@@ -167,23 +166,14 @@ user-select: none;
     margin-left: 60px;
 }
 }
-
-@media only screen and (max-width: 1200px) {
-
-.container {
-    margin-left: 60px;
-}
-}
-
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 764px) {
 table {
   border: 0;
 }
 
-table caption {
+/* table caption {
   font-size: 1.3em;
-}
+} */
 
 table thead {
   border: none;
@@ -197,13 +187,13 @@ table thead {
 }
 
 table tr {
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid #fdda2b;
   display: block;
   margin-bottom: .625em;
 }
 
 table td {
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #fdda2b;
   display: block;
   font-size: .8em;
   text-align: right;
