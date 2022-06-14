@@ -15,7 +15,7 @@ export class ProductService {
   }
 
   getProductListByCategory(category: String): Observable<IDproduct[]>{
-    return this._http.get<IDproduct[]>(`${baseUrlProduct}/products/${category}`)
+    return this._http.get<IDproduct[]>(`${baseUrlProduct}/products/category/${category}`)
     .pipe(
       retry(3),
       catchError(this.handleError)

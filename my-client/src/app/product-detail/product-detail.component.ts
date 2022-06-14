@@ -38,7 +38,7 @@ export class ProductDetailComponent implements OnInit {
     //   error: (err) => this.errMsg = err
     // });
 
-    // chuyenAnh();
+    chuyenAnh();
     this.productID = this.activatedRoute.snapshot.params['id'];
     this.loadProductDetail(this.productID);
     

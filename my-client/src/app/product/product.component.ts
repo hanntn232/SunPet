@@ -13,7 +13,6 @@ export class ProductComponent implements OnInit {
   errMsg: any;
   selectedId: any;
   t: number = 1;
-
   page: number = 1;
   total: number = 50;
 

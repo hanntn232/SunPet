@@ -39,6 +39,7 @@ const routes: Routes = [
   {path: 'admin/dashboard', component: AdmindashboardComponent},
   {path: 'admin/donhang', component: DonhangAdminComponent},
   {path: 'admin/donhang/:id', component: ChitietdonhangAdminComponent},
+  {path: 'admin/chitietdonhang', component: ChitietdonhangAdminComponent},
   {path: '**', component: HomeComponent}
 ]
 

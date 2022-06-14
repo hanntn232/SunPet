@@ -16,6 +16,10 @@
     background-color: #FFC700;
 }
 
+.container-fluid {
+    display: flex;
+}
+
 .btn {
     width: 80px;
     text-align: center;
