@@ -201,7 +201,8 @@ export class ProductAdminComponent implements OnInit {
 
   deleteImage(imageRemove: any) {
     //Không cho phép xóa hết ảnh sản phẩm
-    if (this.product.hinhAnh.length > 1) {
+    if(this.product.hinhAnh.length > 1) {
+      // console.log(this.product.hinhAnh.length)
       this.product.hinhAnh.splice(this.product.hinhAnh.indexOf(imageRemove), 1);
     }
   }

@@ -315,7 +315,7 @@
                                                                         <div class="image-previous">
                                                                             <div *ngFor="let i of product.hinhAnh" class="image-overlay">
                                                                                 <img src="http://localhost:3000/{{i}}">
-                                                                                <button class="image-delete" (click)="deleteImage(i)">x</button>
+                                                                                <button type="button" class="image-delete" (click)="deleteImage(i)">x</button>
                                                                             </div>
                                                                         </div>
                                                                         <input type="file" accept=".jpg, .png" name="hinhAnh" class="button-addimg form-control mb-3" id="image_product" multiple (change)="onChangeFile($event)">

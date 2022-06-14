@@ -54,6 +54,7 @@
     width: 100%;
     border-radius: 30px;
     text-decoration: none;
+    max-height: 350px;
 }
 
 .blog_item {
